@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
+import SEOHead from '../components/SEOHead'
 
 // ─── Formulaire de contact ────────────────────────────────────────────────────
 
@@ -172,6 +173,11 @@ function ContactForm() {
 export default function RDV() {
   return (
     <PageTransition>
+      <SEOHead
+        title="Réserver un appel découverte gratuit | BNK Conseil"
+        description="30 minutes pour parler de votre situation et voir comment BNK Conseil peut vous aider. Gratuit, sans engagement."
+        canonical="https://bnk-conseil-1z3b.vercel.app/rdv"
+      />
 
       {/* En-tête de page */}
       <section
@@ -196,7 +202,7 @@ export default function RDV() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>croissance.</span>
+              }}>croissance</span>
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               30 minutes. Pas de pitch. Juste une conversation honnête sur vos enjeux et comment je peux vous aider.

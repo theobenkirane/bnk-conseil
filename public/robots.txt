@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bnk-conseil-1z3b.vercel.app/sitemap.xml

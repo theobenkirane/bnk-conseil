@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import { Link } from 'react-router-dom'
+import SEOHead from '../components/SEOHead'
 
 // ─── Données ──────────────────────────────────────────────────────────────────
 
@@ -13,7 +14,7 @@ const values = [
       </svg>
     ),
     title: 'Transparence',
-    description: 'Pas de promesses vides. Des objectifs clairs dès le départ, des résultats mesurables, et une communication directe même quand c\'est inconfortable.',
+    description: "Pas de promesses vides. Des objectifs clairs dès le départ, des résultats mesurables, et une communication directe même quand c'est inconfortable.",
   },
   {
     icon: (
@@ -22,7 +23,7 @@ const values = [
       </svg>
     ),
     title: 'Audace',
-    description: 'On challenge le statu quo. Si une approche ne fonctionne pas, on change de cap sans hésiter. L\'immobilisme est notre ennemi principal.',
+    description: "On challenge le statu quo. Si une approche ne fonctionne pas, on change de cap sans hésiter. L'immobilisme est notre ennemi principal.",
   },
   {
     icon: (
@@ -35,62 +36,26 @@ const values = [
   },
 ]
 
-// Domaines du réseau d'experts
-const experts = [
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-    domain: 'Stratégie commerciale B2B',
-    description: 'Experts en prospection, structuration des équipes de vente et génération de pipeline qualifié.',
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-      </svg>
-    ),
-    domain: 'Outils & Digitalisation',
-    description: 'Spécialistes CRM, automatisation, création de sites web et stratégie de présence digitale.',
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
-      </svg>
-    ),
-    domain: 'Réseaux sociaux & Contenu',
-    description: 'Créateurs de contenu et community managers spécialisés dans la communication pour TPE et startups.',
-  },
-]
-
 const timeline = [
   {
     year: '2022',
     title: 'Création de BNK Conseil',
-    description: 'Théo Benkirane crée BNK Conseil avec une conviction forte : les TPE et startups méritent un accompagnement commercial ancré dans la réalité du terrain.',
+    description: "Théo Benkirane crée BNK Conseil avec une conviction forte : les TPE et startups méritent un accompagnement commercial ancré dans la réalité du terrain.",
   },
   {
     year: '2023',
     title: 'Premières missions et résultats',
-    description: 'BNK Conseil accompagne ses premiers clients sur des audits commerciaux et des projets de digitalisation. Les résultats parlent vite : +30% de conversion en moyenne.',
+    description: "BNK Conseil accompagne ses premiers clients sur des audits commerciaux et des projets de digitalisation. Les résultats parlent vite : +30% de conversion en moyenne.",
   },
   {
     year: '2024',
-    title: 'Structuration de l\'offre',
-    description: 'Lancement de l\'offre de digitalisation et de visibilité. Construction d\'un réseau d\'experts partenaires pour répondre à toutes les problématiques clients.',
+    title: "Structuration de l'offre",
+    description: "Lancement de l'offre de digitalisation et de visibilité. Construction d'un réseau d'experts partenaires pour répondre à toutes les problématiques clients.",
   },
   {
     year: '2025',
     title: 'Une référence pour les TPE et startups',
-    description: 'BNK Conseil accompagne des TPE et startups en France sur leur croissance commerciale et digitale, avec des résultats concrets et mesurables.',
+    description: "BNK Conseil accompagne des TPE et startups en France sur leur croissance commerciale et digitale, avec des résultats concrets et mesurables.",
   },
 ]
 
@@ -99,13 +64,17 @@ const timeline = [
 export default function APropos() {
   return (
     <PageTransition>
+      <SEOHead
+        title="À propos — Théo Benkirane, Fondateur BNK Conseil"
+        description="Consultant terrain spécialisé dans la performance commerciale et la digitalisation des TPE et startups. Opérationnel, direct, orienté résultats."
+        canonical="https://bnk-conseil-1z3b.vercel.app/a-propos"
+      />
 
       {/* ── Hero — fond pastel ────────────────────────────────── */}
       <section
         className="pt-32 pb-24 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #bfdbfe 0%, #f9fafb 35%, #fce7f3 65%, #d1fae5 100%)' }}
       >
-        {/* Orbes bokeh */}
         <div
           className="absolute top-10 left-10 w-72 h-72 rounded-full opacity-40 pointer-events-none"
           style={{ background: 'radial-gradient(circle, #c4b5fd, transparent)', filter: 'blur(60px)' }}
@@ -126,19 +95,19 @@ export default function APropos() {
             >
               <span className="text-violet-700 text-sm font-bold uppercase tracking-widest">Qui je suis</span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6 leading-tight">
-                Derrière{' '}
+                Théo Benkirane —{' '}
                 <span style={{
                   background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                }}>BNK Conseil</span>
+                }}>Fondateur de BNK Conseil</span>
               </h1>
               <p className="text-gray-700 text-xl leading-relaxed mb-5">
-                BNK Conseil, c'est un consultant engagé — pas une agence — avec un réseau d'experts sélectionnés pour leur impact concret sur le terrain.
+                BNK Conseil, c'est un consultant engagé — pas une agence anonyme. Je travaille directement avec vous, de l'analyse à l'exécution, sans intermédiaire ni délégation opaque.
               </p>
               <p className="text-gray-500 text-base leading-relaxed">
-                Ma mission : aider les TPE et startups à structurer leur croissance commerciale et leur présence digitale, sans se perdre dans la théorie. Du concret, des résultats, rapidement.
+                Mon objectif : vous apporter des résultats mesurables rapidement, pas des slides et des recommandations théoriques.
               </p>
             </motion.div>
 
@@ -158,7 +127,7 @@ export default function APropos() {
                   <div className="relative inline-block mb-5">
                     <img
                       src="/theo.jpg"
-                      alt="Théo Benkirane — Fondateur BNK Conseil"
+                      alt="Théo Benkirane, fondateur de BNK Conseil"
                       className="w-28 h-28 rounded-full object-cover object-top border-4 border-white shadow-xl"
                       onError={(e) => {
                         e.target.src = 'https://i.pravatar.cc/150?img=11'
@@ -256,57 +225,8 @@ export default function APropos() {
         </div>
       </section>
 
-      {/* ── Réseau d'experts ──────────────────────────────────── */}
-      <section className="py-24" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fdf4ff 100%)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Mon réseau</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
-              Entouré des{' '}
-              <span style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>meilleurs</span>
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
-              Je travaille seul — et c'est un choix. Pas d'overhead, pas de délégation opaque. Quand votre mission l'exige, je m'appuie sur un réseau d'experts triés sur le volet, chacun reconnu dans son domaine.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {experts.map((expert, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-2xl bg-white border border-violet-100 hover:border-violet-300 hover:shadow-md hover:shadow-violet-100/50 group transition-all duration-300"
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-violet-600 group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.1), rgba(168,85,247,0.06))' }}
-                >
-                  {expert.icon}
-                </div>
-                <h3 className="text-gray-900 font-bold text-lg mb-2">{expert.domain}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{expert.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Timeline ──────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-24" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fdf4ff 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

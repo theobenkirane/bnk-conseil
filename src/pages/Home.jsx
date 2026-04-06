@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import AnimatedCounter from '../components/AnimatedCounter'
-import TestimonialCarousel from '../components/TestimonialCarousel'
+import SEOHead from '../components/SEOHead'
 
 // ─── Données ──────────────────────────────────────────────────────────────────
 
@@ -39,7 +39,7 @@ const whyBNK = [
       </svg>
     ),
     title: 'Sur-mesure',
-    description: 'Chaque mission est adaptée à votre contexte. On ne sort pas de templates préformatés.',
+    description: "Chaque mission est adaptée à votre contexte. On ne sort pas de templates préformatés.",
   },
   {
     icon: (
@@ -48,7 +48,7 @@ const whyBNK = [
       </svg>
     ),
     title: 'Rapidité',
-    description: 'Premiers résultats en 30 jours. On passe à l\'action vite, sans attendre que les planètes s\'alignent.',
+    description: "Premiers résultats en 30 jours. On passe à l'action vite, sans attendre que les planètes s'alignent.",
   },
 ]
 
@@ -107,6 +107,12 @@ export default function Home() {
 
   return (
     <PageTransition>
+      <SEOHead
+        title="Développement commercial TPE & Startups | BNK Conseil"
+        description="BNK Conseil accompagne les TPE et startups à structurer leur croissance commerciale et leur présence digitale. Audit commercial, création de site web, réseaux sociaux. Résultats en 30 jours."
+        canonical="https://bnk-conseil-1z3b.vercel.app"
+        ogTitle="BNK Conseil — Développement commercial pour TPE et startups"
+      />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section
@@ -142,21 +148,29 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-300 bg-white/70 text-violet-700 text-sm font-medium mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-300 bg-white/70 text-violet-700 text-sm font-medium mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
             Accompagnement commercial pour TPE et startups
           </motion.div>
 
-          {/* Titre principal */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-6">
-            <span className="text-gray-900 min-h-[1.2em] block">
-              {tagline}
-              <span className="animate-pulse text-violet-500">|</span>
-            </span>
-          </h1>
+          {/* H1 SEO — mot-clé principal, visible et accessible */}
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-xl sm:text-2xl font-semibold text-violet-700 mb-3"
+          >
+            Développement commercial pour TPE et startups
+          </motion.h1>
 
-          {/* Sous-titre */}
+          {/* Tagline animée — sous-titre visuel */}
+          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-6 text-gray-900 min-h-[1.2em]">
+            {tagline}
+            <span className="animate-pulse text-violet-500">|</span>
+          </p>
+
+          {/* Sous-titre descriptif */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -199,9 +213,9 @@ export default function Home() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto"
           >
             {[
-              { value: 40, suffix: '%', prefix: '+', label: 'de CA moyen', sublabel: 'sur 6 mois' },
-              { value: 50, suffix: '+', prefix: '', label: 'clients accompagnés', sublabel: 'TPE et startups' },
-              { value: 3, suffix: ' ans', prefix: '', label: "d'expérience", sublabel: 'terrain et opérationnel' },
+              { value: 40, suffix: '%', prefix: '+', label: 'de CA moyen', sublabel: 'de croissance moyenne sur 6 mois' },
+              { value: 50, suffix: '+', prefix: '', label: 'missions réalisées', sublabel: 'TPE et startups' },
+              { value: 3, suffix: ' ans', prefix: '', label: "d'expérience terrain", sublabel: 'opérationnel et terrain' },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -353,41 +367,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Témoignages ──────────────────────────────────────── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Témoignages</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
-              Ils ont avancé avec{' '}
-              <span style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>BNK Conseil</span>
-            </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              Les résultats parlent pour nous. Voici ce que disent ceux qui ont franchi le cap.
-            </p>
-          </motion.div>
-
-          <TestimonialCarousel />
-        </div>
-      </section>
-
       {/* ── CTA final ────────────────────────────────────────── */}
       <section
         className="py-24 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #ede9fe 0%, #fce7f3 50%, #dbeafe 100%)' }}
       >
-        {/* Orbe décorative */}
         <div
           className="absolute inset-0 opacity-30 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(168,85,247,0.25), transparent)' }}
@@ -400,13 +384,13 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              Pret a{' '}
+              Prêt à{' '}
               <span style={{
                 background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>accelerer ?</span>
+              }}>accélérer ?</span>
             </h2>
             <p className="text-gray-600 text-xl mb-10 max-w-2xl mx-auto">
               Un appel de 30 minutes pour comprendre vos enjeux. Pas de pitch commercial, juste une conversation honnête.
