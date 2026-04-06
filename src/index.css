@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Global resets and base styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #FAFBFF;
+  color: #1F2937;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Custom scrollbar — tons pastels */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EFF6FF;
+}
+::-webkit-scrollbar-thumb {
+  background: #A855F7;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}
+
+/* Gradient text utility (violet → fuchsia) */
+.gradient-text {
+  background: linear-gradient(135deg, #7C3AED, #A855F7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card blanche avec ombre douce */
+.soft-card {
+  background: #ffffff;
+  border: 1px solid #E9D5FF;
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.06);
+}
+
+/* Smooth transitions for page changes */
+html {
+  scroll-behavior: smooth;
+}
