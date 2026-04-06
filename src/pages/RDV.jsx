@@ -20,14 +20,32 @@ function ContactForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    // Simulation d'envoi (pas de backend réel)
-    setTimeout(() => {
+    try {
+      // Remplacez YOUR_FORM_ID par votre identifiant Formspree (formspree.io)
+      const res = await fetch('https://formspree.io/f/mkopkdpl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          prenom: form.prenom,
+          nom: form.nom,
+          email: form.email,
+          societe: form.societe,
+          message: form.message,
+        }),
+      })
+      if (res.ok) {
+        setSent(true)
+      } else {
+        throw new Error('Erreur réseau')
+      }
+    } catch {
+      alert("Une erreur est survenue. Écrivez-nous directement à conseil.bnk@gmail.com")
+    } finally {
       setLoading(false)
-      setSent(true)
-    }, 1200)
+    }
   }
 
   if (sent) {
@@ -177,6 +195,23 @@ export default function RDV() {
         title="Réserver un appel découverte gratuit | BNK Conseil"
         description="30 minutes pour parler de votre situation et voir comment BNK Conseil peut vous aider. Gratuit, sans engagement."
         canonical="https://bnk-conseil-1z3b.vercel.app/rdv"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://bnk-conseil-1z3b.vercel.app/rdv#webpage",
+          "url": "https://bnk-conseil-1z3b.vercel.app/rdv",
+          "name": "Prendre un RDV — BNK Conseil",
+          "description": "Réservez un appel découverte gratuit de 30 minutes avec Théo Benkirane pour discuter de votre croissance commerciale et digitale. Sans engagement.",
+          "inLanguage": "fr-FR",
+          "isPartOf": { "@id": "https://bnk-conseil-1z3b.vercel.app/#website" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bnk-conseil-1z3b.vercel.app/" },
+              { "@type": "ListItem", "position": 2, "name": "Prendre un RDV", "item": "https://bnk-conseil-1z3b.vercel.app/rdv" }
+            ]
+          }
+        }}
       />
 
       {/* En-tête de page */}

@@ -1,0 +1,31 @@
+# BNK Conseil
+
+> Conseil commercial et digitalisation pour TPE et startups en France.
+> Fondé par Théo Benkirane en 2022.
+
+BNK Conseil accompagne les très petites entreprises (TPE) et startups françaises
+dans leur développement commercial et leur transformation digitale.
+Résultats mesurables en moins de 30 jours.
+
+## Services
+
+- [Audit Commercial & Accompagnement](/offres) : Diagnostic complet de l'organisation commerciale, co-construction de la stratégie de vente, suivi mensuel des KPIs. Durée : 1 à 12 mois.
+- [Digitalisation & Visibilité](/offres) : Création de site web professionnel, stratégie et animation des réseaux sociaux, mise en place d'un CRM et d'automatisations. Durée : 1 à 6 mois.
+
+## Pour qui
+
+TPE (Très Petites Entreprises), startups en phase de lancement ou de croissance,
+indépendants souhaitant professionnaliser leur développement commercial.
+Tous secteurs d'activité. Intervention sur toute la France.
+
+## Le fondateur
+
+Théo Benkirane, fondateur et consultant, spécialisé dans la performance commerciale
+et la digitalisation des petites structures. Approche terrain, opérationnelle et orientée résultats.
+LinkedIn : https://www.linkedin.com/in/theobenkirane/
+
+## Contact
+
+- Email : conseil.bnk@gmail.com
+- Prendre un rendez-vous : https://bnk-conseil-1z3b.vercel.app/rdv
+- Site : https://bnk-conseil-1z3b.vercel.app

@@ -68,6 +68,24 @@ export default function APropos() {
         title="À propos — Théo Benkirane, Fondateur BNK Conseil"
         description="Consultant terrain spécialisé dans la performance commerciale et la digitalisation des TPE et startups. Opérationnel, direct, orienté résultats."
         canonical="https://bnk-conseil-1z3b.vercel.app/a-propos"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://bnk-conseil-1z3b.vercel.app/a-propos#webpage",
+          "url": "https://bnk-conseil-1z3b.vercel.app/a-propos",
+          "name": "À propos — Théo Benkirane & BNK Conseil",
+          "description": "Découvrez qui est Théo Benkirane, fondateur de BNK Conseil, et la mission de l'entreprise : accompagner les TPE et startups dans leur croissance commerciale et digitale depuis 2022.",
+          "inLanguage": "fr-FR",
+          "isPartOf": { "@id": "https://bnk-conseil-1z3b.vercel.app/#website" },
+          "about": { "@id": "https://bnk-conseil-1z3b.vercel.app/#theo-benkirane" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bnk-conseil-1z3b.vercel.app/" },
+              { "@type": "ListItem", "position": 2, "name": "À propos", "item": "https://bnk-conseil-1z3b.vercel.app/a-propos" }
+            ]
+          }
+        }}
       />
 
       {/* ── Hero — fond pastel ────────────────────────────────── */}
@@ -128,6 +146,8 @@ export default function APropos() {
                     <img
                       src="/theo.jpg"
                       alt="Théo Benkirane, fondateur de BNK Conseil"
+                      width={112}
+                      height={112}
                       className="w-28 h-28 rounded-full object-cover object-top border-4 border-white shadow-xl"
                       onError={(e) => {
                         e.target.src = 'https://i.pravatar.cc/150?img=11'

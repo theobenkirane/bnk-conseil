@@ -129,9 +129,15 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} BNK Conseil. Tous droits réservés.
           </p>
-          <p className="text-gray-400 text-sm">
-            Fait avec ambition, pour les entreprises qui veulent croître.
-          </p>
+          <div className="flex items-center gap-4">
+            <Link to="/mentions-legales" className="text-gray-400 text-sm hover:text-violet-600 transition-colors duration-200">
+              Mentions légales
+            </Link>
+            <span className="text-gray-200">·</span>
+            <Link to="/politique-confidentialite" className="text-gray-400 text-sm hover:text-violet-600 transition-colors duration-200">
+              Politique de confidentialité
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

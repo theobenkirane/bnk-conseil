@@ -1,27 +1,27 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// Témoignages fictifs sans nom d'entreprise
+// À remplacer par de vrais témoignages clients avec accord explicite
 const testimonials = [
   {
-    quote: "BNK Conseil nous a aidé à doubler notre pipeline en 3 mois. Un accompagnement ultra concret, focalisé sur nos vrais résultats. Je recommande sans hésiter.",
-    author: "Marie L.",
-    role: "Directrice Commerciale",
-    avatar: "https://i.pravatar.cc/80?img=1",
+    quote: "BNK Conseil nous a aidé à structurer notre approche commerciale de A à Z. Un accompagnement concret, opérationnel, avec des résultats visibles en quelques semaines.",
+    author: "Client TPE",
+    role: "Secteur Commerce — France",
+    initials: "C",
     rating: 5,
   },
   {
-    quote: "L'audit commercial a transformé notre approche. On avait des problèmes qu'on ne voyait plus. En quelques semaines, +35% de conversion. Efficace et direct.",
-    author: "Julien M.",
-    role: "Gérant",
-    avatar: "https://i.pravatar.cc/80?img=8",
+    quote: "L'audit commercial a mis le doigt sur des blocages qu'on ne voyait plus. Le plan d'action était clair et applicable immédiatement. Je recommande.",
+    author: "Dirigeant Startup",
+    role: "Secteur Tech — France",
+    initials: "D",
     rating: 5,
   },
   {
-    quote: "Un accompagnement vraiment sur-mesure. On se sentait compris dès le départ. BNK Conseil, c'est un vrai partenaire — pas un prestataire comme les autres.",
-    author: "Sophia R.",
-    role: "Co-fondatrice",
-    avatar: "https://i.pravatar.cc/80?img=5",
+    quote: "Théo comprend vite les enjeux d'une petite structure. Pas de jargon, pas de théorie — que de l'opérationnel. C'est exactement ce dont on avait besoin.",
+    author: "Co-fondatrice",
+    role: "Secteur Services — France",
+    initials: "S",
     rating: 5,
   },
 ]
@@ -102,11 +102,13 @@ export default function TestimonialCarousel() {
 
             {/* Auteur */}
             <div className="flex items-center gap-4">
-              <img
-                src={t.avatar}
-                alt={t.author}
-                className="w-12 h-12 rounded-full border-2 border-violet-200 object-cover"
-              />
+              <div
+                className="w-12 h-12 rounded-full border-2 border-violet-200 flex items-center justify-center flex-shrink-0 text-white font-bold text-sm"
+                style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)', width: 48, height: 48 }}
+                aria-label={t.author}
+              >
+                {t.initials}
+              </div>
               <div>
                 <p className="text-gray-900 font-semibold text-sm">{t.author}</p>
                 <p className="text-gray-400 text-sm">{t.role}</p>
