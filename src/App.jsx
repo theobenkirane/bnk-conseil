@@ -11,6 +11,8 @@ const APropos = lazy(() => import('./pages/APropos'))
 const RDV = lazy(() => import('./pages/RDV'))
 const MentionsLegales = lazy(() => import('./pages/MentionsLegales'))
 const PolitiqueConfidentialite = lazy(() => import('./pages/PolitiqueConfidentialite'))
+const AuditCommercial = lazy(() => import('./pages/AuditCommercial'))
+const CreationSiteVitrine = lazy(() => import('./pages/CreationSiteVitrine'))
 
 // AnimatePresence nécessite l'accès à location via un composant interne
 function AnimatedRoutes() {
@@ -26,6 +28,8 @@ function AnimatedRoutes() {
           <Route path="/rdv" element={<RDV />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route path="/audit-commercial" element={<AuditCommercial />} />
+          <Route path="/creation-site-vitrine" element={<CreationSiteVitrine />} />
         </Routes>
       </Suspense>
     </AnimatePresence>
