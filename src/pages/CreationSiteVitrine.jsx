@@ -205,29 +205,24 @@ export default function CreationSiteVitrine() {
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
               Un site professionnel, rapide à livrer, optimisé pour Google et conçu pour convertir vos visiteurs en clients. Site vitrine pas cher TPE, devis gratuit en 20 min.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/rdv"
-                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-1"
-                style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
-              >
-                Demander un devis gratuit
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-              <p className="flex items-center text-gray-500 text-sm">
-                ✓ Gratuit · ✓ Sans engagement · ✓ Réponse 24h
-              </p>
+            <div className="flex flex-col gap-4">
               <Link
                 to="/apercu-site"
-                className="inline-flex items-center gap-1.5 text-violet-600 text-sm font-medium hover:text-violet-700 transition-colors underline underline-offset-4"
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-1 self-start"
+                style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                   <rect x="2" y="3" width="20" height="14" rx="2" /><polyline points="8 21 12 17 16 21" />
                 </svg>
                 Visualiser votre futur site gratuitement
               </Link>
+              <Link
+                to="/rdv"
+                className="inline-flex items-center gap-1.5 text-gray-500 text-sm font-medium hover:text-violet-600 transition-colors underline underline-offset-4 self-start"
+              >
+                Demander un devis gratuit
+              </Link>
+              <p className="text-gray-400 text-xs">Devis gratuit · Sans engagement · Réponse sous 24h</p>
             </div>
           </motion.div>
         </div>

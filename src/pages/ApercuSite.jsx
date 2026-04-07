@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
@@ -8,6 +8,8 @@ import WebsitePreview, { THEMES, SECTORS } from '../components/WebsitePreview'
 const SECTOR_LIST = Object.keys(SECTORS)
 const THEME_LIST = Object.entries(THEMES).map(([id, t]) => ({ id, ...t }))
 
+const PREVIEW_CONTENT_HEIGHT = 960
+
 const gradientText = {
   background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
   WebkitBackgroundClip: 'text',
@@ -15,13 +17,12 @@ const gradientText = {
   backgroundClip: 'text',
 }
 
-// Pastille de couleur pour chaque thème
 const THEME_COLORS = {
-  modern: { dot: 'linear-gradient(135deg, #7C3AED, #A855F7)', label: 'Moderne' },
-  elegant: { dot: 'linear-gradient(135deg, #1e2d4f, #c9a84c)', label: 'Élégant' },
-  nature: { dot: 'linear-gradient(135deg, #16a34a, #22c55e)', label: 'Nature' },
-  warm: { dot: 'linear-gradient(135deg, #ea580c, #fbbf24)', label: 'Chaleureux' },
-  pro: { dot: 'linear-gradient(135deg, #2563eb, #60a5fa)', label: 'Professionnel' },
+  colore:  { dot: 'linear-gradient(135deg, #F97316, #0D9488)', label: 'Color\u00e9' },
+  elegant: { dot: 'linear-gradient(135deg, #1e2d4f, #c9a84c)', label: '\u00c9l\u00e9gant' },
+  nature:  { dot: 'linear-gradient(135deg, #16a34a, #22c55e)', label: 'Nature' },
+  warm:    { dot: 'linear-gradient(135deg, #ea580c, #fbbf24)', label: 'Chaleureux' },
+  pro:     { dot: 'linear-gradient(135deg, #2563eb, #60a5fa)', label: 'Professionnel' },
 }
 
 export default function ApercuSite() {
@@ -29,8 +30,23 @@ export default function ApercuSite() {
     name: '',
     sector: SECTOR_LIST[0],
     city: '',
-    theme: 'modern',
+    slogan: '',
+    theme: 'colore',
   })
+
+  const previewContainerRef = useRef(null)
+  const [scale, setScale] = useState(null)
+
+  useEffect(() => {
+    const el = previewContainerRef.current
+    if (!el) return
+    const observer = new ResizeObserver(([entry]) => {
+      const w = entry.contentRect.width
+      if (w > 0) setScale(w / 1280)
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   const handleChange = (field, value) => {
     setForm((prev) => ({ ...prev, [field]: value }))
@@ -85,7 +101,7 @@ export default function ApercuSite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12 items-start">
 
-            {/* ── Colonne gauche : Formulaire ─────────────────────────────── */}
+            {/* Colonne gauche : Formulaire */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               animate={{ opacity: 1, x: 0 }}
@@ -149,6 +165,21 @@ export default function ApercuSite() {
                   />
                 </div>
 
+                {/* Slogan */}
+                <div>
+                  <label className="block text-gray-600 text-xs font-semibold mb-1.5 uppercase tracking-wider">
+                    Slogan{' '}
+                    <span className="text-gray-400 font-normal normal-case tracking-normal">(optionnel)</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={form.slogan}
+                    onChange={(e) => handleChange('slogan', e.target.value)}
+                    placeholder="Ex : Artisan de confiance depuis 1998"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+                  />
+                </div>
+
                 {/* Thème visuel */}
                 <div>
                   <label className="block text-gray-600 text-xs font-semibold mb-3 uppercase tracking-wider">
@@ -164,14 +195,14 @@ export default function ApercuSite() {
                           borderColor: form.theme === t.id ? '#7C3AED' : '#e5e7eb',
                           background: form.theme === t.id ? '#f5f3ff' : '#fafafa',
                         }}
-                        title={THEME_COLORS[t.id].label}
+                        title={THEME_COLORS[t.id]?.label}
                       >
                         <div
                           className="w-8 h-8 rounded-full flex-shrink-0"
-                          style={{ background: THEME_COLORS[t.id].dot }}
+                          style={{ background: THEME_COLORS[t.id]?.dot }}
                         />
                         <span className="text-xs font-medium text-gray-600 leading-tight text-center">
-                          {THEME_COLORS[t.id].label}
+                          {THEME_COLORS[t.id]?.label}
                         </span>
                       </button>
                     ))}
@@ -198,7 +229,7 @@ export default function ApercuSite() {
               </div>
             </motion.div>
 
-            {/* ── Colonne droite : Preview live ───────────────────────────── */}
+            {/* Colonne droite : Preview live */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
@@ -223,16 +254,17 @@ export default function ApercuSite() {
                   </div>
                 </div>
 
-                {/* Zone preview scalée */}
+                {/* Zone preview scalée — responsive via ResizeObserver */}
                 <div
+                  ref={previewContainerRef}
                   className="relative overflow-hidden bg-gray-50"
-                  style={{ height: '540px' }}
+                  style={{ height: scale ? `${scale * PREVIEW_CONTENT_HEIGHT}px` : '480px' }}
                 >
                   <div
                     style={{
                       width: '1280px',
                       transformOrigin: 'top left',
-                      transform: 'scale(0.5)',
+                      transform: `scale(${scale ?? 0.5})`,
                       pointerEvents: 'none',
                       userSelect: 'none',
                     }}
@@ -242,6 +274,7 @@ export default function ApercuSite() {
                       sector={form.sector}
                       city={form.city}
                       theme={form.theme}
+                      slogan={form.slogan}
                     />
                   </div>
                 </div>
@@ -255,7 +288,7 @@ export default function ApercuSite() {
                     className="text-xs font-semibold px-2 py-0.5 rounded-full"
                     style={{ background: '#f5f3ff', color: '#7C3AED' }}
                   >
-                    Thème : {THEME_COLORS[form.theme]?.label}
+                    {THEME_COLORS[form.theme]?.label}
                   </span>
                 </div>
               </div>
