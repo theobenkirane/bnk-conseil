@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// Composant accordéon FAQ — expand/collapse par item
+// Composant accordéon FAQ - expand/collapse par item
 export default function FAQ({ items }) {
   const [openIndex, setOpenIndex] = useState(null)
 

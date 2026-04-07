@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-// Carte d'offre réutilisable — page Offres et aperçu Home
-export default function OfferCard({ offer, onOpenModal, index = 0 }) {
+// Carte d'offre réutilisable - page Offres et aperçu Home
+export default function OfferCard({ offer, index = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
@@ -56,12 +56,14 @@ export default function OfferCard({ offer, onOpenModal, index = 0 }) {
 
         {/* Boutons */}
         <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-          <button
-            onClick={() => onOpenModal && onOpenModal(offer)}
-            className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-violet-600 border border-violet-200 bg-violet-50 hover:bg-violet-100 hover:text-violet-700 transition-all duration-200 text-center"
-          >
-            En savoir plus
-          </button>
+          {offer.link && (
+            <Link
+              to={offer.link}
+              className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-violet-600 border border-violet-200 bg-violet-50 hover:bg-violet-100 hover:text-violet-700 transition-all duration-200 text-center"
+            >
+              En savoir plus
+            </Link>
+          )}
           <Link
             to="/rdv"
             className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-white text-center transition-all duration-300 hover:shadow-lg hover:shadow-violet-300/40 hover:-translate-y-0.5"

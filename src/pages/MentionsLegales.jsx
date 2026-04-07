@@ -7,7 +7,7 @@ export default function MentionsLegales() {
     <PageTransition>
       <SEOHead
         title="Mentions Légales | BNK Conseil"
-        description="Mentions légales du site BNK Conseil — éditeur, hébergeur, propriété intellectuelle, responsabilité."
+        description="Mentions légales du site BNK Conseil : éditeur, hébergeur, propriété intellectuelle, responsabilité."
         canonical="https://bnk-conseil-1z3b.vercel.app/mentions-legales"
       />
 
@@ -34,7 +34,7 @@ export default function MentionsLegales() {
                 Le site est hébergé par :<br />
                 <strong>Vercel Inc.</strong><br />
                 340 Pine Street, Suite 701<br />
-                San Francisco, CA 94104 — États-Unis<br />
+                San Francisco, CA 94104, États-Unis<br />
                 Site : <a href="https://vercel.com" className="text-violet-600 hover:underline" target="_blank" rel="noopener noreferrer">vercel.com</a>
               </p>
             </div>

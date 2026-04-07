@@ -208,14 +208,14 @@ const methode = [
 const casClients = [
   {
     emoji: '🔧',
-    tag: 'Artisan plombier — Île-de-France',
+    tag: 'Artisan plombier, Île-de-France',
     probleme: 'Aucune présence en ligne, dépendance totale au bouche-à-oreille, pas de site, pas de fiche Google.',
     actions: ['Création site vitrine optimisé SEO local', 'Fiche Google Business Profile', 'Scripts de relance devis'],
     resultat: '+35% de CA en 4 mois, 3× plus de demandes entrantes',
   },
   {
     emoji: '🎓',
-    tag: 'Formatrice indépendante — Paris',
+    tag: 'Formatrice indépendante, Paris',
     probleme: 'Perte de temps en tâches admin, zéro prospect entrant, aucune visibilité sur LinkedIn.',
     actions: ['Automatisation emails et suivi prospects', 'Page LinkedIn optimisée', 'Tunnel de vente simple et efficace'],
     resultat: '−60% de temps admin, +12 prospects/mois en inbound',
@@ -233,7 +233,7 @@ const faqItems = [
   },
   {
     question: 'Quels résultats puis-je attendre ?',
-    answer: "En moyenne, nos clients constatent une croissance de +40% de leur chiffre d'affaires sur 6 mois. Les premiers résultats — leads, rendez-vous qualifiés, visibilité — sont généralement visibles dès les 30 premiers jours.",
+    answer: "En moyenne, nos clients constatent une croissance de +40% de leur chiffre d'affaires sur 6 mois. Les premiers résultats (leads, rendez-vous qualifiés, visibilité) sont généralement visibles dès les 30 premiers jours.",
   },
   {
     question: "Combien de temps dure l'accompagnement ?",
@@ -271,7 +271,7 @@ export default function Home() {
         title="BNK Conseil | Audit commercial & Digitalisation pour TPE"
         description="Audit commercial, création de site vitrine et digitalisation pour TPE et indépendants. Prenez RDV en 2 min."
         canonical="https://bnk-conseil-1z3b.vercel.app"
-        ogTitle="BNK Conseil — Audit commercial & Digitalisation pour TPE"
+        ogTitle="BNK Conseil : Audit commercial & Digitalisation pour TPE"
         schema={faqSchema}
       />
 
@@ -403,7 +403,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ── Ce que vous allez améliorer — #problemes ─────────────────── */}
+      {/* ── Ce que vous allez améliorer - #problemes ─────────────────── */}
       <section id="problemes" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -463,7 +463,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
               Ce qui nous rend{' '}
               <span style={gradientText}>différents</span>
-              {' '}— conseil commercial TPE
+              {' '}, conseil commercial TPE
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
               Pas un cabinet de conseil comme les autres. Un partenaire qui a fait le job, et qui vous aide à le faire mieux.
@@ -494,7 +494,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Pour qui ? — #pour-qui ──────────────────────────────────── */}
+      {/* ── Pour qui ? - #pour-qui ──────────────────────────────────── */}
       <section id="pour-qui" className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -569,7 +569,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Nos offres — #offres ────────────────────────────────────── */}
+      {/* ── Nos offres - #offres ────────────────────────────────────── */}
       <section id="offres" className="py-24" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fdf4ff 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -581,7 +581,7 @@ export default function Home() {
           >
             <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Nos solutions</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
-              Deux offres pour les TPE —{' '}
+              Deux offres pour les TPE :{' '}
               <span style={gradientText}>un seul objectif</span>
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
@@ -637,7 +637,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Notre méthode — #methode ─────────────────────────────────── */}
+      {/* ── Notre méthode - #methode ─────────────────────────────────── */}
       <section id="methode" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -649,7 +649,7 @@ export default function Home() {
           >
             <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Comment ça marche</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
-              Notre méthode de travail —{' '}
+              Notre méthode de travail :{' '}
               <span style={gradientText}>digitalisation indépendant</span>
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
@@ -688,7 +688,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Preuves & Cas clients — #preuves ─────────────────────────── */}
+      {/* ── Preuves & Cas clients - #preuves ─────────────────────────── */}
       <section id="preuves" className="py-24" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f5f3ff 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -767,7 +767,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FAQ — #faq ───────────────────────────────────────────────── */}
+      {/* ── FAQ - #faq ───────────────────────────────────────────────── */}
       <section id="faq" className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -779,7 +779,7 @@ export default function Home() {
           >
             <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">FAQ</span>
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4">
-              Questions fréquentes —{' '}
+              Questions fréquentes :{' '}
               <span style={gradientText}>audit commercial TPE</span>
             </h2>
             <p className="text-gray-500 text-lg">
@@ -798,7 +798,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA final — #contact ─────────────────────────────────────── */}
+      {/* ── CTA final - #contact ─────────────────────────────────────── */}
       <section
         id="contact"
         className="py-24 relative overflow-hidden"

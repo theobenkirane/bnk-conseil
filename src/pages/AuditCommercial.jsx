@@ -117,7 +117,7 @@ export default function AuditCommercial() {
   return (
     <PageTransition>
       <SEOHead
-        title="Audit Commercial TPE | Consultant Commercial Indépendant — BNK Conseil"
+        title="Audit Commercial TPE | Consultant Commercial Indépendant | BNK Conseil"
         description="Audit commercial pour TPE et indépendants. Diagnostic complet, structuration du process de vente, suivi des KPIs. Prenez RDV gratuit en 2 min."
         canonical="https://bnk-conseil-1z3b.vercel.app/audit-commercial"
         schema={{
@@ -125,7 +125,7 @@ export default function AuditCommercial() {
           '@type': 'WebPage',
           '@id': 'https://bnk-conseil-1z3b.vercel.app/audit-commercial#webpage',
           url: 'https://bnk-conseil-1z3b.vercel.app/audit-commercial',
-          name: 'Audit Commercial TPE — BNK Conseil',
+          name: 'Audit Commercial TPE - BNK Conseil',
           description: "Audit commercial et accompagnement pour TPE et indépendants. Consultant commercial dédié.",
           inLanguage: 'fr-FR',
           isPartOf: { '@id': 'https://bnk-conseil-1z3b.vercel.app/#website' },
@@ -167,7 +167,7 @@ export default function AuditCommercial() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
               Structurez votre{' '}
               <span style={gradientText}>process de vente</span>
-              {' '}— consultant commercial indépendant
+              {' '}, consultant commercial indépendant
             </h1>
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
               Un diagnostic complet de votre organisation commerciale, un plan d'action concret et un suivi mensuel pour améliorer votre process de vente et générer plus de revenus.
@@ -271,7 +271,7 @@ export default function AuditCommercial() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Améliorer son process de vente —{' '}
+              Améliorer son process de vente :{' '}
               <span style={gradientText}>pour qui ?</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">

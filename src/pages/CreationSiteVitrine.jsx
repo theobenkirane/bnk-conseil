@@ -108,7 +108,7 @@ const pourquoi = [
   },
   {
     stat: '75%',
-    label: 'des clics Google vont aux 3 premiers résultats — un site optimisé est indispensable',
+    label: "des clics Google vont aux 3 premiers résultats : un site optimisé est indispensable",
   },
   {
     stat: '2–4 sem.',
@@ -127,7 +127,7 @@ const faqItems = [
   },
   {
     question: 'Est-ce que vous créez des sites pour tous les secteurs ?',
-    answer: "Oui : restauration, artisanat, commerce local, formation, coaching, prestataires de services. Chaque secteur a ses codes visuels et ses attentes clients — on les connaît.",
+    answer: "Oui : restauration, artisanat, commerce local, formation, coaching, prestataires de services. Chaque secteur a ses codes visuels et ses attentes clients, on les connaît.",
   },
   {
     question: "Je n'ai pas de contenu (textes, photos). Vous pouvez aider ?",
@@ -145,7 +145,7 @@ export default function CreationSiteVitrine() {
   return (
     <PageTransition>
       <SEOHead
-        title="Création Site Vitrine Artisan & TPE | Site Web Pro — BNK Conseil"
+        title="Création Site Vitrine Artisan & TPE | Site Web Pro | BNK Conseil"
         description="Création de site vitrine pour artisans, restaurateurs et TPE. Site pro, rapide, optimisé SEO local. Devis gratuit en 30 min. Livraison 2-4 semaines."
         canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine"
         schema={{
@@ -153,7 +153,7 @@ export default function CreationSiteVitrine() {
           '@type': 'WebPage',
           '@id': 'https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine#webpage',
           url: 'https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine',
-          name: 'Création Site Vitrine TPE & Artisan — BNK Conseil',
+          name: 'Création Site Vitrine TPE & Artisan - BNK Conseil',
           description: "Création de site vitrine pour artisans, restaurateurs et TPE. Site pro, rapide, optimisé SEO local.",
           inLanguage: 'fr-FR',
           isPartOf: { '@id': 'https://bnk-conseil-1z3b.vercel.app/#website' },
@@ -198,7 +198,7 @@ export default function CreationSiteVitrine() {
               {' '}pour TPE, Artisans & Restaurateurs
             </h1>
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
-              Un site professionnel, rapide à livrer, optimisé pour Google et conçu pour convertir vos visiteurs en clients. Site vitrine pas cher TPE — devis gratuit en 20 min.
+              Un site professionnel, rapide à livrer, optimisé pour Google et conçu pour convertir vos visiteurs en clients. Site vitrine pas cher TPE, devis gratuit en 20 min.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

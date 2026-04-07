@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import OfferCard from '../components/OfferCard'
-import OfferModal from '../components/OfferModal'
 import FAQ from '../components/FAQ'
 import SEOHead from '../components/SEOHead'
 
-// ─── Les 2 offres principales ─────────────────────────────────────────────────
-
+// Les 2 offres principales
 const offers = [
   {
     id: 'audit',
@@ -19,20 +16,20 @@ const offers = [
     ),
     title: 'Audit Commercial & Accompagnement',
     description: "Un diagnostic complet de votre organisation commerciale, suivi d'un accompagnement stratégique pour structurer et accélérer votre croissance.",
-    longDescription: "Notre offre d'audit et d'accompagnement commence par un diagnostic 360° de votre organisation commerciale. En 2 à 4 semaines, on analyse l'intégralité de votre processus de vente, de la génération de leads à la signature. Ensuite, on co-construit votre stratégie commerciale et on pilote l'exécution à vos côtés, mois après mois. L'objectif : des résultats mesurables et une équipe autonome.",
     benefits: [
       'Analyse complète du processus de vente',
       'Identification des leviers de croissance prioritaires',
-      'Co-construction de la stratégie commerciale',
+      "Co-construction de la stratégie commerciale",
       "Plan d'action avec résultats attendus sous 30 jours",
       'Suivi mensuel des KPIs et ajustements en temps réel',
       'Accès direct et illimité pour toutes vos questions',
     ],
     duration: '1 mois à 12 mois',
     price: 'Sur devis',
+    link: '/audit-commercial',
   },
   {
-    id: 'digital',
+    id: 'site-vitrine',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -41,24 +38,23 @@ const offers = [
         <path d="M7 12h.01M11 12h6" />
       </svg>
     ),
-    title: 'Digitalisation & Visibilité',
-    description: 'Création de site web professionnel, gestion des réseaux sociaux et mise en place des outils digitaux pour attirer et convertir vos prospects en ligne.',
-    longDescription: "Une présence digitale solide est aujourd'hui indispensable pour toute TPE ou startup. On vous accompagne de A à Z : création ou refonte de votre site web, stratégie de contenu pour vos réseaux sociaux, mise en place des outils adaptés (CRM, formulaires, automatisations). Résultat : vous gagnez en visibilité, vous attirez des prospects qualifiés et vous ne perdez plus de temps sur des tâches chronophages.",
+    title: 'Création Site Vitrine',
+    description: "Création de site web professionnel pour TPE, artisans et restaurateurs. Design moderne, SEO optimisé, livré en 2 à 4 semaines.",
     benefits: [
-      'Création ou refonte de site web professionnel',
-      'Stratégie et animation des réseaux sociaux',
-      "Mise en place d'un CRM adapté à votre activité",
-      'Automatisations pour gagner du temps au quotidien',
-      "Formation à l'utilisation des outils",
-      'Suivi mensuel des indicateurs digitaux',
+      'Design sur-mesure et responsive (mobile, tablette, desktop)',
+      'Optimisation SEO pour être trouvé sur Google',
+      'Formulaire de contact et prise de rendez-vous intégrés',
+      'Hébergement et nom de domaine inclus la 1ère année',
+      'Formation à la mise à jour du contenu',
+      'Support technique inclus 3 mois après livraison',
     ],
-    duration: '1 mois à 6 mois',
-    price: 'Sur devis',
+    duration: '2 à 4 semaines',
+    price: 'À partir de 990€',
+    link: '/creation-site-vitrine',
   },
 ]
 
-// ─── Questions fréquentes ─────────────────────────────────────────────────────
-
+// Questions fréquentes
 const faqItems = [
   {
     question: "C'est quoi exactement un audit commercial ?",
@@ -70,7 +66,7 @@ const faqItems = [
   },
   {
     question: "Combien de temps dure une mission ?",
-    answer: "L'audit commercial dure de 1 à 12 mois selon la profondeur de l'accompagnement. La digitalisation de 1 à 6 mois selon le scope. On démarre toujours par un appel découverte de 30 minutes pour cadrer précisément ce dont vous avez besoin.",
+    answer: "L'audit commercial dure de 1 à 12 mois selon la profondeur de l'accompagnement. La création de site vitrine prend 2 à 4 semaines selon le scope. On démarre toujours par un appel découverte de 30 minutes pour cadrer précisément ce dont vous avez besoin.",
   },
   {
     question: "Est-ce que vous garantissez des résultats ?",
@@ -78,27 +74,23 @@ const faqItems = [
   },
   {
     question: "Vous travaillez avec quels types d'entreprises ?",
-    answer: "TPE, startups en phase de lancement ou de croissance, indépendants qui veulent professionnaliser leur développement commercial. Peu importe le secteur — notre approche s'adapte à votre contexte.",
+    answer: "TPE, startups en phase de lancement ou de croissance, indépendants qui veulent professionnaliser leur développement commercial. Peu importe le secteur, notre approche s'adapte à votre contexte.",
   },
 ]
 
-// ─── Composant ────────────────────────────────────────────────────────────────
-
 export default function Offres() {
-  const [selectedOffer, setSelectedOffer] = useState(null)
-
   return (
     <PageTransition>
       <SEOHead
-        title="Nos Offres — Audit Commercial & Digitalisation | BNK Conseil"
-        description="Deux offres pour structurer votre croissance : audit commercial avec suivi KPI, et digitalisation complète (site web, réseaux sociaux, CRM). Sur devis, résultats mesurables."
+        title="Nos Offres : Audit Commercial & Création Site Vitrine | BNK Conseil"
+        description="Deux offres pour structurer votre croissance : audit commercial avec suivi KPI, et création de site vitrine pour TPE, artisans et restaurateurs. Sur devis, résultats mesurables."
         canonical="https://bnk-conseil-1z3b.vercel.app/offres"
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",
           "@id": "https://bnk-conseil-1z3b.vercel.app/offres#webpage",
           "url": "https://bnk-conseil-1z3b.vercel.app/offres",
-          "name": "Nos Offres — BNK Conseil",
+          "name": "Nos Offres - BNK Conseil",
           "description": "Deux offres complémentaires pour structurer votre croissance commerciale et renforcer votre visibilité digitale.",
           "inLanguage": "fr-FR",
           "isPartOf": { "@id": "https://bnk-conseil-1z3b.vercel.app/#website" },
@@ -142,7 +134,7 @@ export default function Offres() {
               }}>commercial et digital</span>
             </h1>
             <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-              Deux solutions complémentaires pour structurer votre croissance commerciale et renforcer votre visibilité digitale.
+              Deux solutions complémentaires pour structurer votre croissance commerciale et renforcer votre visibilité en ligne.
             </p>
           </motion.div>
         </div>
@@ -157,14 +149,13 @@ export default function Offres() {
                 key={offer.id}
                 offer={offer}
                 index={i}
-                onOpenModal={setSelectedOffer}
               />
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Questions fréquentes ──────────────────────────────── */}
+      {/* Questions fréquentes */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -222,11 +213,6 @@ export default function Offres() {
           </motion.div>
         </div>
       </section>
-
-      {/* Modal */}
-      {selectedOffer && (
-        <OfferModal offer={selectedOffer} onClose={() => setSelectedOffer(null)} />
-      )}
 
     </PageTransition>
   )

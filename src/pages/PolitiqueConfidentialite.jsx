@@ -7,7 +7,7 @@ export default function PolitiqueConfidentialite() {
     <PageTransition>
       <SEOHead
         title="Politique de Confidentialité | BNK Conseil"
-        description="Politique de confidentialité de BNK Conseil — données collectées, utilisation, droits RGPD, contact DPO."
+        description="Politique de confidentialité de BNK Conseil : données collectées, utilisation, droits RGPD, contact DPO."
         canonical="https://bnk-conseil-1z3b.vercel.app/politique-confidentialite"
       />
 
@@ -21,7 +21,7 @@ export default function PolitiqueConfidentialite() {
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Responsable du traitement</h2>
               <p>
-                <strong>BNK Conseil</strong> — Théo Benkirane<br />
+                <strong>BNK Conseil</strong>, Théo Benkirane<br />
                 Email : <a href="mailto:conseil.bnk@gmail.com" className="text-violet-600 hover:underline">conseil.bnk@gmail.com</a>
               </p>
             </div>

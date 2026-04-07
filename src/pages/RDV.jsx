@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import SEOHead from '../components/SEOHead'
 
@@ -14,14 +14,32 @@ const SECTEURS = [
   'Autre',
 ]
 
-// ─── Formulaire pré-qualification ────────────────────────────────────────────
+// Widget Calendly chargé dynamiquement (sans dépendance npm)
+function CalendlyInline({ url }) {
+  useEffect(() => {
+    if (!document.getElementById('calendly-script')) {
+      const script = document.createElement('script')
+      script.id = 'calendly-script'
+      script.src = 'https://assets.calendly.com/assets/external/widget.js'
+      script.async = true
+      document.head.appendChild(script)
+    }
+  }, [])
 
+  return (
+    <div
+      className="calendly-inline-widget w-full rounded-2xl overflow-hidden border border-violet-100"
+      data-url={url}
+      style={{ minWidth: '320px', height: '700px' }}
+    />
+  )
+}
+
+// Formulaire pré-qualification
 function PreQualForm() {
-  const [form, setForm] = useState({
-    secteur: '',
-    objectif: '',
-    blocage: '',
-  })
+  const [form, setForm] = useState({ secteur: '', objectif: '', blocage: '' })
+  const [showCalendly, setShowCalendly] = useState(false)
+  const calendlyRef = useRef(null)
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -29,8 +47,12 @@ function PreQualForm() {
 
   const isReady = form.secteur !== '' && form.objectif.trim() !== '' && form.blocage.trim() !== ''
 
-  const handleCalendly = () => {
-    window.open(CALENDLY_URL, '_blank', 'noopener,noreferrer')
+  const handleConfirm = () => {
+    setShowCalendly(true)
+    // Scroll vers le widget après un léger délai pour laisser le DOM se mettre à jour
+    setTimeout(() => {
+      calendlyRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
   }
 
   return (
@@ -47,7 +69,8 @@ function PreQualForm() {
             required
             value={form.secteur}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm appearance-none focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 cursor-pointer"
+            disabled={showCalendly}
+            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm appearance-none focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 cursor-pointer disabled:opacity-60"
           >
             <option value="">Sélectionnez votre secteur...</option>
             {SECTEURS.map((s) => (
@@ -74,8 +97,9 @@ function PreQualForm() {
           required
           value={form.objectif}
           onChange={handleChange}
+          disabled={showCalendly}
           placeholder="Ex : générer plus de leads qualifiés"
-          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 disabled:opacity-60"
         />
       </div>
 
@@ -91,8 +115,9 @@ function PreQualForm() {
           required
           value={form.blocage}
           onChange={handleChange}
+          disabled={showCalendly}
           placeholder="Ex : peu de visibilité en ligne, pas de process de vente"
-          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 disabled:opacity-60"
         />
       </div>
 
@@ -110,25 +135,35 @@ function PreQualForm() {
         </div>
       </div>
 
-      {/* CTA principal */}
-      <button
-        onClick={handleCalendly}
-        disabled={!isReady}
-        className="group w-full py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center justify-center gap-2"
-        style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
-        title={!isReady ? 'Remplissez les 3 champs pour accéder à la réservation' : ''}
-      >
-        Réserver mon diagnostic gratuit
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
-          <path d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      </button>
+      {/* CTA principal - masqué une fois Calendly affiché */}
+      <AnimatePresence>
+        {!showCalendly && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <button
+              onClick={handleConfirm}
+              disabled={!isReady}
+              className="group w-full py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center justify-center gap-2"
+              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              title={!isReady ? "Remplissez les 3 champs pour accéder à la réservation" : ''}
+            >
+              Réserver mon diagnostic gratuit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
 
-      {!isReady && (
-        <p className="text-center text-gray-400 text-xs">
-          Remplissez les 3 champs ci-dessus pour accéder au calendrier de réservation.
-        </p>
-      )}
+            {!isReady && (
+              <p className="text-center text-gray-400 text-xs mt-2">
+                Remplissez les 3 champs ci-dessus pour accéder au calendrier de réservation.
+              </p>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Email secondaire */}
       <p className="text-center text-gray-500 text-sm">
@@ -140,25 +175,43 @@ function PreQualForm() {
           conseil.bnk@gmail.com
         </a>
       </p>
+
+      {/* Widget Calendly inline */}
+      <AnimatePresence>
+        {showCalendly && (
+          <motion.div
+            ref={calendlyRef}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="pt-2"
+          >
+            <div className="mb-4 text-center">
+              <p className="text-gray-700 font-semibold text-sm">Choisissez votre créneau ci-dessous</p>
+              <p className="text-gray-400 text-xs mt-1">Appel de 20 min, sans engagement.</p>
+            </div>
+            <CalendlyInline url={CALENDLY_URL} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
 
-// ─── Composant principal ──────────────────────────────────────────────────────
-
+// Composant principal
 export default function RDV() {
   return (
     <PageTransition>
       <SEOHead
         title="Réserver un diagnostic gratuit | BNK Conseil"
-        description="Réservez votre appel découverte gratuit de 20 minutes avec BNK Conseil. Audit commercial, digitalisation TPE. Sans engagement, réponse sous 24h."
+        description="Réservez votre appel découverte gratuit de 20 minutes avec BNK Conseil. Audit commercial, création site vitrine TPE. Sans engagement, réponse sous 24h."
         canonical="https://bnk-conseil-1z3b.vercel.app/rdv"
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",
           "@id": "https://bnk-conseil-1z3b.vercel.app/rdv#webpage",
           "url": "https://bnk-conseil-1z3b.vercel.app/rdv",
-          "name": "Réserver un diagnostic — BNK Conseil",
+          "name": "Réserver un diagnostic - BNK Conseil",
           "description": "Réservez un appel découverte gratuit de 20 minutes avec Théo Benkirane pour discuter de votre croissance commerciale et digitale. Sans engagement.",
           "inLanguage": "fr-FR",
           "isPartOf": { "@id": "https://bnk-conseil-1z3b.vercel.app/#website" },
@@ -172,7 +225,7 @@ export default function RDV() {
         }}
       />
 
-      {/* ── En-tête de page ─────────────────────────────────────────────── */}
+      {/* En-tête de page */}
       <section
         className="pt-32 pb-12 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
@@ -204,7 +257,7 @@ export default function RDV() {
         </div>
       </section>
 
-      {/* ── Formulaire pré-qualification ──────────────────────────────── */}
+      {/* Formulaire pré-qualification */}
       <section className="py-16 pb-24 bg-white">
         <div className="max-w-xl mx-auto px-4 sm:px-6">
           <motion.div

@@ -32,7 +32,7 @@ const values = [
       </svg>
     ),
     title: 'Excellence',
-    description: 'Chaque mission mérite le meilleur. Toujours. On ne livre pas du "correct" — on vise le remarquable, dans chaque livrable et chaque interaction.',
+    description: 'Chaque mission mérite le meilleur. Toujours. On ne livre pas du "correct", on vise le remarquable, dans chaque livrable et chaque interaction.',
   },
 ]
 
@@ -65,7 +65,7 @@ export default function APropos() {
   return (
     <PageTransition>
       <SEOHead
-        title="À propos — Théo Benkirane, Fondateur BNK Conseil"
+        title="À propos : Théo Benkirane, Fondateur BNK Conseil"
         description="Consultant terrain spécialisé dans la performance commerciale et la digitalisation des TPE et startups. Opérationnel, direct, orienté résultats."
         canonical="https://bnk-conseil-1z3b.vercel.app/a-propos"
         schema={{
@@ -73,7 +73,7 @@ export default function APropos() {
           "@type": "WebPage",
           "@id": "https://bnk-conseil-1z3b.vercel.app/a-propos#webpage",
           "url": "https://bnk-conseil-1z3b.vercel.app/a-propos",
-          "name": "À propos — Théo Benkirane & BNK Conseil",
+          "name": "À propos - Théo Benkirane & BNK Conseil",
           "description": "Découvrez qui est Théo Benkirane, fondateur de BNK Conseil, et la mission de l'entreprise : accompagner les TPE et startups dans leur croissance commerciale et digitale depuis 2022.",
           "inLanguage": "fr-FR",
           "isPartOf": { "@id": "https://bnk-conseil-1z3b.vercel.app/#website" },
@@ -88,7 +88,7 @@ export default function APropos() {
         }}
       />
 
-      {/* ── Hero — fond pastel ────────────────────────────────── */}
+      {/* ── Hero - fond pastel ────────────────────────────────── */}
       <section
         className="pt-32 pb-24 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #bfdbfe 0%, #f9fafb 35%, #fce7f3 65%, #d1fae5 100%)' }}
@@ -113,7 +113,7 @@ export default function APropos() {
             >
               <span className="text-violet-700 text-sm font-bold uppercase tracking-widest">Qui je suis</span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6 leading-tight">
-                Théo Benkirane —{' '}
+                Théo Benkirane,{' '}
                 <span style={{
                   background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
                   WebkitBackgroundClip: 'text',
@@ -122,7 +122,7 @@ export default function APropos() {
                 }}>Fondateur de BNK Conseil</span>
               </h1>
               <p className="text-gray-700 text-xl leading-relaxed mb-5">
-                BNK Conseil, c'est un consultant engagé — pas une agence anonyme. Je travaille directement avec vous, de l'analyse à l'exécution, sans intermédiaire ni délégation opaque.
+                BNK Conseil, c'est un consultant engagé, pas une agence anonyme. Je travaille directement avec vous, de l'analyse à l'exécution, sans intermédiaire ni délégation opaque.
               </p>
               <p className="text-gray-500 text-base leading-relaxed">
                 Mon objectif : vous apporter des résultats mesurables rapidement, pas des slides et des recommandations théoriques.
