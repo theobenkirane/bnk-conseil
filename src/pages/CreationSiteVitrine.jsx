@@ -41,6 +41,11 @@ const secteurs = [
     label: 'Prestataires de services',
     description: "Crédibilité, portfolio, références clients, prise de rendez-vous en ligne.",
   },
+  {
+    emoji: '💻',
+    label: 'Indépendants & Freelances',
+    description: "Portfolio, tarifs, prise de contact directe. Un site qui reflète votre expertise et convertit.",
+  },
 ]
 
 const inclus = [
@@ -145,8 +150,8 @@ export default function CreationSiteVitrine() {
   return (
     <PageTransition>
       <SEOHead
-        title="Création Site Vitrine Artisan & TPE | Site Web Pro | BNK Conseil"
-        description="Création de site vitrine pour artisans, restaurateurs et TPE. Site pro, rapide, optimisé SEO local. Devis gratuit en 30 min. Livraison 2-4 semaines."
+        title="Création Site Vitrine TPE, Artisan & Indépendant | Site Web Pro | BNK Conseil"
+        description="Création de site vitrine pour artisans, restaurateurs, indépendants et TPE. Site pro, rapide, optimisé SEO local. Devis gratuit en 30 min. Livraison 2-4 semaines."
         canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine"
         schema={{
           '@context': 'https://schema.org',
@@ -195,16 +200,14 @@ export default function CreationSiteVitrine() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
               Création{' '}
               <span style={gradientText}>site vitrine</span>
-              {' '}pour TPE, Artisans & Restaurateurs
+              {' '}pour TPE, Artisans, Restaurateurs & Indépendants
             </h1>
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
               Un site professionnel, rapide à livrer, optimisé pour Google et conçu pour convertir vos visiteurs en clients. Site vitrine pas cher TPE, devis gratuit en 20 min.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/rdv"
                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-1"
                 style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
               >
@@ -212,10 +215,19 @@ export default function CreationSiteVitrine() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
               <p className="flex items-center text-gray-500 text-sm">
                 ✓ Gratuit · ✓ Sans engagement · ✓ Réponse 24h
               </p>
+              <Link
+                to="/apercu-site"
+                className="inline-flex items-center gap-1.5 text-violet-600 text-sm font-medium hover:text-violet-700 transition-colors underline underline-offset-4"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
+                  <rect x="2" y="3" width="20" height="14" rx="2" /><polyline points="8 21 12 17 16 21" />
+                </svg>
+                Visualiser votre futur site gratuitement
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -346,10 +358,8 @@ export default function CreationSiteVitrine() {
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
               20 minutes pour discuter de votre projet. On vous dit ce qu'on peut faire, en combien de temps, et pour quel budget.
             </p>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/rdv"
               className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-violet-400/40 hover:-translate-y-1"
               style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
             >
@@ -357,7 +367,7 @@ export default function CreationSiteVitrine() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </a>
+            </Link>
             <p className="text-gray-500 text-sm mt-4">Gratuit · Sans engagement · Réponse sous 24h</p>
           </motion.div>
         </div>

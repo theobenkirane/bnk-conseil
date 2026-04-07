@@ -345,10 +345,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/rdv"
               className="group px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-1 flex items-center gap-2"
               style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
             >
@@ -356,13 +354,16 @@ export default function Home() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </a>
-            <a
-              href="#offres"
-              className="px-8 py-4 rounded-xl font-semibold text-gray-600 text-base hover:text-violet-700 transition-colors duration-200"
+            </Link>
+            <Link
+              to="/apercu-site"
+              className="group px-8 py-4 rounded-xl font-semibold text-violet-700 text-base bg-white/80 border border-violet-200 hover:bg-white hover:border-violet-400 hover:shadow-md hover:shadow-violet-100/60 transition-all duration-200 flex items-center gap-2"
             >
-              Voir les offres →
-            </a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                <rect x="2" y="3" width="20" height="14" rx="2" /><polyline points="8 21 12 17 16 21" />
+              </svg>
+              Voir un aperçu de votre site
+            </Link>
           </motion.div>
 
           {/* Chiffres clés */}

@@ -13,6 +13,7 @@ const MentionsLegales = lazy(() => import('./pages/MentionsLegales'))
 const PolitiqueConfidentialite = lazy(() => import('./pages/PolitiqueConfidentialite'))
 const AuditCommercial = lazy(() => import('./pages/AuditCommercial'))
 const CreationSiteVitrine = lazy(() => import('./pages/CreationSiteVitrine'))
+const ApercuSite = lazy(() => import('./pages/ApercuSite'))
 
 // AnimatePresence nécessite l'accès à location via un composant interne
 function AnimatedRoutes() {
@@ -34,6 +35,7 @@ function AnimatedRoutes() {
           <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
           <Route path="/audit-commercial" element={<AuditCommercial />} />
           <Route path="/creation-site-vitrine" element={<CreationSiteVitrine />} />
+          <Route path="/apercu-site" element={<ApercuSite />} />
         </Routes>
       </Suspense>
     </AnimatePresence>

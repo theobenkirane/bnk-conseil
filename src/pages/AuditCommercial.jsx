@@ -173,10 +173,8 @@ export default function AuditCommercial() {
               Un diagnostic complet de votre organisation commerciale, un plan d'action concret et un suivi mensuel pour améliorer votre process de vente et générer plus de revenus.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/rdv"
                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-1"
                 style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
               >
@@ -184,7 +182,7 @@ export default function AuditCommercial() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
               <p className="flex items-center text-gray-500 text-sm">
                 ✓ Gratuit · ✓ Sans engagement · ✓ 20 min
               </p>
@@ -316,10 +314,8 @@ export default function AuditCommercial() {
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
               20 minutes d'appel gratuit pour faire le point sur votre situation et voir ce qu'on peut faire ensemble.
             </p>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/rdv"
               className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-violet-400/40 hover:-translate-y-1"
               style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
             >
@@ -327,7 +323,7 @@ export default function AuditCommercial() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </a>
+            </Link>
             <p className="text-gray-500 text-sm mt-4">Gratuit · Sans engagement · 20 min</p>
           </motion.div>
         </div>
