@@ -101,7 +101,7 @@ export default function SiteVitrineRestaurant() {
       <SEOHead
         title="Création site vitrine restaurant | BNK Conseil"
         description="Site vitrine professionnel pour votre restaurant. Menu en ligne, réservations, SEO local. Livré en 2-4 semaines à partir de 690€. Devis gratuit sous 24h."
-        canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine-restaurant"
+        canonical="https://bnk-conseil.com/creation-site-vitrine-restaurant"
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

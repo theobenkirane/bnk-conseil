@@ -101,7 +101,7 @@ export default function SiteVitrineArtisan() {
       <SEOHead
         title="Création site vitrine artisan | BNK Conseil"
         description="Site vitrine pour artisan : galerie de réalisations, devis en ligne, certifications. Livré en 2-4 semaines à partir de 690€. Devis gratuit sous 24h."
-        canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine-artisan"
+        canonical="https://bnk-conseil.com/creation-site-vitrine-artisan"
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

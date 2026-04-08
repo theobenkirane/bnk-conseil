@@ -57,7 +57,7 @@ export default function ApercuSite() {
       <SEOHead
         title="Aperçu de votre futur site vitrine | BNK Conseil"
         description="Visualisez gratuitement à quoi ressemblerait votre site vitrine. Choisissez votre secteur, votre thème et obtenez un aperçu instantané. Zéro engagement."
-        canonical="https://bnk-conseil-1z3b.vercel.app/apercu-site"
+        canonical="https://bnk-conseil.com/apercu-site"
       />
 
       {/* En-tête */}

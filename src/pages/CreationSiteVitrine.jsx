@@ -160,21 +160,21 @@ export default function CreationSiteVitrine() {
       <SEOHead
         title="Création Site Vitrine TPE, Artisan & Indépendant | Site Web Pro | BNK Conseil"
         description="Création de site vitrine pour artisans, restaurateurs, indépendants et TPE. Site pro, rapide, optimisé SEO local. Devis gratuit en 30 min. Livraison 2-4 semaines."
-        canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine"
+        canonical="https://bnk-conseil.com/creation-site-vitrine"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          '@id': 'https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine#webpage',
-          url: 'https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine',
+          '@id': 'https://bnk-conseil.com/creation-site-vitrine#webpage',
+          url: 'https://bnk-conseil.com/creation-site-vitrine',
           name: 'Création Site Vitrine TPE & Artisan - BNK Conseil',
           description: "Création de site vitrine pour artisans, restaurateurs et TPE. Site pro, rapide, optimisé SEO local.",
           inLanguage: 'fr-FR',
-          isPartOf: { '@id': 'https://bnk-conseil-1z3b.vercel.app/#website' },
+          isPartOf: { '@id': 'https://bnk-conseil.com/#website' },
           breadcrumb: {
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://bnk-conseil-1z3b.vercel.app/' },
-              { '@type': 'ListItem', position: 2, name: 'Création Site Vitrine', item: 'https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine' },
+              { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://bnk-conseil.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Création Site Vitrine', item: 'https://bnk-conseil.com/creation-site-vitrine' },
             ],
           },
         }}

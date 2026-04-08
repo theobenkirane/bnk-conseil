@@ -227,7 +227,7 @@ export default function Tarifs() {
       <SEOHead
         title="Tarifs création site vitrine | BNK Conseil"
         description="Découvrez nos tarifs transparents pour la création de site vitrine. À partir de 690€, paiement en 2×, livraison garantie en 4 semaines. Devis gratuit."
-        canonical="https://bnk-conseil-1z3b.vercel.app/tarifs"
+        canonical="https://bnk-conseil.com/tarifs"
       />
 
       {/* ── Section 1 : Hero ──────────────────────────────────────────────── */}

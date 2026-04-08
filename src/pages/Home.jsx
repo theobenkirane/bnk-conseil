@@ -271,7 +271,7 @@ export default function Home() {
       <SEOHead
         title="BNK Conseil | Audit commercial & Digitalisation pour TPE"
         description="Audit commercial, création de site vitrine et digitalisation pour TPE et indépendants. Prenez RDV en 2 min."
-        canonical="https://bnk-conseil-1z3b.vercel.app"
+        canonical="https://bnk-conseil.com"
         ogTitle="BNK Conseil : Audit commercial & Digitalisation pour TPE"
         schema={faqSchema}
       />

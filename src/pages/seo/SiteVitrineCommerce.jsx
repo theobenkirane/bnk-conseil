@@ -101,7 +101,7 @@ export default function SiteVitrineCommerce() {
       <SEOHead
         title="Création site vitrine commerce local | BNK Conseil"
         description="Site vitrine pour commerce de proximité : horaires, catalogue, Google Maps, click & collect. À partir de 690€, livré en 2-4 semaines. Devis gratuit."
-        canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine-commerce-local"
+        canonical="https://bnk-conseil.com/creation-site-vitrine-commerce-local"
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

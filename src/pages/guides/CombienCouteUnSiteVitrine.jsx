@@ -32,7 +32,7 @@ const schema = {
       "@type": "Article",
       "headline": "Combien coûte un site vitrine en 2025 ?",
       "description": "Guide complet sur le prix d'un site vitrine : options, comparatif, ce qui influence le tarif.",
-      "url": "https://bnk-conseil-1z3b.vercel.app/guide/combien-coute-un-site-vitrine",
+      "url": "https://bnk-conseil.com/guide/combien-coute-un-site-vitrine",
       "author": { "@type": "Person", "name": "Théo Benkirane" },
       "publisher": { "@type": "Organization", "name": "BNK Conseil" },
       "datePublished": "2025-04-01",
@@ -297,7 +297,7 @@ export default function CombienCouteUnSiteVitrine() {
       <SEOHead
         title="Combien coûte un site vitrine en 2025 ? | BNK Conseil"
         description="Prix, options, ce qui influence le tarif : tout ce que vous devez savoir avant de commander un site vitrine. Comparatif complet Wix, WordPress, agence, freelance."
-        canonical="https://bnk-conseil-1z3b.vercel.app/guide/combien-coute-un-site-vitrine"
+        canonical="https://bnk-conseil.com/guide/combien-coute-un-site-vitrine"
         schema={schema}
       />
 

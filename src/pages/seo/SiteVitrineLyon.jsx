@@ -84,7 +84,7 @@ export default function SiteVitrineLyon() {
       <SEOHead
         title="Création site vitrine à Lyon | BNK Conseil"
         description="Agence web à Lyon spécialisée TPE et artisans. Site vitrine professionnel livré en 2-4 semaines. SEO local, design sur-mesure. À partir de 690€."
-        canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine-lyon"
+        canonical="https://bnk-conseil.com/creation-site-vitrine-lyon"
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

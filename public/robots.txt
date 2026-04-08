@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://bnk-conseil-1z3b.vercel.app/sitemap.xml
+Sitemap: https://bnk-conseil.com/sitemap.xml
 
 # AI crawlers — explicitly allowed
 User-agent: GPTBot

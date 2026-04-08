@@ -205,21 +205,21 @@ export default function RDV() {
       <SEOHead
         title="Réserver un diagnostic gratuit | BNK Conseil"
         description="Réservez votre appel découverte gratuit de 20 minutes avec BNK Conseil. Audit commercial, création site vitrine TPE. Sans engagement, réponse sous 24h."
-        canonical="https://bnk-conseil-1z3b.vercel.app/rdv"
+        canonical="https://bnk-conseil.com/rdv"
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "@id": "https://bnk-conseil-1z3b.vercel.app/rdv#webpage",
-          "url": "https://bnk-conseil-1z3b.vercel.app/rdv",
+          "@id": "https://bnk-conseil.com/rdv#webpage",
+          "url": "https://bnk-conseil.com/rdv",
           "name": "Réserver un diagnostic - BNK Conseil",
           "description": "Réservez un appel découverte gratuit de 20 minutes avec Théo Benkirane pour discuter de votre croissance commerciale et digitale. Sans engagement.",
           "inLanguage": "fr-FR",
-          "isPartOf": { "@id": "https://bnk-conseil-1z3b.vercel.app/#website" },
+          "isPartOf": { "@id": "https://bnk-conseil.com/#website" },
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bnk-conseil-1z3b.vercel.app/" },
-              { "@type": "ListItem", "position": 2, "name": "Réserver un diagnostic", "item": "https://bnk-conseil-1z3b.vercel.app/rdv" }
+              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bnk-conseil.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Réserver un diagnostic", "item": "https://bnk-conseil.com/rdv" }
             ]
           }
         }}

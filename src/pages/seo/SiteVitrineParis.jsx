@@ -84,7 +84,7 @@ export default function SiteVitrineParis() {
       <SEOHead
         title="Création site vitrine à Paris | BNK Conseil"
         description="Agence web à Paris pour TPE, entrepreneurs et startups. Site vitrine professionnel livré en 2-4 semaines. SEO, design sur-mesure. À partir de 690€."
-        canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine-paris"
+        canonical="https://bnk-conseil.com/creation-site-vitrine-paris"
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

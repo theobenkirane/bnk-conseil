@@ -101,7 +101,7 @@ export default function SiteVitrineCoach() {
       <SEOHead
         title="Création site vitrine coach et formateur | BNK Conseil"
         description="Site vitrine pour coach ou formateur : présentation programme, témoignages, prise de RDV. À partir de 690€, livré en 2-4 semaines. Devis gratuit."
-        canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine-coach"
+        canonical="https://bnk-conseil.com/creation-site-vitrine-coach"
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

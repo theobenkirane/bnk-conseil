@@ -8,7 +8,7 @@ export default function MentionsLegales() {
       <SEOHead
         title="Mentions Légales | BNK Conseil"
         description="Mentions légales du site BNK Conseil : éditeur, hébergeur, propriété intellectuelle, responsabilité."
-        canonical="https://bnk-conseil-1z3b.vercel.app/mentions-legales"
+        canonical="https://bnk-conseil.com/mentions-legales"
       />
 
       <section className="pt-32 pb-20">
@@ -20,7 +20,7 @@ export default function MentionsLegales() {
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Éditeur du site</h2>
               <p>
-                Le site <strong>bnk-conseil-1z3b.vercel.app</strong> est édité par :<br />
+                Le site <strong>bnk-conseil.com</strong> est édité par :<br />
                 <strong>BNK Conseil</strong><br />
                 Fondateur : Théo Benkirane<br />
                 Statut : Auto-entrepreneur / Consultant indépendant<br />

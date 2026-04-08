@@ -84,21 +84,21 @@ export default function Offres() {
       <SEOHead
         title="Nos Offres : Audit Commercial & Création Site Vitrine | BNK Conseil"
         description="Deux offres pour structurer votre croissance : audit commercial avec suivi KPI, et création de site vitrine pour TPE, artisans et restaurateurs. Sur devis, résultats mesurables."
-        canonical="https://bnk-conseil-1z3b.vercel.app/offres"
+        canonical="https://bnk-conseil.com/offres"
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "@id": "https://bnk-conseil-1z3b.vercel.app/offres#webpage",
-          "url": "https://bnk-conseil-1z3b.vercel.app/offres",
+          "@id": "https://bnk-conseil.com/offres#webpage",
+          "url": "https://bnk-conseil.com/offres",
           "name": "Nos Offres - BNK Conseil",
           "description": "Deux offres complémentaires pour structurer votre croissance commerciale et renforcer votre visibilité digitale.",
           "inLanguage": "fr-FR",
-          "isPartOf": { "@id": "https://bnk-conseil-1z3b.vercel.app/#website" },
+          "isPartOf": { "@id": "https://bnk-conseil.com/#website" },
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bnk-conseil-1z3b.vercel.app/" },
-              { "@type": "ListItem", "position": 2, "name": "Nos Offres", "item": "https://bnk-conseil-1z3b.vercel.app/offres" }
+              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bnk-conseil.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Nos Offres", "item": "https://bnk-conseil.com/offres" }
             ]
           }
         }}

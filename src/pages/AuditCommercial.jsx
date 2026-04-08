@@ -119,21 +119,21 @@ export default function AuditCommercial() {
       <SEOHead
         title="Audit Commercial TPE | Consultant Commercial Indépendant | BNK Conseil"
         description="Audit commercial pour TPE et indépendants. Diagnostic complet, structuration du process de vente, suivi des KPIs. Prenez RDV gratuit en 2 min."
-        canonical="https://bnk-conseil-1z3b.vercel.app/audit-commercial"
+        canonical="https://bnk-conseil.com/audit-commercial"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          '@id': 'https://bnk-conseil-1z3b.vercel.app/audit-commercial#webpage',
-          url: 'https://bnk-conseil-1z3b.vercel.app/audit-commercial',
+          '@id': 'https://bnk-conseil.com/audit-commercial#webpage',
+          url: 'https://bnk-conseil.com/audit-commercial',
           name: 'Audit Commercial TPE - BNK Conseil',
           description: "Audit commercial et accompagnement pour TPE et indépendants. Consultant commercial dédié.",
           inLanguage: 'fr-FR',
-          isPartOf: { '@id': 'https://bnk-conseil-1z3b.vercel.app/#website' },
+          isPartOf: { '@id': 'https://bnk-conseil.com/#website' },
           breadcrumb: {
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://bnk-conseil-1z3b.vercel.app/' },
-              { '@type': 'ListItem', position: 2, name: 'Audit Commercial', item: 'https://bnk-conseil-1z3b.vercel.app/audit-commercial' },
+              { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://bnk-conseil.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Audit Commercial', item: 'https://bnk-conseil.com/audit-commercial' },
             ],
           },
         }}

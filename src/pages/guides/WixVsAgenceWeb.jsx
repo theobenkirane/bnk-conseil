@@ -32,7 +32,7 @@ const schema = {
       "@type": "Article",
       "headline": "Wix vs Agence web : lequel choisir pour sa TPE ?",
       "description": "Comparatif honnête Wix vs agence web pour une TPE. Coûts réels, SEO, design, support : on compare tout.",
-      "url": "https://bnk-conseil-1z3b.vercel.app/guide/wix-vs-agence-web",
+      "url": "https://bnk-conseil.com/guide/wix-vs-agence-web",
       "author": { "@type": "Person", "name": "Théo Benkirane" },
       "publisher": { "@type": "Organization", "name": "BNK Conseil" },
       "datePublished": "2025-04-01",
@@ -215,7 +215,7 @@ export default function WixVsAgenceWeb() {
       <SEOHead
         title="Wix vs Agence web : lequel choisir pour sa TPE ? | BNK Conseil"
         description="Comparatif honnête Wix vs agence web pour une TPE. Coûts réels, SEO, design, support : on compare tout. Guide 2025."
-        canonical="https://bnk-conseil-1z3b.vercel.app/guide/wix-vs-agence-web"
+        canonical="https://bnk-conseil.com/guide/wix-vs-agence-web"
         schema={schema}
       />
 

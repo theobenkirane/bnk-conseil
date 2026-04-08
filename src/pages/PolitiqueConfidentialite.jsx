@@ -8,7 +8,7 @@ export default function PolitiqueConfidentialite() {
       <SEOHead
         title="Politique de Confidentialité | BNK Conseil"
         description="Politique de confidentialité de BNK Conseil : données collectées, utilisation, droits RGPD, contact DPO."
-        canonical="https://bnk-conseil-1z3b.vercel.app/politique-confidentialite"
+        canonical="https://bnk-conseil.com/politique-confidentialite"
       />
 
       <section className="pt-32 pb-20">

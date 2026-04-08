@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-const DEFAULT_OG_IMAGE = 'https://bnk-conseil-1z3b.vercel.app/og-image.png'
+const DEFAULT_OG_IMAGE = 'https://bnk-conseil.com/og-image.png'
 
 // Composant réutilisable pour les meta tags SEO par page
 export default function SEOHead({ title, description, canonical, ogTitle, ogDescription, ogImage, schema }) {

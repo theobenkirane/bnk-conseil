@@ -84,7 +84,7 @@ export default function SiteVitrineBordeaux() {
       <SEOHead
         title="Création site vitrine à Bordeaux | BNK Conseil"
         description="Agence web à Bordeaux pour artisans, restaurateurs et commerces. Site vitrine livré en 2-4 semaines. SEO local, sur-mesure. À partir de 690€."
-        canonical="https://bnk-conseil-1z3b.vercel.app/creation-site-vitrine-bordeaux"
+        canonical="https://bnk-conseil.com/creation-site-vitrine-bordeaux"
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

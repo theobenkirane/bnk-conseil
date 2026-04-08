@@ -110,7 +110,7 @@ export default function PourquoiPasFaireSoiMeme() {
       <SEOHead
         title="Wix vs Agence web : le vrai coût | BNK Conseil"
         description="Wix, Squarespace, IA… vraiment moins cher que de passer par un pro ? On a fait les calculs. Découvrez le coût réel du DIY vs un site professionnel."
-        canonical="https://bnk-conseil-1z3b.vercel.app/pourquoi-pas-faire-soi-meme"
+        canonical="https://bnk-conseil.com/pourquoi-pas-faire-soi-meme"
       />
 
       {/* ── Section 1 — Hero ─────────────────────────────────────────────── */}
