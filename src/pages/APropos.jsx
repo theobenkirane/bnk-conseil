@@ -13,8 +13,8 @@ const values = [
         <circle cx="12" cy="12" r="3" />
       </svg>
     ),
-    title: 'Transparence',
-    description: "Pas de promesses vides. Des objectifs clairs dès le départ, des résultats mesurables, et une communication directe même quand c'est inconfortable.",
+    title: 'Je parle votre langage',
+    description: "Prospection, closing, gestion de portefeuille, optimisation de process — j'ai fait le terrain. Je comprends vos enjeux parce que je les ai vécus.",
   },
   {
     icon: (
@@ -22,8 +22,8 @@ const values = [
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: 'Audace',
-    description: "On challenge le statu quo. Si une approche ne fonctionne pas, on change de cap sans hésiter. L'immobilisme est notre ennemi principal.",
+    title: 'Des résultats, pas des livrables',
+    description: "Je ne vends pas des prestations, je construis des résultats mesurables. La différence : vous savez exactement ce que vous obtenez et comment le mesurer.",
   },
   {
     icon: (
@@ -31,31 +31,31 @@ const values = [
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ),
-    title: 'Excellence',
-    description: 'Chaque mission mérite le meilleur. Toujours. On ne livre pas du "correct", on vise le remarquable, dans chaque livrable et chaque interaction.',
+    title: 'Chaque client est unique',
+    description: "Pas de copier-coller, pas de solution standard. Chaque mission part de votre réalité terrain, de votre secteur et de vos objectifs spécifiques.",
   },
 ]
 
 const timeline = [
   {
-    year: '2022',
-    title: 'Création de BNK Conseil',
-    description: "Théo Benkirane crée BNK Conseil avec une conviction forte : les TPE et startups méritent un accompagnement commercial ancré dans la réalité du terrain.",
+    year: 'Déb.',
+    title: 'Immobilier — apprendre la vente sur le terrain',
+    description: "Mon premier terrain d'apprentissage : la vente immobilière. Prospection, négociation, gestion de clients exigeants. C'est là que j'ai compris que la méthode fait tout.",
   },
   {
-    year: '2023',
-    title: 'Premières missions et résultats',
-    description: "BNK Conseil accompagne ses premiers clients sur des audits commerciaux et des projets de digitalisation. Les résultats parlent vite : +30% de conversion en moyenne.",
+    year: 'Puis',
+    title: 'Recrutement B2B et prospection commerciale',
+    description: "Recrutement B2B, prospection outbound, closing. J'ai appris à identifier un besoin, construire une relation de confiance et conclure — sur des cycles courts comme longs.",
   },
   {
-    year: '2024',
-    title: "Structuration de l'offre",
-    description: "Lancement de l'offre de digitalisation et de visibilité. Construction d'un réseau d'experts partenaires pour répondre à toutes les problématiques clients.",
+    year: 'Auj.',
+    title: 'Account Manager chez LegalPlace',
+    description: "J'accompagne des entrepreneurs dans la structuration et le lancement de leur activité. Chaque jour, je vois des indépendants avec un vrai potentiel — mais sans méthode ni visibilité.",
   },
   {
-    year: '2025',
-    title: 'Une référence pour les TPE et startups',
-    description: "BNK Conseil accompagne des TPE et startups en France sur leur croissance commerciale et digitale, avec des résultats concrets et mesurables.",
+    year: 'BNK',
+    title: 'BNK Conseil — la conviction qui devient une offre',
+    description: "Aider les TPE à mieux vendre et leur donner une présence digitale qui travaille pour eux. Parce qu'un beau site sans stratégie ne convertit pas, et une bonne équipe sans visibilité plafonne vite.",
   },
 ]
 
@@ -113,19 +113,19 @@ export default function APropos() {
             >
               <span className="text-violet-700 text-sm font-bold uppercase tracking-widest">Qui je suis</span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6 leading-tight">
-                Théo Benkirane,{' '}
+                BNK Conseil, c'est une conviction{' '}
                 <span style={{
                   background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                }}>Fondateur de BNK Conseil</span>
+                }}>qui se construit depuis 5 ans.</span>
               </h1>
               <p className="text-gray-700 text-xl leading-relaxed mb-5">
-                BNK Conseil, c'est un consultant engagé, pas une agence anonyme. Je travaille directement avec vous, de l'analyse à l'exécution, sans intermédiaire ni délégation opaque.
+                Il y a 5 ans, j'ai eu une conviction simple : les TPE et les indépendants méritent le même niveau d'accompagnement commercial et digital que les grandes structures. Pas des templates génériques. Pas des agences qui livrent et disparaissent. Un vrai partenaire, qui comprend leur réalité terrain.
               </p>
               <p className="text-gray-500 text-base leading-relaxed">
-                Mon objectif : vous apporter des résultats mesurables rapidement, pas des slides et des recommandations théoriques.
+                Aujourd'hui, je développe BNK Conseil pour en faire exactement ça.
               </p>
             </motion.div>
 
@@ -209,15 +209,15 @@ export default function APropos() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Mes valeurs</span>
+            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Ma différence</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
-              Ce en quoi je{' '}
+              Ce qui me{' '}
               <span style={{
                 background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>crois</span>
+              }}>différencie</span>
             </h2>
           </motion.div>
 
@@ -255,9 +255,9 @@ export default function APropos() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Mon histoire</span>
+            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Mon parcours</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3">
-              De l'idée aux premiers résultats
+              De la vente terrain au conseil
             </h2>
           </motion.div>
 
@@ -327,17 +327,17 @@ export default function APropos() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Prêt à accélérer votre croissance ?
+              Vous êtes indépendant, artisan, restaurateur, ou dirigeant d'une petite structure ?
             </h2>
             <p className="text-gray-600 text-lg mb-8">
-              Un call découverte gratuit de 30 minutes pour voir comment je peux vous aider.
+              On peut en parler. Pas de jargon, pas de promesses vagues — juste un échange direct pour voir si je peux vous aider à passer un cap.
             </p>
             <Link
               to="/rdv"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/40 hover:-translate-y-0.5"
               style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
             >
-              Réserver un appel
+              Prendre contact
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
