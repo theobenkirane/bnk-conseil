@@ -210,8 +210,8 @@ export default function ApercuSite() {
                 </div>
 
                 {/* CTA */}
-                <div className="pt-2 border-t border-gray-100">
-                  <p className="text-gray-500 text-sm mb-4">
+                <div className="pt-2 border-t border-gray-100 space-y-3">
+                  <p className="text-gray-500 text-sm">
                     Ce design vous convient ? Obtenons votre vrai site en 2 à 4 semaines.
                   </p>
                   <Link
@@ -224,7 +224,13 @@ export default function ApercuSite() {
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </Link>
-                  <p className="text-center text-gray-400 text-xs mt-2">Devis gratuit · Sans engagement · Réponse sous 24h</p>
+                  <Link
+                    to="/commander"
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-violet-700 text-sm border-2 border-violet-200 bg-violet-50 hover:bg-violet-100 hover:border-violet-300 transition-all duration-200"
+                  >
+                    Commander directement (-30%)
+                  </Link>
+                  <p className="text-center text-gray-400 text-xs">Devis gratuit · Sans engagement · Réponse sous 24h</p>
                 </div>
               </div>
             </motion.div>

@@ -21,8 +21,8 @@ const SECTOR_DEFAULTS = {
 }
 
 const FORMULAS = [
-  { label: "Essentiel", price: 690 },
-  { label: "Pro", price: 990 },
+  { label: "Essentiel", price: 690, boost: 1.0, boostNote: null },
+  { label: "Pro", price: 990, boost: 1.3, boostNote: "+30% de conversions estimées grâce au SEO avancé et aux pages supplémentaires" },
 ]
 
 const BADGE_CONFIG = [
@@ -37,13 +37,12 @@ export default function ROICalculator() {
   const [clientsPerMonth, setClientsPerMonth] = useState(3)
   const [formulaIdx, setFormulaIdx] = useState(0)
 
-  // Préremplir le panier moyen au changement de secteur
   useEffect(() => {
     setAvgBasket(SECTOR_DEFAULTS[sector])
   }, [sector])
 
   const formula = FORMULAS[formulaIdx]
-  const revenuePerMonth = clientsPerMonth * avgBasket
+  const revenuePerMonth = Math.round(clientsPerMonth * avgBasket * formula.boost)
   const monthsToROI = revenuePerMonth > 0 ? Math.ceil(formula.price / revenuePerMonth) : 99
   const revenueYear1 = revenuePerMonth * 12
   const profitYear1 = revenueYear1 - formula.price
@@ -56,26 +55,30 @@ export default function ROICalculator() {
     <div className="bg-violet-50 border border-violet-100 rounded-2xl p-6 md:p-8 space-y-6">
 
       {/* Sélecteur de formule */}
-      <div className="flex items-center justify-center gap-2">
-        {FORMULAS.map((f, i) => (
-          <button
-            key={f.label}
-            onClick={() => setFormulaIdx(i)}
-            className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
-              formulaIdx === i
-                ? 'text-white shadow-md shadow-violet-300/40'
-                : 'bg-white border border-violet-200 text-gray-600 hover:border-violet-400'
-            }`}
-            style={formulaIdx === i ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' } : {}}
-          >
-            {f.label} — {f.price}€
-          </button>
-        ))}
+      <div className="space-y-2">
+        <div className="flex items-center justify-center gap-2">
+          {FORMULAS.map((f, i) => (
+            <button
+              key={f.label}
+              onClick={() => setFormulaIdx(i)}
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                formulaIdx === i
+                  ? 'text-white shadow-md shadow-violet-300/40'
+                  : 'bg-white border border-violet-200 text-gray-600 hover:border-violet-400'
+              }`}
+              style={formulaIdx === i ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' } : {}}
+            >
+              {f.label} · {f.price}€
+            </button>
+          ))}
+        </div>
+        {formula.boostNote && (
+          <p className="text-center text-xs text-violet-600 font-medium">{formula.boostNote}</p>
+        )}
       </div>
 
       {/* Inputs */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {/* Sector */}
         <div className="space-y-2">
           <label className="uppercase tracking-widest text-xs font-semibold text-gray-600">
             Secteur
@@ -91,7 +94,6 @@ export default function ROICalculator() {
           </select>
         </div>
 
-        {/* Average basket */}
         <div className="space-y-2">
           <label className="uppercase tracking-widest text-xs font-semibold text-gray-600">
             Panier moyen (€)
@@ -105,7 +107,6 @@ export default function ROICalculator() {
           />
         </div>
 
-        {/* Clients per month */}
         <div className="space-y-2">
           <label className="uppercase tracking-widest text-xs font-semibold text-gray-600">
             Nouveaux clients/mois
@@ -138,7 +139,6 @@ export default function ROICalculator() {
           transition={{ duration: 0.3 }}
           className="bg-white border border-violet-200 rounded-xl p-5 space-y-4"
         >
-          {/* Chiffres clés */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="text-center">
               <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">CA/mois</p>
@@ -158,7 +158,7 @@ export default function ROICalculator() {
             </div>
           </div>
 
-          {/* Barre de progression ROI */}
+          {/* Barre de progression */}
           <div className="space-y-1.5">
             <div className="flex justify-between text-xs text-gray-500">
               <span>Aujourd'hui</span>
@@ -170,10 +170,8 @@ export default function ROICalculator() {
                   key={i}
                   className={`h-2.5 flex-1 rounded-full transition-colors duration-300 ${
                     i < filledSegments
-                      ? monthsToROI <= 3
-                        ? 'bg-green-400'
-                        : monthsToROI <= 6
-                        ? 'bg-blue-400'
+                      ? monthsToROI <= 3 ? 'bg-green-400'
+                        : monthsToROI <= 6 ? 'bg-blue-400'
                         : 'bg-orange-400'
                       : 'bg-gray-100'
                   }`}
@@ -187,7 +185,6 @@ export default function ROICalculator() {
             </p>
           </div>
 
-          {/* Badge */}
           {badge && (
             <div className="flex justify-center">
               <span className={`inline-flex items-center gap-1.5 ${badge.bg} ${badge.text} text-xs font-semibold px-3 py-1 rounded-full`}>

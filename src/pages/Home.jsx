@@ -80,19 +80,19 @@ const problemes = [
 ]
 
 const pourQuiOui = [
-  'TPE et PME de moins de 20 personnes',
-  'Artisans et commerçants locaux',
-  'Restaurateurs et hôteliers',
-  'Prestataires de services B2B ou B2C',
-  'Coachs et formateurs indépendants',
-  'Startups early-stage cherchant à structurer leur vente',
+  'TPE, artisans et indépendants qui veulent plus de clients',
+  'Entreprises sans présence digitale efficace',
+  'Restaurateurs et commerçants locaux',
+  'Prestataires B2B ou B2C cherchant à structurer leur vente',
+  'Coachs et formateurs voulant automatiser leur prospection',
+  'Toute structure prête à investir dans sa croissance',
 ]
 
 const pourQuiNon = [
-  'Grandes entreprises de plus de 50 personnes',
-  'E-commerce pur sans ancrage local',
   "Ceux qui veulent des résultats sans s'impliquer",
-  'Projets avec modèle économique non viable',
+  'Projets sans modèle économique défini',
+  'E-commerce pur (sans service ni conseil associé)',
+  "Structures cherchant une solution 100% automatisée sans échange humain",
 ]
 
 const whyBNK = [
@@ -511,7 +511,7 @@ export default function Home() {
               Pour qui ?
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              Soyons directs : on est fait pour certains profils et pas d'autres.
+              Que vous soyez seul ou en équipe, voici ce qui fait la différence.
             </p>
           </motion.div>
 

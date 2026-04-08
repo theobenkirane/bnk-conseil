@@ -27,6 +27,7 @@ const SiteVitrineParis = lazy(() => import('./pages/seo/SiteVitrineParis'))
 const SiteVitrineBordeaux = lazy(() => import('./pages/seo/SiteVitrineBordeaux'))
 const CombienCouteUnSiteVitrine = lazy(() => import('./pages/guides/CombienCouteUnSiteVitrine'))
 const WixVsAgenceWeb = lazy(() => import('./pages/guides/WixVsAgenceWeb'))
+const Commander = lazy(() => import('./pages/Commander'))
 
 // AnimatePresence nécessite l'accès à location via un composant interne
 function AnimatedRoutes() {
@@ -60,6 +61,7 @@ function AnimatedRoutes() {
           <Route path="/creation-site-vitrine-bordeaux" element={<SiteVitrineBordeaux />} />
           <Route path="/guide/combien-coute-un-site-vitrine" element={<CombienCouteUnSiteVitrine />} />
           <Route path="/guide/wix-vs-agence-web" element={<WixVsAgenceWeb />} />
+          <Route path="/commander" element={<Commander />} />
         </Routes>
       </Suspense>
     </AnimatePresence>

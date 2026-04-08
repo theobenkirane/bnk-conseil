@@ -1,8 +1,35 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import PageTransition from '../components/PageTransition'
 import OfferCard from '../components/OfferCard'
 import FAQ from '../components/FAQ'
 import SEOHead from '../components/SEOHead'
+
+const sectorPages = [
+  { label: 'Restaurant', emoji: '🍽️', path: '/creation-site-vitrine-restaurant', desc: 'Menu en ligne, réservations, Google Maps' },
+  { label: 'Artisan', emoji: '🔧', path: '/creation-site-vitrine-artisan', desc: 'Devis en ligne, galerie, zones d\'intervention' },
+  { label: 'Coach / Formation', emoji: '🎓', path: '/creation-site-vitrine-coach', desc: 'Programmes, témoignages, prise de RDV' },
+  { label: 'Commerce local', emoji: '🛍️', path: '/creation-site-vitrine-commerce-local', desc: 'Horaires, catalogue, click & collect' },
+]
+
+const guidePages = [
+  { label: 'Combien coûte un site vitrine ?', path: '/guide/combien-coute-un-site-vitrine', emoji: '💰' },
+  { label: 'Wix vs Agence web — lequel choisir ?', path: '/guide/wix-vs-agence-web', emoji: '⚖️' },
+  { label: 'Pourquoi pas faire soi-même ?', path: '/pourquoi-pas-faire-soi-meme', emoji: '🤔' },
+]
+
+const cityPages = [
+  { label: 'Lyon', path: '/creation-site-vitrine-lyon' },
+  { label: 'Paris', path: '/creation-site-vitrine-paris' },
+  { label: 'Bordeaux', path: '/creation-site-vitrine-bordeaux' },
+]
+
+const fadeUpView = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, delay },
+})
 
 // Les 2 offres principales
 const offers = [
@@ -150,6 +177,78 @@ export default function Offres() {
                 offer={offer}
                 index={i}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section Par secteur */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeUpView(0)} className="text-center mb-10">
+            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Sites vitrines</span>
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2 mb-3">Par secteur d'activité</h2>
+            <p className="text-gray-500">Un site conçu pour votre métier, pas un template générique.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {sectorPages.map((s, i) => (
+              <motion.div key={s.path} {...fadeUpView(i * 0.08)}>
+                <Link
+                  to={s.path}
+                  className="group flex flex-col bg-white rounded-2xl border border-gray-100 p-5 hover:border-violet-300 hover:shadow-md hover:shadow-violet-100/50 transition-all duration-300"
+                >
+                  <span className="text-3xl mb-3">{s.emoji}</span>
+                  <span className="font-bold text-gray-900 text-sm mb-1 group-hover:text-violet-700 transition-colors">{s.label}</span>
+                  <span className="text-gray-500 text-xs leading-relaxed">{s.desc}</span>
+                  <span className="mt-3 text-violet-600 text-xs font-semibold group-hover:translate-x-1 transition-transform inline-block">
+                    Voir la page →
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Villes */}
+          <motion.div {...fadeUpView(0.3)} className="mt-8 flex items-center justify-center gap-3 flex-wrap">
+            <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Villes :</span>
+            {cityPages.map((c) => (
+              <Link
+                key={c.path}
+                to={c.path}
+                className="text-sm font-medium px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-violet-400 hover:text-violet-700 transition-colors"
+              >
+                {c.label}
+              </Link>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section Guides */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeUpView(0)} className="text-center mb-10">
+            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Ressources</span>
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2">Guides gratuits</h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {guidePages.map((g, i) => (
+              <motion.div key={g.path} {...fadeUpView(i * 0.1)}>
+                <Link
+                  to={g.path}
+                  className="group flex items-start gap-4 bg-violet-50 border border-violet-100 rounded-2xl p-5 hover:border-violet-300 hover:bg-violet-50/80 transition-all duration-300"
+                >
+                  <span className="text-2xl flex-shrink-0">{g.emoji}</span>
+                  <div>
+                    <span className="font-semibold text-gray-800 text-sm leading-snug group-hover:text-violet-700 transition-colors block mb-1">
+                      {g.label}
+                    </span>
+                    <span className="text-violet-600 text-xs font-semibold group-hover:translate-x-1 transition-transform inline-block">
+                      Lire le guide →
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>

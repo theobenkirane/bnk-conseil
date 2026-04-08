@@ -343,6 +343,18 @@ export default function Tarifs() {
           <motion.p {...fadeUpView(0.4)} className="text-center text-sm text-gray-500">
             Paiement en 2× disponible · Livraison garantie · Devis gratuit sous 24h
           </motion.p>
+
+          <motion.div {...fadeUpView(0.5)} className="text-center">
+            <Link
+              to="/commander"
+              className="inline-flex items-center gap-2 text-violet-600 hover:text-violet-700 text-sm font-semibold transition-colors"
+            >
+              Ou commander directement avec -30%
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
