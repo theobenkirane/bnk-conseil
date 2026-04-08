@@ -14,7 +14,7 @@ const values = [
       </svg>
     ),
     title: 'Je parle votre langage',
-    description: "Prospection, closing, gestion de portefeuille, optimisation de process — j'ai fait le terrain. Je comprends vos enjeux parce que je les ai vécus.",
+    description: "Je suis passé par la prospection, le closing, la gestion de portefeuille et l'optimisation de process — je parle le même langage que vous.",
   },
   {
     icon: (
@@ -23,7 +23,7 @@ const values = [
       </svg>
     ),
     title: 'Des résultats, pas des livrables',
-    description: "Je ne vends pas des prestations, je construis des résultats mesurables. La différence : vous savez exactement ce que vous obtenez et comment le mesurer.",
+    description: "Je ne vends pas des prestations, je construis des résultats mesurables.",
   },
   {
     icon: (
@@ -31,8 +31,8 @@ const values = [
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ),
-    title: 'Chaque client est unique',
-    description: "Pas de copier-coller, pas de solution standard. Chaque mission part de votre réalité terrain, de votre secteur et de vos objectifs spécifiques.",
+    title: 'Chaque client est un cas unique',
+    description: "Pas de copier-coller, pas de solution standard.",
   },
 ]
 
@@ -259,6 +259,12 @@ export default function APropos() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3">
               De la vente terrain au conseil
             </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto mt-4">
+              Je m'appelle Théo Benkirane. Mon parcours, c'est la vente et le terrain — l'immobilier d'abord, puis le recrutement B2B, la prospection commerciale, et aujourd'hui Account Manager chez LegalPlace où j'accompagne des entrepreneurs dans la structuration et le lancement de leur activité.
+            </p>
+            <p className="text-gray-500 text-base max-w-2xl mx-auto mt-3">
+              Ce que j'ai appris au fil de ces expériences : la majorité des TPE ont un vrai potentiel commercial — mais elles manquent de méthode, de visibilité en ligne, ou des deux à la fois. C'est exactement le problème que BNK Conseil adresse.
+            </p>
           </motion.div>
 
           <div className="relative max-w-3xl mx-auto">
