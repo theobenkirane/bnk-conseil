@@ -1,6 +1,6 @@
 export const AVAILABILITY = {
   active: true,
-  message: "🟢 2 places disponibles en avril",
+  message: "🟢 Plus que quelques places disponibles",
   cta: "Réserver mon créneau",
   ctaLink: "/rdv",
 }

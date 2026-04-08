@@ -75,7 +75,7 @@ const problemes = [
       </svg>
     ),
     title: 'Croissance sans recruter',
-    description: "Scaler sans embaucher, c'est possible. Automatisation, outils digitaux et stratégie : on fait travailler les bons leviers pour vous.",
+    description: "Grandir sans embaucher, c'est possible. Automatisation, outils digitaux et stratégie : on fait travailler les bons leviers pour vous.",
   },
 ]
 
@@ -245,7 +245,7 @@ const faqItems = [
     answer: 'Oui. Nous créons des sites vitrines pour les restaurateurs, artisans, coachs, formateurs, commerces locaux et prestataires de services. Chaque site est conçu pour votre secteur et optimisé SEO local.',
   },
   {
-    question: 'Puis-je scaler sans recruter ?',
+    question: 'Puis-je grandir sans recruter ?',
     answer: "C'est justement notre approche. Nous mettons en place des processus, des outils et une stratégie qui vous permettent de croître sans forcément agrandir votre équipe. Automatisation, CRM, présence digitale : on fait travailler les outils à votre place.",
   },
 ]
@@ -324,9 +324,8 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-6 text-gray-900"
           >
-            Plus de rendez-vous qualifiés.{' '}
-            <span style={gradientText}>Un process commercial qui tourne.</span>{' '}
-            Un site qui convertit.
+            Le site vitrine qui travaille pour vous.{' '}
+            <span style={gradientText}>À partir de 690€.</span>
           </motion.h1>
 
           {/* Sous-titre */}
@@ -336,7 +335,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Pour les TPE et indépendants qui veulent scaler sans recruter une équipe marketing.
+            Création site vitrine sur mesure + accompagnement commercial pour TPE, artisans et indépendants.
           </motion.p>
 
           {/* Boutons CTA */}

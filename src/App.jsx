@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import AvailabilityBanner from './components/AvailabilityBanner'
+import { AVAILABILITY } from './config/availability'
 import Home from './pages/Home'
 
 const Offres = lazy(() => import('./pages/Offres'))
@@ -72,7 +73,7 @@ export default function App() {
         <div className="min-h-screen bg-[#FAFBFF] text-gray-900" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
           <AvailabilityBanner />
           <Header />
-          <main>
+          <main style={{ paddingTop: AVAILABILITY.active ? '40px' : '0' }}>
             <AnimatedRoutes />
           </main>
           <Footer />

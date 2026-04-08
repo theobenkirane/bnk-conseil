@@ -25,7 +25,7 @@ const offers = [
       'Accès direct et illimité pour toutes vos questions',
     ],
     duration: '1 mois à 12 mois',
-    price: 'Sur devis',
+    price: 'À partir de 390€',
     link: '/audit-commercial',
   },
   {
@@ -49,7 +49,7 @@ const offers = [
       'Support technique inclus 3 mois après livraison',
     ],
     duration: '2 à 4 semaines',
-    price: 'À partir de 990€',
+    price: 'À partir de 690€',
     link: '/creation-site-vitrine',
   },
 ]

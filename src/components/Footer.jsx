@@ -3,8 +3,21 @@ import { Link } from 'react-router-dom'
 const navLinks = [
   { label: 'Accueil', path: '/' },
   { label: 'Offres', path: '/offres' },
+  { label: 'Tarifs', path: '/tarifs' },
   { label: 'À propos', path: '/a-propos' },
   { label: 'Contact', path: '/rdv' },
+]
+
+const resourceLinks = [
+  { label: 'Combien coûte un site vitrine ?', path: '/guide/combien-coute-un-site-vitrine' },
+  { label: 'Wix vs Agence web', path: '/guide/wix-vs-agence-web' },
+  { label: 'Pourquoi pas faire soi-même ?', path: '/pourquoi-pas-faire-soi-meme' },
+]
+
+const cityLinks = [
+  { label: 'Création site vitrine Lyon', path: '/creation-site-vitrine-lyon' },
+  { label: 'Création site vitrine Paris', path: '/creation-site-vitrine-paris' },
+  { label: 'Création site vitrine Bordeaux', path: '/creation-site-vitrine-bordeaux' },
 ]
 
 function LinkedInIcon() {
@@ -19,10 +32,10 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-violet-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
           {/* Colonne marque */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-2">
               <span
                 className="text-3xl font-black tracking-tight"
@@ -38,7 +51,7 @@ export default function Footer() {
               <span className="text-gray-400 text-sm font-semibold">Conseil</span>
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-              On booste votre moteur commercial. Nous accompagnons les TPE et startups à structurer et accélérer leur croissance.
+              Sites vitrines professionnels et accompagnement commercial pour TPE, artisans et indépendants.
             </p>
             {/* Liens sociaux */}
             <div className="flex items-center gap-3 pt-2">
@@ -81,46 +94,69 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Colonne contact */}
+          {/* Colonne ressources */}
           <div>
-            <h3 className="text-gray-800 font-semibold text-sm mb-5 uppercase tracking-widest">Contact</h3>
+            <h3 className="text-gray-800 font-semibold text-sm mb-5 uppercase tracking-widest">Ressources</h3>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="mailto:conseil.bnk@gmail.com"
-                  className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200 flex items-center gap-2"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4 flex-shrink-0 text-violet-400">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                  conseil.bnk@gmail.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/theobenkirane/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200 flex items-center gap-2"
-                >
-                  <LinkedInIcon />
-                  LinkedIn
-                </a>
-              </li>
-              <li className="pt-2">
-                <Link
-                  to="/rdv"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:shadow-violet-300/40"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
-                >
-                  Réserver un appel
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </li>
+              {resourceLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200 leading-relaxed block"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          {/* Colonne villes + contact */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-gray-800 font-semibold text-sm mb-5 uppercase tracking-widest">Villes</h3>
+              <ul className="space-y-3">
+                {cityLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200 leading-relaxed block"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-gray-800 font-semibold text-sm mb-3 uppercase tracking-widest">Contact</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="mailto:conseil.bnk@gmail.com"
+                    className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200 flex items-center gap-2"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4 flex-shrink-0 text-violet-400">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    conseil.bnk@gmail.com
+                  </a>
+                </li>
+                <li className="pt-1">
+                  <Link
+                    to="/rdv"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:shadow-violet-300/40"
+                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                  >
+                    Réserver un appel
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 

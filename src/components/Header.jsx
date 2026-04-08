@@ -1,12 +1,26 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { AVAILABILITY } from '../config/availability'
 
 // Sous-liens du menu Offres
 const offresSubLinks = [
   { label: 'Audit Commercial', path: '/audit-commercial' },
   { label: 'Création Site Vitrine', path: '/creation-site-vitrine' },
   { label: "Aperçu gratuit", path: '/apercu-site' },
+]
+
+const sectorLinks = [
+  { label: 'Restaurant', path: '/creation-site-vitrine-restaurant' },
+  { label: 'Artisan', path: '/creation-site-vitrine-artisan' },
+  { label: 'Coach / Formation', path: '/creation-site-vitrine-coach' },
+  { label: 'Commerce local', path: '/creation-site-vitrine-commerce-local' },
+]
+
+const cityLinks = [
+  { label: 'Lyon', path: '/creation-site-vitrine-lyon' },
+  { label: 'Paris', path: '/creation-site-vitrine-paris' },
+  { label: 'Bordeaux', path: '/creation-site-vitrine-bordeaux' },
 ]
 
 const navLinks = [
@@ -25,6 +39,8 @@ export default function Header() {
   const location = useLocation()
   const dropdownRef = useRef(null)
 
+  const bannerActive = AVAILABILITY.active
+
   // Fond blanc + ombre au scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -40,11 +56,18 @@ export default function Header() {
   }, [location.pathname])
 
   // L'onglet "Offres" est actif si on est sur /offres, /audit-commercial ou /creation-site-vitrine
-  const isOffresActive = ['/offres', '/audit-commercial', '/creation-site-vitrine', '/creation-site-vitrine-restaurant', '/creation-site-vitrine-artisan', '/creation-site-vitrine-coach', '/creation-site-vitrine-commerce-local'].includes(location.pathname)
+  const isOffresActive = [
+    '/offres', '/audit-commercial', '/creation-site-vitrine',
+    '/creation-site-vitrine-restaurant', '/creation-site-vitrine-artisan',
+    '/creation-site-vitrine-coach', '/creation-site-vitrine-commerce-local',
+    '/creation-site-vitrine-lyon', '/creation-site-vitrine-paris', '/creation-site-vitrine-bordeaux',
+  ].includes(location.pathname)
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+        bannerActive ? 'top-10' : 'top-0'
+      } ${
         scrolled
           ? 'bg-white/90 backdrop-blur-xl border-b border-violet-100 shadow-sm shadow-violet-100/50'
           : 'bg-white/70 backdrop-blur-md'
@@ -109,7 +132,7 @@ export default function Header() {
                       )}
                     </Link>
 
-                    {/* Dropdown desktop */}
+                    {/* Dropdown desktop enrichi */}
                     <AnimatePresence>
                       {desktopDropdown && (
                         <motion.div
@@ -117,16 +140,13 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 6 }}
                           transition={{ duration: 0.18 }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white rounded-xl border border-gray-100 shadow-lg shadow-violet-100/40 overflow-hidden"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-xl border border-gray-100 shadow-lg shadow-violet-100/40 overflow-hidden"
                         >
                           <div className="p-1.5">
-                            <Link
-                              to="/offres"
-                              className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-xs font-semibold text-gray-400 hover:bg-gray-50 hover:text-gray-600 transition-colors uppercase tracking-wider"
-                            >
-                              Toutes les offres
-                            </Link>
-                            <div className="border-t border-gray-100 my-1" />
+                            {/* Section Services */}
+                            <p className="px-3 pt-2 pb-1 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">
+                              Services
+                            </p>
                             {link.sub.map((sub) => (
                               <Link
                                 key={sub.path}
@@ -144,6 +164,49 @@ export default function Header() {
                                 {sub.label}
                               </Link>
                             ))}
+
+                            {/* Séparateur */}
+                            <div className="border-t border-gray-100 my-1.5" />
+
+                            {/* Section Par secteur */}
+                            <p className="px-3 pt-1 pb-1 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">
+                              Par secteur
+                            </p>
+                            {sectorLinks.map((sub) => (
+                              <Link
+                                key={sub.path}
+                                to={sub.path}
+                                className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                                  location.pathname === sub.path
+                                    ? 'bg-violet-50 text-violet-700'
+                                    : 'text-gray-600 hover:bg-violet-50 hover:text-violet-700'
+                                }`}
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-gray-300" />
+                                {sub.label}
+                              </Link>
+                            ))}
+
+                            {/* Séparateur + villes */}
+                            <div className="border-t border-gray-100 my-1.5" />
+                            <div className="px-3 py-2 flex items-center gap-1.5 flex-wrap">
+                              <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mr-1">
+                                Villes
+                              </span>
+                              {cityLinks.map((city) => (
+                                <Link
+                                  key={city.path}
+                                  to={city.path}
+                                  className={`text-xs font-medium px-2 py-0.5 rounded-full transition-colors ${
+                                    location.pathname === city.path
+                                      ? 'bg-violet-100 text-violet-700'
+                                      : 'bg-gray-100 text-gray-600 hover:bg-violet-100 hover:text-violet-700'
+                                  }`}
+                                >
+                                  {city.label}
+                                </Link>
+                              ))}
+                            </div>
                           </div>
                         </motion.div>
                       )}
@@ -266,6 +329,9 @@ export default function Header() {
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden ml-4 mt-1 flex flex-col gap-1"
                           >
+                            <p className="px-4 pt-2 pb-1 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">
+                              Services
+                            </p>
                             {link.sub.map((sub) => (
                               <Link
                                 key={sub.path}
@@ -283,6 +349,34 @@ export default function Header() {
                                 {sub.label}
                               </Link>
                             ))}
+                            <p className="px-4 pt-2 pb-1 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">
+                              Par secteur
+                            </p>
+                            {sectorLinks.map((sub) => (
+                              <Link
+                                key={sub.path}
+                                to={sub.path}
+                                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
+                                  location.pathname === sub.path
+                                    ? 'bg-violet-50 text-violet-700'
+                                    : 'text-gray-500 hover:bg-gray-50 hover:text-gray-800'
+                                }`}
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-gray-300" />
+                                {sub.label}
+                              </Link>
+                            ))}
+                            <div className="px-4 py-2 flex items-center gap-1.5 flex-wrap">
+                              {cityLinks.map((city) => (
+                                <Link
+                                  key={city.path}
+                                  to={city.path}
+                                  className="text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 hover:bg-violet-100 hover:text-violet-700 transition-colors"
+                                >
+                                  {city.label}
+                                </Link>
+                              ))}
+                            </div>
                           </motion.div>
                         )}
                       </AnimatePresence>

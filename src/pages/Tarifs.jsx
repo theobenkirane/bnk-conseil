@@ -35,8 +35,7 @@ const packages = [
     price: "690€",
     priceNote: "paiement unique",
     popular: false,
-    headerClass: "bg-gray-100",
-    headerTextClass: "text-gray-700",
+    dark: false,
     features: [
       { label: "3-4 pages", ok: true },
       { label: "SEO de base", ok: true },
@@ -51,8 +50,7 @@ const packages = [
     price: "990€",
     priceNote: "paiement unique",
     popular: true,
-    headerStyle: { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' },
-    headerTextClass: "text-white",
+    dark: false,
     features: [
       { label: "5-7 pages", ok: true },
       { label: "SEO avancé", ok: true },
@@ -67,8 +65,7 @@ const packages = [
     price: "Sur devis",
     priceNote: "selon cahier des charges",
     popular: false,
-    headerClass: "bg-gray-900",
-    headerTextClass: "text-white",
+    dark: true,
     features: [
       { label: "Pages illimitées", ok: true },
       { label: "SEO premium", ok: true },
@@ -123,54 +120,105 @@ const faqItems = [
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
+function CheckIcon({ ok, dark }) {
+  if (ok) {
+    return (
+      <span className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${dark ? 'bg-white/20' : 'bg-violet-100'}`}>
+        <svg viewBox="0 0 12 12" fill="none" className={`w-2.5 h-2.5 ${dark ? 'text-white' : 'text-violet-600'}`}>
+          <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </span>
+    )
+  }
+  return (
+    <span className="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-gray-100">
+      <svg viewBox="0 0 12 12" fill="none" className="w-2.5 h-2.5 text-gray-400">
+        <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    </span>
+  )
+}
+
 function PackageCard({ pkg, delay }) {
+  const isDark = pkg.dark
+  const isPro = pkg.popular
+
   return (
     <motion.div
       {...fadeUpView(delay)}
-      className={`relative flex flex-col rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border ${
-        pkg.popular ? 'border-violet-400 ring-2 ring-violet-300/50' : 'border-gray-100'
+      className={`relative flex flex-col rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl ${
+        isPro
+          ? 'shadow-xl shadow-violet-400/30'
+          : isDark
+          ? 'shadow-lg shadow-gray-900/20'
+          : 'shadow-sm hover:shadow-violet-100/60 border border-gray-100'
       }`}
+      style={
+        isPro
+          ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }
+          : isDark
+          ? { background: '#0F172A' }
+          : { background: '#ffffff' }
+      }
     >
-      {pkg.popular && (
-        <div className="absolute top-3 right-3 z-10">
-          <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2.5 py-1 rounded-full">
+      {/* Badge "Plus populaire" */}
+      {isPro && (
+        <div className="absolute -top-0 left-1/2 -translate-x-1/2 z-10">
+          <span className="bg-white text-violet-700 text-xs font-bold px-3 py-1 rounded-b-xl shadow-md shadow-violet-200/50 flex items-center gap-1">
             ⭐ Plus populaire
           </span>
         </div>
       )}
 
-      {/* Header band */}
-      <div
-        className={`px-6 py-5 ${pkg.headerClass || ''} ${pkg.headerTextClass}`}
-        style={pkg.headerStyle || {}}
-      >
-        <h3 className="text-xl font-black">{pkg.name}</h3>
-        <p className="text-2xl font-black mt-1">{pkg.price}</p>
-        <p className={`text-xs mt-0.5 ${pkg.popular ? 'text-white/70' : 'text-gray-500'}`}>
-          {pkg.priceNote}
-        </p>
-      </div>
-
-      {/* Features */}
-      <div className="flex-1 bg-white px-6 py-5 space-y-3">
-        {pkg.features.map((f) => (
-          <div key={f.label} className="flex items-center gap-2.5 text-sm text-gray-700">
-            <span className="text-base leading-none">{f.ok ? '✅' : '❌'}</span>
-            <span className={f.ok ? '' : 'text-gray-400'}>{f.label}</span>
+      {/* Content */}
+      <div className={`flex flex-col flex-1 px-6 pt-8 pb-6 ${isPro ? 'pt-10' : ''}`}>
+        {/* Name + price */}
+        <div className="mb-6">
+          <h3 className={`text-lg font-bold mb-3 ${isPro || isDark ? 'text-white' : 'text-gray-500'}`}>
+            {pkg.name}
+          </h3>
+          <div className="flex items-baseline gap-2">
+            <p className={`text-4xl font-black ${isPro || isDark ? 'text-white' : 'text-gray-900'}`}>
+              {pkg.price}
+            </p>
           </div>
-        ))}
-      </div>
+          <p className={`text-xs mt-1 ${isPro ? 'text-white/60' : isDark ? 'text-gray-500' : 'text-gray-400'}`}>
+            {pkg.priceNote}
+            {!isDark && (
+              <span className={`ml-2 font-medium ${isPro ? 'text-white/80' : 'text-violet-600'}`}>
+                · Paiement en 2×
+              </span>
+            )}
+          </p>
+        </div>
 
-      {/* CTA */}
-      <div className="bg-white px-6 pb-6">
+        {/* Features */}
+        <div className="flex-1 space-y-3 mb-6">
+          {pkg.features.map((f) => (
+            <div key={f.label} className="flex items-center gap-2.5 text-sm">
+              <CheckIcon ok={f.ok} dark={isPro || isDark} />
+              <span className={
+                f.ok
+                  ? isPro || isDark ? 'text-white/90' : 'text-gray-700'
+                  : 'text-gray-400'
+              }>
+                {f.label}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
         <Link
           to="/rdv"
           className={`block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 ${
-            pkg.popular
-              ? 'text-white hover:shadow-xl hover:shadow-violet-300/50'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            isPro
+              ? 'bg-white text-violet-700 hover:bg-white/90 hover:shadow-lg'
+              : isDark
+              ? 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
+              : 'text-white hover:shadow-lg hover:shadow-violet-300/50'
           }`}
-          style={pkg.popular ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' } : {}}
+          style={!isPro && !isDark ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' } : {}}
         >
           Choisir {pkg.name} →
         </Link>
@@ -291,6 +339,10 @@ export default function Tarifs() {
               <PackageCard key={pkg.name} pkg={pkg} delay={0.1 + i * 0.1} />
             ))}
           </div>
+
+          <motion.p {...fadeUpView(0.4)} className="text-center text-sm text-gray-500">
+            Paiement en 2× disponible · Livraison garantie · Devis gratuit sous 24h
+          </motion.p>
         </div>
       </section>
 
