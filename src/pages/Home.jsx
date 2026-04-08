@@ -157,6 +157,7 @@ const offerPreviews = [
     ),
     title: 'Digitalisation & Visibilité',
     description: 'Création de site web, gestion des réseaux sociaux et mise en place des outils digitaux pour générer des leads.',
+    price: "À partir de 690€",
     link: '/creation-site-vitrine',
     linkLabel: 'Découvrir le site vitrine →',
   },
@@ -343,7 +344,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4"
           >
             <Link
               to="/rdv"
@@ -365,6 +366,7 @@ export default function Home() {
               Voir un aperçu de votre site
             </Link>
           </motion.div>
+          <p className="text-gray-400 text-xs mt-3 mb-12">Paiement en 2× · Livraison garantie · Devis sous 24h</p>
 
           {/* Chiffres clés */}
           <motion.div
@@ -606,14 +608,26 @@ export default function Home() {
                 >
                   {offer.icon}
                 </div>
-                <h3 className="text-gray-900 font-bold text-lg mb-3">{offer.title}</h3>
+                <div className="flex items-center gap-3 mb-3">
+                  <h3 className="text-gray-900 font-bold text-lg">{offer.title}</h3>
+                  {offer.price && (
+                    <span className="text-xs font-semibold text-violet-600 bg-violet-50 border border-violet-200 px-2 py-0.5 rounded-full whitespace-nowrap">{offer.price}</span>
+                  )}
+                </div>
                 <p className="text-gray-500 text-sm leading-relaxed flex-1">{offer.description}</p>
-                <Link
-                  to={offer.link}
-                  className="mt-5 text-violet-600 text-sm font-semibold hover:text-violet-700 transition-colors"
-                >
-                  {offer.linkLabel}
-                </Link>
+                <div className="mt-5 flex items-center gap-4">
+                  <Link
+                    to={offer.link}
+                    className="text-violet-600 text-sm font-semibold hover:text-violet-700 transition-colors"
+                  >
+                    {offer.linkLabel}
+                  </Link>
+                  {offer.price && (
+                    <Link to="/tarifs" className="text-violet-500 text-sm font-medium hover:text-violet-700 transition-colors">
+                      Voir les tarifs →
+                    </Link>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -836,6 +850,7 @@ export default function Home() {
               </svg>
             </a>
             <p className="text-gray-500 text-sm mt-4">Gratuit · Sans engagement · 20 min</p>
+            <p className="text-gray-400 text-xs mt-2">Paiement en 2× · Sans engagement · Réponse sous 24h</p>
           </motion.div>
         </div>
       </section>

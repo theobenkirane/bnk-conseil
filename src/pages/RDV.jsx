@@ -265,6 +265,17 @@ export default function RDV() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
+            {/* Disponibilité */}
+            <div className="mb-6 p-4 rounded-xl border border-violet-200 bg-violet-50 flex items-center gap-3">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-violet-600"></span>
+              </span>
+              <p className="text-violet-700 text-sm font-medium">
+                🟢 2 créneaux disponibles en avril — Réservez rapidement
+              </p>
+            </div>
+
             {/* Titre section */}
             <div className="text-center mb-8">
               <div

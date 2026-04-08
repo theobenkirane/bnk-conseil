@@ -6,12 +6,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 const offresSubLinks = [
   { label: 'Audit Commercial', path: '/audit-commercial' },
   { label: 'Création Site Vitrine', path: '/creation-site-vitrine' },
+  { label: "Aperçu gratuit", path: '/apercu-site' },
 ]
 
 const navLinks = [
   { label: 'Accueil', path: '/' },
   { label: 'Offres', path: '/offres', sub: offresSubLinks },
-  { label: 'À propos', path: '/a-propos' },
+  { label: 'Tarifs', path: '/tarifs' },
+  { label: "À propos", path: '/a-propos' },
   { label: 'Contact', path: '/rdv' },
 ]
 
@@ -38,7 +40,7 @@ export default function Header() {
   }, [location.pathname])
 
   // L'onglet "Offres" est actif si on est sur /offres, /audit-commercial ou /creation-site-vitrine
-  const isOffresActive = ['/offres', '/audit-commercial', '/creation-site-vitrine'].includes(location.pathname)
+  const isOffresActive = ['/offres', '/audit-commercial', '/creation-site-vitrine', '/creation-site-vitrine-restaurant', '/creation-site-vitrine-artisan', '/creation-site-vitrine-coach', '/creation-site-vitrine-commerce-local'].includes(location.pathname)
 
   return (
     <header

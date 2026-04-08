@@ -191,6 +191,29 @@ export default function AuditCommercial() {
         </div>
       </section>
 
+      {/* Garanties */}
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { icon: '📊', title: 'Résultats mesurables', desc: 'Objectifs définis dès le départ, KPIs suivis mensuellement.' },
+                { icon: '🤝', title: 'Accompagnement personnalisé', desc: "Un consultant dédié qui connaît votre secteur et vos enjeux." },
+                { icon: '✅', title: 'Premier résultat en 30 jours', desc: "Plan d'action concret et premières améliorations dès le premier mois." },
+              ].map((g) => (
+                <div key={g.title} className="p-5 rounded-2xl border border-gray-100 bg-white shadow-sm flex gap-4 items-start">
+                  <span className="text-2xl">{g.icon}</span>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1 text-sm">{g.title}</h3>
+                    <p className="text-gray-500 text-sm">{g.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Résultats ──────────────────────────────────────────────────── */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

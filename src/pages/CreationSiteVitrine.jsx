@@ -142,6 +142,14 @@ const faqItems = [
     question: 'Le site sera-t-il trouvé sur Google ?',
     answer: "Oui, c'est une priorité. Chaque site est livré avec les fondations SEO en place : balises meta, schema, sitemap, vitesse optimisée, et fiche Google Business Profile. Les résultats SEO prennent 1 à 3 mois à se concrétiser.",
   },
+  {
+    question: 'Puis-je payer en plusieurs fois ?',
+    answer: "Oui, le paiement en 2 fois est disponible : 50% à la commande, 50% à la livraison. Possibilité de 3 fois sur devis.",
+  },
+  {
+    question: 'Quel est le prix exact de votre service ?',
+    answer: "La formule Essentiel démarre à 690€ (3-4 pages), la formule Pro à 990€ (5-7 pages + blog). Consultez notre page tarifs pour le détail complet.",
+  },
 ]
 
 // ─── Composant ────────────────────────────────────────────────────────────────
@@ -222,7 +230,35 @@ export default function CreationSiteVitrine() {
               >
                 Demander un devis gratuit
               </Link>
-              <p className="text-gray-400 text-xs">Devis gratuit · Sans engagement · Réponse sous 24h</p>
+              <p className="text-gray-400 text-xs">Devis gratuit · Sans engagement · Réponse sous 24h · Paiement en 2×</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Garanties */}
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { icon: '⏱️', title: 'Livraison garantie', desc: 'Délai respecté ou remboursement partiel.' },
+                { icon: '🔧', title: '1 mois de retouches', desc: 'Modifications illimitées pendant 1 mois après livraison.' },
+                { icon: '🌐', title: 'Hébergement 1 an inclus', desc: 'Domaine et hébergement offerts la première année.' },
+              ].map((g) => (
+                <div key={g.title} className="p-5 rounded-2xl border border-gray-100 bg-white shadow-sm flex gap-4 items-start">
+                  <span className="text-2xl">{g.icon}</span>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1 text-sm">{g.title}</h3>
+                    <p className="text-gray-500 text-sm">{g.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -364,6 +400,30 @@ export default function CreationSiteVitrine() {
               </svg>
             </Link>
             <p className="text-gray-500 text-sm mt-4">Gratuit · Sans engagement · Réponse sous 24h</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Votre secteur */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">{"Votre secteur d'activité"}</h2>
+            <p className="text-gray-500 text-center mb-8">Un site vitrine adapté à votre métier</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { emoji: '🍽️', label: 'Restaurant', path: '/creation-site-vitrine-restaurant' },
+                { emoji: '🔨', label: 'Artisan', path: '/creation-site-vitrine-artisan' },
+                { emoji: '🎯', label: 'Coach / Formateur', path: '/creation-site-vitrine-coach' },
+                { emoji: '🛍️', label: 'Commerce local', path: '/creation-site-vitrine-commerce-local' },
+              ].map((s) => (
+                <Link key={s.path} to={s.path} className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-gray-200 bg-white hover:border-violet-300 hover:shadow-md transition-all duration-200 text-center">
+                  <span className="text-2xl">{s.emoji}</span>
+                  <span className="text-sm font-medium text-gray-700">{s.label}</span>
+                  <span className="text-xs text-violet-600 font-medium">{"Voir →"}</span>
+                </Link>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
