@@ -87,7 +87,7 @@ export const ABOUT = {
     { label: 'Âge',       value: '24 ans' },
     { label: 'Basé à',    value: 'Montpellier' },
     { label: 'Mobilité',  value: 'Paris / IDF · Remote' },
-    { label: 'Permis',    value: 'B · Véhiculé' },
+    { label: 'Permis',    value: 'B & A2 · Véhiculé' },
   ],
   formation: [
     {
@@ -168,7 +168,7 @@ export const EXPERIENCE = [
     id: 'groupagora',
     role: 'Chargé d\'affaires',
     company: 'Groupagora',
-    type: 'CDD',
+    type: 'Alternance',
     location: 'Pérols',
     period: 'Sep. → Nov. 2023',
     highlight: 'Recrutement et placement de profils IT en environnement B2B exigeant.',
