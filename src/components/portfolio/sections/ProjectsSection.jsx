@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { PROJECTS } from '../../../lib/portfolio-content'
+import { PROJECTS, PROJECTS_INTRO } from '../../../lib/portfolio-content'
 
 function ProjectCard({ project, index }) {
   const isExternal = project.url !== '#'
@@ -106,14 +106,20 @@ export default function ProjectsSection() {
           fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
           color: 'var(--signal)', marginBottom: '0.75rem',
         }}>
-          Re1 — Projets
+          Initiatives
         </p>
         <h2 style={{
-          fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.05,
-          marginBottom: 'clamp(2.5rem, 5vw, 4rem)',
+          fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, lineHeight: 1.05,
+          marginBottom: '1.25rem', maxWidth: '16ch',
         }}>
-          Ce que je construis
+          L'esprit d'initiative, prouvé.
         </h2>
+        <p style={{
+          fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.65,
+          maxWidth: '58ch', marginBottom: 'clamp(2.5rem, 5vw, 4rem)',
+        }}>
+          {PROJECTS_INTRO}
+        </p>
 
         <div style={{
           display: 'grid',

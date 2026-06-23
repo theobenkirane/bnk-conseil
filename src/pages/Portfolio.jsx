@@ -5,12 +5,14 @@ import Lenis from 'lenis'
 import SEOHead from '../components/SEOHead'
 import PortfolioShell from '../components/portfolio/PortfolioShell'
 import ChessNotationSidebar from '../components/portfolio/ChessNotationSidebar'
+import ChessGame from '../components/portfolio/ChessGame'
 import HeroSection from '../components/portfolio/sections/HeroSection'
 import AboutSection from '../components/portfolio/sections/AboutSection'
 import ExperienceSection from '../components/portfolio/sections/ExperienceSection'
 import SkillsSection from '../components/portfolio/sections/SkillsSection'
 import ProjectsSection from '../components/portfolio/sections/ProjectsSection'
 import ResultsSection from '../components/portfolio/sections/ResultsSection'
+import CompatibilitySection from '../components/portfolio/sections/CompatibilitySection'
 import ContactSection from '../components/portfolio/sections/ContactSection'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -72,19 +74,21 @@ export default function Portfolio() {
     <>
       <SEOHead
         title="Théo Benkirane — Account Manager & Stratège Commercial"
-        description="Portfolio de Théo Benkirane, Account Manager chez LegalPlace, MBA Directeur Commercial. Top performer, 80%+ de taux d'upsell. Ouvert aux opportunités AM, Business Developer et profils hybrides."
+        description="Portfolio de Théo Benkirane, Account Manager chez LegalPlace. Top performer, culture tech et IA. Ouvert à un CDI sur des rôles Account Manager, Business Developer et Sales Ops en SaaS / LegalTech."
         canonical="https://bnk-conseil.com/portfolio"
         schema={SCHEMA}
       />
 
       <PortfolioShell>
         <ChessNotationSidebar />
+        <ChessGame />
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
         <ResultsSection />
+        <CompatibilitySection />
         <ContactSection />
       </PortfolioShell>
     </>

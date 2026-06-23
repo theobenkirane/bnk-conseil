@@ -104,13 +104,13 @@ export default function SkillsSection() {
           fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
           color: 'var(--signal)', marginBottom: '0.75rem',
         }}>
-          O-O — Compétences
+          Compétences
         </p>
         <h2 style={{
-          fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.05,
-          marginBottom: 'clamp(2.5rem, 5vw, 4rem)',
+          fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, lineHeight: 1.05,
+          marginBottom: 'clamp(2.5rem, 5vw, 4rem)', maxWidth: '16ch',
         }}>
-          Maîtrise & outils
+          Ce que j'apporte, outillé par l'IA.
         </h2>
 
         <div style={{

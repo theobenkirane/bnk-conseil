@@ -14,11 +14,12 @@ export default function AboutSection() {
 
     const ctx = gsap.context(() => {
       gsap.utils.toArray('.about-reveal').forEach((el) => {
-        gsap.fromTo(el,
+        gsap.fromTo(
+          el,
           { opacity: 0, y: 28 },
           {
-            opacity: 1, y: 0, duration: 0.65, ease: 'power2.out',
-            scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+            opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' },
           }
         )
       })
@@ -37,108 +38,148 @@ export default function AboutSection() {
       }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        {/* Eyebrow */}
         <p className="about-reveal mono" style={{
           fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
           color: 'var(--signal)', marginBottom: '0.75rem',
         }}>
-          Nf3 — Profil
+          Profil
         </p>
         <h2 className="about-reveal" style={{
-          fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.05,
-          marginBottom: 'clamp(3rem, 6vw, 5rem)', maxWidth: '640px',
+          fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, lineHeight: 1.05,
+          marginBottom: '1.5rem', maxWidth: '14ch',
         }}>
-          Commercial de terrain,<br />mindset tech.
+          {ABOUT.headline}
         </h2>
+        <p className="about-reveal" style={{
+          fontSize: 'clamp(1rem, 1.8vw, 1.2rem)',
+          color: 'var(--text)', lineHeight: 1.6, maxWidth: '60ch',
+          marginBottom: 'clamp(3rem, 6vw, 4.5rem)',
+        }}>
+          {ABOUT.lead}
+        </p>
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: 'clamp(3rem, 6vw, 6rem)',
+          gridTemplateColumns: 'minmax(220px, 0.8fr) minmax(0, 1.2fr)',
+          gap: 'clamp(2.5rem, 6vw, 5rem)',
           alignItems: 'start',
-        }}>
-          {/* Photo + bio */}
+        }}
+          className="about-grid"
+        >
+          <style>{`
+            @media (max-width: 820px) {
+              .about-grid { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
+
+          {/* Left — photo + quick facts */}
           <div>
             <div className="about-reveal" style={{
               width: '100%', maxWidth: '300px', aspectRatio: '3/4',
-              borderRadius: '6px', overflow: 'hidden',
+              borderRadius: '10px', overflow: 'hidden',
               border: '1px solid var(--border)',
-              marginBottom: '2rem',
+              marginBottom: '1.5rem',
               background: 'var(--surface-2)',
-              boxShadow: '0 8px 32px rgba(28,25,23,0.08)',
+              boxShadow: '0 12px 40px rgba(28,25,23,0.12)',
             }}>
               <img
                 src="/theo.jpg"
-                alt="Théo Benkirane — Account Manager"
+                alt="Théo Benkirane, Account Manager"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                onError={e => {
-                  e.currentTarget.style.display = 'none'
-                  e.currentTarget.parentElement.style.display = 'flex'
-                  e.currentTarget.parentElement.style.alignItems = 'center'
-                  e.currentTarget.parentElement.style.justifyContent = 'center'
-                }}
               />
             </div>
 
-            {ABOUT.intro.map((para, i) => (
+            <dl className="about-reveal" style={{
+              margin: 0,
+              border: '1px solid var(--border)',
+              borderRadius: '10px',
+              background: 'var(--surface)',
+              overflow: 'hidden',
+              maxWidth: '300px',
+            }}>
+              {ABOUT.facts.map((f, i) => (
+                <div key={f.label} style={{
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  padding: '0.7rem 1rem',
+                  borderBottom: i < ABOUT.facts.length - 1 ? '1px solid var(--border)' : 'none',
+                }}>
+                  <dt className="mono" style={{
+                    fontSize: '0.62rem', letterSpacing: '0.08em', textTransform: 'uppercase',
+                    color: 'var(--text-muted)',
+                  }}>
+                    {f.label}
+                  </dt>
+                  <dd style={{ margin: 0, fontSize: '0.82rem', fontWeight: 600, color: 'var(--text)' }}>
+                    {f.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {/* Right — bio + formation */}
+          <div>
+            {ABOUT.paragraphs.map((para, i) => (
               <p key={i} className="about-reveal" style={{
                 color: 'var(--text-muted)', lineHeight: 1.75, marginBottom: '1.2rem',
-                fontSize: '0.95rem',
+                fontSize: '0.98rem', maxWidth: '60ch',
               }}>
                 {para}
               </p>
             ))}
 
-            {/* AI highlight badge */}
             <div className="about-reveal" style={{
-              marginTop: '1.5rem',
+              margin: '1.5rem 0 2.5rem',
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               padding: '0.6rem 1rem',
-              border: '1px solid var(--border)',
-              borderRadius: '4px',
-              background: 'var(--surface)',
+              border: '1px solid var(--signal)',
+              borderRadius: '100px',
+              background: 'rgba(185,28,28,0.05)',
             }}>
               <span style={{ fontSize: '1rem' }}>⚡</span>
               <span className="mono" style={{
-                fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase',
-                color: 'var(--text-muted)',
+                fontSize: '0.65rem', letterSpacing: '0.08em', textTransform: 'uppercase',
+                color: 'var(--signal)', fontWeight: 600,
               }}>
-                Utilise l'IA dans sa pratique quotidienne
+                L'IA intégrée à ma pratique quotidienne
               </span>
             </div>
-          </div>
 
-          {/* Formation */}
-          <div>
             <h3 className="about-reveal mono" style={{
               fontSize: '0.62rem', letterSpacing: '0.18em', textTransform: 'uppercase',
-              color: 'var(--text-muted)', marginBottom: '1.5rem',
+              color: 'var(--text-muted)', marginBottom: '1rem',
             }}>
               Formation
             </h3>
 
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {ABOUT.formation.map((f, i) => (
                 <li key={i} className="about-reveal" style={{
-                  display: 'flex', gap: '1.25rem', alignItems: 'flex-start',
-                  paddingTop: i === 0 ? 0 : '1.25rem',
-                  paddingBottom: '1.25rem',
+                  display: 'flex', gap: '1rem', alignItems: 'baseline',
+                  paddingTop: i === 0 ? 0 : '1rem',
+                  paddingBottom: '1rem',
                   borderBottom: i < ABOUT.formation.length - 1 ? '1px solid var(--border)' : 'none',
                 }}>
-                  <span style={{ color: 'var(--signal)', marginTop: '3px', flexShrink: 0, fontSize: '0.9rem' }}>♟</span>
+                  <span className="mono" style={{
+                    fontSize: '0.62rem', color: 'var(--text-muted)', opacity: 0.7,
+                    whiteSpace: 'nowrap', minWidth: '5.5rem',
+                  }}>
+                    {f.period}
+                  </span>
                   <div>
-                    <p style={{ fontWeight: 600, color: 'var(--text)', fontSize: '0.9rem', marginBottom: '0.15rem' }}>
+                    <p style={{ fontWeight: 600, color: 'var(--text)', fontSize: '0.92rem', marginBottom: '0.1rem' }}>
                       {f.degree}
+                      {f.note && (
+                        <span className="mono" style={{
+                          marginLeft: '0.6rem', fontSize: '0.6rem', color: 'var(--signal)',
+                          letterSpacing: '0.04em', textTransform: 'uppercase',
+                        }}>
+                          {f.note}
+                        </span>
+                      )}
                     </p>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', marginBottom: '0.2rem' }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>
                       {f.school}
-                    </p>
-                    <p className="mono" style={{
-                      color: 'var(--text-muted)', fontSize: '0.65rem',
-                      letterSpacing: '0.06em', opacity: 0.7,
-                    }}>
-                      {f.period}
-                      {f.note && <span style={{ marginLeft: '0.5rem', color: 'var(--signal)' }}>— {f.note}</span>}
                     </p>
                   </div>
                 </li>

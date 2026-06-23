@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
-import { CHESS_MOVES } from '../../lib/portfolio-content'
+import { SECTIONS } from '../../lib/portfolio-content'
 
 export default function ChessNotationSidebar() {
-  const [activeIndex, setActiveIndex] = useState(-1)
+  const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    const observers = CHESS_MOVES.map((move, i) => {
-      const section = document.getElementById(move.sectionId)
-      if (!section) return null
+    const observers = SECTIONS.map((section, i) => {
+      const el = document.getElementById(section.id)
+      if (!el) return null
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -17,7 +17,7 @@ export default function ChessNotationSidebar() {
         },
         { threshold: 0.25, rootMargin: '-10% 0px -55% 0px' }
       )
-      observer.observe(section)
+      observer.observe(el)
       return observer
     })
 
@@ -35,7 +35,7 @@ export default function ChessNotationSidebar() {
         zIndex: 50,
         display: 'none',
         flexDirection: 'column',
-        gap: '0.6rem',
+        gap: '0.7rem',
         pointerEvents: 'none',
       }}
     >
@@ -45,50 +45,45 @@ export default function ChessNotationSidebar() {
         }
       `}</style>
 
-      {CHESS_MOVES.map((move, i) => {
-        const isPast = i < activeIndex
+      {SECTIONS.map((section, i) => {
         const isActive = i === activeIndex
 
         return (
           <a
-            key={move.sectionId}
-            href={`#${move.sectionId}`}
+            key={section.id}
+            href={`#${section.id}`}
             style={{
               pointerEvents: 'all',
               display: 'flex',
               alignItems: 'center',
-              gap: '0.5rem',
+              gap: '0.6rem',
               textDecoration: 'none',
               transition: 'opacity 0.3s',
-              opacity: isActive ? 1 : isPast ? 0.5 : 0.25,
+              opacity: isActive ? 1 : 0.4,
             }}
-            aria-label={`Aller à ${move.label}`}
+            aria-label={`Aller à ${section.label}`}
           >
             <span
-              className="mono"
               style={{
-                fontSize: '0.62rem',
-                fontWeight: 600,
-                letterSpacing: '0.05em',
-                color: (isPast || isActive) ? 'var(--signal)' : 'var(--text-muted)',
-                transition: 'color 0.3s',
-                minWidth: '1.8rem',
-                textAlign: 'right',
+                width: isActive ? '1.6rem' : '0.8rem',
+                height: '2px',
+                background: isActive ? 'var(--signal)' : 'var(--text-muted)',
+                borderRadius: '2px',
+                transition: 'width 0.3s, background 0.3s',
+                flexShrink: 0,
               }}
-            >
-              {move.move}
-            </span>
+            />
             <span
               className="mono"
               style={{
-                fontSize: '0.52rem',
+                fontSize: '0.55rem',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 color: isActive ? 'var(--text)' : 'var(--text-muted)',
                 transition: 'color 0.3s',
               }}
             >
-              {move.label}
+              {section.label}
             </span>
           </a>
         )

@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { STATS } from '../../../lib/portfolio-content'
+import { STATS, STATS_NOTE } from '../../../lib/portfolio-content'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -85,12 +85,13 @@ export default function ResultsSection() {
             fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
             color: 'var(--signal)', marginBottom: '0.75rem',
           }}>
-            c3 — Résultats
+            Résultats
           </p>
           <h2 style={{
-            fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.05,
+            fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, lineHeight: 1.05,
+            maxWidth: '14ch',
           }}>
-            Les chiffres parlent
+            Les chiffres parlent.
           </h2>
         </div>
 
@@ -110,7 +111,7 @@ export default function ResultsSection() {
           borderTop: '1px solid var(--border)',
           paddingTop: '1.5rem', paddingBottom: 'clamp(4rem, 8vw, 7rem)',
         }}>
-          * Top performer de l'équipe depuis l'arrivée — performances supérieures à la moyenne des collaborateurs CDI.
+          {STATS_NOTE}
         </p>
       </div>
     </section>
