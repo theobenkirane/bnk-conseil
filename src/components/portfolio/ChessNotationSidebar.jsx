@@ -3,11 +3,8 @@ import { CHESS_MOVES } from '../../lib/portfolio-content'
 
 export default function ChessNotationSidebar() {
   const [activeIndex, setActiveIndex] = useState(-1)
-  const observersRef = useRef([])
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
     const observers = CHESS_MOVES.map((move, i) => {
       const section = document.getElementById(move.sectionId)
       if (!section) return null
@@ -15,26 +12,21 @@ export default function ChessNotationSidebar() {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveIndex(i)
-            }
+            if (entry.isIntersecting) setActiveIndex(i)
           })
         },
-        { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' }
+        { threshold: 0.25, rootMargin: '-10% 0px -55% 0px' }
       )
       observer.observe(section)
       return observer
     })
 
-    observersRef.current = observers
-
-    return () => {
-      observers.forEach((obs) => obs && obs.disconnect())
-    }
+    return () => observers.forEach((obs) => obs && obs.disconnect())
   }, [])
 
   return (
     <aside
+      className="portfolio-sidebar"
       style={{
         position: 'fixed',
         right: '2rem',
@@ -43,20 +35,20 @@ export default function ChessNotationSidebar() {
         zIndex: 50,
         display: 'none',
         flexDirection: 'column',
-        gap: '0.75rem',
+        gap: '0.6rem',
         pointerEvents: 'none',
       }}
-      className="portfolio-sidebar"
     >
       <style>{`
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           .portfolio-sidebar { display: flex !important; }
         }
       `}</style>
+
       {CHESS_MOVES.map((move, i) => {
         const isPast = i < activeIndex
         const isActive = i === activeIndex
-        const color = (isPast || isActive) ? 'var(--signal)' : 'var(--text-muted)'
+
         return (
           <a
             key={move.sectionId}
@@ -67,32 +59,33 @@ export default function ChessNotationSidebar() {
               alignItems: 'center',
               gap: '0.5rem',
               textDecoration: 'none',
-              transition: 'color 0.3s ease',
-              color,
+              transition: 'opacity 0.3s',
+              opacity: isActive ? 1 : isPast ? 0.5 : 0.25,
             }}
-            aria-label={`Aller à la section ${move.label}`}
+            aria-label={`Aller à ${move.label}`}
           >
             <span
+              className="mono"
               style={{
-                fontFamily: "'IBM Plex Mono', monospace",
-                fontSize: '0.65rem',
+                fontSize: '0.62rem',
                 fontWeight: 600,
                 letterSpacing: '0.05em',
-                color: 'inherit',
-                transition: 'color 0.3s ease',
+                color: (isPast || isActive) ? 'var(--signal)' : 'var(--text-muted)',
+                transition: 'color 0.3s',
+                minWidth: '1.8rem',
+                textAlign: 'right',
               }}
             >
               {move.move}
             </span>
             <span
+              className="mono"
               style={{
-                fontFamily: "'IBM Plex Mono', monospace",
-                fontSize: '0.55rem',
-                letterSpacing: '0.08em',
+                fontSize: '0.52rem',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: 'inherit',
-                transition: 'color 0.3s ease, opacity 0.3s ease',
-                opacity: isActive ? 1 : (isPast ? 0.7 : 0.4),
+                color: isActive ? 'var(--text)' : 'var(--text-muted)',
+                transition: 'color 0.3s',
               }}
             >
               {move.label}

@@ -7,13 +7,16 @@ import '@fontsource/ibm-plex-mono/400.css'
 import '@fontsource/ibm-plex-mono/600.css'
 
 const CSS_VARS = {
-  '--bg': '#0B0D10',
-  '--surface': '#14171C',
-  '--border': '#23262C',
-  '--text': '#F2F0EA',
-  '--text-muted': '#8B8F98',
-  '--signal': '#E8483A',
-  '--data': '#D9A95B',
+  '--bg':          '#F8F5F0',
+  '--surface':     '#FFFFFF',
+  '--surface-2':   '#EEE9E0',
+  '--border':      '#E0D9CF',
+  '--text':        '#1C1917',
+  '--text-muted':  '#7A7268',
+  '--signal':      '#B91C1C',
+  '--data':        '#92400E',
+  '--chess-light': '#F0E6CE',
+  '--chess-dark':  '#2C2018',
 }
 
 export default function PortfolioShell({ children }) {
@@ -51,6 +54,10 @@ export default function PortfolioShell({ children }) {
             animation-duration: 0.01ms !important;
             transition-duration: 0.01ms !important;
           }
+        }
+        #portfolio-root ::selection {
+          background: var(--chess-dark);
+          color: var(--chess-light);
         }
       `}</style>
       {children}

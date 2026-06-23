@@ -5,7 +5,7 @@ import { STATS } from '../../../lib/portfolio-content'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function NumericStat({ stat }) {
+function StatBlock({ stat, index }) {
   const [value, setValue] = useState(0)
   const ref = useRef(null)
   const triggered = useRef(false)
@@ -16,20 +16,18 @@ function NumericStat({ stat }) {
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: ref.current,
-        start: 'top 80%',
+        start: 'top 82%',
         once: true,
         onEnter: () => {
           if (triggered.current) return
           triggered.current = true
-          if (prefersReduced) {
-            setValue(stat.value)
-            return
-          }
+          if (prefersReduced) { setValue(stat.value); return }
           const obj = { val: 0 }
           gsap.to(obj, {
             val: stat.value,
-            duration: 1.8,
-            ease: 'power2.out',
+            duration: 1.6,
+            ease: 'power3.out',
+            delay: index * 0.15,
             onUpdate: () => setValue(Math.round(obj.val)),
           })
         },
@@ -37,81 +35,35 @@ function NumericStat({ stat }) {
     })
 
     return () => ctx.revert()
-  }, [stat.value])
+  }, [stat.value, index])
 
   return (
     <div
       ref={ref}
       style={{
-        textAlign: 'center',
-        padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem)',
-        flex: '1 1 200px',
+        flex: '1 1 180px',
+        padding: 'clamp(2.5rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem)',
+        borderRight: index < STATS.length - 1 ? '1px solid var(--border)' : 'none',
+        display: 'flex', flexDirection: 'column', gap: '0.4rem',
       }}
     >
-      <div
-        className="mono"
-        style={{
-          fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-          fontWeight: 600,
-          color: 'var(--data)',
-          lineHeight: 1,
-          marginBottom: '0.5rem',
-        }}
-      >
+      <div className="mono" style={{
+        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+        fontWeight: 600,
+        color: 'var(--text)',
+        lineHeight: 1,
+        letterSpacing: '-0.02em',
+      }}>
         {value}{stat.suffix}
       </div>
-      <div
-        className="mono"
-        style={{
-          fontSize: '0.7rem',
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          color: 'var(--text)',
-          marginBottom: '0.4rem',
-        }}
-      >
+      <div className="mono" style={{
+        fontSize: '0.65rem', letterSpacing: '0.14em',
+        textTransform: 'uppercase', color: 'var(--signal)',
+        marginTop: '0.25rem',
+      }}>
         {stat.label}
       </div>
-      <div
-        style={{
-          fontSize: '0.8rem',
-          color: 'var(--text-muted)',
-        }}
-      >
-        {stat.description}
-      </div>
-    </div>
-  )
-}
-
-function TextStat({ stat }) {
-  return (
-    <div
-      style={{
-        textAlign: 'center',
-        padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem)',
-        flex: '1 1 200px',
-      }}
-    >
-      <div
-        className="mono"
-        style={{
-          fontSize: 'clamp(1.1rem, 2vw, 1.6rem)',
-          fontWeight: 600,
-          color: 'var(--data)',
-          lineHeight: 1.2,
-          marginBottom: '0.5rem',
-          letterSpacing: '-0.02em',
-        }}
-      >
-        {stat.label}
-      </div>
-      <div
-        style={{
-          fontSize: '0.8rem',
-          color: 'var(--text-muted)',
-        }}
-      >
+      <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
         {stat.description}
       </div>
     </div>
@@ -122,58 +74,44 @@ export default function ResultsSection() {
   return (
     <section
       id="results"
-      style={{ background: 'var(--surface)', padding: '0 clamp(1.5rem, 5vw, 3rem)' }}
+      style={{ borderTop: '1px solid var(--border)' }}
     >
-      {/* Eyebrow */}
-      <div style={{ paddingTop: 'clamp(4rem, 8vw, 7rem)', paddingBottom: '2.5rem', maxWidth: '1200px', margin: '0 auto' }}>
-        <p
-          className="mono"
-          style={{
-            fontSize: '0.7rem',
-            letterSpacing: '0.15em',
-            textTransform: 'uppercase',
-            color: 'var(--signal)',
-            marginBottom: '0.75rem',
-          }}
-        >
-          c3 — Résultats
-        </p>
-        <h2
-          style={{
-            fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-            fontWeight: 700,
-            lineHeight: 1.1,
-          }}
-        >
-          Les chiffres parlent
-        </h2>
-      </div>
+      <div style={{
+        maxWidth: '1200px', margin: '0 auto',
+        padding: '0 clamp(1.5rem, 6vw, 5rem)',
+      }}>
+        <div style={{ padding: 'clamp(4rem, 8vw, 7rem) 0 2.5rem' }}>
+          <p className="mono" style={{
+            fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
+            color: 'var(--signal)', marginBottom: '0.75rem',
+          }}>
+            c3 — Résultats
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.05,
+          }}>
+            Les chiffres parlent
+          </h2>
+        </div>
 
-      {/* Stats band */}
-      <div
-        style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'flex',
-          flexWrap: 'wrap',
+        {/* Stats */}
+        <div style={{
+          display: 'flex', flexWrap: 'wrap',
           borderTop: '1px solid var(--border)',
           paddingBottom: 'clamp(4rem, 8vw, 7rem)',
-        }}
-      >
-        {STATS.map((stat, i) => {
-          const isNotLast = i < STATS.length - 1
-          return (
-            <div
-              key={i}
-              style={{
-                flex: '1 1 200px',
-                borderRight: isNotLast ? '1px solid var(--border)' : 'none',
-              }}
-            >
-              {stat.isText ? <TextStat stat={stat} /> : <NumericStat stat={stat} />}
-            </div>
-          )
-        })}
+        }}>
+          {STATS.map((s, i) => <StatBlock key={i} stat={s} index={i} />)}
+        </div>
+
+        {/* Note contextuelle */}
+        <p className="mono" style={{
+          fontSize: '0.62rem', letterSpacing: '0.08em',
+          color: 'var(--text-muted)', opacity: 0.6,
+          borderTop: '1px solid var(--border)',
+          paddingTop: '1.5rem', paddingBottom: 'clamp(4rem, 8vw, 7rem)',
+        }}>
+          * Top performer de l'équipe depuis l'arrivée — performances supérieures à la moyenne des collaborateurs CDI.
+        </p>
       </div>
     </section>
   )

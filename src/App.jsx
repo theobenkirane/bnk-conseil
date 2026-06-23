@@ -74,6 +74,14 @@ function AppLayout() {
   const location = useLocation()
   const isPortfolio = location.pathname === '/portfolio'
 
+  if (isPortfolio) {
+    return (
+      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}>
+        <AnimatedRoutes />
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-[#FAFBFF] text-gray-900" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
       <AvailabilityBanner />
@@ -81,7 +89,7 @@ function AppLayout() {
       <main style={{ paddingTop: AVAILABILITY.active ? '40px' : '0' }}>
         <AnimatedRoutes />
       </main>
-      {!isPortfolio && <Footer />}
+      <Footer />
     </div>
   )
 }
