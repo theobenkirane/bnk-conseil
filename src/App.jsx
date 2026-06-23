@@ -28,6 +28,7 @@ const SiteVitrineBordeaux = lazy(() => import('./pages/seo/SiteVitrineBordeaux')
 const CombienCouteUnSiteVitrine = lazy(() => import('./pages/guides/CombienCouteUnSiteVitrine'))
 const WixVsAgenceWeb = lazy(() => import('./pages/guides/WixVsAgenceWeb'))
 const Commander = lazy(() => import('./pages/Commander'))
+const Portfolio = lazy(() => import('./pages/Portfolio'))
 
 // AnimatePresence nécessite l'accès à location via un composant interne
 function AnimatedRoutes() {
@@ -62,9 +63,26 @@ function AnimatedRoutes() {
           <Route path="/guide/combien-coute-un-site-vitrine" element={<CombienCouteUnSiteVitrine />} />
           <Route path="/guide/wix-vs-agence-web" element={<WixVsAgenceWeb />} />
           <Route path="/commander" element={<Commander />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </Suspense>
     </AnimatePresence>
+  )
+}
+
+function AppLayout() {
+  const location = useLocation()
+  const isPortfolio = location.pathname === '/portfolio'
+
+  return (
+    <div className="min-h-screen bg-[#FAFBFF] text-gray-900" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <AvailabilityBanner />
+      <Header />
+      <main style={{ paddingTop: AVAILABILITY.active ? '40px' : '0' }}>
+        <AnimatedRoutes />
+      </main>
+      {!isPortfolio && <Footer />}
+    </div>
   )
 }
 
@@ -72,14 +90,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-[#FAFBFF] text-gray-900" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-          <AvailabilityBanner />
-          <Header />
-          <main style={{ paddingTop: AVAILABILITY.active ? '40px' : '0' }}>
-            <AnimatedRoutes />
-          </main>
-          <Footer />
-        </div>
+        <AppLayout />
       </BrowserRouter>
     </HelmetProvider>
   )

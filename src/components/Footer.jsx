@@ -5,6 +5,7 @@ const navLinks = [
   { label: 'Offres', path: '/offres' },
   { label: 'Tarifs', path: '/tarifs' },
   { label: 'À propos', path: '/a-propos' },
+  { label: 'Portfolio Théo', path: '/portfolio' },
   { label: 'Contact', path: '/rdv' },
 ]
 
