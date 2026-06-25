@@ -55,7 +55,7 @@ export default function ContactSection() {
                 </a>
                 <a className="pf-contact-link" href={CONTACT.cv} target="_blank" rel="noreferrer" data-cursor>
                   <span className="pf-mono pf-contact-link-l">CV</span>
-                  <span className="pf-contact-link-v">Télécharger le PDF ↓</span>
+                  <span className="pf-contact-link-v">Télécharger le CV ↓</span>
                 </a>
               </div>
             </Reveal>
