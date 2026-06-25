@@ -27,7 +27,10 @@ export default function ProjectsSection() {
                 data-cursor
                 style={{ '--brand': p.brand, '--accent': p.accent || p.brand }}
               >
-                <div className="pf-proj-visual">
+                <div className={`pf-proj-visual ${p.screen ? 'has-shot' : ''}`}>
+                  {p.screen && (
+                    <img src={p.screen} alt={`Aperçu ${p.name}`} className="pf-proj-shot" loading="lazy" />
+                  )}
                   {p.logo ? (
                     <img src={p.logo} alt={p.name} className="pf-proj-logo" loading="lazy" />
                   ) : (
@@ -97,6 +100,18 @@ const CSS = `
   border-right: 1px solid var(--line); overflow: hidden;
 }
 .pf-proj-logo { max-width: 62%; max-height: 58%; object-fit: contain; position: relative; z-index: 1; }
+.pf-proj-shot {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: top center; z-index: 0;
+  transition: transform 0.7s var(--ease, ease);
+}
+.pf-proj:hover .pf-proj-shot { transform: scale(1.05); }
+.pf-proj-visual.has-shot { background: var(--base); }
+.pf-proj-visual.has-shot .pf-proj-logo, .pf-proj-visual.has-shot .pf-proj-mono { display: none; }
+.pf-proj-visual.has-shot::after {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(155deg, transparent 45%, color-mix(in srgb, var(--brand) 42%, transparent));
+}
 .pf-proj-mono {
   font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem); font-weight: 460;
   color: var(--brand); letter-spacing: -0.04em; position: relative; z-index: 1;

@@ -98,6 +98,7 @@ const CSS = `
 
 .pf-about-side { display: flex; flex-direction: column; gap: clamp(1.5rem, 3vh, 2.2rem); }
 .pf-about-photo {
+  position: relative;
   width: 100%; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; border: 1px solid var(--line);
 }
 .pf-about-photo img { width: 100%; height: 115%; object-fit: cover; display: block; }

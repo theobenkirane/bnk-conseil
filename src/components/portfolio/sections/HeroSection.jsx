@@ -1,17 +1,17 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { Section } from '../theme'
-import { MaskText, Magnetic } from '../motion'
+import { MaskText, Magnetic, Counter } from '../motion'
 import { HERO } from '../../../lib/portfolio-content'
 
-const START = 1.55 // synchronise les reveals avec la levée du loader
+const START = 0.2 // léger délai d'entrée au montage de la page
 
 export default function HeroSection() {
   const reduce = useReducedMotion()
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const portraitY = useTransform(scrollYProgress, [0, 1], ['0%', '22%'])
-  const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 1.12])
+  const portraitY = useTransform(scrollYProgress, [0, 1], ['0%', '-12%'])
+  const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 1.08])
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   return (
@@ -76,6 +76,7 @@ export default function HeroSection() {
         >
           <div className="pf-hero-portrait">
             <motion.img
+              className="pf-hero-img"
               src="/portfolio/theo-portrait.jpg"
               alt="Théo Benkirane"
               style={{ y: portraitY, scale: portraitScale }}
@@ -94,8 +95,10 @@ export default function HeroSection() {
         transition={{ duration: 0.9, delay: START + 1.05 }}
       >
         {HERO.facts.map((f) => (
-          <div key={f.k} className="pf-hero-stat">
-            <span className="pf-hero-stat-k">{f.k}</span>
+          <div key={f.v} className="pf-hero-stat">
+            <span className="pf-hero-stat-k">
+              <Counter to={f.value} prefix={f.prefix} suffix={f.suffix} />
+            </span>
             <span className="pf-hero-stat-v">{f.v}</span>
           </div>
         ))}
@@ -122,6 +125,7 @@ const CSS = `
   padding-top: clamp(6rem, 14vh, 9rem); padding-bottom: clamp(3rem, 6vh, 5rem);
 }
 .pf-hero-grid {
+  position: relative;
   display: grid; grid-template-columns: 1.35fr 0.65fr; gap: clamp(2rem, 5vw, 5rem);
   align-items: center; flex: 1;
 }
@@ -139,13 +143,17 @@ const CSS = `
   border-radius: 200px 200px 18px 18px; overflow: hidden;
   border: 1px solid var(--line);
 }
-.pf-hero-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pf-hero-img {
+  position: absolute; top: -8%; left: 0; z-index: 0;
+  width: 100%; height: 116%;
+  object-fit: cover; object-position: center top; display: block;
+}
 .pf-hero-frame {
-  position: absolute; inset: 10px; border: 1px solid rgba(243,238,228,0.35);
+  position: absolute; inset: 10px; z-index: 2; border: 1px solid rgba(21,18,14,0.14);
   border-radius: 190px 190px 12px 12px; pointer-events: none;
 }
 .pf-hero-tag {
-  position: absolute; left: 14px; bottom: 14px; z-index: 2;
+  position: absolute; left: 14px; bottom: 14px; z-index: 3;
   font-size: 0.7rem; letter-spacing: 0.08em; color: #F3EEE4;
   background: rgba(21,18,14,0.55); backdrop-filter: blur(8px);
   padding: 0.4rem 0.7rem; border-radius: 999px;

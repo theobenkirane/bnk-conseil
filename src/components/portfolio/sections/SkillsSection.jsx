@@ -2,6 +2,17 @@ import { Section } from '../theme'
 import { Reveal, MaskText } from '../motion'
 import { SKILLS } from '../../../lib/portfolio-content'
 
+const TOOLS = [
+  { src: '/portfolio/tool-claude.svg', name: 'Claude' },
+  { src: '/portfolio/tool-openai.png', name: 'OpenAI' },
+  { src: '/portfolio/tool-hubspot.png', name: 'HubSpot' },
+  { src: '/portfolio/tool-salesforce.png', name: 'Salesforce' },
+  { src: '/portfolio/tool-notion.png', name: 'Notion' },
+  { src: '/portfolio/tool-slack.png', name: 'Slack' },
+  { src: '/portfolio/tool-sheets.png', name: 'Google Sheets' },
+  { src: '/portfolio/tool-office.png', name: 'Microsoft Office' },
+]
+
 export default function SkillsSection() {
   return (
     <Section theme="ink" id="skills">
@@ -35,6 +46,19 @@ export default function SkillsSection() {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        <div className="pf-tools-block">
+          <Reveal><span className="pf-mono pf-tools-label">Au quotidien</span></Reveal>
+          <div className="pf-tools" aria-hidden="true">
+            <div className="pf-tools-track">
+              {[...TOOLS, ...TOOLS].map((t, i) => (
+                <div key={i} className="pf-tool">
+                  <img src={t.src} alt={t.name} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -70,11 +94,31 @@ const CSS = `
 .pf-skill-items li { position: relative; padding-left: 1rem; font-size: 0.86rem; color: var(--muted); line-height: 1.4; }
 .pf-skill-items li::before { content: ''; position: absolute; left: 0; top: 0.5em; width: 4px; height: 4px; background: var(--brass); transform: rotate(45deg); }
 
+.pf-tools-block { margin-top: clamp(2.5rem, 6vh, 4rem); }
+.pf-tools-label { display: block; text-align: center; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.3rem; }
+.pf-tools {
+  position: relative; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.pf-tools-track { display: flex; gap: 1rem; width: max-content; animation: pf-tools-scroll 34s linear infinite; }
+.pf-tools:hover .pf-tools-track { animation-play-state: paused; }
+.pf-tool {
+  flex: 0 0 auto; height: 66px; min-width: 158px;
+  display: flex; align-items: center; justify-content: center; padding: 0 1.7rem;
+  background: rgba(243,238,228,0.95); border: 1px solid rgba(243,238,228,0.12); border-radius: 14px;
+}
+.pf-tool img { max-height: 30px; max-width: 116px; object-fit: contain; display: block; }
+@keyframes pf-tools-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
 @media (max-width: 900px) {
   .pf-skills-head { grid-template-columns: 1fr; gap: 1.2rem; }
   .pf-skills-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
   .pf-skills-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pf-tools-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
 }
 `

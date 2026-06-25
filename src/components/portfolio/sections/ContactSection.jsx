@@ -47,7 +47,10 @@ export default function ContactSection() {
                   <span className="pf-contact-link-v">{CONTACT.phone}</span>
                 </a>
                 <a className="pf-contact-link" href={CONTACT.linkedin} target="_blank" rel="noreferrer" data-cursor>
-                  <span className="pf-mono pf-contact-link-l">LinkedIn</span>
+                  <span className="pf-contact-link-l pf-contact-link-li">
+                    <img src="/portfolio/LinkedIn_icon.svg.webp" alt="" className="pf-contact-li-logo" loading="lazy" />
+                    <span className="pf-mono">LinkedIn</span>
+                  </span>
                   <span className="pf-contact-link-v">/theobenkirane ↗</span>
                 </a>
                 <a className="pf-contact-link" href={CONTACT.cv} target="_blank" rel="noreferrer" data-cursor>
@@ -111,6 +114,8 @@ const CSS = `
 .pf-contact-link:last-child { border-bottom: 1px solid var(--line); }
 .pf-contact-link:hover { padding-left: 0.6rem; color: var(--brass); }
 .pf-contact-link-l { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.pf-contact-link-li { display: inline-flex; align-items: center; gap: 0.5rem; }
+.pf-contact-li-logo { width: 16px; height: 16px; object-fit: contain; display: block; }
 .pf-contact-link-v { font-size: 1.02rem; font-weight: 480; }
 
 .pf-form { padding: clamp(1.5rem, 3vw, 2.4rem); display: flex; flex-direction: column; gap: 1.1rem; }

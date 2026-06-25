@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
 import SEOHead from '../components/SEOHead'
 import PortfolioShell from '../components/portfolio/PortfolioShell'
 import Nav from '../components/portfolio/Nav'
-import { IntroLoader } from '../components/portfolio/motion'
 import HeroSection from '../components/portfolio/sections/HeroSection'
 import AboutSection from '../components/portfolio/sections/AboutSection'
 import ExperienceSection from '../components/portfolio/sections/ExperienceSection'
@@ -35,7 +34,6 @@ const SCHEMA = {
 export default function Portfolio() {
   const prefersReduced =
     typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  const [ready, setReady] = useState(prefersReduced)
 
   useEffect(() => {
     let lenis = null
@@ -77,10 +75,8 @@ export default function Portfolio() {
         schema={SCHEMA}
       />
 
-      {!prefersReduced && <IntroLoader onDone={() => setReady(true)} />}
-
       <PortfolioShell>
-        <Nav ready={ready} />
+        <Nav ready />
         <HeroSection />
         <AboutSection />
         <ExperienceSection />

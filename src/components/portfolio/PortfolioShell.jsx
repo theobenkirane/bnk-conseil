@@ -29,20 +29,8 @@ const CSS = `
   --ivory: #F3EEE4;
   --brass: #BE823A;
   --brass-bright: #D89A4B;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow-x: clip;
-  background: var(--ivory);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-synthesis: none;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
 
-/* ── Thèmes ─────────────────────────────────────────────────────────────── */
-#portfolio-root [data-theme="ivory"] {
+  /* Teinte par défaut (ivoire) — surchargée en continu au scroll par le moteur. */
   --fg: #15120E;
   --muted: #6F6557;
   --line: rgba(21,18,14,0.12);
@@ -50,24 +38,28 @@ const CSS = `
   --base: #F3EEE4;
   --card: rgba(21,18,14,0.022);
   --card-hover: rgba(21,18,14,0.045);
-}
-#portfolio-root [data-theme="ink"] {
-  --fg: #F3EEE4;
-  --muted: #A99E8D;
-  --line: rgba(243,238,228,0.15);
-  --hair: rgba(243,238,228,0.08);
-  --base: #15120E;
-  --card: rgba(243,238,228,0.035);
-  --card-hover: rgba(243,238,228,0.07);
+  --pf-bg: #F3EEE4;
+  --pf-grid: rgba(21,18,14,0.055);
+
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: clip;
+  background: var(--pf-bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* ── Fond cinématique fixe ──────────────────────────────────────────────── */
-.pf-backdrop { position: fixed; inset: 0; z-index: 0; }
+.pf-backdrop { position: fixed; inset: 0; z-index: 0; background-color: var(--pf-bg); }
 .pf-grid {
   position: absolute; inset: -12%;
   background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    linear-gradient(var(--pf-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pf-grid) 1px, transparent 1px);
   background-size: calc(100vw / 8) calc(100vw / 8);
   -webkit-mask-image: radial-gradient(120% 100% at 50% 30%, #000 35%, transparent 88%);
   mask-image: radial-gradient(120% 100% at 50% 30%, #000 35%, transparent 88%);

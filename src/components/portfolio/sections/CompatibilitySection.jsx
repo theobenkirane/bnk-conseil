@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { motion, AnimatePresence, useSpring, useReducedMotion } from 'framer-motion'
 import { Section } from '../theme'
 import { Reveal, MaskText, Counter, Magnetic } from '../motion'
 import { QUIZ } from '../../../lib/portfolio-content'
@@ -114,6 +114,7 @@ export default function CompatibilitySection() {
                   </Magnetic>
                   <button className="pf-btn-ghost" onClick={reset} data-cursor>Recommencer</button>
                 </div>
+                <DodgeButton />
               </motion.div>
             )}
           </AnimatePresence>
@@ -122,6 +123,72 @@ export default function CompatibilitySection() {
 
       <style>{CSS}</style>
     </Section>
+  )
+}
+
+// Bouton « Ne pas me contacter » qui esquive le curseur : impossible à cliquer.
+const TAUNTS = [
+  'Ne pas me contacter',
+  'Trop lent.',
+  'Presque…',
+  'Joli essai.',
+  'Non non non.',
+  'Tu insistes ?',
+]
+
+function DodgeButton() {
+  const reduce = useReducedMotion()
+  const ref = useRef(null)
+  const wasNear = useRef(false)
+  const x = useSpring(0, { stiffness: 260, damping: 18, mass: 0.4 })
+  const y = useSpring(0, { stiffness: 260, damping: 18, mass: 0.4 })
+  const [tries, setTries] = useState(0)
+
+  useEffect(() => {
+    if (reduce) return
+    const clamp = (v, m) => Math.max(-m, Math.min(m, v))
+    function onMove(e) {
+      const el = ref.current
+      if (!el) return
+      const r = el.getBoundingClientRect()
+      const cx = r.left + r.width / 2
+      const cy = r.top + r.height / 2
+      const dx = e.clientX - cx
+      const dy = e.clientY - cy
+      const d = Math.hypot(dx, dy)
+      const threshold = 140
+      if (d < threshold) {
+        const force = (threshold - d) * 1.1
+        const ang = Math.atan2(dy, dx)
+        x.set(clamp(x.get() - Math.cos(ang) * force, 170))
+        y.set(clamp(y.get() - Math.sin(ang) * force, 70))
+        if (!wasNear.current) {
+          wasNear.current = true
+          setTries((t) => t + 1)
+        }
+      } else if (d > threshold + 40) {
+        wasNear.current = false
+      }
+    }
+    window.addEventListener('mousemove', onMove)
+    return () => window.removeEventListener('mousemove', onMove)
+  }, [reduce, x, y])
+
+  const label = reduce ? TAUNTS[0] : TAUNTS[Math.min(tries, TAUNTS.length - 1)]
+
+  return (
+    <div className="pf-quiz-dodge-wrap">
+      <motion.button
+        ref={ref}
+        type="button"
+        className="pf-quiz-dodge"
+        style={reduce ? undefined : { x, y }}
+        tabIndex={-1}
+        aria-hidden="true"
+      >
+        {label}
+      </motion.button>
+    </div>
   )
 }
 
@@ -169,4 +236,17 @@ const CSS = `
 .pf-quiz-rtitle { font-size: clamp(1.4rem, 3vw, 2.2rem); margin-bottom: 0.8rem; }
 .pf-quiz-rmsg { max-width: 42ch; margin: 0 auto 2rem; }
 .pf-quiz-ractions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+
+.pf-quiz-dodge-wrap {
+  position: relative; height: 64px; margin-top: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.pf-quiz-dodge {
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em;
+  padding: 0.7rem 1.2rem; border-radius: 999px;
+  background: transparent; color: var(--muted);
+  border: 1px dashed var(--line); cursor: default; white-space: nowrap;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) { .pf-quiz-dodge-wrap { height: auto; } }
 `

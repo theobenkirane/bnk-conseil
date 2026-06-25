@@ -151,11 +151,15 @@ const CSS = `
   font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink); background: var(--brass); padding: 0.3rem 0.6rem; border-radius: 999px;
 }
-.pf-exp-logo-wrap { height: 40px; display: flex; align-items: center; margin-bottom: 1.3rem; }
-.pf-exp-logo { max-height: 40px; max-width: 150px; object-fit: contain; }
+.pf-exp-logo-wrap {
+  height: 84px; width: 100%; margin-bottom: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; border: 1px solid var(--line); border-radius: 14px;
+  padding: 1rem 1.4rem; box-shadow: 0 1px 2px rgba(21,18,14,0.04);
+}
+.pf-exp-logo { max-height: 100%; max-width: 100%; object-fit: contain; display: block; }
 .pf-exp-logo-fallback {
-  width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--brass);
+  font-family: var(--font-display); font-weight: 460; font-size: 2rem; color: var(--brass);
 }
 .pf-exp-period { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em; }
 .pf-exp-role { font-size: clamp(1.3rem, 1.9vw, 1.7rem); margin: 0.4rem 0 0.2rem; }
