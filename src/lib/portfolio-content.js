@@ -261,8 +261,8 @@ export const QUIZ = {
     {
       id: 'contract', q: 'Quel type de contrat ?', multi: false,
       options: [
-        { label: 'CDI', score: 50 },
-        { label: 'Freelance / mission', score: 5 },
+        { label: 'CDI', score: 25 },
+        { label: 'Freelance / mission', score: 10 },
         { label: 'Alternance', score: 0 },
         { label: 'Stage', score: 0 },
       ],
