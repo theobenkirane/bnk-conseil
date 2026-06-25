@@ -1,292 +1,143 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { Section } from '../theme'
+import { Reveal, MaskText, Magnetic } from '../motion'
 import { CONTACT } from '../../../lib/portfolio-content'
 
-function ContactLink({ href, label, isExternal, icon }) {
-  return (
-    <motion.a
-      href={href}
-      target={isExternal ? '_blank' : undefined}
-      rel={isExternal ? 'noopener noreferrer' : undefined}
-      whileHover={{ x: 6 }}
-      transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-      style={{
-        display: 'flex', alignItems: 'center', gap: '1rem',
-        color: 'var(--text)', textDecoration: 'none',
-        padding: '1rem 0',
-        borderBottom: '1px solid var(--border)',
-        fontSize: '0.9rem',
-        transition: 'color 0.2s',
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--signal)')}
-      onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text)')}
-    >
-      <span className="mono" style={{
-        fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase',
-        color: 'var(--text-muted)', width: '2.5rem', flexShrink: 0,
-      }}>
-        {icon}
-      </span>
-      <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '0.86rem' }}>
-        {label}
-      </span>
-      {isExternal && <span style={{ marginLeft: 'auto', opacity: 0.4, fontSize: '0.85rem' }}>↗</span>}
-    </motion.a>
-  )
-}
+export default function ContactSection() {
+  const [state, setState] = useState('idle') // idle | sending | ok | error
 
-function ContactForm() {
-  const [status, setStatus] = useState('idle') // idle | sending | ok | error
-  const keyMissing = !CONTACT.web3formsKey || CONTACT.web3formsKey === 'VOTRE_CLE_WEB3FORMS'
-
-  const handleSubmit = async (e) => {
+  async function onSubmit(e) {
     e.preventDefault()
-    const form = e.currentTarget
-    const data = Object.fromEntries(new FormData(form))
-
-    // Fallback if no Web3Forms key configured yet: open the user's mail client.
-    if (keyMissing) {
-      const subject = encodeURIComponent(`Contact portfolio — ${data.name || ''}`)
-      const body = encodeURIComponent(
-        `Nom : ${data.name || ''}\nEntreprise : ${data.company || ''}\nEmail : ${data.email || ''}\n\n${data.message || ''}`
-      )
-      window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`
-      return
-    }
-
-    setStatus('sending')
+    setState('sending')
+    const data = new FormData(e.target)
+    data.append('access_key', CONTACT.web3formsKey)
+    data.append('subject', 'Nouveau message — Portfolio Théo Benkirane')
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: CONTACT.web3formsKey,
-          subject: `Nouveau message portfolio — ${data.name || ''}`,
-          from_name: data.name,
-          ...data,
-        }),
+        body: data,
       })
       const json = await res.json()
-      if (json.success) {
-        setStatus('ok')
-        form.reset()
-      } else {
-        setStatus('error')
-      }
+      setState(json.success ? 'ok' : 'error')
+      if (json.success) e.target.reset()
     } catch {
-      setStatus('error')
+      setState('error')
     }
   }
 
-  const fieldStyle = {
-    width: '100%',
-    padding: '0.8rem 1rem',
-    borderRadius: '8px',
-    border: '1px solid rgba(240,230,206,0.18)',
-    background: 'rgba(240,230,206,0.05)',
-    color: 'var(--chess-light)',
-    fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
-    fontSize: '0.9rem',
-    outline: 'none',
-  }
-
-  if (status === 'ok') {
-    return (
-      <div style={{
-        padding: '2rem', borderRadius: '12px',
-        border: '1px solid rgba(240,230,206,0.18)',
-        background: 'rgba(240,230,206,0.05)',
-        textAlign: 'center',
-      }}>
-        <p style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>♚</p>
-        <p style={{ color: 'var(--chess-light)', fontWeight: 600, marginBottom: '0.3rem' }}>
-          Message envoyé.
-        </p>
-        <p style={{ color: 'rgba(240,230,206,0.55)', fontSize: '0.88rem' }}>
-          Je vous réponds dans la journée. À très vite.
-        </p>
-      </div>
-    )
-  }
-
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }} className="cf-grid">
-        <style>{`
-          @media (max-width: 520px) { .cf-grid { grid-template-columns: 1fr !important; } }
-          #portfolio-root form input::placeholder,
-          #portfolio-root form textarea::placeholder { color: rgba(240,230,206,0.4); }
-        `}</style>
-        <input style={fieldStyle} name="name" placeholder="Votre nom" required />
-        <input style={fieldStyle} name="company" placeholder="Entreprise" />
+    <Section theme="ink" id="contact" className="pf-contact">
+      <div className="pf-wrap">
+        <div className="pf-contact-grid">
+          <div className="pf-contact-left">
+            <Reveal><span className="pf-eyebrow">{CONTACT.eyebrow}</span></Reveal>
+            <MaskText as="h2" className="pf-display pf-contact-title" text={CONTACT.headline} />
+            <Reveal delay={0.1}>
+              <p className="pf-lead pf-contact-sub">{CONTACT.sub}</p>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="pf-contact-links">
+                <a className="pf-contact-link" href={`mailto:${CONTACT.email}`} data-cursor>
+                  <span className="pf-mono pf-contact-link-l">Email</span>
+                  <span className="pf-contact-link-v">{CONTACT.email}</span>
+                </a>
+                <a className="pf-contact-link" href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} data-cursor>
+                  <span className="pf-mono pf-contact-link-l">Téléphone</span>
+                  <span className="pf-contact-link-v">{CONTACT.phone}</span>
+                </a>
+                <a className="pf-contact-link" href={CONTACT.linkedin} target="_blank" rel="noreferrer" data-cursor>
+                  <span className="pf-mono pf-contact-link-l">LinkedIn</span>
+                  <span className="pf-contact-link-v">/theobenkirane ↗</span>
+                </a>
+                <a className="pf-contact-link" href={CONTACT.cv} target="_blank" rel="noreferrer" data-cursor>
+                  <span className="pf-mono pf-contact-link-l">CV</span>
+                  <span className="pf-contact-link-v">Télécharger le PDF ↓</span>
+                </a>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.1} className="pf-contact-right">
+            <form className="pf-form pf-card" onSubmit={onSubmit}>
+              <div className="pf-field">
+                <label htmlFor="cf-name">Nom</label>
+                <input id="cf-name" name="name" type="text" required placeholder="Votre nom" />
+              </div>
+              <div className="pf-field">
+                <label htmlFor="cf-email">Email</label>
+                <input id="cf-email" name="email" type="email" required placeholder="vous@entreprise.com" />
+              </div>
+              <div className="pf-field">
+                <label htmlFor="cf-msg">Message</label>
+                <textarea id="cf-msg" name="message" rows={4} required placeholder="Le poste, le contexte, vos questions…" />
+              </div>
+              <Magnetic strength={0.2}>
+                <button className="pf-btn-brass" type="submit" disabled={state === 'sending'} data-cursor>
+                  {state === 'sending' ? 'Envoi…' : 'Envoyer'} <span className="pf-arrow">↗</span>
+                </button>
+              </Magnetic>
+              {state === 'ok' && <p className="pf-form-msg is-ok">Message envoyé. Je reviens vers vous très vite.</p>}
+              {state === 'error' && <p className="pf-form-msg is-err">Une erreur est survenue. Écrivez-moi directement par email.</p>}
+            </form>
+          </Reveal>
+        </div>
+
+        <div className="pf-footer">
+          <span className="pf-mono">© {new Date().getFullYear()} Théo Benkirane</span>
+          <span className="pf-mono pf-footer-mob">{CONTACT.mobility}</span>
+          <button className="pf-mono pf-footer-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} data-cursor>
+            Haut de page ↑
+          </button>
+        </div>
       </div>
-      <input style={fieldStyle} type="email" name="email" placeholder="Email professionnel" required />
-      <textarea
-        style={{ ...fieldStyle, resize: 'vertical', minHeight: '110px' }}
-        name="message"
-        placeholder="Le poste, votre besoin, ou simplement un bonjour…"
-        required
-      />
-      {/* honeypot */}
-      <input type="checkbox" name="botcheck" tabIndex="-1" style={{ display: 'none' }} aria-hidden="true" />
 
-      <button
-        type="submit"
-        disabled={status === 'sending'}
-        style={{
-          marginTop: '0.25rem',
-          padding: '0.9rem 1.5rem',
-          borderRadius: '8px',
-          border: 'none',
-          background: 'var(--chess-light)',
-          color: 'var(--chess-dark)',
-          fontFamily: "'IBM Plex Mono', monospace",
-          fontSize: '0.82rem', fontWeight: 600, letterSpacing: '0.03em',
-          cursor: status === 'sending' ? 'default' : 'pointer',
-          transition: 'opacity 0.2s',
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.88')}
-        onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-      >
-        {status === 'sending' ? 'Envoi…' : 'Réserver un échange →'}
-      </button>
-
-      {status === 'error' && (
-        <p style={{ color: '#F87171', fontSize: '0.8rem', textAlign: 'center' }}>
-          Une erreur est survenue. Écrivez-moi directement à {CONTACT.email}.
-        </p>
-      )}
-      <p className="mono" style={{
-        fontSize: '0.62rem', color: 'rgba(240,230,206,0.4)', textAlign: 'center', letterSpacing: '0.04em',
-      }}>
-        Réponse sous 24 h · Échange de 20 min sans engagement
-      </p>
-    </form>
+      <style>{CSS}</style>
+    </Section>
   )
 }
 
-export default function ContactSection() {
-  return (
-    <section
-      id="contact"
-      style={{
-        borderTop: '1px solid var(--border)',
-        background: 'var(--chess-dark)',
-      }}
-    >
-      <div style={{
-        maxWidth: '1200px', margin: '0 auto',
-        padding: 'clamp(5rem, 10vw, 9rem) clamp(1.5rem, 6vw, 5rem)',
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: 'clamp(3rem, 6vw, 5rem)',
-          alignItems: 'start',
-        }}>
-          {/* Left */}
-          <div>
-            <p className="mono" style={{
-              fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
-              color: 'var(--signal)', marginBottom: '0.75rem',
-            }}>
-              ♚ Échec et mat
-            </p>
-            <h2 style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, lineHeight: 1.05,
-              marginBottom: '1.25rem',
-              color: 'var(--chess-light)',
-            }}>
-              {CONTACT.headline}
-            </h2>
-            <p style={{
-              color: 'rgba(240,230,206,0.55)', fontSize: '0.98rem',
-              lineHeight: 1.7, marginBottom: '2rem', maxWidth: '40ch',
-            }}>
-              {CONTACT.sub}
-            </p>
-
-            {/* Inverted theme for links */}
-            <div style={{
-              '--text': 'var(--chess-light)',
-              '--text-muted': 'rgba(240,230,206,0.45)',
-              '--border': 'rgba(240,230,206,0.12)',
-              '--signal': '#E8483A',
-            }}>
-              <ContactLink href={`mailto:${CONTACT.email}`} label={CONTACT.email} icon="mail" />
-              <ContactLink href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} label={CONTACT.phone} icon="tél" />
-              <ContactLink href={CONTACT.linkedin} label="linkedin.com/in/theobenkirane" isExternal icon="in" />
-            </div>
-
-            <motion.a
-              href={CONTACT.cv}
-              download
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-                marginTop: '2rem',
-                padding: '0.85rem 1.6rem',
-                border: '1px solid rgba(240,230,206,0.25)',
-                color: 'var(--chess-light)',
-                borderRadius: '6px',
-                fontFamily: "'IBM Plex Mono', monospace",
-                fontSize: '0.8rem', fontWeight: 600,
-                letterSpacing: '0.03em', textDecoration: 'none',
-              }}
-            >
-              ↓ Télécharger le CV
-            </motion.a>
-
-            <p className="mono" style={{
-              marginTop: '2rem',
-              fontSize: '0.7rem', letterSpacing: '0.06em',
-              color: 'rgba(240,230,206,0.4)',
-              display: 'flex', alignItems: 'center', gap: '0.5rem',
-            }}>
-              <span style={{ color: '#E8483A' }}>◉</span>
-              Mobilité : {CONTACT.mobility}
-            </p>
-          </div>
-
-          {/* Right — form */}
-          <div style={{
-            background: 'rgba(240,230,206,0.03)',
-            border: '1px solid rgba(240,230,206,0.12)',
-            borderRadius: '16px',
-            padding: 'clamp(1.5rem, 4vw, 2.25rem)',
-          }}>
-            <p className="mono" style={{
-              fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-              color: 'rgba(240,230,206,0.5)', marginBottom: '1.25rem',
-            }}>
-              Prenons rendez-vous
-            </p>
-            <ContactForm />
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div style={{
-          marginTop: 'clamp(4rem, 8vw, 6rem)',
-          paddingTop: '1.5rem',
-          borderTop: '1px solid rgba(240,230,206,0.12)',
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          flexWrap: 'wrap', gap: '1rem',
-        }}>
-          <span className="mono" style={{
-            fontSize: '0.58rem', color: 'rgba(240,230,206,0.3)', letterSpacing: '0.1em',
-          }}>
-            THÉO BENKIRANE · {new Date().getFullYear()}
-          </span>
-          <span className="mono" style={{
-            fontSize: '0.58rem', color: 'rgba(240,230,206,0.3)', letterSpacing: '0.1em',
-          }}>
-            1.e4 · Nf3 · d4 · O-O-O · Rd8#
-          </span>
-        </div>
-      </div>
-    </section>
-  )
+const CSS = `
+.pf-contact { padding-bottom: clamp(2rem, 4vh, 3rem); }
+.pf-contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.pf-contact-title { margin: 1.2rem 0; }
+.pf-contact-sub { margin-bottom: clamp(2rem, 4vh, 2.6rem); }
+.pf-contact-links { display: flex; flex-direction: column; }
+.pf-contact-link {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 1.1rem 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--fg);
+  transition: padding 0.35s var(--ease, ease), color 0.3s ease;
 }
+.pf-contact-link:last-child { border-bottom: 1px solid var(--line); }
+.pf-contact-link:hover { padding-left: 0.6rem; color: var(--brass); }
+.pf-contact-link-l { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.pf-contact-link-v { font-size: 1.02rem; font-weight: 480; }
+
+.pf-form { padding: clamp(1.5rem, 3vw, 2.4rem); display: flex; flex-direction: column; gap: 1.1rem; }
+.pf-field { display: flex; flex-direction: column; gap: 0.45rem; }
+.pf-field label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.pf-field input, .pf-field textarea {
+  background: transparent; border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.85rem 1rem; color: var(--fg); font-family: var(--font-body); font-size: 0.95rem;
+  transition: border-color 0.3s ease; resize: vertical;
+}
+.pf-field input::placeholder, .pf-field textarea::placeholder { color: var(--muted); opacity: 0.6; }
+.pf-field input:focus, .pf-field textarea:focus { outline: none; border-color: var(--brass); }
+.pf-form .pf-btn-brass { margin-top: 0.3rem; }
+.pf-form-msg { font-size: 0.85rem; font-family: var(--font-mono); }
+.pf-form-msg.is-ok { color: #4ADE80; }
+.pf-form-msg.is-err { color: #F87171; }
+
+.pf-footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin-top: clamp(3rem, 7vh, 5rem); padding-top: 1.5rem; border-top: 1px solid var(--line);
+  font-size: 0.7rem; color: var(--muted);
+}
+.pf-footer-top { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 0.7rem; transition: color 0.3s ease; }
+.pf-footer-top:hover { color: var(--brass); }
+
+@media (max-width: 860px) {
+  .pf-contact-grid { grid-template-columns: 1fr; }
+  .pf-footer-mob { display: none; }
+}
+`

@@ -1,309 +1,172 @@
 import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Section } from '../theme'
+import { Reveal, MaskText, Counter, Magnetic } from '../motion'
 import { QUIZ } from '../../../lib/portfolio-content'
 
-// A single-question expectation cap so the multi-select can't dominate the score.
-const EXPECT_CAP = 25
-
-function scoreToPercent(answers) {
-  let raw = 0
-  for (const q of QUIZ.questions) {
-    const picked = answers[q.id]
-    if (!picked) continue
-    if (q.multi) {
-      const sum = picked.reduce((acc, idx) => acc + q.options[idx].score, 0)
-      raw += Math.min(EXPECT_CAP, sum)
-    } else {
-      raw += q.options[picked].score
-    }
-  }
-  // Map raw (0..maxRaw) onto a friendly 60..99 range.
-  const pct = 60 + (raw / QUIZ.maxRaw) * 39
-  return Math.max(60, Math.min(99, Math.round(pct)))
-}
-
-function resultFor(pct) {
-  return QUIZ.results.find((r) => pct >= r.min) || QUIZ.results[QUIZ.results.length - 1]
-}
-
-function OptionButton({ label, selected, onClick }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      style={{
-        textAlign: 'left',
-        padding: '0.85rem 1.1rem',
-        borderRadius: '8px',
-        border: '1px solid',
-        borderColor: selected ? 'var(--signal)' : 'var(--border)',
-        background: selected ? 'rgba(185,28,28,0.06)' : 'var(--surface)',
-        color: 'var(--text)',
-        fontSize: '0.9rem',
-        fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
-        cursor: 'pointer',
-        display: 'flex', alignItems: 'center', gap: '0.7rem',
-        transition: 'border-color 0.15s, background 0.15s',
-      }}
-      onMouseEnter={(e) => { if (!selected) e.currentTarget.style.borderColor = 'var(--text-muted)' }}
-      onMouseLeave={(e) => { if (!selected) e.currentTarget.style.borderColor = 'var(--border)' }}
-    >
-      <span style={{
-        width: '16px', height: '16px', flexShrink: 0,
-        borderRadius: '4px',
-        border: '1px solid', borderColor: selected ? 'var(--signal)' : 'var(--border)',
-        background: selected ? 'var(--signal)' : 'transparent',
-        color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontSize: '0.7rem', lineHeight: 1,
-      }}>
-        {selected ? '✓' : ''}
-      </span>
-      {label}
-    </button>
-  )
-}
-
-function Gauge({ pct }) {
-  const r = 52
-  const c = 2 * Math.PI * r
-  return (
-    <div style={{ position: 'relative', width: '140px', height: '140px' }}>
-      <svg width="140" height="140" viewBox="0 0 140 140" style={{ transform: 'rotate(-90deg)' }}>
-        <circle cx="70" cy="70" r={r} fill="none" stroke="var(--border)" strokeWidth="10" />
-        <motion.circle
-          cx="70" cy="70" r={r} fill="none"
-          stroke="var(--signal)" strokeWidth="10" strokeLinecap="round"
-          strokeDasharray={c}
-          initial={{ strokeDashoffset: c }}
-          animate={{ strokeDashoffset: c - (c * pct) / 100 }}
-          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-        />
-      </svg>
-      <div style={{
-        position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column',
-        alignItems: 'center', justifyContent: 'center',
-      }}>
-        <span style={{
-          fontFamily: "'IBM Plex Mono', monospace",
-          fontSize: '2rem', fontWeight: 600, color: 'var(--text)', lineHeight: 1,
-        }}>
-          {pct}%
-        </span>
-        <span className="mono" style={{
-          fontSize: '0.55rem', letterSpacing: '0.1em', textTransform: 'uppercase',
-          color: 'var(--text-muted)', marginTop: '0.25rem',
-        }}>
-          Compatibilité
-        </span>
-      </div>
-    </div>
-  )
-}
-
 export default function CompatibilitySection() {
+  const [started, setStarted] = useState(false)
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState({})
   const [done, setDone] = useState(false)
 
-  const total = QUIZ.questions.length
   const q = QUIZ.questions[step]
-  const current = answers[q?.id]
-  const canNext = q?.multi ? Array.isArray(current) && current.length > 0 : current !== undefined
+  const total = QUIZ.questions.length
 
-  const pct = useMemo(() => scoreToPercent(answers), [answers])
-  const result = resultFor(pct)
-
-  const select = (idx) => {
-    setAnswers((prev) => {
-      if (q.multi) {
-        const arr = Array.isArray(prev[q.id]) ? [...prev[q.id]] : []
-        const at = arr.indexOf(idx)
-        if (at >= 0) arr.splice(at, 1)
-        else arr.push(idx)
-        return { ...prev, [q.id]: arr }
+  const score = useMemo(() => {
+    let raw = 0
+    QUIZ.questions.forEach((qq) => {
+      const a = answers[qq.id]
+      if (a == null) return
+      if (qq.multi) {
+        const sum = a.reduce((acc, idx) => acc + qq.options[idx].score, 0)
+        raw += Math.min(sum, 25)
+      } else {
+        raw += qq.options[a].score
       }
-      return { ...prev, [q.id]: idx }
     })
+    return Math.round((raw / QUIZ.maxRaw) * 100)
+  }, [answers])
+
+  const result = useMemo(() => QUIZ.results.find((r) => score >= r.min), [score])
+
+  function choose(idx) {
+    if (q.multi) {
+      const cur = answers[q.id] || []
+      const next = cur.includes(idx) ? cur.filter((x) => x !== idx) : [...cur, idx]
+      setAnswers({ ...answers, [q.id]: next })
+    } else {
+      setAnswers({ ...answers, [q.id]: idx })
+      setTimeout(next, 280)
+    }
   }
 
-  const next = () => {
+  function next() {
     if (step < total - 1) setStep(step + 1)
     else setDone(true)
   }
-  const back = () => setStep(Math.max(0, step - 1))
-  const restart = () => { setAnswers({}); setStep(0); setDone(false) }
+
+  function reset() {
+    setAnswers({}); setStep(0); setDone(false); setStarted(false)
+  }
+
+  const selected = answers[q?.id]
+  const canNext = q?.multi ? selected && selected.length > 0 : selected != null
 
   return (
-    <section
-      id="compatibility"
-      style={{
-        padding: 'clamp(5rem, 10vw, 9rem) clamp(1.5rem, 6vw, 5rem)',
-        borderTop: '1px solid var(--border)',
-      }}
-    >
-      <div style={{ maxWidth: '720px', margin: '0 auto' }}>
-        <p className="mono" style={{
-          fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
-          color: 'var(--signal)', marginBottom: '0.75rem', textAlign: 'center',
-        }}>
-          Compatibilité
-        </p>
-        <h2 style={{
-          fontSize: 'clamp(1.9rem, 4vw, 3.2rem)', fontWeight: 700, lineHeight: 1.07,
-          marginBottom: '0.9rem', textAlign: 'center',
-        }}>
-          Sommes-nous faits pour jouer ensemble ?
-        </h2>
-        <p style={{
-          fontSize: '0.98rem', color: 'var(--text-muted)', lineHeight: 1.6,
-          textAlign: 'center', maxWidth: '46ch', margin: '0 auto clamp(2.5rem, 5vw, 3.5rem)',
-        }}>
-          {QUIZ.intro}
-        </p>
+    <Section theme="ivory" id="compatibility">
+      <div className="pf-wrap pf-wrap-narrow">
+        <div className="pf-quiz-head">
+          <Reveal><span className="pf-eyebrow">{QUIZ.eyebrow}</span></Reveal>
+          <MaskText as="h2" className="pf-h2 pf-quiz-title" text="On est faits pour bosser ensemble ?" />
+        </div>
 
-        <div style={{
-          background: 'var(--surface)',
-          border: '1px solid var(--border)',
-          borderRadius: '16px',
-          padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-          boxShadow: '0 16px 50px rgba(28,25,23,0.08)',
-          minHeight: '340px',
-          display: 'flex', flexDirection: 'column',
-        }}>
+        <div className="pf-quiz-panel pf-card">
           <AnimatePresence mode="wait">
-            {!done ? (
-              <motion.div
-                key={`q-${step}`}
-                initial={{ opacity: 0, x: 24 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -24 }}
-                transition={{ duration: 0.3 }}
-                style={{ display: 'flex', flexDirection: 'column', flex: 1 }}
-              >
-                {/* Progress */}
-                <div style={{ display: 'flex', gap: '0.3rem', marginBottom: '1.5rem' }}>
-                  {QUIZ.questions.map((_, i) => (
-                    <div key={i} style={{
-                      flex: 1, height: '3px', borderRadius: '2px',
-                      background: i <= step ? 'var(--signal)' : 'var(--border)',
-                      transition: 'background 0.3s',
-                    }} />
-                  ))}
-                </div>
-
-                <span className="mono" style={{
-                  fontSize: '0.62rem', letterSpacing: '0.08em',
-                  color: 'var(--text-muted)', marginBottom: '0.5rem',
-                }}>
-                  Question {step + 1} / {total}
-                </span>
-                <h3 style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: 'clamp(1.15rem, 2.5vw, 1.5rem)', fontWeight: 600,
-                  color: 'var(--text)', lineHeight: 1.25, marginBottom: '1.5rem',
-                }}>
-                  {q.q}
-                </h3>
-
-                <div style={{ display: 'grid', gap: '0.6rem', marginBottom: '1.75rem' }}>
-                  {q.options.map((opt, idx) => (
-                    <OptionButton
-                      key={opt.label}
-                      label={opt.label}
-                      selected={q.multi ? (current || []).includes(idx) : current === idx}
-                      onClick={() => select(idx)}
-                    />
-                  ))}
-                </div>
-
-                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <button
-                    type="button"
-                    onClick={back}
-                    disabled={step === 0}
-                    style={{
-                      background: 'none', border: 'none', cursor: step === 0 ? 'default' : 'pointer',
-                      fontFamily: "'IBM Plex Mono', monospace", fontSize: '0.75rem',
-                      color: 'var(--text-muted)', opacity: step === 0 ? 0.3 : 1,
-                    }}
-                  >
-                    ← Retour
+            {!started && !done && (
+              <motion.div key="intro" className="pf-quiz-state pf-quiz-center" {...fade}>
+                <p className="pf-lead pf-quiz-intro">{QUIZ.intro}</p>
+                <Magnetic>
+                  <button className="pf-btn-brass" onClick={() => setStarted(true)} data-cursor>
+                    Lancer le test <span className="pf-arrow">→</span>
                   </button>
-                  <button
-                    type="button"
-                    onClick={next}
-                    disabled={!canNext}
-                    style={{
-                      padding: '0.7rem 1.5rem', borderRadius: '6px', border: 'none',
-                      background: canNext ? 'var(--text)' : 'var(--border)',
-                      color: canNext ? 'var(--bg)' : 'var(--text-muted)',
-                      fontFamily: "'IBM Plex Mono', monospace", fontSize: '0.78rem', fontWeight: 600,
-                      letterSpacing: '0.03em', cursor: canNext ? 'pointer' : 'default',
-                      transition: 'opacity 0.2s',
-                    }}
-                  >
-                    {step < total - 1 ? 'Suivant →' : 'Voir le score'}
-                  </button>
-                </div>
+                </Magnetic>
               </motion.div>
-            ) : (
-              <motion.div
-                key="result"
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
-                style={{
-                  flex: 1, display: 'flex', flexDirection: 'column',
-                  alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: '1.25rem',
-                }}
-              >
-                <Gauge pct={pct} />
-                <div>
-                  <h3 style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 700,
-                    color: 'var(--signal)', marginBottom: '0.5rem',
-                  }}>
-                    {result.title}
-                  </h3>
-                  <p style={{
-                    fontSize: '0.98rem', color: 'var(--text-muted)', lineHeight: 1.6,
-                    maxWidth: '40ch', margin: '0 auto',
-                  }}>
-                    {result.message}
-                  </p>
+            )}
+
+            {started && !done && (
+              <motion.div key={`q-${step}`} className="pf-quiz-state" {...fade}>
+                <div className="pf-quiz-meta">
+                  <span className="pf-mono">{String(step + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
+                  <div className="pf-quiz-bar"><div className="pf-quiz-bar-fill" style={{ width: `${((step + 1) / total) * 100}%` }} /></div>
                 </div>
-                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                  <a
-                    href="#contact"
-                    style={{
-                      padding: '0.8rem 1.6rem', borderRadius: '6px',
-                      background: 'var(--text)', color: 'var(--bg)',
-                      fontFamily: "'IBM Plex Mono', monospace", fontSize: '0.78rem', fontWeight: 600,
-                      letterSpacing: '0.03em', textDecoration: 'none',
-                    }}
-                  >
-                    Prendre contact →
-                  </a>
-                  <button
-                    type="button"
-                    onClick={restart}
-                    style={{
-                      padding: '0.8rem 1.6rem', borderRadius: '6px',
-                      border: '1px solid var(--border)', background: 'var(--surface)',
-                      color: 'var(--text)', cursor: 'pointer',
-                      fontFamily: "'IBM Plex Mono', monospace", fontSize: '0.78rem',
-                      letterSpacing: '0.03em',
-                    }}
-                  >
-                    Recommencer
-                  </button>
+                <h3 className="pf-quiz-q">{q.q}</h3>
+                <div className="pf-quiz-options">
+                  {q.options.map((o, idx) => {
+                    const isSel = q.multi ? (selected || []).includes(idx) : selected === idx
+                    return (
+                      <button key={idx} className={`pf-quiz-opt ${isSel ? 'is-sel' : ''}`} onClick={() => choose(idx)} data-cursor>
+                        <span className="pf-quiz-opt-mark" />
+                        {o.label}
+                      </button>
+                    )
+                  })}
+                </div>
+                {q.multi && (
+                  <div className="pf-quiz-actions">
+                    <button className="pf-btn-brass" disabled={!canNext} onClick={next} data-cursor>
+                      Continuer <span className="pf-arrow">→</span>
+                    </button>
+                  </div>
+                )}
+              </motion.div>
+            )}
+
+            {done && (
+              <motion.div key="result" className="pf-quiz-state pf-quiz-result" {...fade}>
+                <span className="pf-mono pf-quiz-score-label">Compatibilité</span>
+                <span className="pf-quiz-score"><Counter to={score} suffix=" %" /></span>
+                <h3 className="pf-quiz-rtitle">{result.title}</h3>
+                <p className="pf-body pf-quiz-rmsg">{result.message}</p>
+                <div className="pf-quiz-ractions">
+                  <Magnetic>
+                    <a className="pf-btn-brass" href="#contact" data-cursor>Me contacter <span className="pf-arrow">↗</span></a>
+                  </Magnetic>
+                  <button className="pf-btn-ghost" onClick={reset} data-cursor>Recommencer</button>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
-    </section>
+
+      <style>{CSS}</style>
+    </Section>
   )
 }
+
+const fade = {
+  initial: { opacity: 0, y: 14 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -14 },
+  transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+}
+
+const CSS = `
+.pf-quiz-head { text-align: center; margin-bottom: clamp(2rem, 5vh, 3rem); }
+.pf-quiz-head .pf-eyebrow { justify-content: center; }
+.pf-quiz-title { margin-top: 1rem; }
+.pf-quiz-panel { padding: clamp(1.8rem, 4vw, 3.2rem); min-height: 380px; display: flex; align-items: center; }
+.pf-quiz-state { width: 100%; }
+
+.pf-quiz-center { text-align: center; }
+.pf-quiz-intro { margin: 0 auto 1.8rem; max-width: 40ch; }
+
+.pf-quiz-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.6rem; color: var(--muted); font-size: 0.72rem; }
+.pf-quiz-bar { flex: 1; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.pf-quiz-bar-fill { height: 100%; background: var(--brass); transition: width 0.5s var(--ease, ease); }
+.pf-quiz-q { font-size: clamp(1.3rem, 2.5vw, 1.9rem); margin-bottom: 1.6rem; }
+.pf-quiz-options { display: grid; gap: 0.7rem; }
+.pf-quiz-opt {
+  display: flex; align-items: center; gap: 0.9rem; text-align: left;
+  padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 12px;
+  background: transparent; color: var(--fg); cursor: pointer; font-size: 0.98rem;
+  font-family: var(--font-body); transition: border-color 0.3s ease, background 0.3s ease;
+}
+.pf-quiz-opt:hover { border-color: var(--brass); }
+.pf-quiz-opt-mark { width: 16px; height: 16px; border: 1px solid var(--line); border-radius: 50%; flex: none; transition: all 0.3s ease; }
+.pf-quiz-opt.is-sel { border-color: var(--brass); background: color-mix(in srgb, var(--brass) 8%, transparent); }
+.pf-quiz-opt.is-sel .pf-quiz-opt-mark { background: var(--brass); border-color: var(--brass); box-shadow: inset 0 0 0 3px var(--base); }
+.pf-quiz-actions { margin-top: 1.6rem; display: flex; justify-content: flex-end; }
+.pf-btn-brass:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.pf-quiz-result { text-align: center; }
+.pf-quiz-score-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.pf-quiz-score {
+  display: block; font-family: var(--font-display); font-weight: 440; letter-spacing: -0.04em;
+  font-size: clamp(4rem, 12vw, 8rem); line-height: 0.9; color: var(--brass); margin: 0.4rem 0 0.6rem;
+}
+.pf-quiz-rtitle { font-size: clamp(1.4rem, 3vw, 2.2rem); margin-bottom: 0.8rem; }
+.pf-quiz-rmsg { max-width: 42ch; margin: 0 auto 2rem; }
+.pf-quiz-ractions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+`

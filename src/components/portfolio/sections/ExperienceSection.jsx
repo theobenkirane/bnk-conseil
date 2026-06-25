@@ -1,156 +1,185 @@
-import { motion } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useThemeSection } from '../theme'
+import { Reveal, MaskText } from '../motion'
 import { EXPERIENCE } from '../../../lib/portfolio-content'
 
-function ExperienceRow({ exp, index, isLast }) {
-  const isCurrent = index === 0
+export default function ExperienceSection() {
+  const [desktop, setDesktop] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 901px)')
+    const on = () => setDesktop(mq.matches)
+    on()
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
 
+  return desktop ? <HorizontalExp /> : <VerticalExp />
+}
+
+function Header() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'minmax(0, 0.55fr) minmax(0, 1.45fr)',
-        gap: 'clamp(1.5rem, 4vw, 3.5rem)',
-        paddingBottom: isLast ? 0 : 'clamp(2.5rem, 4vw, 3.5rem)',
-        marginBottom: isLast ? 0 : 'clamp(2.5rem, 4vw, 3.5rem)',
-        borderBottom: isLast ? 'none' : '1px solid var(--border)',
-      }}
-      className="exp-row"
-    >
-      {/* Left — meta */}
-      <div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-          <span className="mono" style={{
-            fontSize: '0.62rem', letterSpacing: '0.06em',
-            color: 'var(--text-muted)',
-          }}>
-            {exp.period}
-          </span>
-          <span className="mono" style={{
-            fontSize: '0.55rem', letterSpacing: '0.06em', textTransform: 'uppercase',
-            color: 'var(--text-muted)',
-            border: '1px solid var(--border)', borderRadius: '3px',
-            padding: '0.1rem 0.4rem',
-          }}>
-            {exp.type}
-          </span>
-        </div>
-        <p className="mono" style={{
-          fontSize: '0.7rem', letterSpacing: '0.04em', color: 'var(--text-muted)',
-        }}>
-          {exp.location}
-        </p>
-        {isCurrent && exp.badge && (
-          <span style={{
-            display: 'inline-block', marginTop: '0.75rem',
-            fontFamily: "'IBM Plex Mono', monospace",
-            fontSize: '0.6rem', letterSpacing: '0.06em', textTransform: 'uppercase',
-            fontWeight: 600, color: '#fff', background: 'var(--signal)',
-            borderRadius: '4px', padding: '0.25rem 0.6rem',
-          }}>
-            🏆 {exp.badge}
-          </span>
-        )}
-      </div>
-
-      {/* Right — content */}
-      <div>
-        <h3 style={{
-          fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 'clamp(1.25rem, 2.6vw, 1.75rem)',
-          fontWeight: 700, color: 'var(--text)', lineHeight: 1.15,
-          marginBottom: '0.15rem',
-        }}>
-          {exp.role}
-        </h3>
-        <p style={{
-          fontSize: '1rem', color: 'var(--signal)', fontWeight: 600, marginBottom: '0.9rem',
-        }}>
-          {exp.company}
-        </p>
-
-        {exp.highlight && (
-          <p style={{
-            fontSize: '0.95rem', color: 'var(--text)', fontWeight: 500,
-            lineHeight: 1.5, marginBottom: '1rem',
-            paddingLeft: '0.9rem', borderLeft: '2px solid var(--signal)',
-          }}>
-            {exp.highlight}
-          </p>
-        )}
-
-        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          {exp.missions.map((m, i) => (
-            <li key={i} style={{
-              display: 'flex', gap: '0.7rem', alignItems: 'flex-start',
-              fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.55,
-            }}>
-              <span style={{ color: 'var(--signal)', flexShrink: 0, marginTop: '1px', fontSize: '0.75rem' }}>♟</span>
-              {m}
-            </li>
-          ))}
-        </ul>
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-          {exp.tags.map((t) => (
-            <span key={t} className="mono" style={{
-              fontSize: '0.58rem', letterSpacing: '0.06em', textTransform: 'uppercase',
-              color: 'var(--text-muted)', background: 'var(--surface-2)',
-              borderRadius: '3px', padding: '0.2rem 0.5rem',
-            }}>
-              {t}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <style>{`
-        @media (max-width: 760px) {
-          .exp-row { grid-template-columns: 1fr !important; gap: 1rem !important; }
-        }
-      `}</style>
-    </motion.div>
+    <div className="pf-wrap pf-exp-head">
+      <Reveal><span className="pf-eyebrow">Le parcours</span></Reveal>
+      <MaskText as="h2" className="pf-h2" text="Cinq ans, cinq terrains." />
+      <Reveal delay={0.1}>
+        <p className="pf-body pf-exp-sub">De l'immobilier au SaaS, une même obsession : comprendre le besoin, conclure, fidéliser.</p>
+      </Reveal>
+    </div>
   )
 }
 
-export default function ExperienceSection() {
+function Card({ exp, i }) {
+  return (
+    <article className="pf-exp-card pf-card">
+      <div className="pf-exp-card-top">
+        <span className="pf-exp-index pf-mono">{String(i + 1).padStart(2, '0')}</span>
+        {exp.badge && <span className="pf-exp-badge">{exp.badge}</span>}
+      </div>
+
+      <div className="pf-exp-logo-wrap">
+        {exp.logo ? (
+          <img src={exp.logo} alt={exp.company} className="pf-exp-logo" loading="lazy" />
+        ) : (
+          <span className="pf-exp-logo-fallback pf-mono">{exp.company.charAt(0)}</span>
+        )}
+      </div>
+
+      <span className="pf-mono pf-exp-period">{exp.period}</span>
+      <h3 className="pf-exp-role">{exp.role}</h3>
+      <span className="pf-exp-company">{exp.company} · {exp.location}</span>
+
+      <p className="pf-exp-highlight">{exp.highlight}</p>
+
+      <ul className="pf-exp-missions">
+        {exp.missions.map((m, k) => (
+          <li key={k}>{m}</li>
+        ))}
+      </ul>
+
+      <div className="pf-exp-tags">
+        {exp.tags.map((t) => (
+          <span key={t} className="pf-tag">{t}</span>
+        ))}
+      </div>
+    </article>
+  )
+}
+
+function HorizontalExp() {
+  const ref = useThemeSection('ivory')
+  const trackRef = useRef(null)
+  const [dist, setDist] = useState(0)
+
+  useEffect(() => {
+    const calc = () => {
+      if (trackRef.current) setDist(Math.max(0, trackRef.current.scrollWidth - window.innerWidth))
+    }
+    calc()
+    const t = setTimeout(calc, 400)
+    window.addEventListener('resize', calc)
+    return () => {
+      clearTimeout(t)
+      window.removeEventListener('resize', calc)
+    }
+  }, [])
+
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] })
+  const x = useTransform(scrollYProgress, [0.08, 1], [0, -dist])
+  const progress = useTransform(scrollYProgress, [0.08, 1], ['0%', '100%'])
+
   return (
     <section
+      ref={ref}
       id="experience"
-      style={{
-        padding: 'clamp(5rem, 10vw, 9rem) clamp(1.5rem, 6vw, 5rem)',
-        borderTop: '1px solid var(--border)',
-        background: 'var(--surface-2)',
-      }}
+      data-theme="ivory"
+      className="pf-section pf-exp"
+      style={{ height: `calc(100vh + ${dist}px)`, padding: 0 }}
     >
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        <p className="mono" style={{
-          fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
-          color: 'var(--signal)', marginBottom: '0.75rem',
-        }}>
-          Parcours
-        </p>
-        <h2 style={{
-          fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, lineHeight: 1.05,
-          marginBottom: 'clamp(2.5rem, 5vw, 4rem)', maxWidth: '16ch',
-        }}>
-          5 ans de terrain, des résultats à chaque poste.
-        </h2>
-
-        <div>
+      <div className="pf-exp-sticky">
+        <Header />
+        <motion.div ref={trackRef} className="pf-exp-track" style={{ x }}>
           {EXPERIENCE.map((exp, i) => (
-            <ExperienceRow
-              key={exp.id}
-              exp={exp}
-              index={i}
-              isLast={i === EXPERIENCE.length - 1}
-            />
+            <Card key={exp.id} exp={exp} i={i} />
           ))}
+          <div className="pf-exp-end">
+            <span className="pf-mono">Et la suite<br />avec vous ?</span>
+          </div>
+        </motion.div>
+        <div className="pf-exp-progress">
+          <motion.div className="pf-exp-progress-fill" style={{ width: progress }} />
         </div>
       </div>
+      <style>{CSS}</style>
     </section>
   )
 }
+
+function VerticalExp() {
+  const ref = useThemeSection('ivory')
+  return (
+    <section ref={ref} id="experience" data-theme="ivory" className="pf-section">
+      <Header />
+      <div className="pf-wrap pf-exp-vstack">
+        {EXPERIENCE.map((exp, i) => (
+          <Card key={exp.id} exp={exp} i={i} />
+        ))}
+      </div>
+      <style>{CSS}</style>
+    </section>
+  )
+}
+
+const CSS = `
+.pf-exp-sticky {
+  position: sticky; top: 0; height: 100vh; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(4rem, 8vh, 6rem) 0 2rem;
+}
+.pf-exp-head { margin-bottom: clamp(1.5rem, 4vh, 2.5rem); padding-left: clamp(1.25rem, 5vw, 4rem); }
+.pf-exp-head .pf-eyebrow { margin-bottom: 1rem; }
+.pf-exp-sub { margin-top: 1rem; max-width: 44ch; }
+
+.pf-exp-track { display: flex; gap: clamp(1rem, 2vw, 1.6rem); padding: 0 clamp(1.25rem, 5vw, 4rem); align-items: stretch; }
+.pf-exp-card {
+  flex: 0 0 auto; width: clamp(300px, 30vw, 420px);
+  padding: clamp(1.5rem, 2.2vw, 2.2rem); display: flex; flex-direction: column;
+}
+.pf-exp-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; }
+.pf-exp-index { font-size: 0.8rem; color: var(--muted); }
+.pf-exp-badge {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); background: var(--brass); padding: 0.3rem 0.6rem; border-radius: 999px;
+}
+.pf-exp-logo-wrap { height: 40px; display: flex; align-items: center; margin-bottom: 1.3rem; }
+.pf-exp-logo { max-height: 40px; max-width: 150px; object-fit: contain; }
+.pf-exp-logo-fallback {
+  width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--brass);
+}
+.pf-exp-period { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em; }
+.pf-exp-role { font-size: clamp(1.3rem, 1.9vw, 1.7rem); margin: 0.4rem 0 0.2rem; }
+.pf-exp-company { font-size: 0.85rem; color: var(--muted); }
+.pf-exp-highlight {
+  font-family: var(--font-display); font-style: italic; font-weight: 380;
+  font-size: 1.05rem; line-height: 1.35; margin: 1.2rem 0; color: var(--fg);
+}
+.pf-exp-missions { list-style: none; padding: 0; margin: 0 0 1.4rem; display: flex; flex-direction: column; gap: 0.55rem; flex: 1; }
+.pf-exp-missions li { position: relative; padding-left: 1.1rem; font-size: 0.88rem; color: var(--muted); line-height: 1.45; }
+.pf-exp-missions li::before { content: ''; position: absolute; left: 0; top: 0.5em; width: 5px; height: 5px; background: var(--brass); transform: rotate(45deg); }
+.pf-exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+.pf-tag {
+  font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.04em;
+  color: var(--muted); border: 1px solid var(--line); padding: 0.3rem 0.6rem; border-radius: 999px;
+}
+.pf-exp-end {
+  flex: 0 0 auto; width: 320px; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 1.6rem; font-style: italic; color: var(--muted); text-align: center;
+}
+
+.pf-exp-progress { margin: 1.5rem clamp(1.25rem, 5vw, 4rem) 0; height: 1px; background: var(--line); }
+.pf-exp-progress-fill { height: 100%; background: var(--brass); }
+
+.pf-exp-vstack { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+.pf-exp-vstack .pf-exp-card { width: 100%; }
+`

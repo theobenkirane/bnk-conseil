@@ -1,11 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
 import SEOHead from '../components/SEOHead'
 import PortfolioShell from '../components/portfolio/PortfolioShell'
-import ChessNotationSidebar from '../components/portfolio/ChessNotationSidebar'
-import ChessGame from '../components/portfolio/ChessGame'
+import Nav from '../components/portfolio/Nav'
+import { IntroLoader } from '../components/portfolio/motion'
 import HeroSection from '../components/portfolio/sections/HeroSection'
 import AboutSection from '../components/portfolio/sections/AboutSection'
 import ExperienceSection from '../components/portfolio/sections/ExperienceSection'
@@ -33,28 +33,27 @@ const SCHEMA = {
 }
 
 export default function Portfolio() {
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const prefersReduced =
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const [ready, setReady] = useState(prefersReduced)
 
+  useEffect(() => {
     let lenis = null
+    let rafCb = null
 
     if (!prefersReduced) {
-      // Initialise Lenis scroll inertiel
       lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
       })
 
-      // Synchronise Lenis avec GSAP ticker
       lenis.on('scroll', ScrollTrigger.update)
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000)
-      })
+      rafCb = (time) => lenis.raf(time * 1000)
+      gsap.ticker.add(rafCb)
       gsap.ticker.lagSmoothing(0)
     }
 
-    // Refresh ScrollTrigger après montage (pour les dimensions correctes)
     const timer = setTimeout(() => {
       ScrollTrigger.refresh()
     }, 200)
@@ -63,12 +62,11 @@ export default function Portfolio() {
       clearTimeout(timer)
       if (lenis) {
         lenis.destroy()
-        gsap.ticker.remove((time) => lenis.raf(time * 1000))
+        if (rafCb) gsap.ticker.remove(rafCb)
       }
-      // Nettoyer tous les ScrollTriggers de cette page
       ScrollTrigger.getAll().forEach((st) => st.kill())
     }
-  }, [])
+  }, [prefersReduced])
 
   return (
     <>
@@ -79,9 +77,10 @@ export default function Portfolio() {
         schema={SCHEMA}
       />
 
+      {!prefersReduced && <IntroLoader onDone={() => setReady(true)} />}
+
       <PortfolioShell>
-        <ChessNotationSidebar />
-        <ChessGame />
+        <Nav ready={ready} />
         <HeroSection />
         <AboutSection />
         <ExperienceSection />

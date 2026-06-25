@@ -1,119 +1,65 @@
-import { useRef, useEffect, useState } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { Section } from '../theme'
+import { Reveal, MaskText, Counter } from '../motion'
 import { STATS, STATS_NOTE } from '../../../lib/portfolio-content'
-
-gsap.registerPlugin(ScrollTrigger)
-
-function StatBlock({ stat, index }) {
-  const [value, setValue] = useState(0)
-  const ref = useRef(null)
-  const triggered = useRef(false)
-
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: ref.current,
-        start: 'top 82%',
-        once: true,
-        onEnter: () => {
-          if (triggered.current) return
-          triggered.current = true
-          if (prefersReduced) { setValue(stat.value); return }
-          const obj = { val: 0 }
-          gsap.to(obj, {
-            val: stat.value,
-            duration: 1.6,
-            ease: 'power3.out',
-            delay: index * 0.15,
-            onUpdate: () => setValue(Math.round(obj.val)),
-          })
-        },
-      })
-    })
-
-    return () => ctx.revert()
-  }, [stat.value, index])
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        flex: '1 1 180px',
-        padding: 'clamp(2.5rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem)',
-        borderRight: index < STATS.length - 1 ? '1px solid var(--border)' : 'none',
-        display: 'flex', flexDirection: 'column', gap: '0.4rem',
-      }}
-    >
-      <div className="mono" style={{
-        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-        fontWeight: 600,
-        color: 'var(--text)',
-        lineHeight: 1,
-        letterSpacing: '-0.02em',
-      }}>
-        {value}{stat.suffix}
-      </div>
-      <div className="mono" style={{
-        fontSize: '0.65rem', letterSpacing: '0.14em',
-        textTransform: 'uppercase', color: 'var(--signal)',
-        marginTop: '0.25rem',
-      }}>
-        {stat.label}
-      </div>
-      <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-        {stat.description}
-      </div>
-    </div>
-  )
-}
 
 export default function ResultsSection() {
   return (
-    <section
-      id="results"
-      style={{ borderTop: '1px solid var(--border)' }}
-    >
-      <div style={{
-        maxWidth: '1200px', margin: '0 auto',
-        padding: '0 clamp(1.5rem, 6vw, 5rem)',
-      }}>
-        <div style={{ padding: 'clamp(4rem, 8vw, 7rem) 0 2.5rem' }}>
-          <p className="mono" style={{
-            fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
-            color: 'var(--signal)', marginBottom: '0.75rem',
-          }}>
-            Résultats
+    <Section theme="ink" id="results">
+      <div className="pf-wrap">
+        <div className="pf-res-head">
+          <Reveal><span className="pf-eyebrow">Résultats</span></Reveal>
+          <MaskText as="h2" className="pf-h2 pf-res-title" text="Les chiffres parlent." />
+        </div>
+
+        <div className="pf-res-grid">
+          {STATS.map((s, i) => (
+            <Reveal key={s.label} delay={i * 0.08}>
+              <div className="pf-res-card">
+                <span className="pf-res-value">
+                  <Counter to={s.value} suffix={s.suffix} />
+                </span>
+                <span className="pf-res-label">{s.label}</span>
+                <span className="pf-res-desc">{s.description}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.1}>
+          <p className="pf-res-note">
+            <span className="pf-brass">—</span> {STATS_NOTE}
           </p>
-          <h2 style={{
-            fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, lineHeight: 1.05,
-            maxWidth: '14ch',
-          }}>
-            Les chiffres parlent.
-          </h2>
-        </div>
-
-        {/* Stats */}
-        <div style={{
-          display: 'flex', flexWrap: 'wrap',
-          borderTop: '1px solid var(--border)',
-          paddingBottom: 'clamp(4rem, 8vw, 7rem)',
-        }}>
-          {STATS.map((s, i) => <StatBlock key={i} stat={s} index={i} />)}
-        </div>
-
-        {/* Note contextuelle */}
-        <p className="mono" style={{
-          fontSize: '0.62rem', letterSpacing: '0.08em',
-          color: 'var(--text-muted)', opacity: 0.6,
-          borderTop: '1px solid var(--border)',
-          paddingTop: '1.5rem', paddingBottom: 'clamp(4rem, 8vw, 7rem)',
-        }}>
-          {STATS_NOTE}
-        </p>
+        </Reveal>
       </div>
-    </section>
+
+      <style>{CSS}</style>
+    </Section>
   )
 }
+
+const CSS = `
+.pf-res-head { margin-bottom: clamp(2rem, 5vh, 3.5rem); }
+.pf-res-title { margin-top: 1rem; }
+.pf-res-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
+}
+.pf-res-card {
+  background: var(--base); padding: clamp(1.5rem, 2.5vw, 2.6rem) clamp(1.2rem, 2vw, 2rem);
+  display: flex; flex-direction: column; gap: 0.5rem; min-height: 200px;
+}
+.pf-res-value {
+  font-family: var(--font-display); font-weight: 440; letter-spacing: -0.04em; line-height: 0.9;
+  font-size: clamp(2.8rem, 5.5vw, 4.6rem); color: var(--brass);
+}
+.pf-res-label { font-size: 1rem; font-weight: 500; margin-top: auto; }
+.pf-res-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+.pf-res-note {
+  font-family: var(--font-display); font-style: italic; font-weight: 380;
+  font-size: clamp(1.1rem, 2vw, 1.5rem); line-height: 1.45; margin-top: clamp(2rem, 5vh, 3rem);
+  max-width: 60ch; color: var(--fg);
+}
+
+@media (max-width: 900px) { .pf-res-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .pf-res-grid { grid-template-columns: 1fr; } }
+`
