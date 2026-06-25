@@ -17,7 +17,7 @@ export const SECTIONS = [
 export const HERO = {
   name: 'Théo Benkirane',
   role: 'Account Manager',
-  domain: 'SaaS · LegalTech',
+  domain: 'SaaS · Banque · Assurance · Conseil',
   headline: ['Transformer', 'des prospects', 'en clients', 'qui restent.'],
   pitch:
     "Cinq ans sur le terrain commercial, top performer chez LegalPlace. Je fais grandir des portefeuilles avec de la vraie relation client, des chiffres qui suivent, et les outils IA pour aller plus vite. Et je code mes propres produits à côté.",
@@ -244,7 +244,7 @@ export const QUIZ = {
       id: 'sector', q: 'Dans quel secteur ?', multi: false,
       options: [
         { label: 'SaaS / Tech', score: 25 },
-        { label: 'LegalTech / Juridique', score: 25 },
+        { label: 'Banque / Assurance', score: 25 },
         { label: 'Services B2B', score: 18 },
         { label: 'Autre secteur', score: 12 },
       ],
@@ -261,10 +261,10 @@ export const QUIZ = {
     {
       id: 'contract', q: 'Quel type de contrat ?', multi: false,
       options: [
-        { label: 'CDI', score: 25 },
-        { label: 'Freelance / mission', score: 14 },
-        { label: 'Alternance', score: 10 },
-        { label: 'Stage', score: 6 },
+        { label: 'CDI', score: 50 },
+        { label: 'Freelance / mission', score: 5 },
+        { label: 'Alternance', score: 0 },
+        { label: 'Stage', score: 0 },
       ],
     },
     {
