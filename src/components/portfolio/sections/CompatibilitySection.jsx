@@ -58,7 +58,7 @@ export default function CompatibilitySection() {
       <div className="pf-wrap pf-wrap-narrow">
         <div className="pf-quiz-head">
           <Reveal><span className="pf-eyebrow">{QUIZ.eyebrow}</span></Reveal>
-          <MaskText as="h2" className="pf-h2 pf-quiz-title" text="On est faits pour bosser ensemble ?" />
+          <MaskText as="h2" className="pf-h2 pf-quiz-title" text="Sommes-nous fait pour travailler ensemble ?" />
         </div>
 
         <div className="pf-quiz-panel pf-card">
@@ -128,12 +128,7 @@ export default function CompatibilitySection() {
 
 // Bouton « Ne pas me contacter » qui esquive le curseur : impossible à cliquer.
 const TAUNTS = [
-  'Ne pas me contacter',
-  'Trop lent.',
-  'Presque…',
-  'Joli essai.',
-  'Non non non.',
-  'Tu insistes ?',
+  'Ne pas me contacter'
 ]
 
 function DodgeButton() {

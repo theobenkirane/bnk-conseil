@@ -23,7 +23,7 @@ function Header() {
       <Reveal><span className="pf-eyebrow">Le parcours</span></Reveal>
       <MaskText as="h2" className="pf-h2" text="Cinq ans, cinq terrains." />
       <Reveal delay={0.1}>
-        <p className="pf-body pf-exp-sub">De l'immobilier au SaaS, une même obsession : comprendre le besoin, conclure, fidéliser.</p>
+        <p className="pf-body pf-exp-sub">De l'immobilier au SaaS : comprendre le besoin, conclure, fidéliser.</p>
       </Reveal>
     </div>
   )

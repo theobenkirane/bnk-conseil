@@ -20,7 +20,7 @@ export const HERO = {
   domain: 'SaaS · Banque · Assurance · Conseil',
   headline: ['Transformer', 'des prospects', 'en clients', 'qui restent.'],
   pitch:
-    "Cinq ans sur le terrain commercial, top performer chez LegalPlace. Je fais grandir des portefeuilles avec de la vraie relation client, des chiffres qui suivent, et les outils IA pour aller plus vite. Et je code mes propres produits à côté.",
+    "Cinq ans sur le terrain commercial, top performer chez LegalPlace. Je développe des portefeuilles clients avec une approche relationnelle solide, des résultats concrets, et des outils IA pour accélérer l’exécution. Je développe aussi mes propres produits en parallèle.",
   status: 'Disponible pour un CDI',
   facts: [
     { prefix: '', value: 200, suffix: '+', v: 'clients onboardés / mois' },
@@ -39,7 +39,7 @@ export const HERO = {
 export const ABOUT = {
   eyebrow: 'Le profil',
   headline: 'Commercial de terrain, culture tech.',
-  lead: "Depuis cinq ans, je vends, je négocie et je fidélise. Ce qui change aujourd'hui : j'intègre l'IA et les outils digitaux à chaque étape pour aller plus vite et viser plus haut.",
+  lead: "Depuis cinq ans, je vends, je négocie et je fidélise. Ce qui change aujourd'hui : j'intègre l'IA et les outils digitaux à chaque étape pour aller plus vite et être plus performant",
   paragraphs: [
     "Account Manager chez LegalPlace, j'accompagne chaque jour des entrepreneurs, de la création de leur société jusqu'à l'obtention de leur Kbis. Écoute, analyse du besoin, vente de solutions à forte valeur : c'est ma routine, et elle est rentable.",
     "Je construis aussi mes propres outils : sites, automatisations, plateformes web. Cette double casquette, commerciale et tech, m'aide à comprendre un produit SaaS de l'intérieur et à parler le même langage que les équipes produit.",
@@ -72,7 +72,7 @@ export const EXPERIENCE = [
     highlight: "200+ entrepreneurs accompagnés chaque mois, objectifs dépassés de 150 à 250 %.",
     missions: [
       "Onboarding des entrepreneurs, de la création de société à l'obtention du Kbis",
-      'Détection des besoins et vente de solutions (compta, domiciliation, juridique)',
+      'Détection des besoins et vente de solutions (comptabilité, domiciliation, juridique, facturation)',
       "Upsell supérieur à 80 % sur le portefeuille",
       "Animation de formations et encadrement d'alternants",
     ],
