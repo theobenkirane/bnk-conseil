@@ -8,7 +8,7 @@ import ROICalculator from '../components/ROICalculator'
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #A855F7)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -123,8 +123,8 @@ const faqItems = [
 function CheckIcon({ ok, dark }) {
   if (ok) {
     return (
-      <span className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${dark ? 'bg-white/20' : 'bg-violet-100'}`}>
-        <svg viewBox="0 0 12 12" fill="none" className={`w-2.5 h-2.5 ${dark ? 'text-white' : 'text-violet-600'}`}>
+      <span className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${dark ? 'bg-white/20' : 'bg-[#F0F0F0]'}`}>
+        <svg viewBox="0 0 12 12" fill="none" className={`w-2.5 h-2.5 ${dark ? 'text-white' : 'text-[#066377]'}`}>
           <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </span>
@@ -148,14 +148,14 @@ function PackageCard({ pkg, delay }) {
       {...fadeUpView(delay)}
       className={`relative flex flex-col rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl ${
         isPro
-          ? 'shadow-xl shadow-violet-400/30'
+          ? 'shadow-xl shadow-[#066377]/30'
           : isDark
           ? 'shadow-lg shadow-gray-900/20'
-          : 'shadow-sm hover:shadow-violet-100/60 border border-gray-100'
+          : 'shadow-sm hover:shadow-[#F0F0F0]/60 border border-gray-100'
       }`}
       style={
         isPro
-          ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }
+          ? { background: 'linear-gradient(135deg, #066377, #A855F7)' }
           : isDark
           ? { background: '#0F172A' }
           : { background: '#ffffff' }
@@ -164,7 +164,7 @@ function PackageCard({ pkg, delay }) {
       {/* Badge "Plus populaire" */}
       {isPro && (
         <div className="absolute -top-0 left-1/2 -translate-x-1/2 z-10">
-          <span className="bg-white text-violet-700 text-xs font-bold px-3 py-1 rounded-b-xl shadow-md shadow-violet-200/50 flex items-center gap-1">
+          <span className="bg-white text-[#154359] text-xs font-bold px-3 py-1 rounded-b-xl shadow-md shadow-white/50 flex items-center gap-1">
             ⭐ Plus populaire
           </span>
         </div>
@@ -185,7 +185,7 @@ function PackageCard({ pkg, delay }) {
           <p className={`text-xs mt-1 ${isPro ? 'text-white/60' : isDark ? 'text-gray-500' : 'text-gray-400'}`}>
             {pkg.priceNote}
             {!isDark && (
-              <span className={`ml-2 font-medium ${isPro ? 'text-white/80' : 'text-violet-600'}`}>
+              <span className={`ml-2 font-medium ${isPro ? 'text-white/80' : 'text-[#066377]'}`}>
                 · Paiement en 2×
               </span>
             )}
@@ -213,12 +213,12 @@ function PackageCard({ pkg, delay }) {
           to="/rdv"
           className={`block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 ${
             isPro
-              ? 'bg-white text-violet-700 hover:bg-white/90 hover:shadow-lg'
+              ? 'bg-white text-[#154359] hover:bg-white/90 hover:shadow-lg'
               : isDark
               ? 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
-              : 'text-white hover:shadow-lg hover:shadow-violet-300/50'
+              : 'text-white hover:shadow-lg hover:shadow-[#3B9BB3]/50'
           }`}
-          style={!isPro && !isDark ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' } : {}}
+          style={!isPro && !isDark ? { background: 'linear-gradient(135deg, #066377, #A855F7)' } : {}}
         >
           Choisir {pkg.name} →
         </Link>
@@ -242,7 +242,7 @@ function FAQAccordion() {
             <motion.span
               animate={{ rotate: openIndex === i ? 45 : 0 }}
               transition={{ duration: 0.2 }}
-              className="text-violet-600 text-lg leading-none ml-3 flex-shrink-0"
+              className="text-[#066377] text-lg leading-none ml-3 flex-shrink-0"
             >
               +
             </motion.span>
@@ -293,7 +293,7 @@ export default function Tarifs() {
         <div
           className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full opacity-20 pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, #7C3AED 0%, transparent 70%)',
+            background: 'radial-gradient(circle, #066377 0%, transparent 70%)',
           }}
         />
 
@@ -347,7 +347,7 @@ export default function Tarifs() {
           <motion.div {...fadeUpView(0.5)} className="text-center">
             <Link
               to="/commander"
-              className="inline-flex items-center gap-2 text-violet-600 hover:text-violet-700 text-sm font-semibold transition-colors"
+              className="inline-flex items-center gap-2 text-[#066377] hover:text-[#154359] text-sm font-semibold transition-colors"
             >
               Ou commander directement avec -30%
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -402,7 +402,7 @@ export default function Tarifs() {
       </section>
 
       {/* ── Section 5 : Coût réel ─────────────────────────────────────────── */}
-      <section className="bg-violet-50 py-20 px-4">
+      <section className="bg-[#F0F5F7] py-20 px-4">
         <div className="max-w-4xl mx-auto space-y-10">
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Comparaison</span>
@@ -447,7 +447,7 @@ export default function Tarifs() {
             {/* BNK Essentiel */}
             <motion.div
               {...fadeUpView(0.2)}
-              className="bg-white border-2 border-violet-300 rounded-2xl p-6 space-y-4 ring-2 ring-violet-100"
+              className="bg-white border-2 border-[#3B9BB3] rounded-2xl p-6 space-y-4 ring-2 ring-[#F0F0F0]"
             >
               <div className="flex items-center gap-2">
                 <span className="text-2xl">🚀</span>
@@ -460,7 +460,7 @@ export default function Tarifs() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-0.5">✓</span>
-                  <span>0h de votre temps — on s'occupe de tout</span>
+                  <span>0h de votre temps  -  on s'occupe de tout</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-0.5">✓</span>
@@ -471,7 +471,7 @@ export default function Tarifs() {
                   <span>SEO optimisé dès le départ, livraison en 2 semaines</span>
                 </li>
               </ul>
-              <div className="bg-violet-50 border border-violet-200 rounded-xl px-4 py-3 text-sm font-semibold text-violet-700">
+              <div className="bg-[#F0F5F7] border border-white rounded-xl px-4 py-3 text-sm font-semibold text-[#154359]">
                 Coût total : 690€ une seule fois
               </div>
             </motion.div>
@@ -491,8 +491,8 @@ export default function Tarifs() {
           <motion.div {...fadeUpView(0.3)} className="text-center">
             <Link
               to="/rdv"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 transition-all duration-300"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 transition-all duration-300"
+              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
             >
               Libérez votre temps → Demander un devis
             </Link>
@@ -517,7 +517,7 @@ export default function Tarifs() {
       {/* ── Final CTA ─────────────────────────────────────────────────────── */}
       <section
         className="py-20 px-4"
-        style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #faf5ff 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #F0F5F7 50%, #faf5ff 100%)' }}
       >
         <motion.div {...fadeUpView(0)} className="max-w-xl mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900">
@@ -526,8 +526,8 @@ export default function Tarifs() {
 
           <Link
             to="/rdv"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white text-base font-semibold hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 transition-all duration-300"
-            style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white text-base font-semibold hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 transition-all duration-300"
+            style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
           >
             Réserver mon appel gratuit
           </Link>

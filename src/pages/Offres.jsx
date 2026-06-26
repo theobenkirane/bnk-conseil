@@ -14,7 +14,7 @@ const sectorPages = [
 
 const guidePages = [
   { label: 'Combien coûte un site vitrine ?', path: '/guide/combien-coute-un-site-vitrine', emoji: '💰' },
-  { label: 'Wix vs Agence web — lequel choisir ?', path: '/guide/wix-vs-agence-web', emoji: '⚖️' },
+  { label: 'Wix vs Agence web  -  lequel choisir ?', path: '/guide/wix-vs-agence-web', emoji: '⚖️' },
   { label: 'Pourquoi pas faire soi-même ?', path: '/pourquoi-pas-faire-soi-meme', emoji: '🤔' },
 ]
 
@@ -150,11 +150,11 @@ export default function Offres() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Ce que l'on fait</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Ce que l'on fait</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6">
               Nos offres d'accompagnement{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #A855F7)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -186,7 +186,7 @@ export default function Offres() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUpView(0)} className="text-center mb-10">
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Sites vitrines</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Sites vitrines</span>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2 mb-3">Par secteur d'activité</h2>
             <p className="text-gray-500">Un site conçu pour votre métier, pas un template générique.</p>
           </motion.div>
@@ -195,12 +195,12 @@ export default function Offres() {
               <motion.div key={s.path} {...fadeUpView(i * 0.08)}>
                 <Link
                   to={s.path}
-                  className="group flex flex-col bg-white rounded-2xl border border-gray-100 p-5 hover:border-violet-300 hover:shadow-md hover:shadow-violet-100/50 transition-all duration-300"
+                  className="group flex flex-col bg-white rounded-2xl border border-gray-100 p-5 hover:border-[#3B9BB3] hover:shadow-md hover:shadow-[#F0F0F0]/50 transition-all duration-300"
                 >
                   <span className="text-3xl mb-3">{s.emoji}</span>
-                  <span className="font-bold text-gray-900 text-sm mb-1 group-hover:text-violet-700 transition-colors">{s.label}</span>
+                  <span className="font-bold text-gray-900 text-sm mb-1 group-hover:text-[#154359] transition-colors">{s.label}</span>
                   <span className="text-gray-500 text-xs leading-relaxed">{s.desc}</span>
-                  <span className="mt-3 text-violet-600 text-xs font-semibold group-hover:translate-x-1 transition-transform inline-block">
+                  <span className="mt-3 text-[#066377] text-xs font-semibold group-hover:translate-x-1 transition-transform inline-block">
                     Voir la page →
                   </span>
                 </Link>
@@ -215,7 +215,7 @@ export default function Offres() {
               <Link
                 key={c.path}
                 to={c.path}
-                className="text-sm font-medium px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-violet-400 hover:text-violet-700 transition-colors"
+                className="text-sm font-medium px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-[#066377] hover:text-[#154359] transition-colors"
               >
                 {c.label}
               </Link>
@@ -228,7 +228,7 @@ export default function Offres() {
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUpView(0)} className="text-center mb-10">
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Ressources</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Ressources</span>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2">Guides gratuits</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -236,14 +236,14 @@ export default function Offres() {
               <motion.div key={g.path} {...fadeUpView(i * 0.1)}>
                 <Link
                   to={g.path}
-                  className="group flex items-start gap-4 bg-violet-50 border border-violet-100 rounded-2xl p-5 hover:border-violet-300 hover:bg-violet-50/80 transition-all duration-300"
+                  className="group flex items-start gap-4 bg-[#F0F5F7] border border-[#F0F0F0] rounded-2xl p-5 hover:border-[#3B9BB3] hover:bg-[#F0F5F7]/80 transition-all duration-300"
                 >
                   <span className="text-2xl flex-shrink-0">{g.emoji}</span>
                   <div>
-                    <span className="font-semibold text-gray-800 text-sm leading-snug group-hover:text-violet-700 transition-colors block mb-1">
+                    <span className="font-semibold text-gray-800 text-sm leading-snug group-hover:text-[#154359] transition-colors block mb-1">
                       {g.label}
                     </span>
-                    <span className="text-violet-600 text-xs font-semibold group-hover:translate-x-1 transition-transform inline-block">
+                    <span className="text-[#066377] text-xs font-semibold group-hover:translate-x-1 transition-transform inline-block">
                       Lire le guide →
                     </span>
                   </div>
@@ -264,7 +264,7 @@ export default function Offres() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">FAQ</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">FAQ</span>
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 mb-4">
               Questions fréquentes
             </h2>
@@ -301,8 +301,8 @@ export default function Offres() {
             </p>
             <a
               href="/rdv"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/40 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
             >
               Discutons-en gratuitement
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

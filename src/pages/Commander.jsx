@@ -5,7 +5,7 @@ import PageTransition from '../components/PageTransition'
 import SEOHead from '../components/SEOHead'
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #A855F7)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -56,8 +56,8 @@ const FORMULAS = [
 
 function CheckIcon({ dark }) {
   return (
-    <span className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${dark ? 'bg-white/20' : 'bg-violet-100'}`}>
-      <svg viewBox="0 0 12 12" fill="none" className={`w-2.5 h-2.5 ${dark ? 'text-white' : 'text-violet-600'}`}>
+    <span className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${dark ? 'bg-white/20' : 'bg-[#F0F0F0]'}`}>
+      <svg viewBox="0 0 12 12" fill="none" className={`w-2.5 h-2.5 ${dark ? 'text-white' : 'text-[#066377]'}`}>
         <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </span>
@@ -122,7 +122,7 @@ export default function Commander() {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeUp(0)}>
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Offre directe</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Offre directe</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-4 leading-tight">
               Commandez directement{' '}
               <span style={gradientText}>-30% garanti</span>
@@ -148,7 +148,7 @@ export default function Commander() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUpView(0)} className="text-center mb-10">
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Étape 1</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Étape 1</span>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2">Choisissez votre formule</h2>
           </motion.div>
 
@@ -194,27 +194,27 @@ export default function Commander() {
                     onClick={() => setSelectedFormula(f.id)}
                     className={`relative flex flex-col w-full h-full text-left rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] p-6 ${
                       isPro
-                        ? 'shadow-xl shadow-violet-400/30'
+                        ? 'shadow-xl shadow-[#066377]/30'
                         : 'border-2 shadow-sm'
                     } ${
-                      isSelected && !isPro ? 'border-violet-500 shadow-violet-200/60 shadow-lg' : !isPro ? 'border-gray-100' : ''
+                      isSelected && !isPro ? 'border-[#066377] shadow-white/60 shadow-lg' : !isPro ? 'border-gray-100' : ''
                     }`}
                     style={
                       isPro
-                        ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }
+                        ? { background: 'linear-gradient(135deg, #066377, #A855F7)' }
                         : { background: '#ffffff' }
                     }
                   >
                     {isPro && (
                       <div className="absolute -top-0 left-1/2 -translate-x-1/2">
-                        <span className="bg-white text-violet-700 text-xs font-bold px-3 py-1 rounded-b-xl shadow-md shadow-violet-200/50 flex items-center gap-1">
+                        <span className="bg-white text-[#154359] text-xs font-bold px-3 py-1 rounded-b-xl shadow-md shadow-white/50 flex items-center gap-1">
                           ⭐ Plus populaire
                         </span>
                       </div>
                     )}
                     {isSelected && !isPro && (
                       <div className="absolute top-3 right-3">
-                        <span className="bg-violet-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                        <span className="bg-[#066377] text-white text-xs font-bold px-2 py-0.5 rounded-full">
                           Sélectionné
                         </span>
                       </div>
@@ -254,7 +254,7 @@ export default function Commander() {
 
           <motion.p {...fadeUpView(0.4)} className="text-center text-sm text-gray-500 mt-6">
             Pas sûr de votre choix ?{' '}
-            <Link to="/rdv" className="text-violet-600 hover:text-violet-700 font-medium transition-colors">
+            <Link to="/rdv" className="text-[#066377] hover:text-[#154359] font-medium transition-colors">
               Prenez un appel gratuit de 20 min →
             </Link>
           </motion.p>
@@ -265,7 +265,7 @@ export default function Commander() {
       <section className="py-16 bg-white">
         <div className="max-w-xl mx-auto px-4 sm:px-6">
           <motion.div {...fadeUpView(0)} className="text-center mb-8">
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Étape 2</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Étape 2</span>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2">Vos coordonnées</h2>
           </motion.div>
 
@@ -285,8 +285,8 @@ export default function Commander() {
                 </p>
                 <Link
                   to="/"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-violet-300/50"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/50"
+                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                 >
                   Retour à l'accueil
                 </Link>
@@ -297,20 +297,20 @@ export default function Commander() {
                 className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-5"
               >
                 {/* Formule choisie (lecture seule) */}
-                <div className="rounded-xl border border-violet-200 bg-violet-50 px-5 py-3 flex items-center justify-between">
+                <div className="rounded-xl border border-white bg-[#F0F5F7] px-5 py-3 flex items-center justify-between">
                   <div>
-                    <p className="text-violet-700 text-xs font-semibold uppercase tracking-widest mb-0.5">Formule choisie</p>
+                    <p className="text-[#154359] text-xs font-semibold uppercase tracking-widest mb-0.5">Formule choisie</p>
                     <p className="text-gray-900 font-bold text-sm">
                       {selectedData?.name}
                       {selectedData?.discountedPrice && (
-                        <span className="ml-2 text-violet-600">{selectedData.discountedPrice}€</span>
+                        <span className="ml-2 text-[#066377]">{selectedData.discountedPrice}€</span>
                       )}
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="text-violet-600 text-xs font-medium hover:text-violet-700 transition-colors"
+                    className="text-[#066377] text-xs font-medium hover:text-[#154359] transition-colors"
                   >
                     Modifier
                   </button>
@@ -329,7 +329,7 @@ export default function Commander() {
                       value={form.prenom}
                       onChange={handleChange}
                       placeholder="Jean"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200"
                     />
                   </div>
                   <div>
@@ -343,7 +343,7 @@ export default function Commander() {
                       value={form.nom}
                       onChange={handleChange}
                       placeholder="Dupont"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200"
                     />
                   </div>
                 </div>
@@ -360,7 +360,7 @@ export default function Commander() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="jean@monentreprise.fr"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200"
                   />
                 </div>
 
@@ -376,7 +376,7 @@ export default function Commander() {
                     value={form.telephone}
                     onChange={handleChange}
                     placeholder="06 12 34 56 78"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200"
                   />
                 </div>
 
@@ -392,7 +392,7 @@ export default function Commander() {
                     onChange={handleChange}
                     rows={3}
                     placeholder="Précisez votre secteur, vos besoins ou posez vos questions..."
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200 resize-none"
                   />
                 </div>
 
@@ -405,8 +405,8 @@ export default function Commander() {
                 <button
                   type="submit"
                   disabled={!isReady}
-                  className="group w-full py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center justify-center gap-2"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                  className="group w-full py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center justify-center gap-2"
+                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                 >
                   Confirmer ma commande
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 group-hover:translate-x-1 transition-transform">

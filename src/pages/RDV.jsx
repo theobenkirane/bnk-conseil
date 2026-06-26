@@ -29,7 +29,7 @@ function CalendlyInline({ url }) {
 
   return (
     <div
-      className="calendly-inline-widget w-full rounded-2xl overflow-hidden border border-violet-100"
+      className="calendly-inline-widget w-full rounded-2xl overflow-hidden border border-[#F0F0F0]"
       data-url={url}
       style={{ minWidth: '320px', height: '700px' }}
     />
@@ -71,7 +71,7 @@ function PreQualForm() {
             value={form.secteur}
             onChange={handleChange}
             disabled={showCalendly}
-            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm appearance-none focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 cursor-pointer disabled:opacity-60"
+            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm appearance-none focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200 cursor-pointer disabled:opacity-60"
           >
             <option value="">Sélectionnez votre secteur...</option>
             {SECTEURS.map((s) => (
@@ -100,7 +100,7 @@ function PreQualForm() {
           onChange={handleChange}
           disabled={showCalendly}
           placeholder="Ex : générer plus de leads qualifiés"
-          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 disabled:opacity-60"
+          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200 disabled:opacity-60"
         />
       </div>
 
@@ -118,15 +118,15 @@ function PreQualForm() {
           onChange={handleChange}
           disabled={showCalendly}
           placeholder="Ex : peu de visibilité en ligne, pas de process de vente"
-          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 disabled:opacity-60"
+          className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200 disabled:opacity-60"
         />
       </div>
 
       {/* Encadré de réassurance */}
-      <div className="rounded-xl border border-violet-200 bg-violet-50 px-5 py-4">
+      <div className="rounded-xl border border-white bg-[#F0F5F7] px-5 py-4">
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           {['Appel sans engagement', '20 minutes', 'Réponse sous 24h'].map((item) => (
-            <div key={item} className="flex items-center gap-1.5 text-violet-700 text-sm font-medium">
+            <div key={item} className="flex items-center gap-1.5 text-[#154359] text-sm font-medium">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 flex-shrink-0">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
@@ -147,8 +147,8 @@ function PreQualForm() {
             <button
               onClick={handleConfirm}
               disabled={!isReady}
-              className="group w-full py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center justify-center gap-2"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="group w-full py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center justify-center gap-2"
+              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
               title={!isReady ? "Remplissez les 3 champs pour accéder à la réservation" : ''}
             >
               Réserver mon diagnostic gratuit
@@ -171,7 +171,7 @@ function PreQualForm() {
         ou écrivez directement à{' '}
         <a
           href="mailto:conseil.bnk@gmail.com"
-          className="text-violet-600 hover:text-violet-700 transition-colors font-medium"
+          className="text-[#066377] hover:text-[#154359] transition-colors font-medium"
         >
           conseil.bnk@gmail.com
         </a>
@@ -241,11 +241,11 @@ export default function RDV() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Passons à l'action</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Passons à l'action</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-4 leading-tight">
               Parlons de votre{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #A855F7)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -268,13 +268,13 @@ export default function RDV() {
           >
             {/* Disponibilité */}
             {AVAILABILITY.active && (
-              <div className="mb-6 p-4 rounded-xl border border-violet-200 bg-violet-50 flex items-center gap-3">
+              <div className="mb-6 p-4 rounded-xl border border-white bg-[#F0F5F7] flex items-center gap-3">
                 <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-violet-600"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#066377] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#066377]"></span>
                 </span>
-                <p className="text-violet-700 text-sm font-medium">
-                  {AVAILABILITY.message} — Réservez rapidement
+                <p className="text-[#154359] text-sm font-medium">
+                  {AVAILABILITY.message}  -  Réservez rapidement
                 </p>
               </div>
             )}
@@ -285,7 +285,7 @@ export default function RDV() {
                 className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
                 style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.08))' }}
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-7 h-7 text-violet-600">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-7 h-7 text-[#066377]">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                   <line x1="16" y1="2" x2="16" y2="6" />
                   <line x1="8" y1="2" x2="8" y2="6" />

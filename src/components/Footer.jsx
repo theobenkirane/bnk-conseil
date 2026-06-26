@@ -31,7 +31,7 @@ function LinkedInIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-violet-100">
+    <footer className="bg-white border-t border-[#F0F0F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
@@ -41,7 +41,7 @@ export default function Footer() {
               <span
                 className="text-3xl font-black tracking-tight"
                 style={{
-                  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                  background: 'linear-gradient(135deg, #066377, #A855F7)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -60,14 +60,14 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/theobenkirane/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-violet-50 border border-violet-200 text-violet-500 hover:bg-violet-100 hover:text-violet-700 transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-[#F0F5F7] border border-white text-[#066377] hover:bg-[#F0F0F0] hover:text-[#154359] transition-all duration-200"
                 aria-label="LinkedIn BNK Conseil"
               >
                 <LinkedInIcon />
               </a>
               <a
                 href="mailto:conseil.bnk@gmail.com"
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-violet-50 border border-violet-200 text-violet-500 hover:bg-violet-100 hover:text-violet-700 transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-[#F0F5F7] border border-white text-[#066377] hover:bg-[#F0F0F0] hover:text-[#154359] transition-all duration-200"
                 aria-label="Email BNK Conseil"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -86,7 +86,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200"
+                    className="text-gray-500 text-sm hover:text-[#066377] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200 leading-relaxed block"
+                    className="text-gray-500 text-sm hover:text-[#066377] transition-colors duration-200 leading-relaxed block"
                   >
                     {link.label}
                   </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200 leading-relaxed block"
+                      className="text-gray-500 text-sm hover:text-[#066377] transition-colors duration-200 leading-relaxed block"
                     >
                       {link.label}
                     </Link>
@@ -135,9 +135,9 @@ export default function Footer() {
                 <li>
                   <a
                     href="mailto:conseil.bnk@gmail.com"
-                    className="text-gray-500 text-sm hover:text-violet-600 transition-colors duration-200 flex items-center gap-2"
+                    className="text-gray-500 text-sm hover:text-[#066377] transition-colors duration-200 flex items-center gap-2"
                   >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4 flex-shrink-0 text-violet-400">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4 flex-shrink-0 text-[#066377]">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                       <polyline points="22,6 12,13 2,6" />
                     </svg>
@@ -147,8 +147,8 @@ export default function Footer() {
                 <li className="pt-1">
                   <Link
                     to="/rdv"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:shadow-violet-300/40"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:shadow-[#3B9BB3]/40"
+                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                   >
                     Réserver un appel
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
@@ -167,11 +167,11 @@ export default function Footer() {
             © {new Date().getFullYear()} BNK Conseil. Tous droits réservés.
           </p>
           <div className="flex items-center gap-4">
-            <Link to="/mentions-legales" className="text-gray-400 text-sm hover:text-violet-600 transition-colors duration-200">
+            <Link to="/mentions-legales" className="text-gray-400 text-sm hover:text-[#066377] transition-colors duration-200">
               Mentions légales
             </Link>
             <span className="text-gray-200">·</span>
-            <Link to="/politique-confidentialite" className="text-gray-400 text-sm hover:text-violet-600 transition-colors duration-200">
+            <Link to="/politique-confidentialite" className="text-gray-400 text-sm hover:text-[#066377] transition-colors duration-200">
               Politique de confidentialité
             </Link>
           </div>

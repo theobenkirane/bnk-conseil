@@ -7,7 +7,7 @@ import FAQ from '../components/FAQ'
 const CALENDLY_URL = 'https://calendly.com/conseil-bnk/30min'
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #A855F7)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -156,14 +156,14 @@ export default function AuditCommercial() {
           >
             <Link
               to="/offres"
-              className="inline-flex items-center gap-2 text-violet-600 text-sm font-medium mb-6 hover:text-violet-700 transition-colors"
+              className="inline-flex items-center gap-2 text-[#066377] text-sm font-medium mb-6 hover:text-[#154359] transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path d="M19 12H5M12 5l-7 7 7 7" />
               </svg>
               Toutes les offres
             </Link>
-            <span className="block text-violet-600 text-sm font-semibold uppercase tracking-widest mb-4">Audit commercial TPE</span>
+            <span className="block text-[#066377] text-sm font-semibold uppercase tracking-widest mb-4">Audit commercial TPE</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
               Structurez votre{' '}
               <span style={gradientText}>process de vente</span>
@@ -175,8 +175,8 @@ export default function AuditCommercial() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/rdv"
-                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-1"
-                style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-1"
+                style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
               >
                 Réserver un diagnostic gratuit
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
@@ -225,7 +225,7 @@ export default function AuditCommercial() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="text-center p-6 rounded-2xl bg-white border border-violet-100"
+                className="text-center p-6 rounded-2xl bg-white border border-[#F0F0F0]"
               >
                 <div className="text-4xl font-black mb-1" style={gradientText}>{stat.value}</div>
                 <div className="text-gray-800 font-semibold text-sm">{stat.label}</div>
@@ -263,10 +263,10 @@ export default function AuditCommercial() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="flex gap-4 p-5 rounded-2xl bg-white border border-gray-200 hover:border-violet-300 hover:shadow-sm transition-all duration-200"
+                className="flex gap-4 p-5 rounded-2xl bg-white border border-gray-200 hover:border-[#3B9BB3] hover:shadow-sm transition-all duration-200"
               >
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-violet-600 flex-shrink-0"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-[#066377] flex-shrink-0"
                   style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.1), rgba(168,85,247,0.06))' }}
                 >
                   {item.icon}
@@ -308,7 +308,7 @@ export default function AuditCommercial() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-20px' }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex items-center gap-3 p-4 rounded-xl bg-white border border-violet-100"
+                className="flex items-center gap-3 p-4 rounded-xl bg-white border border-[#F0F0F0]"
               >
                 <span className="text-2xl" role="img" aria-label={cible.label}>{cible.emoji}</span>
                 <span className="text-gray-700 text-sm font-medium">{cible.label}</span>
@@ -321,7 +321,7 @@ export default function AuditCommercial() {
       {/* ── CTA ────────────────────────────────────────────────────────── */}
       <section
         className="py-20 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #ede9fe 0%, #fce7f3 50%, #dbeafe 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fce7f3 50%, #dbeafe 100%)' }}
       >
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -339,8 +339,8 @@ export default function AuditCommercial() {
             </p>
             <Link
               to="/rdv"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-violet-400/40 hover:-translate-y-1"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#066377]/40 hover:-translate-y-1"
+              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
             >
               Réserver mon diagnostic gratuit
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">

@@ -12,7 +12,7 @@ export default function FAQ({ items }) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="rounded-2xl bg-white border border-gray-200 overflow-hidden transition-all duration-200 hover:border-violet-300"
+          className="rounded-2xl bg-white border border-gray-200 overflow-hidden transition-all duration-200 hover:border-[#3B9BB3]"
         >
           {/* Question */}
           <button
@@ -26,7 +26,7 @@ export default function FAQ({ items }) {
             <motion.span
               animate={{ rotate: openIndex === i ? 45 : 0 }}
               transition={{ duration: 0.2 }}
-              className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-violet-600"
+              className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[#066377]"
               style={{ background: openIndex === i ? 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.08))' : 'transparent' }}
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">

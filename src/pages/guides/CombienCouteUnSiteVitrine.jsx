@@ -7,7 +7,7 @@ import SEOHead from '../../components/SEOHead'
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #A855F7)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -97,7 +97,7 @@ const priceCategories = [
     icon: '🏆',
     highlight: true,
     badgeText: '✅ Recommandé',
-    borderClass: 'border-violet-300',
+    borderClass: 'border-[#3B9BB3]',
     bgClass: '',
     priceColor: '',
   },
@@ -186,7 +186,7 @@ const costCards = [
       '+ 0h de votre temps',
     ],
     total: '690€ la première année',
-    borderClass: 'border-violet-300',
+    borderClass: 'border-[#3B9BB3]',
     bgClass: '',
     totalColor: '',
     headerGrad: true,
@@ -272,7 +272,7 @@ function AccordionItem({ question, answer }) {
       >
         <span className="font-semibold text-gray-900 text-base">{question}</span>
         <span
-          className="shrink-0 text-violet-600 transition-transform duration-300"
+          className="shrink-0 text-[#066377] transition-transform duration-300"
           style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)' }}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
@@ -306,7 +306,7 @@ export default function CombienCouteUnSiteVitrine() {
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <section
           className="relative overflow-hidden pt-28 pb-16 px-4"
-          style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #ede9fe 40%, #dbeafe 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 40%, #dbeafe 100%)' }}
         >
           <div
             className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
@@ -325,7 +325,7 @@ export default function CombienCouteUnSiteVitrine() {
               className="flex items-center gap-2 text-sm text-gray-500 mb-8"
               aria-label="Fil d'Ariane"
             >
-              <Link to="/" className="hover:text-violet-600 transition-colors">Accueil</Link>
+              <Link to="/" className="hover:text-[#066377] transition-colors">Accueil</Link>
               <span>/</span>
               <span className="text-gray-400">Guides</span>
               <span>/</span>
@@ -338,7 +338,7 @@ export default function CombienCouteUnSiteVitrine() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="inline-flex items-center gap-2 bg-white/80 border border-violet-200 rounded-full px-4 py-1.5 text-sm font-medium text-violet-700 mb-6"
+                className="inline-flex items-center gap-2 bg-white/80 border border-white rounded-full px-4 py-1.5 text-sm font-medium text-[#154359] mb-6"
               >
                 📖 Guide complet
               </motion.div>
@@ -415,23 +415,23 @@ export default function CombienCouteUnSiteVitrine() {
                     <motion.div
                       key={cat.id}
                       variants={fadeUp}
-                      className={`relative rounded-2xl border-2 p-6 ${cat.borderClass} ${cat.highlight ? 'ring-2 ring-violet-200' : ''}`}
+                      className={`relative rounded-2xl border-2 p-6 ${cat.borderClass} ${cat.highlight ? 'ring-2 ring-white' : ''}`}
                       style={
                         cat.highlight
-                          ? { background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' }
+                          ? { background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }
                           : {}
                       }
                     >
                       {cat.badgeText && (
                         <span
                           className="absolute top-4 right-4 text-xs font-semibold text-white px-3 py-1 rounded-full"
-                          style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                          style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                         >
                           {cat.badgeText}
                         </span>
                       )}
                       <div className="text-2xl mb-3">{cat.icon}</div>
-                      <h3 className={`font-semibold text-lg mb-1 ${cat.highlight ? 'text-violet-900' : 'text-gray-900'}`}>
+                      <h3 className={`font-semibold text-lg mb-1 ${cat.highlight ? 'text-[#154359]' : 'text-gray-900'}`}>
                         {cat.title}
                       </h3>
                       <p
@@ -440,7 +440,7 @@ export default function CombienCouteUnSiteVitrine() {
                       >
                         {cat.price}
                       </p>
-                      <p className={`text-sm leading-relaxed ${cat.highlight ? 'text-violet-700' : 'text-gray-600'}`}>
+                      <p className={`text-sm leading-relaxed ${cat.highlight ? 'text-[#154359]' : 'text-gray-600'}`}>
                         {cat.desc}
                       </p>
                     </motion.div>
@@ -505,12 +505,12 @@ export default function CombienCouteUnSiteVitrine() {
                     <motion.div
                       key={card.id}
                       variants={fadeUp}
-                      className={`rounded-2xl border-2 overflow-hidden ${card.borderClass} ${card.id === 'bnk' ? 'ring-2 ring-violet-200' : ''}`}
+                      className={`rounded-2xl border-2 overflow-hidden ${card.borderClass} ${card.id === 'bnk' ? 'ring-2 ring-white' : ''}`}
                     >
                       {/* Header */}
                       <div
                         className={`px-5 py-4 ${card.headerGrad ? '' : card.bgClass}`}
-                        style={card.headerGrad ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' } : {}}
+                        style={card.headerGrad ? { background: 'linear-gradient(135deg, #066377, #A855F7)' } : {}}
                       >
                         <p className={`font-bold text-base ${card.headerGrad ? 'text-white' : 'text-gray-800'}`}>
                           {card.title}
@@ -544,10 +544,10 @@ export default function CombienCouteUnSiteVitrine() {
                 {/* Callout */}
                 <motion.div
                   variants={fadeUp}
-                  className="rounded-2xl border-2 border-violet-200 p-6"
-                  style={{ background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' }}
+                  className="rounded-2xl border-2 border-white p-6"
+                  style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}
                 >
-                  <p className="text-violet-800 font-medium leading-relaxed">
+                  <p className="text-[#154359] font-medium leading-relaxed">
                     💡 Un site BNK Conseil est rentabilisé dès que vous gagnez 2 nouveaux clients grâce à lui.
                     Pour un restaurant avec un panier moyen de 40€/personne, c'est souvent le mois 1.
                   </p>
@@ -560,17 +560,17 @@ export default function CombienCouteUnSiteVitrine() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="mb-20 rounded-2xl border border-violet-200 p-8 text-center"
-                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%)' }}
+                className="mb-20 rounded-2xl border border-white p-8 text-center"
+                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 100%)' }}
               >
-                <p className="text-violet-900 font-bold text-xl mb-2">Obtenez un devis transparent en 24h</p>
-                <p className="text-violet-700 text-base mb-6">
+                <p className="text-[#154359] font-bold text-xl mb-2">Obtenez un devis transparent en 24h</p>
+                <p className="text-[#154359] text-base mb-6">
                   Sans engagement · Réponse garantie sous 24h
                 </p>
                 <Link
                   to="/tarifs"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                 >
                   Voir les tarifs
                 </Link>
@@ -599,10 +599,10 @@ export default function CombienCouteUnSiteVitrine() {
                       variants={fadeUp}
                       className={`rounded-2xl border-2 p-5 flex gap-4 items-start ${
                         opt.recommended
-                          ? 'border-violet-300 ring-2 ring-violet-100'
+                          ? 'border-[#3B9BB3] ring-2 ring-[#F0F0F0]'
                           : 'border-gray-200 bg-white'
                       }`}
-                      style={opt.recommended ? { background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' } : {}}
+                      style={opt.recommended ? { background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' } : {}}
                     >
                       <span className="text-xl shrink-0 mt-0.5">{opt.icon}</span>
                       <div className="flex-1">
@@ -611,16 +611,16 @@ export default function CombienCouteUnSiteVitrine() {
                           {opt.recommended && (
                             <span
                               className="text-xs font-semibold text-white px-3 py-0.5 rounded-full"
-                              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                             >
                               ✅ Notre recommandation
                             </span>
                           )}
                         </div>
-                        <p className={`font-semibold text-base mb-1 ${opt.recommended ? 'text-violet-900' : 'text-gray-900'}`}>
+                        <p className={`font-semibold text-base mb-1 ${opt.recommended ? 'text-[#154359]' : 'text-gray-900'}`}>
                           {opt.choice}
                         </p>
-                        <p className={`text-sm ${opt.recommended ? 'text-violet-700' : 'text-gray-500'}`}>
+                        <p className={`text-sm ${opt.recommended ? 'text-[#154359]' : 'text-gray-500'}`}>
                           {opt.note}
                         </p>
                       </div>
@@ -661,7 +661,7 @@ export default function CombienCouteUnSiteVitrine() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.55 }}
                 className="rounded-2xl p-10 text-center"
-                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #ede9fe 50%, #dbeafe 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 50%, #dbeafe 100%)' }}
               >
                 <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3">
                   Vous savez maintenant ce que vaut un site vitrine.
@@ -671,14 +671,14 @@ export default function CombienCouteUnSiteVitrine() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     to="/tarifs"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                   >
                     Voir les tarifs
                   </Link>
                   <Link
                     to="/apercu-site"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-violet-300 bg-white px-7 py-3.5 text-base font-semibold text-violet-700 transition-all duration-300 hover:bg-violet-50 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#3B9BB3] bg-white px-7 py-3.5 text-base font-semibold text-[#154359] transition-all duration-300 hover:bg-[#F0F5F7] hover:-translate-y-0.5"
                   >
                     Visualiser mon site
                   </Link>
@@ -701,7 +701,7 @@ export default function CombienCouteUnSiteVitrine() {
                       <a
                         key={link.href}
                         href={link.href}
-                        className="block text-sm text-gray-600 hover:text-violet-600 hover:translate-x-1 transition-all duration-200 py-0.5"
+                        className="block text-sm text-gray-600 hover:text-[#066377] hover:translate-x-1 transition-all duration-200 py-0.5"
                       >
                         {link.label}
                       </a>
@@ -711,23 +711,23 @@ export default function CombienCouteUnSiteVitrine() {
 
                 {/* CTA card */}
                 <div
-                  className="rounded-2xl border border-violet-200 p-6 text-center"
-                  style={{ background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' }}
+                  className="rounded-2xl border border-white p-6 text-center"
+                  style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}
                 >
-                  <p className="font-bold text-violet-900 text-base mb-2">
+                  <p className="font-bold text-[#154359] text-base mb-2">
                     Vous avez votre réponse ?
                   </p>
-                  <p className="text-sm text-violet-700 mb-5 leading-relaxed">
+                  <p className="text-sm text-[#154359] mb-5 leading-relaxed">
                     Obtenez un devis gratuit et personnalisé.
                   </p>
                   <Link
                     to="/rdv"
-                    className="block text-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-violet-300/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                    className="block text-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                   >
                     Obtenez un devis gratuit
                   </Link>
-                  <p className="text-xs text-violet-500 mt-3">Réponse sous 24h · Sans engagement</p>
+                  <p className="text-xs text-[#066377] mt-3">Réponse sous 24h · Sans engagement</p>
                 </div>
 
               </div>

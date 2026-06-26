@@ -37,11 +37,11 @@ export default function OfferModal({ offer, onClose }) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.94, y: 12 }}
           transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="relative w-full max-w-lg bg-white border border-violet-100 rounded-2xl overflow-hidden shadow-2xl shadow-violet-200/30"
+          className="relative w-full max-w-lg bg-white border border-[#F0F0F0] rounded-2xl overflow-hidden shadow-2xl shadow-white/30"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Barre dégradée en haut */}
-          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, #7C3AED, #A855F7)' }} />
+          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, #066377, #A855F7)' }} />
 
           <div className="p-6 sm:p-8">
             {/* En-tête */}
@@ -51,12 +51,12 @@ export default function OfferModal({ offer, onClose }) {
                   className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                   style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.08))' }}
                 >
-                  <span className="text-violet-600">{offer.icon}</span>
+                  <span className="text-[#066377]">{offer.icon}</span>
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900">{offer.title}</h2>
                   <div className="flex items-center gap-3 mt-1">
-                    <span className="text-xs text-violet-600 font-medium bg-violet-50 px-2 py-0.5 rounded-full border border-violet-200">
+                    <span className="text-xs text-[#066377] font-medium bg-[#F0F5F7] px-2 py-0.5 rounded-full border border-white">
                       {offer.duration}
                     </span>
                     {offer.price && (
@@ -85,7 +85,7 @@ export default function OfferModal({ offer, onClose }) {
               <ul className="space-y-2.5">
                 {offer.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 text-violet-500 flex-shrink-0 mt-0.5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 text-[#066377] flex-shrink-0 mt-0.5">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     {benefit}
@@ -98,8 +98,8 @@ export default function OfferModal({ offer, onClose }) {
             <Link
               to="/rdv"
               onClick={onClose}
-              className="block w-full text-center py-3 rounded-xl font-semibold text-white text-sm transition-all duration-300 hover:shadow-lg hover:shadow-violet-300/40 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="block w-full text-center py-3 rounded-xl font-semibold text-white text-sm transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
             >
               Réserver un appel gratuit
             </Link>

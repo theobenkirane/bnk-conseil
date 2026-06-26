@@ -79,13 +79,13 @@ export default function TestimonialCarousel() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="rounded-2xl p-8 sm:p-10 bg-white border border-violet-100 shadow-sm shadow-violet-100/50"
+            className="rounded-2xl p-8 sm:p-10 bg-white border border-[#F0F0F0] shadow-sm shadow-[#F0F0F0]/50"
           >
             {/* Guillemet */}
             <div
               className="text-6xl font-serif leading-none mb-4 opacity-70"
               style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #A855F7)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -103,8 +103,8 @@ export default function TestimonialCarousel() {
             {/* Auteur */}
             <div className="flex items-center gap-4">
               <div
-                className="w-12 h-12 rounded-full border-2 border-violet-200 flex items-center justify-center flex-shrink-0 text-white font-bold text-sm"
-                style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)', width: 48, height: 48 }}
+                className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center flex-shrink-0 text-white font-bold text-sm"
+                style={{ background: 'linear-gradient(135deg, #066377, #A855F7)', width: 48, height: 48 }}
                 aria-label={t.author}
               >
                 {t.initials}
@@ -122,7 +122,7 @@ export default function TestimonialCarousel() {
       <div className="flex items-center justify-center gap-4 mt-6">
         <button
           onClick={prev}
-          className="w-10 h-10 rounded-xl bg-white border border-gray-200 hover:bg-violet-50 hover:border-violet-300 transition-all duration-200 flex items-center justify-center text-gray-500 hover:text-violet-600 shadow-sm"
+          className="w-10 h-10 rounded-xl bg-white border border-gray-200 hover:bg-[#F0F5F7] hover:border-[#3B9BB3] transition-all duration-200 flex items-center justify-center text-gray-500 hover:text-[#066377] shadow-sm"
           aria-label="Témoignage précédent"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -138,8 +138,8 @@ export default function TestimonialCarousel() {
               onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i) }}
               className={`transition-all duration-300 rounded-full ${
                 i === current
-                  ? 'w-6 h-2 bg-violet-500'
-                  : 'w-2 h-2 bg-violet-200 hover:bg-violet-300'
+                  ? 'w-6 h-2 bg-[#066377]'
+                  : 'w-2 h-2 bg-white hover:bg-[#3B9BB3]'
               }`}
               aria-label={`Témoignage ${i + 1}`}
             />
@@ -148,7 +148,7 @@ export default function TestimonialCarousel() {
 
         <button
           onClick={next}
-          className="w-10 h-10 rounded-xl bg-white border border-gray-200 hover:bg-violet-50 hover:border-violet-300 transition-all duration-200 flex items-center justify-center text-gray-500 hover:text-violet-600 shadow-sm"
+          className="w-10 h-10 rounded-xl bg-white border border-gray-200 hover:bg-[#F0F5F7] hover:border-[#3B9BB3] transition-all duration-200 flex items-center justify-center text-gray-500 hover:text-[#066377] shadow-sm"
           aria-label="Témoignage suivant"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

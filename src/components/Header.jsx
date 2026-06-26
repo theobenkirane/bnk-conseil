@@ -70,7 +70,7 @@ export default function Header() {
         bannerActive ? 'top-10' : 'top-0'
       } ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-xl border-b border-violet-100 shadow-sm shadow-violet-100/50'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-[#F0F0F0] shadow-sm shadow-[#F0F0F0]/50'
           : 'bg-white/70 backdrop-blur-md'
       }`}
     >
@@ -82,7 +82,7 @@ export default function Header() {
             <span
               className="text-2xl font-black tracking-tight"
               style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #A855F7)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -128,7 +128,7 @@ export default function Header() {
                         <motion.span
                           layoutId="nav-indicator"
                           className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-                          style={{ background: 'linear-gradient(90deg, #7C3AED, #A855F7)' }}
+                          style={{ background: 'linear-gradient(90deg, #066377, #A855F7)' }}
                         />
                       )}
                     </Link>
@@ -141,7 +141,7 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 6 }}
                           transition={{ duration: 0.18 }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-xl border border-gray-100 shadow-lg shadow-violet-100/40 overflow-hidden"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-xl border border-gray-100 shadow-lg shadow-[#F0F0F0]/40 overflow-hidden"
                         >
                           <div className="p-1.5">
                             {/* Section Services */}
@@ -154,13 +154,13 @@ export default function Header() {
                                 to={sub.path}
                                 className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                                   location.pathname === sub.path
-                                    ? 'bg-violet-50 text-violet-700'
-                                    : 'text-gray-700 hover:bg-violet-50 hover:text-violet-700'
+                                    ? 'bg-[#F0F5F7] text-[#154359]'
+                                    : 'text-gray-700 hover:bg-[#F0F5F7] hover:text-[#154359]'
                                 }`}
                               >
                                 <span
                                   className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                                 />
                                 {sub.label}
                               </Link>
@@ -179,8 +179,8 @@ export default function Header() {
                                 to={sub.path}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                                   location.pathname === sub.path
-                                    ? 'bg-violet-50 text-violet-700'
-                                    : 'text-gray-600 hover:bg-violet-50 hover:text-violet-700'
+                                    ? 'bg-[#F0F5F7] text-[#154359]'
+                                    : 'text-gray-600 hover:bg-[#F0F5F7] hover:text-[#154359]'
                                 }`}
                               >
                                 <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-gray-300" />
@@ -200,8 +200,8 @@ export default function Header() {
                                   to={city.path}
                                   className={`text-xs font-medium px-2 py-0.5 rounded-full transition-colors ${
                                     location.pathname === city.path
-                                      ? 'bg-violet-100 text-violet-700'
-                                      : 'bg-gray-100 text-gray-600 hover:bg-violet-100 hover:text-violet-700'
+                                      ? 'bg-[#F0F0F0] text-[#154359]'
+                                      : 'bg-gray-100 text-gray-600 hover:bg-[#F0F0F0] hover:text-[#154359]'
                                   }`}
                                 >
                                   {city.label}
@@ -231,7 +231,7 @@ export default function Header() {
                     <motion.span
                       layoutId="nav-indicator"
                       className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-                      style={{ background: 'linear-gradient(90deg, #7C3AED, #A855F7)' }}
+                      style={{ background: 'linear-gradient(90deg, #066377, #A855F7)' }}
                     />
                   )}
                 </Link>
@@ -243,8 +243,8 @@ export default function Header() {
           <div className="hidden md:flex items-center">
             <Link
               to="/rdv"
-              className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-violet-300/40 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
             >
               Réserver un appel
             </Link>
@@ -300,7 +300,7 @@ export default function Header() {
                         onClick={() => setOffresOpen(!offresOpen)}
                         className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                           isOffresActive
-                            ? 'bg-violet-50 text-violet-700 border border-violet-200'
+                            ? 'bg-[#F0F5F7] text-[#154359] border border-white'
                             : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                         }`}
                       >
@@ -339,13 +339,13 @@ export default function Header() {
                                 to={sub.path}
                                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                                   location.pathname === sub.path
-                                    ? 'bg-violet-50 text-violet-700'
+                                    ? 'bg-[#F0F5F7] text-[#154359]'
                                     : 'text-gray-500 hover:bg-gray-50 hover:text-gray-800'
                                 }`}
                               >
                                 <span
                                   className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                                 />
                                 {sub.label}
                               </Link>
@@ -359,7 +359,7 @@ export default function Header() {
                                 to={sub.path}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
                                   location.pathname === sub.path
-                                    ? 'bg-violet-50 text-violet-700'
+                                    ? 'bg-[#F0F5F7] text-[#154359]'
                                     : 'text-gray-500 hover:bg-gray-50 hover:text-gray-800'
                                 }`}
                               >
@@ -372,7 +372,7 @@ export default function Header() {
                                 <Link
                                   key={city.path}
                                   to={city.path}
-                                  className="text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 hover:bg-violet-100 hover:text-violet-700 transition-colors"
+                                  className="text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 hover:bg-[#F0F0F0] hover:text-[#154359] transition-colors"
                                 >
                                   {city.label}
                                 </Link>
@@ -396,7 +396,7 @@ export default function Header() {
                       to={link.path}
                       className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                         location.pathname === link.path
-                          ? 'bg-violet-50 text-violet-700 border border-violet-200'
+                          ? 'bg-[#F0F5F7] text-[#154359] border border-white'
                           : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                       }`}
                     >
@@ -414,7 +414,7 @@ export default function Header() {
                 <Link
                   to="/rdv"
                   className="block text-center px-4 py-3 rounded-xl text-sm font-semibold text-white"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
                 >
                   Réserver un appel
                 </Link>
