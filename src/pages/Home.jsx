@@ -342,14 +342,14 @@ export default function Home() {
             <StatCard
               variant={2}
               value="50+"
-              label="missions TPE et independants"
+              label="missions TPE et indépendants"
               image="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&auto=format&fit=crop"
               className="lg:mt-24"
             />
             <StatCard
               variant={3}
               value="30j"
-              label="pour les premiers resultats"
+              label="pour les premiers résultats"
               image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop"
             />
           </div>
