@@ -1,127 +1,26 @@
-import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import PageTransition from '../components/PageTransition'
 import SEOHead from '../components/SEOHead'
 import NominationCard from '../components/NominationCard'
 import StatCard from '../components/StatCard'
-import { useStellar } from '../contexts/StellarContext'
+import LiquidChrome from '../components/stellar/LiquidChrome'
+import Reveal from '../components/stellar/Reveal'
+import MagneticButton from '../components/stellar/MagneticButton'
+import LiquidDivider from '../components/stellar/LiquidDivider'
+import { motion } from 'framer-motion' // eslint-disable-line no-unused-vars -- used via motion.p / motion.div JSX dot notation
+import { ClipboardCheck, Target, LineChart, Globe, MapPin, Cpu } from 'lucide-react'
 
-gsap.registerPlugin(ScrollTrigger)
+const CALENDLY = 'https://calendly.com/conseil-bnk/30min'
+
+const SERVICES = [
+  { title: 'Audit Commercial', subtitle: 'Diagnostic complet', to: '/offres', icon: ClipboardCheck },
+  { title: 'Stratégie', subtitle: 'Sur-mesure, sans template', to: '/offres', icon: Target },
+  { title: 'Suivi et KPIs', subtitle: 'ROI mesurable', to: '/offres', icon: LineChart },
+  { title: 'Création de Site', subtitle: 'À partir de 690 euros', to: '/creation-site-vitrine', icon: Globe },
+  { title: 'SEO Local', subtitle: 'Visibilité Google', to: '/offres', icon: MapPin },
+  { title: 'Digitalisation', subtitle: 'CRM et automation', to: '/offres', icon: Cpu },
+]
 
 export default function Home() {
-  const { scrollRef } = useStellar()
-  const videoRef = useRef(null)
-  const leftColRef = useRef(null)
-  const rightColRef = useRef(null)
-  const videoRef2 = useRef(null)
-  const statsGridRef = useRef(null)
-
-  useEffect(() => {
-    if (!videoRef.current || !scrollRef.current) return
-    const ctx = gsap.context(() => {
-      gsap.to(videoRef.current, {
-        scale: 1.08,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: videoRef.current,
-          scroller: scrollRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      })
-    })
-    return () => ctx.revert()
-  }, [scrollRef])
-
-  useEffect(() => {
-    if (!scrollRef.current) return
-    const ctx = gsap.context(() => {
-      // Left cards slide in from left
-      if (leftColRef.current) {
-        gsap.fromTo(leftColRef.current.children,
-          { x: -60, opacity: 0 },
-          {
-            x: 0, opacity: 1,
-            stagger: 0.1,
-            duration: 0.6,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: leftColRef.current,
-              scroller: scrollRef.current,
-              start: 'top 80%',
-              toggleActions: 'play none none none',
-            }
-          }
-        )
-      }
-      // Right cards slide in from right
-      if (rightColRef.current) {
-        gsap.fromTo(rightColRef.current.children,
-          { x: 60, opacity: 0 },
-          {
-            x: 0, opacity: 1,
-            stagger: 0.1,
-            duration: 0.6,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: rightColRef.current,
-              scroller: scrollRef.current,
-              start: 'top 80%',
-              toggleActions: 'play none none none',
-            }
-          }
-        )
-      }
-      // Center video clip-path reveal
-      if (videoRef2.current) {
-        gsap.fromTo(videoRef2.current,
-          { clipPath: 'inset(100% 0 0 0)' },
-          {
-            clipPath: 'inset(0% 0 0 0)',
-            duration: 0.8,
-            ease: 'power2.out',
-            delay: 0.2,
-            scrollTrigger: {
-              trigger: videoRef2.current,
-              scroller: scrollRef.current,
-              start: 'top 80%',
-              toggleActions: 'play none none none',
-            }
-          }
-        )
-      }
-    })
-    return () => ctx.revert()
-  }, [scrollRef])
-
-  useEffect(() => {
-    if (!scrollRef.current || !statsGridRef.current) return
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        statsGridRef.current.children,
-        { y: 40, opacity: 0, rotateY: 4, transformPerspective: 1000 },
-        {
-          y: 0,
-          opacity: 1,
-          rotateY: 0,
-          stagger: 0.15,
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: statsGridRef.current,
-            scroller: scrollRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          }
-        }
-      )
-    })
-    return () => ctx.revert()
-  }, [scrollRef])
-
   return (
     <PageTransition>
       <SEOHead
@@ -131,229 +30,91 @@ export default function Home() {
         ogTitle="BNK Conseil : Audit commercial & Digitalisation pour TPE"
       />
 
+      {/* SECTION 1 — HERO */}
       <section style={{ minHeight: 'calc(100vh - 40px)', position: 'relative', overflow: 'hidden' }}>
-        {/* Video background z-0 */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ zIndex: 0 }}
-          ref={videoRef}
-          src="https://cdn.mixkit.co/videos/preview/mixkit-team-meeting-in-a-modern-office-4809-large.mp4"
-        />
-
-        {/* Gradient overlay z-1 */}
+        <div className="absolute inset-0" style={{ zIndex: 0 }}>
+          <LiquidChrome />
+        </div>
+        {/* voile radial pour contraste du texte */}
         <div
           className="absolute inset-0"
-          style={{
-            zIndex: 1,
-            background:
-              'linear-gradient(to bottom, rgba(0,0,0,0.10), transparent 50%, rgba(0,0,0,0.20))',
-          }}
+          style={{ zIndex: 1, background: 'radial-gradient(60% 50% at 50% 50%, rgba(255,255,255,0.35), transparent 70%)' }}
         />
 
-        {/* Mobile top bar - hidden on md+, z-20 */}
-        <div
-          className="absolute top-0 left-0 right-0 flex md:hidden items-center justify-between px-5 pt-5"
-          style={{ zIndex: 20 }}
-        >
-          <span className="font-firs text-white text-xl font-semibold">
-            BNK{' '}
-            <span className="font-sans font-normal opacity-90 text-base">Conseil</span>
-          </span>
-          <a
-            href="https://calendly.com/conseil-bnk/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-[11px] uppercase tracking-[0.14em] font-medium px-4 py-2 bg-[#066377]"
-            style={{
-              clipPath:
-                'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)',
-            }}
-          >
-            Réserver
-          </a>
-        </div>
-
-        {/* Hero content centered, z-30 */}
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-          style={{ zIndex: 30 }}
-        >
-          {/* Eyebrow */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style={{ zIndex: 30 }}>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[11px] uppercase tracking-[0.3em] text-white/90 font-medium mb-6"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-[11px] uppercase tracking-[0.3em] font-medium mb-6" style={{ color: 'var(--c-dark)' }}
           >
             Conseil Commercial · Depuis 2022
           </motion.p>
 
-          {/* H1 line 1 */}
-          <div className="overflow-hidden mb-2">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
-              className="font-firs font-normal tracking-[-0.04em] leading-[0.9] text-[48px] sm:text-[76px] lg:text-[100px] xl:text-[120px] text-[#154359]"
-            >
-              BNK
-            </motion.h1>
-          </div>
+          <h1 className="font-firs font-semibold tracking-[-0.04em] leading-[0.9] text-[52px] sm:text-[80px] lg:text-[104px] xl:text-[124px]" style={{ color: 'var(--c-dark)' }}>
+            <Reveal variant="chars" as="span" className="block">BNK</Reveal>
+            <Reveal variant="chars" as="span" className="block" delay={0.1}>Conseil</Reveal>
+          </h1>
 
-          {/* H1 line 2 */}
-          <div className="overflow-hidden mb-8">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="font-firs font-normal tracking-[-0.04em] leading-[0.9] text-[48px] sm:text-[76px] lg:text-[100px] xl:text-[120px] text-[#154359]"
-            >
-              Conseil
-            </motion.h1>
-          </div>
-
-          {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-medium max-w-md leading-[1.8] text-[#154359]/90 mb-8"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.55 }}
+            className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-medium max-w-lg leading-[1.8] mt-8 mb-8" style={{ color: 'var(--c-dark)' }}
           >
-            Audit commercial. Création site. Résultats en 30 jours.
+            Sites qui convertissent. Audit commercial. Résultats en 30 jours.
           </motion.p>
 
-          {/* CTA */}
-          <motion.a
-            href="https://calendly.com/conseil-bnk/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="inline-flex items-center gap-2 text-white text-[11px] uppercase tracking-[0.14em] font-medium px-[18px] py-3 bg-[#066377]"
-            style={{
-              clipPath:
-                'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)',
-            }}
-          >
-            Réserver un diagnostic gratuit
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path
-                d="M2 10L10 2M10 2H4M10 2V8"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </motion.a>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}>
+            <MagneticButton href={CALENDLY}>Réserver un diagnostic gratuit</MagneticButton>
+          </motion.div>
         </div>
       </section>
 
-      <section style={{ background: '#F0F0F0', position: 'relative' }} className="py-20 sm:py-28 px-6 sm:px-10">
-        <div className="max-w-5xl mx-auto">
-          {/* 3-column grid: left cards | center | right cards */}
-          {/* Mobile: center column first (order-first), stacked */}
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-6 items-start">
+      <LiquidDivider color="var(--c-bg-services)" />
 
-            {/* Left column - 3 NominationCards */}
-            <div ref={leftColRef} className="flex flex-col gap-4 lg:mt-36 order-2 lg:order-1 w-full lg:w-auto">
-              <NominationCard title="Audit Commercial" subtitle="Diagnostic complet" to="/offres" />
-              <NominationCard title="Stratégie" subtitle="Sur-mesure, sans template" to="/offres" />
-              <NominationCard title="Suivi et KPIs" subtitle="ROI mesurable" to="/offres" />
-            </div>
+      {/* SECTION 2 — SERVICES */}
+      <section style={{ background: 'var(--c-bg-services)' }} className="py-20 sm:py-28 px-6 sm:px-10">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="text-center mb-14">
+            <p className="text-[12px] tracking-[0.24em] uppercase font-medium mb-3" style={{ color: 'var(--c-teal)' }}>[ Services ]</p>
+            <h2 className="font-firs text-[40px] sm:text-[54px] font-semibold uppercase tracking-tight mb-4" style={{ color: 'var(--c-dark)' }}>Services</h2>
+            <p className="text-[15px] leading-relaxed max-w-xl mx-auto" style={{ color: 'var(--c-dark)' }}>
+              Tout ce qu'il faut pour structurer votre commercial et lancer votre présence en ligne. Un seul interlocuteur, des résultats mesurables.
+            </p>
+          </Reveal>
 
-            {/* Center column */}
-            <div className="flex flex-col items-center order-1 lg:order-2 flex-1 min-w-0">
-              <p className="text-[12px] tracking-[0.24em] uppercase text-[#154359] font-medium mb-2">[services]</p>
-              <h2 className="font-firs text-[44px] sm:text-[54px] font-semibold uppercase text-[#154359] tracking-tight mb-6 text-center">Services</h2>
-              <div ref={videoRef2} className="w-full overflow-hidden" style={{ maxWidth: 460 }}>
-                <video
-                  autoPlay loop muted playsInline
-                  className="w-full object-cover"
-                  style={{ height: 220, maxHeight: 460 }}
-                  src="https://cdn.mixkit.co/videos/preview/mixkit-business-team-working-in-an-office-4815-large.mp4"
-                />
-              </div>
-            </div>
-
-            {/* Right column - 3 NominationCards */}
-            <div ref={rightColRef} className="flex flex-col gap-4 lg:mt-36 order-3 w-full lg:w-auto">
-              <NominationCard title="Création de Site" subtitle="À partir de 690 euros" to="/creation-site-vitrine" />
-              <NominationCard title="SEO Local" subtitle="Visibilité Google" to="/offres" />
-              <NominationCard title="Digitalisation" subtitle="CRM et automation" to="/offres" />
-            </div>
-
-          </div>
+          <Reveal stagger={0.08} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {SERVICES.map((s) => (
+              <NominationCard key={s.title} {...s} />
+            ))}
+          </Reveal>
         </div>
-
-        {/* Bottom fade into Section 3 */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 sm:h-56 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(240,245,247,0) 0%, rgba(240,245,247,0.7) 60%, #F0F5F7 100%)', zIndex: 10 }} />
       </section>
 
-      <section style={{ background: '#F0F5F7', position: 'relative' }} className="py-20 sm:py-28 px-6 sm:px-10">
+      <LiquidDivider color="var(--c-bg-results)" />
+
+      {/* SECTION 3 — RÉSULTATS */}
+      <section style={{ background: 'var(--c-bg-results)' }} className="py-20 sm:py-28 px-6 sm:px-10">
         <div className="max-w-7xl mx-auto">
-
-          {/* Top row */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-14 text-[#154359]">
-
-            {/* Left: title */}
-            <div>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-14" style={{ color: 'var(--c-dark)' }}>
+            <Reveal>
               <h2 className="font-firs text-[36px] sm:text-[48px] lg:text-[54px] font-semibold uppercase tracking-tight leading-[0.95]">
                 Résultats<br />Concrets
               </h2>
-            </div>
-
-            {/* Right: description + CTA */}
-            <div className="max-w-xl">
-              <p className="text-[15px] leading-relaxed text-[#154359] mb-4">
+            </Reveal>
+            <Reveal className="max-w-xl" delay={0.1}>
+              <p className="text-[15px] leading-relaxed mb-4">
                 BNK Conseil accompagne les TPE, artisans et indépendants pour structurer leur croissance commerciale et renforcer leur présence digitale.
               </p>
-              <p className="text-[15px] leading-relaxed text-[#154359] mb-6">
+              <p className="text-[15px] leading-relaxed mb-6">
                 Une approche terrain, des résultats mesurables, et des premiers effets visibles en 30 jours.
               </p>
-              <a
-                href="https://calendly.com/conseil-bnk/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white text-[11px] uppercase tracking-[0.14em] font-medium px-[18px] py-3 bg-[#066377]"
-                style={{ clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)' }}
-              >
-                Réserver un diagnostic gratuit
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
-            </div>
+              <MagneticButton href={CALENDLY}>Réserver un diagnostic gratuit</MagneticButton>
+            </Reveal>
           </div>
 
-          {/* Stats grid */}
-          <div ref={statsGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <StatCard
-              variant={1}
-              value="+40%"
-              label="de CA moyen sur 6 mois"
-              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop"
-            />
-            <StatCard
-              variant={2}
-              value="50+"
-              label="missions TPE et indépendants"
-              image="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&auto=format&fit=crop"
-              className="lg:mt-24"
-            />
-            <StatCard
-              variant={3}
-              value="30j"
-              label="pour les premiers résultats"
-              image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop"
-            />
-          </div>
-
+          <Reveal stagger={0.12} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <StatCard variant={1} value="+40%" label="de CA moyen sur 6 mois" />
+            <StatCard variant={2} value="50+" label="missions TPE et indépendants" className="lg:mt-24" />
+            <StatCard variant={3} value="30j" label="pour les premiers résultats" />
+          </Reveal>
         </div>
       </section>
     </PageTransition>
