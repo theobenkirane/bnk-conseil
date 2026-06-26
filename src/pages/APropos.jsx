@@ -115,7 +115,7 @@ export default function APropos() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6 leading-tight">
                 BNK Conseil, c'est une conviction{' '}
                 <span style={{
-                  background: 'linear-gradient(135deg, #066377, #A855F7)',
+                  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -138,7 +138,7 @@ export default function APropos() {
             >
               <div
                 className="relative p-1 rounded-3xl"
-                style={{ background: 'linear-gradient(135deg, #066377, #A855F7, #fbcfe8)' }}
+                style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3, #fbcfe8)' }}
               >
                 <div className="bg-white rounded-[22px] p-8 text-center max-w-xs w-full">
                   {/* Photo */}
@@ -155,7 +155,7 @@ export default function APropos() {
                     />
                     <span
                       className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg"
-                      style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                      style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                     >
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-4 h-4">
                         <polyline points="20 6 9 17 4 12" />
@@ -167,7 +167,7 @@ export default function APropos() {
                   <p
                     className="text-sm font-semibold mt-1 mb-3"
                     style={{
-                      background: 'linear-gradient(135deg, #066377, #A855F7)',
+                      background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
@@ -184,7 +184,7 @@ export default function APropos() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -213,7 +213,7 @@ export default function APropos() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
               Ce qui me{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #066377, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -233,7 +233,7 @@ export default function APropos() {
               >
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 text-[#066377] group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.1), rgba(168,85,247,0.06))' }}
+                  style={{ background: 'linear-gradient(135deg, rgba(6,99,119,0.1), rgba(6,99,119,0.06))' }}
                 >
                   {value.icon}
                 </div>
@@ -246,7 +246,7 @@ export default function APropos() {
       </section>
 
       {/* ── Timeline ──────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fdf4ff 100%)' }}>
+      <section className="py-24" style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fdf4ff 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -271,7 +271,7 @@ export default function APropos() {
             {/* Ligne verticale */}
             <div
               className="absolute left-6 top-0 bottom-0 w-px hidden sm:block"
-              style={{ background: 'linear-gradient(180deg, transparent, #A855F7, #066377, transparent)' }}
+              style={{ background: 'linear-gradient(180deg, transparent, #3B9BB3, #066377, transparent)' }}
             />
 
             <div className="space-y-8">
@@ -287,7 +287,7 @@ export default function APropos() {
                   {/* Point année */}
                   <div
                     className="hidden sm:flex absolute left-0 top-1 w-12 h-12 rounded-full items-center justify-center text-xs font-bold text-white shadow-md"
-                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     {item.year.slice(2)}
                   </div>
@@ -297,7 +297,7 @@ export default function APropos() {
                       <span
                         className="text-sm font-bold sm:hidden"
                         style={{
-                          background: 'linear-gradient(135deg, #066377, #A855F7)',
+                          background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                           WebkitBackgroundClip: 'text',
                           WebkitTextFillColor: 'transparent',
                           backgroundClip: 'text',
@@ -323,7 +323,7 @@ export default function APropos() {
       >
         <div
           className="absolute inset-0 opacity-30 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(168,85,247,0.2), transparent)' }}
+          style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(6,99,119,0.2), transparent)' }}
         />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -341,7 +341,7 @@ export default function APropos() {
             <Link
               to="/rdv"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Prendre contact
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

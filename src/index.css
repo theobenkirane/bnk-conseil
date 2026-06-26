@@ -41,7 +41,7 @@ body {
   background: #EFF6FF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #A855F7;
+  background: #3B9BB3;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -50,7 +50,7 @@ body {
 
 /* Gradient text utility (violet → fuchsia) */
 .gradient-text {
-  background: linear-gradient(135deg, #7C3AED, #A855F7);
+  background: linear-gradient(135deg, #7C3AED, #3B9BB3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -60,7 +60,7 @@ body {
 .soft-card {
   background: #ffffff;
   border: 1px solid #E9D5FF;
-  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.06);
+  box-shadow: 0 2px 12px rgba(6,99,119, 0.06);
 }
 
 /* Smooth transitions for page changes */

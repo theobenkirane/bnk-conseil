@@ -41,7 +41,7 @@ export default function Footer() {
               <span
                 className="text-3xl font-black tracking-tight"
                 style={{
-                  background: 'linear-gradient(135deg, #066377, #A855F7)',
+                  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -148,7 +148,7 @@ export default function Footer() {
                   <Link
                     to="/rdv"
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:shadow-[#3B9BB3]/40"
-                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Réserver un appel
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">

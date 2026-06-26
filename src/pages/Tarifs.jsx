@@ -8,7 +8,7 @@ import ROICalculator from '../components/ROICalculator'
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #066377, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -155,7 +155,7 @@ function PackageCard({ pkg, delay }) {
       }`}
       style={
         isPro
-          ? { background: 'linear-gradient(135deg, #066377, #A855F7)' }
+          ? { background: 'linear-gradient(135deg, #066377, #3B9BB3)' }
           : isDark
           ? { background: '#0F172A' }
           : { background: '#ffffff' }
@@ -218,7 +218,7 @@ function PackageCard({ pkg, delay }) {
               ? 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
               : 'text-white hover:shadow-lg hover:shadow-[#3B9BB3]/50'
           }`}
-          style={!isPro && !isDark ? { background: 'linear-gradient(135deg, #066377, #A855F7)' } : {}}
+          style={!isPro && !isDark ? { background: 'linear-gradient(135deg, #066377, #3B9BB3)' } : {}}
         >
           Choisir {pkg.name} →
         </Link>
@@ -281,13 +281,13 @@ export default function Tarifs() {
       {/* ── Section 1 : Hero ──────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden pt-20 pb-16 px-4"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         {/* Blob decoration */}
         <div
           className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-30 pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, #A855F7 0%, transparent 70%)',
+            background: 'radial-gradient(circle, #3B9BB3 0%, transparent 70%)',
           }}
         />
         <div
@@ -492,7 +492,7 @@ export default function Tarifs() {
             <Link
               to="/rdv"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 transition-all duration-300"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Libérez votre temps → Demander un devis
             </Link>
@@ -517,7 +517,7 @@ export default function Tarifs() {
       {/* ── Final CTA ─────────────────────────────────────────────────────── */}
       <section
         className="py-20 px-4"
-        style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #F0F5F7 50%, #faf5ff 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 50%, #F0F5F7 100%)' }}
       >
         <motion.div {...fadeUpView(0)} className="max-w-xl mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900">
@@ -527,7 +527,7 @@ export default function Tarifs() {
           <Link
             to="/rdv"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white text-base font-semibold hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 transition-all duration-300"
-            style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+            style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
           >
             Réserver mon appel gratuit
           </Link>

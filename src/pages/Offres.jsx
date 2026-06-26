@@ -134,7 +134,7 @@ export default function Offres() {
       {/* En-tête de page */}
       <section
         className="pt-32 pb-16 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         <div
           className="absolute top-0 left-1/3 w-96 h-72 opacity-40 pointer-events-none"
@@ -154,7 +154,7 @@ export default function Offres() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6">
               Nos offres d'accompagnement{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #066377, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -285,7 +285,7 @@ export default function Offres() {
       </section>
 
       {/* Bandeau CTA */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fdf4ff 100%)' }}>
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fdf4ff 100%)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -302,7 +302,7 @@ export default function Offres() {
             <a
               href="/rdv"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Discutons-en gratuitement
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

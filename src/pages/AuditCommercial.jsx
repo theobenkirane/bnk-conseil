@@ -7,7 +7,7 @@ import FAQ from '../components/FAQ'
 const CALENDLY_URL = 'https://calendly.com/conseil-bnk/30min'
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #066377, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -142,7 +142,7 @@ export default function AuditCommercial() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         className="pt-32 pb-16 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         <div
           className="absolute top-0 left-1/4 w-96 h-72 opacity-40 pointer-events-none"
@@ -176,7 +176,7 @@ export default function AuditCommercial() {
               <Link
                 to="/rdv"
                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-1"
-                style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
               >
                 Réserver un diagnostic gratuit
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
@@ -267,7 +267,7 @@ export default function AuditCommercial() {
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-[#066377] flex-shrink-0"
-                  style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.1), rgba(168,85,247,0.06))' }}
+                  style={{ background: 'linear-gradient(135deg, rgba(6,99,119,0.1), rgba(6,99,119,0.06))' }}
                 >
                   {item.icon}
                 </div>
@@ -282,7 +282,7 @@ export default function AuditCommercial() {
       </section>
 
       {/* ── Pour qui ? ─────────────────────────────────────────────────── */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fdf4ff 100%)' }}>
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fdf4ff 100%)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -340,7 +340,7 @@ export default function AuditCommercial() {
             <Link
               to="/rdv"
               className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#066377]/40 hover:-translate-y-1"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Réserver mon diagnostic gratuit
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">

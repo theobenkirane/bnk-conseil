@@ -4,7 +4,7 @@ import PageTransition from '../../components/PageTransition'
 import SEOHead from '../../components/SEOHead'
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #066377, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -90,7 +90,7 @@ export default function SiteVitrineLyon() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         className="pt-32 pb-16 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         <div
           className="absolute top-0 right-1/4 w-96 h-72 opacity-40 pointer-events-none"
@@ -134,7 +134,7 @@ export default function SiteVitrineLyon() {
               <Link
                 to="/apercu-site"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 self-start"
-                style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
               >
                 Visualiser mon site gratuitement
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -188,7 +188,7 @@ export default function SiteVitrineLyon() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-2xl p-8 border border-[#F0F0F0]"
-            style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 100%)' }}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
               <div className="bg-white rounded-xl p-6 border border-[#F0F0F0] shadow-sm">
@@ -294,7 +294,7 @@ export default function SiteVitrineLyon() {
               >
                 <div
                   className="text-xs font-black mb-3 w-8 h-8 rounded-lg flex items-center justify-center text-white"
-                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                 >
                   {item.step}
                 </div>
@@ -406,7 +406,7 @@ export default function SiteVitrineLyon() {
             <Link
               to="/rdv"
               className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Réserver mon appel gratuit
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">

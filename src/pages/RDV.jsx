@@ -148,7 +148,7 @@ function PreQualForm() {
               onClick={handleConfirm}
               disabled={!isReady}
               className="group w-full py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center justify-center gap-2"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
               title={!isReady ? "Remplissez les 3 champs pour accéder à la réservation" : ''}
             >
               Réserver mon diagnostic gratuit
@@ -229,7 +229,7 @@ export default function RDV() {
       {/* En-tête de page */}
       <section
         className="pt-32 pb-12 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         <div
           className="absolute top-0 left-1/3 w-96 h-72 opacity-40 pointer-events-none"
@@ -245,7 +245,7 @@ export default function RDV() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-4 leading-tight">
               Parlons de votre{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #066377, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -283,7 +283,7 @@ export default function RDV() {
             <div className="text-center mb-8">
               <div
                 className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
-                style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.08))' }}
+                style={{ background: 'linear-gradient(135deg, rgba(6,99,119,0.12), rgba(6,99,119,0.08))' }}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-7 h-7 text-[#066377]">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />

@@ -82,7 +82,7 @@ export default function Header() {
             <span
               className="text-2xl font-black tracking-tight"
               style={{
-                background: 'linear-gradient(135deg, #066377, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -128,7 +128,7 @@ export default function Header() {
                         <motion.span
                           layoutId="nav-indicator"
                           className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-                          style={{ background: 'linear-gradient(90deg, #066377, #A855F7)' }}
+                          style={{ background: 'linear-gradient(90deg, #066377, #3B9BB3)' }}
                         />
                       )}
                     </Link>
@@ -160,7 +160,7 @@ export default function Header() {
                               >
                                 <span
                                   className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                                  style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                                 />
                                 {sub.label}
                               </Link>
@@ -231,7 +231,7 @@ export default function Header() {
                     <motion.span
                       layoutId="nav-indicator"
                       className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-                      style={{ background: 'linear-gradient(90deg, #066377, #A855F7)' }}
+                      style={{ background: 'linear-gradient(90deg, #066377, #3B9BB3)' }}
                     />
                   )}
                 </Link>
@@ -244,7 +244,7 @@ export default function Header() {
             <Link
               to="/rdv"
               className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Réserver un appel
             </Link>
@@ -345,7 +345,7 @@ export default function Header() {
                               >
                                 <span
                                   className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                                  style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                                 />
                                 {sub.label}
                               </Link>
@@ -414,7 +414,7 @@ export default function Header() {
                 <Link
                   to="/rdv"
                   className="block text-center px-4 py-3 rounded-xl text-sm font-semibold text-white"
-                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                 >
                   Réserver un appel
                 </Link>

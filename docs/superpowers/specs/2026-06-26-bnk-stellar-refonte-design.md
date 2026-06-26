@@ -269,6 +269,21 @@ Deux vidéos nécessaires :
 
 ---
 
+## 8b. AvailabilityBanner dans le nouveau shell
+
+Quand `AVAILABILITY.active = true`, la bannière se place **au-dessus** du shell (outside `.shell`), dans le flux normal de la page. Le shell passe de `h-screen` à `h-[calc(100vh-40px)]` pour compenser. La StellarNav reste à l'intérieur du frame.
+
+```
+<AvailabilityBanner />        ← sticky, h-10, au-dessus du shell
+<div class="shell h-[calc(100vh-40px)]">
+  <div class="frame">
+    ...
+  </div>
+</div>
+```
+
+---
+
 ## 9. Ce qui ne change pas
 
 - Architecture React Router (routes identiques)

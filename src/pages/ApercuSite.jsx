@@ -11,7 +11,7 @@ const THEME_LIST = Object.entries(THEMES).map(([id, t]) => ({ id, ...t }))
 const PREVIEW_CONTENT_HEIGHT = 960
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #066377, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -63,7 +63,7 @@ export default function ApercuSite() {
       {/* En-tête */}
       <section
         className="pt-32 pb-12 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         <div
           className="absolute top-0 left-1/3 w-96 h-72 opacity-40 pointer-events-none"
@@ -193,7 +193,7 @@ export default function ApercuSite() {
                         className="flex flex-col items-center gap-2 p-2.5 rounded-xl border-2 transition-all duration-200"
                         style={{
                           borderColor: form.theme === t.id ? '#066377' : '#e5e7eb',
-                          background: form.theme === t.id ? '#f5f3ff' : '#fafafa',
+                          background: form.theme === t.id ? '#F0F5F7' : '#fafafa',
                         }}
                         title={THEME_COLORS[t.id]?.label}
                       >
@@ -217,7 +217,7 @@ export default function ApercuSite() {
                   <Link
                     to="/rdv"
                     className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Obtenir mon vrai site
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
@@ -292,7 +292,7 @@ export default function ApercuSite() {
                   </span>
                   <span
                     className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                    style={{ background: '#f5f3ff', color: '#066377' }}
+                    style={{ background: '#F0F5F7', color: '#066377' }}
                   >
                     {THEME_COLORS[form.theme]?.label}
                   </span>

@@ -7,7 +7,7 @@ import SEOHead from '../../components/SEOHead'
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #066377, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -224,7 +224,7 @@ export default function WixVsAgenceWeb() {
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <section
           className="relative overflow-hidden pt-28 pb-16 px-4"
-          style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 40%, #dbeafe 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 40%, #dbeafe 100%)' }}
         >
           <div
             className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
@@ -380,7 +380,7 @@ export default function WixVsAgenceWeb() {
                 <motion.div
                   variants={fadeUp}
                   className="rounded-2xl border border-white p-6 mb-6"
-                  style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
                   <ul className="space-y-4">
                     {agencePros.map((item, i) => (
@@ -457,7 +457,7 @@ export default function WixVsAgenceWeb() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
                 className="mb-20 rounded-2xl border border-white p-8 text-center"
-                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 100%)' }}
               >
                 <p className="text-[#154359] font-bold text-xl mb-2">
                   Pas encore convaincu ?
@@ -468,7 +468,7 @@ export default function WixVsAgenceWeb() {
                 <Link
                   to="/apercu-site"
                   className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                 >
                   Voir un aperçu de mon site
                 </Link>
@@ -513,7 +513,7 @@ export default function WixVsAgenceWeb() {
                   <motion.div
                     variants={fadeUp}
                     className="border-2 border-white rounded-2xl p-6"
-                    style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                   >
                     <h3 className="font-semibold text-[#154359] text-lg mb-4 flex items-center gap-2">
                       ❌ Wix insuffisant pour :
@@ -562,7 +562,7 @@ export default function WixVsAgenceWeb() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.55 }}
                 className="rounded-2xl p-10 text-center"
-                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 50%, #dbeafe 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 50%, #dbeafe 100%)' }}
               >
                 <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3">
                   Prêt à faire le bon choix ?
@@ -575,7 +575,7 @@ export default function WixVsAgenceWeb() {
                   <Link
                     to="/tarifs"
                     className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Voir les tarifs
                   </Link>
@@ -615,7 +615,7 @@ export default function WixVsAgenceWeb() {
                 {/* CTA card */}
                 <div
                   className="rounded-2xl border border-white p-6 text-center"
-                  style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
                   <p className="font-bold text-[#154359] text-base mb-2">
                     Convaincu par l'agence ?
@@ -626,7 +626,7 @@ export default function WixVsAgenceWeb() {
                   <Link
                     to="/rdv"
                     className="block text-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Obtenez un devis gratuit
                   </Link>

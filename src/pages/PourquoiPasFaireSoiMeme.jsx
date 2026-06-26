@@ -5,7 +5,7 @@ import PageTransition from '../components/PageTransition'
 import SEOHead from '../components/SEOHead'
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #066377, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -61,7 +61,7 @@ const comparatorCards = [
   {
     id: 'bnk',
     title: 'BNK Conseil',
-    headerStyle: { background: 'linear-gradient(135deg, #066377, #A855F7)' },
+    headerStyle: { background: 'linear-gradient(135deg, #066377, #3B9BB3)' },
     headerTextClass: 'text-white',
     badge: '✓ Recommandé',
     price: '690€',
@@ -116,7 +116,7 @@ export default function PourquoiPasFaireSoiMeme() {
       {/* ── Section 1  -  Hero ─────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden pt-28 pb-20 px-4"
-        style={{ background: 'linear-gradient(135deg, #fef3c7 0%, #faf5ff 40%, #dbeafe 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #fef3c7 0%, #F0F5F7 40%, #dbeafe 100%)' }}
       >
         {/* Radial blob */}
         <div
@@ -277,7 +277,7 @@ export default function PourquoiPasFaireSoiMeme() {
                     <Link
                       to="/tarifs"
                       className="mt-2 inline-flex justify-center items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-                      style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                      style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                     >
                       Voir les tarifs
                     </Link>
@@ -332,7 +332,7 @@ export default function PourquoiPasFaireSoiMeme() {
                 <span className="text-gray-500 font-medium">€/h</span>
               </div>
 
-              <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}>
+              <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}>
                 <p className="text-lg font-bold text-[#154359]">
                   En passant 60h sur Wix →{' '}
                   <span className="text-2xl" style={gradientText}>
@@ -458,7 +458,7 @@ export default function PourquoiPasFaireSoiMeme() {
             <motion.div
               variants={fadeUp}
               className="border border-white rounded-2xl shadow-sm p-7"
-              style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}
+              style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
             >
               <h3 className="font-black text-[#154359] text-lg mb-5 flex items-center gap-2">
                 ✨ BNK adapté pour :
@@ -484,7 +484,7 @@ export default function PourquoiPasFaireSoiMeme() {
       {/* ── Section 6  -  CTA final ────────────────────────────────────────── */}
       <section
         className="py-24 px-4"
-        style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 50%, #dbeafe 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 50%, #dbeafe 100%)' }}
       >
         <motion.div
           className="max-w-2xl mx-auto text-center"
@@ -507,7 +507,7 @@ export default function PourquoiPasFaireSoiMeme() {
             <Link
               to="/tarifs"
               className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Voir les tarifs
             </Link>

@@ -41,7 +41,7 @@ export default function OfferModal({ offer, onClose }) {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Barre dégradée en haut */}
-          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, #066377, #A855F7)' }} />
+          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, #066377, #3B9BB3)' }} />
 
           <div className="p-6 sm:p-8">
             {/* En-tête */}
@@ -49,7 +49,7 @@ export default function OfferModal({ offer, onClose }) {
               <div className="flex items-center gap-4">
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.08))' }}
+                  style={{ background: 'linear-gradient(135deg, rgba(6,99,119,0.12), rgba(6,99,119,0.08))' }}
                 >
                   <span className="text-[#066377]">{offer.icon}</span>
                 </div>
@@ -99,7 +99,7 @@ export default function OfferModal({ offer, onClose }) {
               to="/rdv"
               onClick={onClose}
               className="block w-full text-center py-3 rounded-xl font-semibold text-white text-sm transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Réserver un appel gratuit
             </Link>

@@ -14,7 +14,7 @@ export default function OfferCard({ offer, index = 0 }) {
       {/* Barre de couleur en haut */}
       <div
         className="h-1 w-full opacity-60 group-hover:opacity-100 transition-opacity"
-        style={{ background: 'linear-gradient(90deg, #066377, #A855F7)' }}
+        style={{ background: 'linear-gradient(90deg, #066377, #3B9BB3)' }}
       />
 
       <div className="flex flex-col flex-1 p-6 sm:p-8">
@@ -22,7 +22,7 @@ export default function OfferCard({ offer, index = 0 }) {
         <div className="flex items-start gap-4 mb-4">
           <div
             className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
-            style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.08))' }}
+            style={{ background: 'linear-gradient(135deg, rgba(6,99,119,0.12), rgba(6,99,119,0.08))' }}
           >
             <span className="text-[#066377]">{offer.icon}</span>
           </div>
@@ -67,7 +67,7 @@ export default function OfferCard({ offer, index = 0 }) {
           <Link
             to="/rdv"
             className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-white text-center transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
-            style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+            style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
           >
             Réserver un appel
           </Link>

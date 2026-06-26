@@ -66,7 +66,7 @@ export default function ROICalculator() {
                   ? 'text-white shadow-md shadow-[#3B9BB3]/40'
                   : 'bg-white border border-white text-gray-600 hover:border-[#066377]'
               }`}
-              style={formulaIdx === i ? { background: 'linear-gradient(135deg, #066377, #A855F7)' } : {}}
+              style={formulaIdx === i ? { background: 'linear-gradient(135deg, #066377, #3B9BB3)' } : {}}
             >
               {f.label} · {f.price}€
             </button>
@@ -200,7 +200,7 @@ export default function ROICalculator() {
         <Link
           to="/rdv"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-semibold hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 transition-all duration-300"
-          style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+          style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
         >
           Obtenir ce résultat → Réserver mon appel gratuit
         </Link>

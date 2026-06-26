@@ -7,7 +7,7 @@ import SEOHead from '../../components/SEOHead'
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #066377, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -306,7 +306,7 @@ export default function CombienCouteUnSiteVitrine() {
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <section
           className="relative overflow-hidden pt-28 pb-16 px-4"
-          style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 40%, #dbeafe 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 40%, #dbeafe 100%)' }}
         >
           <div
             className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
@@ -418,14 +418,14 @@ export default function CombienCouteUnSiteVitrine() {
                       className={`relative rounded-2xl border-2 p-6 ${cat.borderClass} ${cat.highlight ? 'ring-2 ring-white' : ''}`}
                       style={
                         cat.highlight
-                          ? { background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }
+                          ? { background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }
                           : {}
                       }
                     >
                       {cat.badgeText && (
                         <span
                           className="absolute top-4 right-4 text-xs font-semibold text-white px-3 py-1 rounded-full"
-                          style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                          style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                         >
                           {cat.badgeText}
                         </span>
@@ -510,7 +510,7 @@ export default function CombienCouteUnSiteVitrine() {
                       {/* Header */}
                       <div
                         className={`px-5 py-4 ${card.headerGrad ? '' : card.bgClass}`}
-                        style={card.headerGrad ? { background: 'linear-gradient(135deg, #066377, #A855F7)' } : {}}
+                        style={card.headerGrad ? { background: 'linear-gradient(135deg, #066377, #3B9BB3)' } : {}}
                       >
                         <p className={`font-bold text-base ${card.headerGrad ? 'text-white' : 'text-gray-800'}`}>
                           {card.title}
@@ -545,7 +545,7 @@ export default function CombienCouteUnSiteVitrine() {
                 <motion.div
                   variants={fadeUp}
                   className="rounded-2xl border-2 border-white p-6"
-                  style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
                   <p className="text-[#154359] font-medium leading-relaxed">
                     💡 Un site BNK Conseil est rentabilisé dès que vous gagnez 2 nouveaux clients grâce à lui.
@@ -561,7 +561,7 @@ export default function CombienCouteUnSiteVitrine() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
                 className="mb-20 rounded-2xl border border-white p-8 text-center"
-                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 100%)' }}
               >
                 <p className="text-[#154359] font-bold text-xl mb-2">Obtenez un devis transparent en 24h</p>
                 <p className="text-[#154359] text-base mb-6">
@@ -570,7 +570,7 @@ export default function CombienCouteUnSiteVitrine() {
                 <Link
                   to="/tarifs"
                   className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-                  style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                 >
                   Voir les tarifs
                 </Link>
@@ -602,7 +602,7 @@ export default function CombienCouteUnSiteVitrine() {
                           ? 'border-[#3B9BB3] ring-2 ring-[#F0F0F0]'
                           : 'border-gray-200 bg-white'
                       }`}
-                      style={opt.recommended ? { background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' } : {}}
+                      style={opt.recommended ? { background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' } : {}}
                     >
                       <span className="text-xl shrink-0 mt-0.5">{opt.icon}</span>
                       <div className="flex-1">
@@ -611,7 +611,7 @@ export default function CombienCouteUnSiteVitrine() {
                           {opt.recommended && (
                             <span
                               className="text-xs font-semibold text-white px-3 py-0.5 rounded-full"
-                              style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                             >
                               ✅ Notre recommandation
                             </span>
@@ -661,7 +661,7 @@ export default function CombienCouteUnSiteVitrine() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.55 }}
                 className="rounded-2xl p-10 text-center"
-                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #F0F5F7 50%, #dbeafe 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 50%, #dbeafe 100%)' }}
               >
                 <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3">
                   Vous savez maintenant ce que vaut un site vitrine.
@@ -672,7 +672,7 @@ export default function CombienCouteUnSiteVitrine() {
                   <Link
                     to="/tarifs"
                     className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Voir les tarifs
                   </Link>
@@ -712,7 +712,7 @@ export default function CombienCouteUnSiteVitrine() {
                 {/* CTA card */}
                 <div
                   className="rounded-2xl border border-white p-6 text-center"
-                  style={{ background: 'linear-gradient(135deg, #faf5ff, #F0F5F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
                   <p className="font-bold text-[#154359] text-base mb-2">
                     Vous avez votre réponse ?
@@ -723,7 +723,7 @@ export default function CombienCouteUnSiteVitrine() {
                   <Link
                     to="/rdv"
                     className="block text-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #066377, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Obtenez un devis gratuit
                   </Link>

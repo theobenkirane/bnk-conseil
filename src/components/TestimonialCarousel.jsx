@@ -85,7 +85,7 @@ export default function TestimonialCarousel() {
             <div
               className="text-6xl font-serif leading-none mb-4 opacity-70"
               style={{
-                background: 'linear-gradient(135deg, #066377, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -104,7 +104,7 @@ export default function TestimonialCarousel() {
             <div className="flex items-center gap-4">
               <div
                 className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center flex-shrink-0 text-white font-bold text-sm"
-                style={{ background: 'linear-gradient(135deg, #066377, #A855F7)', width: 48, height: 48 }}
+                style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)', width: 48, height: 48 }}
                 aria-label={t.author}
               >
                 {t.initials}

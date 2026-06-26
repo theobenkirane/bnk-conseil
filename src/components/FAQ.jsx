@@ -27,7 +27,7 @@ export default function FAQ({ items }) {
               animate={{ rotate: openIndex === i ? 45 : 0 }}
               transition={{ duration: 0.2 }}
               className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[#066377]"
-              style={{ background: openIndex === i ? 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.08))' : 'transparent' }}
+              style={{ background: openIndex === i ? 'linear-gradient(135deg, rgba(6,99,119,0.12), rgba(6,99,119,0.08))' : 'transparent' }}
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
                 <line x1="12" y1="5" x2="12" y2="19" />
