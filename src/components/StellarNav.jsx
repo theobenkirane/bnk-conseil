@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import MagneticButton from './stellar/MagneticButton'
 
@@ -14,6 +14,9 @@ export default function StellarNav() {
   const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
   const closeMobile = () => setMobileOpen(false)
+
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => setMobileOpen(false), [location.pathname])
 
   const logoMark = (
     <span
