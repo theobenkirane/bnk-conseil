@@ -236,7 +236,7 @@ export default function Home() {
             {/* Left column - 3 NominationCards */}
             <div ref={leftColRef} className="flex flex-col gap-4 lg:mt-36 order-2 lg:order-1 w-full lg:w-auto">
               <NominationCard title="Audit Commercial" subtitle="Diagnostic complet" to="/offres" />
-              <NominationCard title="Strategie" subtitle="Sur-mesure, sans template" to="/offres" />
+              <NominationCard title="Stratégie" subtitle="Sur-mesure, sans template" to="/offres" />
               <NominationCard title="Suivi et KPIs" subtitle="ROI mesurable" to="/offres" />
             </div>
 
@@ -256,8 +256,8 @@ export default function Home() {
 
             {/* Right column - 3 NominationCards */}
             <div ref={rightColRef} className="flex flex-col gap-4 lg:mt-36 order-3 w-full lg:w-auto">
-              <NominationCard title="Creation de Site" subtitle="A partir de 690 euros" to="/creation-site-vitrine" />
-              <NominationCard title="SEO Local" subtitle="Visibilite Google" to="/offres" />
+              <NominationCard title="Création de Site" subtitle="À partir de 690 euros" to="/creation-site-vitrine" />
+              <NominationCard title="SEO Local" subtitle="Visibilité Google" to="/offres" />
               <NominationCard title="Digitalisation" subtitle="CRM et automation" to="/offres" />
             </div>
 
