@@ -20,7 +20,7 @@ Base commit: 8a786b3
   MINOR: dual h1 (plan-mandated), dark text contrast on video, no video fallback bg
 - [x] Task 10: Home Services (54abb8a..8b64110, review clean)
 - [x] Task 11: Home Results (8b64110..13c0716, review clean)
-- [ ] Task 12: Secondary Pages Token Update
+- [x] Task 12: Secondary Pages Token Update (13c0716..0ac667f, review clean)
 
 ## Completed
 (none yet)
