@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import PageTransition from '../components/PageTransition'
 import SEOHead from '../components/SEOHead'
 import NominationCard from '../components/NominationCard'
+import StatCard from '../components/StatCard'
 import { useStellar } from '../contexts/StellarContext'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -15,6 +16,7 @@ export default function Home() {
   const leftColRef = useRef(null)
   const rightColRef = useRef(null)
   const videoRef2 = useRef(null)
+  const statsGridRef = useRef(null)
 
   useEffect(() => {
     if (!videoRef.current || !scrollRef.current) return
@@ -91,6 +93,31 @@ export default function Home() {
           }
         )
       }
+    })
+    return () => ctx.revert()
+  }, [scrollRef])
+
+  useEffect(() => {
+    if (!scrollRef.current || !statsGridRef.current) return
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        statsGridRef.current.children,
+        { y: 40, opacity: 0, rotateY: 4, transformPerspective: 1000 },
+        {
+          y: 0,
+          opacity: 1,
+          rotateY: 0,
+          stagger: 0.15,
+          duration: 0.7,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: statsGridRef.current,
+            scroller: scrollRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          }
+        }
+      )
     })
     return () => ctx.revert()
   }, [scrollRef])
@@ -266,6 +293,68 @@ export default function Home() {
 
         {/* Bottom fade into Section 3 */}
         <div className="absolute bottom-0 left-0 right-0 h-40 sm:h-56 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(240,245,247,0) 0%, rgba(240,245,247,0.7) 60%, #F0F5F7 100%)', zIndex: 10 }} />
+      </section>
+
+      <section style={{ background: '#F0F5F7', position: 'relative' }} className="py-20 sm:py-28 px-6 sm:px-10">
+        <div className="max-w-7xl mx-auto">
+
+          {/* Top row */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-14 text-[#154359]">
+
+            {/* Left: title */}
+            <div>
+              <h2 className="font-firs text-[36px] sm:text-[48px] lg:text-[54px] font-semibold uppercase tracking-tight leading-[0.95]">
+                Résultats<br />Concrets
+              </h2>
+            </div>
+
+            {/* Right: description + CTA */}
+            <div className="max-w-xl">
+              <p className="text-[15px] leading-relaxed text-[#154359] mb-4">
+                BNK Conseil accompagne les TPE, artisans et indépendants pour structurer leur croissance commerciale et renforcer leur présence digitale.
+              </p>
+              <p className="text-[15px] leading-relaxed text-[#154359] mb-6">
+                Une approche terrain, des résultats mesurables, et des premiers effets visibles en 30 jours.
+              </p>
+              <a
+                href="https://calendly.com/conseil-bnk/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white text-[11px] uppercase tracking-[0.14em] font-medium px-[18px] py-3 bg-[#066377]"
+                style={{ clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)' }}
+              >
+                Réserver un diagnostic gratuit
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Stats grid */}
+          <div ref={statsGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <StatCard
+              variant={1}
+              value="+40%"
+              label="de CA moyen sur 6 mois"
+              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop"
+            />
+            <StatCard
+              variant={2}
+              value="50+"
+              label="missions TPE et independants"
+              image="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&auto=format&fit=crop"
+              className="lg:mt-24"
+            />
+            <StatCard
+              variant={3}
+              value="30j"
+              label="pour les premiers resultats"
+              image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop"
+            />
+          </div>
+
+        </div>
       </section>
     </PageTransition>
   )
