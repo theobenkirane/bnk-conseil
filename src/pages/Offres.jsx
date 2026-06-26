@@ -168,7 +168,7 @@ export default function Offres() {
       </section>
 
       {/* Grille des offres */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white/45 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {offers.map((offer, i) => (
@@ -183,7 +183,7 @@ export default function Offres() {
       </section>
 
       {/* Section Par secteur */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50/35 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUpView(0)} className="text-center mb-10">
             <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Sites vitrines</span>
@@ -225,7 +225,7 @@ export default function Offres() {
       </section>
 
       {/* Section Guides */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-16 bg-white/45 backdrop-blur-sm border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUpView(0)} className="text-center mb-10">
             <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Ressources</span>
@@ -255,7 +255,7 @@ export default function Offres() {
       </section>
 
       {/* Questions fréquentes */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

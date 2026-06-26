@@ -6,6 +6,10 @@ uniform float uTime;
 uniform vec2 uResolution;
 uniform vec2 uPointer;
 uniform float uScroll;
+uniform vec3 uColA;   // base / fond
+uniform vec3 uColB;   // teinte
+uniform vec3 uColC;   // reflet
+uniform float uLight; // 0 = sombre (accueil), 1 = clair teinté
 
 float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)))*43758.5453); }
 float noise(vec2 p){
@@ -60,21 +64,26 @@ void main(){
   float band = sin(f*16.0 + t*2.0)*0.5+0.5;
   band = pow(band, 3.0);
 
-  // palette : noir-teal profond -> teal -> chrome clair
-  vec3 black  = vec3(0.008,0.028,0.042);
-  vec3 teal   = vec3(0.020,0.270,0.340);
-  vec3 chrome = vec3(0.62,0.92,1.00);
-  vec3 col = mix(black, teal, smoothstep(0.22,0.78,f));
-  col = mix(col, chrome, band*0.55);
-  col += chrome * spec;            // reflets spéculaires nets
-  col += teal * diff * 0.30;       // volume / diffus
-
-  // halo de réflexion autour du curseur
-  col += chrome * 0.14 * smoothstep(0.55, 0.0, pd);
-
-  // vignette (profondeur)
   float vig = smoothstep(1.35, 0.25, length(uv-0.5));
-  col *= 0.45 + 0.55*vig;
+  vec3 col;
+
+  if (uLight > 0.5) {
+    // MODE CLAIR : métal pâle et teinté, ambiance douce et lisible
+    col = mix(uColA, uColB, smoothstep(0.25, 0.85, f) * 0.55);
+    col = mix(col, uColC, band * 0.30);
+    col += uColC * spec * 0.55;            // reflets discrets
+    col += uColB * diff * 0.10;            // léger volume
+    col += uColB * 0.09 * smoothstep(0.55, 0.0, pd); // halo curseur
+    col = mix(col, uColA, (1.0 - vig) * 0.20);       // vignette douce vers le fond clair
+  } else {
+    // MODE SOMBRE : chrome liquide profond (accueil)
+    col = mix(uColA, uColB, smoothstep(0.22,0.78,f));
+    col = mix(col, uColC, band*0.55);
+    col += uColC * spec;                   // reflets spéculaires nets
+    col += uColB * diff * 0.30;            // volume / diffus
+    col += uColC * 0.14 * smoothstep(0.55, 0.0, pd); // halo curseur
+    col *= 0.45 + 0.55*vig;                // vignette profonde
+  }
 
   gl_FragColor = vec4(col, 1.0);
 }
@@ -85,8 +94,26 @@ attribute vec2 aPos;
 void main(){ gl_Position = vec4(aPos,0.0,1.0); }
 `
 
-export default function LiquidChrome({ className = '' }) {
+// Palettes par variante. light:0 = mode sombre (accueil), light:1 = mode clair teinté.
+// Couleurs normalisées 0..1 : a = fond, b = teinte, c = reflet.
+const VARIANTS = {
+  home:   { light: 0, a: [0.008, 0.028, 0.042], b: [0.020, 0.270, 0.340], c: [0.62, 0.92, 1.00] },
+  teal:   { light: 1, a: [0.902, 0.953, 0.965], b: [0.180, 0.550, 0.640], c: [1.0, 1.0, 1.0] },
+  blue:   { light: 1, a: [0.910, 0.940, 0.990], b: [0.200, 0.400, 0.680], c: [1.0, 1.0, 1.0] },
+  violet: { light: 1, a: [0.948, 0.930, 0.992], b: [0.430, 0.340, 0.760], c: [1.0, 1.0, 1.0] },
+  amber:  { light: 1, a: [0.985, 0.955, 0.910], b: [0.780, 0.520, 0.170], c: [1.0, 1.0, 1.0] },
+}
+
+export default function LiquidChrome({ className = '', variant = 'home' }) {
   const canvasRef = useRef(null)
+  const variantRef = useRef(variant)
+  const renderRef = useRef(null)
+  variantRef.current = variant
+
+  // Redessine une frame quand la teinte change (utile si l'animation est en pause / reduced-motion)
+  useEffect(() => {
+    if (renderRef.current) renderRef.current()
+  }, [variant])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -158,6 +185,10 @@ export default function LiquidChrome({ className = '' }) {
     const uRes = gl.getUniformLocation(prog, 'uResolution')
     const uPtr = gl.getUniformLocation(prog, 'uPointer')
     const uScroll = gl.getUniformLocation(prog, 'uScroll')
+    const uColA = gl.getUniformLocation(prog, 'uColA')
+    const uColB = gl.getUniformLocation(prog, 'uColB')
+    const uColC = gl.getUniformLocation(prog, 'uColC')
+    const uLight = gl.getUniformLocation(prog, 'uLight')
 
     const pointer = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5 }
     let scroll = 0
@@ -195,8 +226,8 @@ export default function LiquidChrome({ className = '' }) {
     let raf
     let running = true
     const start = performance.now()
-    const render = () => {
-      if (!running) return
+    // dessine UNE frame (sans planifier de boucle) — réutilisé pour les MAJ ponctuelles
+    const draw = () => {
       const time = (performance.now() - start) / 1000
       // lissage du pointeur pour un suivi fluide
       pointer.x += (pointer.tx - pointer.x) * 0.06
@@ -204,10 +235,20 @@ export default function LiquidChrome({ className = '' }) {
       gl.uniform1f(uTime, time)
       gl.uniform2f(uPtr, pointer.x, pointer.y)
       gl.uniform1f(uScroll, scroll)
+      const pal = VARIANTS[variantRef.current] || VARIANTS.home
+      gl.uniform3f(uColA, pal.a[0], pal.a[1], pal.a[2])
+      gl.uniform3f(uColB, pal.b[0], pal.b[1], pal.b[2])
+      gl.uniform3f(uColC, pal.c[0], pal.c[1], pal.c[2])
+      gl.uniform1f(uLight, pal.light)
       gl.drawArrays(gl.TRIANGLES, 0, 3)
-      if (!reduced) raf = requestAnimationFrame(render)
     }
-    render()
+    const loop = () => {
+      if (!running) return
+      draw()
+      if (!reduced) raf = requestAnimationFrame(loop)
+    }
+    renderRef.current = draw
+    loop()
 
     const onVisibility = () => {
       if (document.hidden) {
@@ -215,7 +256,7 @@ export default function LiquidChrome({ className = '' }) {
         cancelAnimationFrame(raf)
       } else if (!reduced) {
         running = true
-        render()
+        loop()
       }
     }
     document.addEventListener('visibilitychange', onVisibility)

@@ -219,7 +219,7 @@ export default function WixVsAgenceWeb() {
         schema={schema}
       />
 
-      <div className="min-h-screen bg-[#FAFBFF]">
+      <div className="min-h-screen bg-[#FAFBFF]/55 backdrop-blur-sm">
 
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <section

@@ -145,7 +145,7 @@ export default function Commander() {
       </section>
 
       {/* Sélection de formule */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50/35 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUpView(0)} className="text-center mb-10">
             <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Étape 1</span>
@@ -262,7 +262,7 @@ export default function Commander() {
       </section>
 
       {/* Formulaire de commande */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white/45 backdrop-blur-sm">
         <div className="max-w-xl mx-auto px-4 sm:px-6">
           <motion.div {...fadeUpView(0)} className="text-center mb-8">
             <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Étape 2</span>
@@ -426,7 +426,7 @@ export default function Commander() {
       </section>
 
       {/* Réassurance */}
-      <section className="py-16 bg-gray-50 border-t border-gray-100">
+      <section className="py-16 bg-gray-50/35 backdrop-blur-sm border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[

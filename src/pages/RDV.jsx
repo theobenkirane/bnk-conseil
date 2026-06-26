@@ -259,7 +259,7 @@ export default function RDV() {
       </section>
 
       {/* Formulaire pré-qualification */}
-      <section className="py-16 pb-24 bg-white">
+      <section className="py-16 pb-24 bg-white/45 backdrop-blur-sm">
         <div className="max-w-xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

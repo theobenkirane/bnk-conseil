@@ -192,7 +192,7 @@ export default function AuditCommercial() {
       </section>
 
       {/* Garanties */}
-      <section className="py-12 bg-white border-b border-gray-100">
+      <section className="py-12 bg-white/45 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -215,7 +215,7 @@ export default function AuditCommercial() {
       </section>
 
       {/* ── Résultats ──────────────────────────────────────────────────── */}
-      <section className="py-12 bg-white border-b border-gray-100">
+      <section className="py-12 bg-white/45 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {resultats.map((stat, i) => (
@@ -237,7 +237,7 @@ export default function AuditCommercial() {
       </section>
 
       {/* ── Ce qui est inclus ──────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -353,7 +353,7 @@ export default function AuditCommercial() {
       </section>
 
       {/* ── FAQ ────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

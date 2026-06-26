@@ -237,7 +237,7 @@ export default function CreationSiteVitrine() {
       </section>
 
       {/* Garanties */}
-      <section className="py-12 bg-white border-b border-gray-100">
+      <section className="py-12 bg-white/45 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -265,7 +265,7 @@ export default function CreationSiteVitrine() {
       </section>
 
       {/* ── Chiffres clés ──────────────────────────────────────────────── */}
-      <section className="py-12 bg-white border-b border-gray-100">
+      <section className="py-12 bg-white/45 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {pourquoi.map((item, i) => (
@@ -286,7 +286,7 @@ export default function CreationSiteVitrine() {
       </section>
 
       {/* ── Secteurs couverts ──────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -405,7 +405,7 @@ export default function CreationSiteVitrine() {
       </section>
 
       {/* Votre secteur */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-50/35 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">{"Votre secteur d'activité"}</h2>
@@ -429,7 +429,7 @@ export default function CreationSiteVitrine() {
       </section>
 
       {/* ── FAQ ────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

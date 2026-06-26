@@ -196,7 +196,7 @@ export default function PourquoiPasFaireSoiMeme() {
       </section>
 
       {/* ── Section 2  -  Comparateur visuel ───────────────────────────────── */}
-      <section className="bg-white py-20 px-4">
+      <section className="bg-white/45 backdrop-blur-sm py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <motion.div
             className="text-center mb-12"
@@ -290,7 +290,7 @@ export default function PourquoiPasFaireSoiMeme() {
       </section>
 
       {/* ── Section 3  -  Vrai coût du temps ──────────────────────────────── */}
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-gray-50/35 backdrop-blur-sm py-20 px-4">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial="hidden"
@@ -361,7 +361,7 @@ export default function PourquoiPasFaireSoiMeme() {
       </section>
 
       {/* ── Section 4  -  Idées reçues ─────────────────────────────────────── */}
-      <section className="bg-white py-20 px-4">
+      <section className="bg-white/45 backdrop-blur-sm py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
             className="text-center mb-12"

@@ -167,7 +167,7 @@ export default function SiteVitrineArtisan() {
       </section>
 
       {/* ── Aperçu live ──────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
@@ -208,7 +208,7 @@ export default function SiteVitrineArtisan() {
       </section>
 
       {/* ── Bénéfices ────────────────────────────────────────────────── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50/35 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
@@ -240,7 +240,7 @@ export default function SiteVitrineArtisan() {
       </section>
 
       {/* ── Tarif ────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white/45 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             {...fadeUp}
@@ -261,7 +261,7 @@ export default function SiteVitrineArtisan() {
       </section>
 
       {/* ── Garanties ────────────────────────────────────────────────── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50/35 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
@@ -288,7 +288,7 @@ export default function SiteVitrineArtisan() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4">

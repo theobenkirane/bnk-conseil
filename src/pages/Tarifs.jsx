@@ -327,7 +327,7 @@ export default function Tarifs() {
       </section>
 
       {/* ── Section 2 : Packages ──────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-gray-50/35 backdrop-blur-sm py-20 px-4">
         <div className="max-w-5xl mx-auto space-y-10">
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Nos formules</span>
@@ -359,7 +359,7 @@ export default function Tarifs() {
       </section>
 
       {/* ── Section 3 : ROI Calculator ────────────────────────────────────── */}
-      <section className="bg-white py-20 px-4">
+      <section className="bg-white/45 backdrop-blur-sm py-20 px-4">
         <div className="max-w-2xl mx-auto space-y-8">
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Simulation</span>
@@ -378,7 +378,7 @@ export default function Tarifs() {
       </section>
 
       {/* ── Section 4 : Garanties ─────────────────────────────────────────── */}
-      <section className="bg-white py-20 px-4 border-t border-gray-100">
+      <section className="bg-white/45 backdrop-blur-sm py-20 px-4 border-t border-gray-100">
         <div className="max-w-5xl mx-auto space-y-10">
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Engagements</span>
@@ -402,7 +402,7 @@ export default function Tarifs() {
       </section>
 
       {/* ── Section 5 : Coût réel ─────────────────────────────────────────── */}
-      <section className="bg-[#F0F5F7] py-20 px-4">
+      <section className="bg-[#F0F5F7]/55 backdrop-blur-sm py-20 px-4">
         <div className="max-w-4xl mx-auto space-y-10">
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Comparaison</span>
@@ -501,7 +501,7 @@ export default function Tarifs() {
       </section>
 
       {/* ── Section 6 : FAQ ───────────────────────────────────────────────── */}
-      <section className="bg-white py-20 px-4">
+      <section className="bg-white/45 backdrop-blur-sm py-20 px-4">
         <div className="max-w-2xl mx-auto space-y-8">
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Questions fréquentes</span>

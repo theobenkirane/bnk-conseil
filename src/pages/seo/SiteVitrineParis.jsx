@@ -154,7 +154,7 @@ export default function SiteVitrineParis() {
       </section>
 
       {/* ── Travail local ─────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -204,7 +204,7 @@ export default function SiteVitrineParis() {
       </section>
 
       {/* ── Secteurs locaux ───────────────────────────────────────────── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50/35 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -254,7 +254,7 @@ export default function SiteVitrineParis() {
       </section>
 
       {/* ── Process ───────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -297,7 +297,7 @@ export default function SiteVitrineParis() {
       </section>
 
       {/* ── Tarifs ────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50/35 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -333,7 +333,7 @@ export default function SiteVitrineParis() {
       </section>
 
       {/* ── Garanties ─────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/45 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
