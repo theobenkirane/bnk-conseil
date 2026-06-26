@@ -37,7 +37,7 @@ export default function NominationCard({ title, subtitle, to, icon: Icon, classN
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
         <polygon
           points="14,0 100,0 100,86 86,100 0,100 0,14"
-          fill="rgba(255,255,255,0.6)"
+          fill="rgba(255,255,255,0.94)"
           stroke="rgba(6,99,119,0.25)"
           strokeWidth="1"
           vectorEffect="non-scaling-stroke"

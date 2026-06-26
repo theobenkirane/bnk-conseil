@@ -5,6 +5,7 @@ precision highp float;
 uniform float uTime;
 uniform vec2 uResolution;
 uniform vec2 uPointer;
+uniform float uScroll;
 
 float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)))*43758.5453); }
 float noise(vec2 p){
@@ -15,48 +16,67 @@ float noise(vec2 p){
 }
 float fbm(vec2 p){
   float v=0.0, a=0.5;
-  for(int i=0;i<5;i++){ v+=a*noise(p); p*=2.0; a*=0.5; }
+  for(int i=0;i<6;i++){ v+=a*noise(p); p=p*2.0+vec2(1.7,9.2); a*=0.5; }
   return v;
 }
+
+// hauteur du métal liquide en un point — réutilisée pour calculer la normale
+float field(vec2 p, float t, vec2 warp){
+  vec2 q = vec2(fbm(p*2.6 + t), fbm(p*2.6 - t + 5.2));
+  vec2 r = vec2(
+    fbm(p*2.6 + q*2.0 + t*1.3 + warp),
+    fbm(p*2.6 + q*2.0 - t*1.1 + 2.7 + warp.yx)
+  );
+  return fbm(p*2.6 + r*2.4);
+}
+
 void main(){
   vec2 uv = gl_FragCoord.xy / uResolution.xy;
   float aspect = uResolution.x / uResolution.y;
   vec2 p = uv; p.x *= aspect;
   vec2 ptr = uPointer; ptr.x *= aspect;
-  float t = uTime * 0.13;
+  // le scroll fait couler le métal verticalement
+  float t = uTime * 0.16 + uScroll * 0.9;
 
-  // domaine déformé (liquide)
-  vec2 q = vec2(fbm(p*2.2 + t), fbm(p*2.2 - t + 5.2));
-  vec2 r = vec2(
-    fbm(p*2.2 + q*1.8 + t*1.3 + (p-ptr)*0.35),
-    fbm(p*2.2 + q*1.8 - t*1.1 + 2.7)
-  );
-  float f = fbm(p*2.2 + r*2.2);
+  // influence du curseur : creux/relief qui suit la souris
+  float pd = length(p - ptr);
+  vec2 warp = (p - ptr) * 0.55 / (pd*pd + 0.22);
 
-  // crêtes métalliques (chrome)
-  float band = sin(f*14.0 + r.x*6.0 + t*2.0)*0.5+0.5;
-  band = pow(band, 2.0);
+  float f = field(p, t, warp);
 
-  // base sombre -> teal -> chrome lumineux
-  vec3 deep   = vec3(0.012,0.063,0.094);
-  vec3 teal   = vec3(0.024,0.388,0.467);
-  vec3 chrome = vec3(0.45,0.86,0.98);
-  vec3 col = mix(deep, teal, smoothstep(0.2,0.7,f));
-  col = mix(col, chrome, band * smoothstep(0.45,1.0,f));
+  // normale par différences finies -> reflets métalliques réalistes
+  float e = 0.0022;
+  float fx = field(p + vec2(e,0.0), t, warp) - f;
+  float fy = field(p + vec2(0.0,e), t, warp) - f;
+  vec3 n = normalize(vec3(-fx, -fy, e*0.6));
 
-  // irisation
-  float irid = sin(f*8.0 + r.y*5.0 - t*1.5)*0.5+0.5;
-  col += vec3(0.0,0.12,0.18) * irid * 0.4;
+  // éclairage spéculaire (chrome)
+  vec3 L = normalize(vec3(0.35, 0.65, 0.7));
+  vec3 H = normalize(L + vec3(0.0,0.0,1.0));
+  float spec = pow(max(dot(n, H), 0.0), 22.0);
+  float diff = max(dot(n, L), 0.0);
 
-  // reflets spéculaires nets
-  float spec = smoothstep(0.9,1.0, fbm(p*3.2 - t*2.2 + r));
-  col += chrome * spec * 0.6;
+  // crêtes métalliques saturées
+  float band = sin(f*16.0 + t*2.0)*0.5+0.5;
+  band = pow(band, 3.0);
+
+  // palette : noir-teal profond -> teal -> chrome clair
+  vec3 black  = vec3(0.008,0.028,0.042);
+  vec3 teal   = vec3(0.020,0.270,0.340);
+  vec3 chrome = vec3(0.62,0.92,1.00);
+  vec3 col = mix(black, teal, smoothstep(0.22,0.78,f));
+  col = mix(col, chrome, band*0.55);
+  col += chrome * spec;            // reflets spéculaires nets
+  col += teal * diff * 0.30;       // volume / diffus
+
+  // halo de réflexion autour du curseur
+  col += chrome * 0.14 * smoothstep(0.55, 0.0, pd);
 
   // vignette (profondeur)
-  float vig = smoothstep(1.2,0.2, length(uv-0.5));
-  col *= 0.55 + 0.45*vig;
+  float vig = smoothstep(1.35, 0.25, length(uv-0.5));
+  col *= 0.45 + 0.55*vig;
 
-  gl_FragColor = vec4(col,1.0);
+  gl_FragColor = vec4(col, 1.0);
 }
 `
 
@@ -137,8 +157,10 @@ export default function LiquidChrome({ className = '' }) {
     const uTime = gl.getUniformLocation(prog, 'uTime')
     const uRes = gl.getUniformLocation(prog, 'uResolution')
     const uPtr = gl.getUniformLocation(prog, 'uPointer')
+    const uScroll = gl.getUniformLocation(prog, 'uScroll')
 
-    const pointer = { x: 0.5, y: 0.5 }
+    const pointer = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5 }
+    let scroll = 0
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
 
     const resize = () => {
@@ -155,10 +177,20 @@ export default function LiquidChrome({ className = '' }) {
 
     const onMove = (e) => {
       const r = canvas.getBoundingClientRect()
-      pointer.x = (e.clientX - r.left) / r.width
-      pointer.y = 1.0 - (e.clientY - r.top) / r.height
+      pointer.tx = (e.clientX - r.left) / r.width
+      pointer.ty = 1.0 - (e.clientY - r.top) / r.height
     }
     window.addEventListener('mousemove', onMove)
+
+    const onScroll = (e) => {
+      const tgt = e && e.target
+      const top = tgt && typeof tgt.scrollTop === 'number' ? tgt.scrollTop : window.scrollY
+      const h = (tgt && tgt.clientHeight) || window.innerHeight
+      scroll = top / Math.max(h, 1)
+    }
+    // capture:true pour capter aussi le scroll d'un conteneur interne (Lenis)
+    window.addEventListener('scroll', onScroll, { passive: true, capture: true })
+    onScroll()
 
     let raf
     let running = true
@@ -166,8 +198,12 @@ export default function LiquidChrome({ className = '' }) {
     const render = () => {
       if (!running) return
       const time = (performance.now() - start) / 1000
+      // lissage du pointeur pour un suivi fluide
+      pointer.x += (pointer.tx - pointer.x) * 0.06
+      pointer.y += (pointer.ty - pointer.y) * 0.06
       gl.uniform1f(uTime, time)
       gl.uniform2f(uPtr, pointer.x, pointer.y)
+      gl.uniform1f(uScroll, scroll)
       gl.drawArrays(gl.TRIANGLES, 0, 3)
       if (!reduced) raf = requestAnimationFrame(render)
     }
@@ -189,12 +225,15 @@ export default function LiquidChrome({ className = '' }) {
       cancelAnimationFrame(raf)
       ro.disconnect()
       window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('scroll', onScroll, { capture: true })
       document.removeEventListener('visibilitychange', onVisibility)
       if (buf) gl.deleteBuffer(buf)
       if (vertShader) gl.deleteShader(vertShader)
       if (fragShader) gl.deleteShader(fragShader)
       if (prog) gl.deleteProgram(prog)
-      gl.getExtension('WEBGL_lose_context')?.loseContext()
+      // NB: ne pas appeler WEBGL_lose_context.loseContext() ici — en StrictMode
+      // le cleanup s'exécute avant le remount sur le MÊME canvas, ce qui tuerait
+      // définitivement le contexte et ferait échouer la 2e compilation du shader.
     }
   }, [])
 
