@@ -300,7 +300,7 @@ export default function Tarifs() {
         <div className="relative max-w-3xl mx-auto text-center space-y-6">
           <motion.div {...fadeUp(0)}>
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600 bg-white/70 border border-gray-200 px-3 py-1.5 rounded-full inline-block">
-              💰 Tarifs transparents
+              Tarifs transparents
             </span>
           </motion.div>
 

@@ -13,8 +13,8 @@ const values = [
         <circle cx="12" cy="12" r="3" />
       </svg>
     ),
-    title: 'Je parle votre langage',
-    description: "Je suis passé par la prospection, le closing, la gestion de portefeuille et l'optimisation de process  -  je parle le même langage que vous.",
+    title: "Je suis client avant tout",
+    description: "Je sais ce qui me fait acheter... et surtout ce qui me fait partir. C'est cette vision qui guide tout ce que je construis.",
   },
   {
     icon: (
@@ -22,8 +22,8 @@ const values = [
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: 'Des résultats, pas des livrables',
-    description: "Je ne vends pas des prestations, je construis des résultats mesurables.",
+    title: 'Vous êtes bon, moi aussi',
+    description: "Vous faites du bon travail, moi je fais en sorte que vos clients le comprennent en 10 secondes.",
   },
   {
     icon: (
@@ -31,15 +31,15 @@ const values = [
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ),
-    title: 'Chaque client est un cas unique',
-    description: "Pas de copier-coller, pas de solution standard.",
+    title: 'Sur-mesure',
+    description: "Je recommence à zéro, en fonction de ce que vous voulez et de ce que vous aimez.",
   },
 ]
 
 const timeline = [
   {
     year: 'Déb.',
-    title: 'Immobilier  -  apprendre la vente sur le terrain',
+    title: 'Agent immobilier',
     description: "Mon premier terrain d'apprentissage : la vente immobilière. Prospection, négociation, gestion de clients exigeants. C'est là que j'ai compris que la méthode fait tout.",
   },
   {
@@ -48,13 +48,13 @@ const timeline = [
     description: "Recrutement B2B, prospection outbound, closing. J'ai appris à identifier un besoin, construire une relation de confiance et conclure  -  sur des cycles courts comme longs.",
   },
   {
-    year: 'Auj.',
-    title: 'Account Manager chez LegalPlace',
+    year: 'Puis',
+    title: 'Account Manager',
     description: "J'accompagne des entrepreneurs dans la structuration et le lancement de leur activité. Chaque jour, je vois des indépendants avec un vrai potentiel  -  mais sans méthode ni visibilité.",
   },
   {
-    year: 'BNK',
-    title: 'BNK Conseil  -  la conviction qui devient une offre',
+    year: 'Pour',
+    title: 'BNK Conseil',
     description: "Aider les TPE à mieux vendre et leur donner une présence digitale qui travaille pour eux. Parce qu'un beau site sans stratégie ne convertit pas, et une bonne équipe sans visibilité plafonne vite.",
   },
 ]
@@ -113,20 +113,18 @@ export default function APropos() {
             >
               <span className="text-[#154359] text-sm font-bold uppercase tracking-widest">Qui je suis</span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6 leading-tight">
-                BNK Conseil, c'est une conviction{' '}
+                BNK Conseil{' '}
                 <span style={{
                   background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                }}>qui se construit depuis 5 ans.</span>
+                }}>se construit depuis 5 ans.</span>
               </h1>
               <p className="text-gray-700 text-xl leading-relaxed mb-5">
-                Il y a 5 ans, j'ai eu une conviction simple : les TPE et les indépendants méritent le même niveau d'accompagnement commercial et digital que les grandes structures. Pas des templates génériques. Pas des agences qui livrent et disparaissent. Un vrai partenaire, qui comprend leur réalité terrain.
-              </p>
-              <p className="text-gray-500 text-base leading-relaxed">
-                Aujourd'hui, je développe BNK Conseil pour en faire exactement ça.
-              </p>
+                Il y a 5 ans, j'étais dans mon garage en Californie avec une idée révolutionnaire... Ah non c'est pas moi ça.
+                <br></br><br></br>Par contre avant d'aller quelque part, je regarde toujours le site. Et 8 fois sur 10, je tombe sur un site qui fait fuir alors que le resto, le lieu ou la société est top. C'est dommage non ? <br></br><br></br> Aujourd'hui, je développe BNK Conseil pour ça ! </p>
+              
             </motion.div>
 
             {/* Carte fondateur */}
@@ -222,7 +220,7 @@ export default function APropos() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Ma différence</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Mais encore...</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
               Ce qui me{' '}
               <span style={{
@@ -273,10 +271,9 @@ export default function APropos() {
               De la vente terrain au conseil
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto mt-4">
-              Je m'appelle Théo Benkirane. Mon parcours, c'est la vente et le terrain  -  l'immobilier d'abord, puis le recrutement B2B, la prospection commerciale, et aujourd'hui Account Manager chez LegalPlace où j'accompagne des entrepreneurs dans la structuration et le lancement de leur activité.
-            </p>
+              J’ai commencé sur le terrain : immobilier, recrutement B2B, prospection commerciale… et aujourd’hui j'accompagne des entrepreneurs à créer, structurer et lancer leur activité.            </p>
             <p className="text-gray-500 text-base max-w-2xl mx-auto mt-3">
-              Ce que j'ai appris au fil de ces expériences : la majorité des TPE ont un vrai potentiel commercial  -  mais elles manquent de méthode, de visibilité en ligne, ou des deux à la fois. C'est exactement le problème que BNK Conseil adresse.
+              Ce que j'ai appris, c'est que je ne sais pas faire ce que vous faites, mais je sais le mettre en valeur ! Notamment en ligne.
             </p>
           </motion.div>
 

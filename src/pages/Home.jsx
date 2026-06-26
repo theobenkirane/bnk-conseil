@@ -81,23 +81,26 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
               className="text-[11px] uppercase tracking-[0.3em] font-medium mb-6" style={{ color: 'var(--c-chrome-hi)' }}
             >
-              Conseil Commercial · Depuis 2022
+              Conseil Commercial · Depuis 2025
             </motion.p>
 
-            <h1 className="font-firs font-semibold tracking-[-0.04em] leading-[0.9] text-[52px] sm:text-[80px] lg:text-[104px] xl:text-[124px]" style={{ color: '#FFFFFF', textShadow: '0 4px 40px rgba(3,16,24,0.55)' }}>
-              <Reveal variant="chars" as="span" className="block">BNK</Reveal>
-              <Reveal variant="chars" as="span" className="block" delay={0.1}>Conseil</Reveal>
+            <h1 className="font-firs font-semibold tracking-[-0.04em] leading-[0.9] text-[52px] sm:text-[80px] lg:text-[104px] xl:text-[124px]" style={{ color: '#ffffffb0', textShadow: '0 4px 40px rgba(3,16,24,0.55)' }}>
+              <Reveal variant="chars" as="span" className="block">Votre site web dès</Reveal>
+            </h1>
+
+            <h1 className="font-firs font-semibold tracking-[-0.04em] leading-[0.9] text-[52px] sm:text-[80px] lg:text-[104px] xl:text-[124px]" style={{ color: '#ffffff', textShadow: '0 4px 40px rgba(3,16,24,0.55)' }}>
+              <Reveal variant="chars" as="span" className="block" delay={0.1}>690€</Reveal>
             </h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.55 }}
-              className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-medium max-w-lg leading-[1.8] mt-8 mb-8" style={{ color: 'rgba(255,255,255,0.88)' }}
+              className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-medium max-w-lg leading-[1.8] mt-8 mb-8" style={{ color: 'rgb(255, 255, 255)' }}
             >
-              Sites qui convertissent. Audit commercial. Résultats en 30 jours.
+              Site vitrine. Audit commercial. Résultats en 30 jours.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}>
-              <MagneticButton href={CALENDLY}>Réserver un diagnostic gratuit</MagneticButton>
+              <MagneticButton href={CALENDLY}>On en discute ? C'est GRATUIT !</MagneticButton>
             </motion.div>
           </section>
 
@@ -107,10 +110,10 @@ export default function Home() {
               <Reveal className="text-center mb-14 max-w-2xl mx-auto">
                 <p className="text-[12px] tracking-[0.24em] uppercase font-medium mb-3" style={{ color: 'var(--c-chrome-hi)' }}>[ Tarifs ]</p>
                 <h2 className="font-firs text-[40px] sm:text-[56px] font-semibold uppercase tracking-tight leading-[0.95] mb-4" style={{ color: '#FFFFFF', textShadow: '0 2px 30px rgba(3,16,24,0.5)' }}>
-                  Un site qui<br />rapporte, dès 690€
+                  Un site qui<br />vous correspond
                 </h2>
                 <p className="text-[15px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Prix fixe, sans surprise. Paiement en 2×, hébergement 1 an offert, livraison garantie. Vos premiers résultats en 30 jours.
+                  Prix fixe. Paiement en 2×, hébergement 1 an offert, livraison garantie. Vos premiers résultats en 30 jours.
                 </p>
               </Reveal>
 
@@ -190,7 +193,7 @@ export default function Home() {
                 <p className="text-[12px] tracking-[0.24em] uppercase font-medium mb-3" style={{ color: 'var(--c-chrome-hi)' }}>[ Services ]</p>
                 <h2 className="font-firs text-[40px] sm:text-[54px] font-semibold uppercase tracking-tight mb-4" style={{ color: '#FFFFFF', textShadow: '0 2px 30px rgba(3,16,24,0.5)' }}>Ce qu'on fait pour vous</h2>
                 <p className="text-[15px] leading-relaxed max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Tout ce qu'il faut pour structurer votre commercial et lancer votre présence en ligne. Un seul interlocuteur, des résultats mesurables.
+                  Tout ce qu'il faut pour structurer votre partie commercial et lancer votre présence en ligne. Un seul interlocuteur, des résultats mesurables.
                 </p>
               </Reveal>
 
