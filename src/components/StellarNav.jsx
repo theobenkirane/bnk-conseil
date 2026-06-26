@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import MagneticButton from './stellar/MagneticButton'
 
 const NAV_LINKS = [
   { label: 'Accueil', path: '/' },
@@ -9,13 +10,28 @@ const NAV_LINKS = [
   { label: 'Contact', path: '/rdv' },
 ]
 
-const CTA_CLIP = 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)'
-
 export default function StellarNav() {
   const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const closeMobile = () => setMobileOpen(false)
 
-  useEffect(() => setMobileOpen(false), [location.pathname])
+  const logoMark = (
+    <span
+      className="block w-6 h-6"
+      style={{
+        background: 'var(--c-dark)',
+        WebkitMaskImage: 'url(/logo.svg)',
+        maskImage: 'url(/logo.svg)',
+        WebkitMaskSize: 'contain',
+        maskSize: 'contain',
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+        WebkitMaskPosition: 'center',
+        maskPosition: 'center',
+      }}
+      aria-hidden="true"
+    />
+  )
 
   return (
     <>
@@ -34,27 +50,25 @@ export default function StellarNav() {
           style={{ background: 'radial-gradient(circle at 100% 100%, transparent 24px, white 25px)' }}
         />
 
+        <Link to="/" className="flex items-center gap-2 mr-2" data-cursor="lg">
+          {logoMark}
+          <span className="font-firs text-[15px] font-semibold tracking-tight" style={{ color: 'var(--c-dark)' }}>
+            BNK <span className="font-sans font-normal text-[12px] opacity-70">Conseil</span>
+          </span>
+        </Link>
+
         {NAV_LINKS.map(({ label, path }) => (
           <Link
             key={path}
             to={path}
             className="text-[11px] uppercase tracking-[0.14em] font-medium transition-colors"
-            style={{ color: location.pathname === path ? '#154359' : '#737373' }}
+            style={{ color: location.pathname === path ? 'var(--c-dark)' : '#737373' }}
           >
             {label}
           </Link>
         ))}
 
-        <Link
-          to="/rdv"
-          className="flex items-center gap-1.5 text-white text-[10px] uppercase tracking-[0.14em] font-medium px-[18px] py-3 transition-[filter] hover:brightness-125 ml-2"
-          style={{ background: '#066377', clipPath: CTA_CLIP }}
-        >
-          Réserver un appel
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
-            <path d="M7 17L17 7M17 7H7M17 7v10" />
-          </svg>
-        </Link>
+        <MagneticButton to="/rdv" className="ml-2">Réserver un appel</MagneticButton>
       </div>
 
       {/* Mobile hamburger */}
@@ -64,34 +78,35 @@ export default function StellarNav() {
           className="w-10 h-10 flex flex-col justify-center items-center gap-1.5 rounded-lg bg-white/80 backdrop-blur border border-white/20"
           aria-label="Menu"
         >
-          <span className={`block w-5 h-0.5 bg-[#154359] rounded-full transition-transform origin-center ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-[#154359] rounded-full transition-opacity ${mobileOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-[#154359] rounded-full transition-transform origin-center ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-5 h-0.5 rounded-full transition-transform origin-center ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} style={{ background: 'var(--c-dark)' }} />
+          <span className={`block w-5 h-0.5 rounded-full transition-opacity ${mobileOpen ? 'opacity-0' : ''}`} style={{ background: 'var(--c-dark)' }} />
+          <span className={`block w-5 h-0.5 rounded-full transition-transform origin-center ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} style={{ background: 'var(--c-dark)' }} />
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden absolute inset-0 z-40 bg-white flex flex-col justify-center items-center gap-8">
+          <Link to="/" className="flex items-center gap-2 mb-2" data-cursor="lg" onClick={closeMobile}>
+            {logoMark}
+            <span className="font-firs text-[15px] font-semibold tracking-tight" style={{ color: 'var(--c-dark)' }}>
+              BNK <span className="font-sans font-normal text-[12px] opacity-70">Conseil</span>
+            </span>
+          </Link>
           {NAV_LINKS.map(({ label, path }) => (
             <Link
               key={path}
               to={path}
-              onClick={() => setMobileOpen(false)}
+              onClick={closeMobile}
               className="font-firs text-3xl font-semibold uppercase tracking-tight"
-              style={{ color: '#154359' }}
+              style={{ color: 'var(--c-dark)' }}
             >
               {label}
             </Link>
           ))}
-          <Link
-            to="/rdv"
-            onClick={() => setMobileOpen(false)}
-            className="flex items-center gap-2 text-white text-sm uppercase tracking-[0.14em] font-medium px-6 py-3 mt-4 transition-[filter] hover:brightness-125"
-            style={{ background: '#066377', clipPath: CTA_CLIP }}
-          >
+          <MagneticButton to="/rdv" className="mt-4" onClick={closeMobile}>
             Réserver un appel
-          </Link>
+          </MagneticButton>
         </div>
       )}
     </>
