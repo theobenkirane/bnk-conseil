@@ -1,7 +1,5 @@
-@import url('https://db.onlinewebfonts.com/c/69f2576e7ca287875bf8d089130e292c?family=TT+Firs+Neue');
-
 .font-firs {
-  font-family: 'TT Firs Neue', 'Inter', system-ui, sans-serif;
+  font-family: 'Bricolage Grotesque Variable', 'Inter', system-ui, sans-serif;
 }
 
 .no-scrollbar {
@@ -14,6 +12,36 @@
 }
 
 @import "tailwindcss";
+
+:root {
+  --c-dark: #154359;
+  --c-teal: #066377;
+  --c-teal-mid: #3B9BB3;
+  --c-chrome-lo: #185B7B;
+  --c-chrome-hi: #4BBDF0;
+  --c-bg: #FAFBFF;
+  --c-bg-services: #F0F0F0;
+  --c-bg-results: #F0F5F7;
+  --grad-display: linear-gradient(294deg, var(--c-chrome-lo) 20%, var(--c-chrome-hi));
+  --clip-cta: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+/* Sheen liquide réutilisable (CTA, cartes) */
+.sheen { position: relative; overflow: hidden; }
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.45) 50%, transparent 70%);
+  transform: translateX(-130%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+.sheen:hover::after { transform: translateX(130%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sheen::after { transition: none; }
+}
 
 /* Global resets and base styles */
 *, *::before, *::after {
