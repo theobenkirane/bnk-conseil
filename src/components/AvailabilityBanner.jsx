@@ -6,7 +6,7 @@ export default function AvailabilityBanner() {
   return (
     <div
       className="fixed top-0 left-0 right-0 z-60 w-full flex items-center justify-center gap-3 px-4 py-2.5 text-white text-sm font-medium"
-      style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+      style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
     >
       <span>{AVAILABILITY.message}</span>
       <Link

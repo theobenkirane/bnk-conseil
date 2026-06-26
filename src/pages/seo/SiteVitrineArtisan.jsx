@@ -9,7 +9,7 @@ const SECTOR_KEY = 'Artisanat & Renovation'
 const PREVIEW_HEIGHT = 960
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -107,7 +107,7 @@ export default function SiteVitrineArtisan() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         className="pt-32 pb-16 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         <div
           className="absolute top-0 right-1/4 w-96 h-72 opacity-40 pointer-events-none"
@@ -121,7 +121,7 @@ export default function SiteVitrineArtisan() {
           >
             <Link
               to="/creation-site-vitrine"
-              className="inline-flex items-center gap-2 text-violet-600 text-sm font-medium mb-6 hover:text-violet-700 transition-colors"
+              className="inline-flex items-center gap-2 text-[#066377] text-sm font-medium mb-6 hover:text-[#154359] transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path d="M19 12H5M12 5l-7 7 7 7" />
@@ -129,14 +129,14 @@ export default function SiteVitrineArtisan() {
               Création site vitrine
             </Link>
 
-            <span className="inline-flex items-center gap-2 bg-white/70 border border-violet-100 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+            <span className="inline-flex items-center gap-2 bg-white/70 border border-[#F0F0F0] text-[#154359] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
               🔨 Artisanat
             </span>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
               Site vitrine pour{' '}
               <span style={gradientText}>artisan</span>
-              {' '}— valorisez votre savoir-faire
+              {' '} -  valorisez votre savoir-faire
             </h1>
 
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
@@ -146,8 +146,8 @@ export default function SiteVitrineArtisan() {
             <div className="flex flex-col gap-4">
               <Link
                 to="/apercu-site"
-                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 self-start"
-                style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 self-start"
+                style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                   <rect x="2" y="3" width="20" height="14" rx="2" /><polyline points="8 21 12 17 16 21" />
@@ -156,7 +156,7 @@ export default function SiteVitrineArtisan() {
               </Link>
               <Link
                 to="/rdv"
-                className="inline-flex items-center gap-1.5 text-gray-500 text-sm font-medium hover:text-violet-600 transition-colors underline underline-offset-4 self-start"
+                className="inline-flex items-center gap-1.5 text-gray-500 text-sm font-medium hover:text-[#066377] transition-colors underline underline-offset-4 self-start"
               >
                 Demander un devis gratuit →
               </Link>
@@ -196,10 +196,10 @@ export default function SiteVitrineArtisan() {
           </motion.div>
 
           <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.2 }} className="text-center mt-6">
-            <p className="text-gray-400 text-sm mb-2">Aperçu non-contractuel — personnalisable à 100%</p>
+            <p className="text-gray-400 text-sm mb-2">Aperçu non-contractuel  -  personnalisable à 100%</p>
             <Link
               to="/apercu-site"
-              className="text-violet-600 text-sm font-semibold hover:text-violet-700 transition-colors underline underline-offset-4"
+              className="text-[#066377] text-sm font-semibold hover:text-[#154359] transition-colors underline underline-offset-4"
             >
               Personnaliser l'aperçu →
             </Link>
@@ -244,15 +244,15 @@ export default function SiteVitrineArtisan() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             {...fadeUp}
-            className="text-center p-10 rounded-2xl border border-violet-100"
-            style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fdf4ff 100%)' }}
+            className="text-center p-10 rounded-2xl border border-[#F0F0F0]"
+            style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fdf4ff 100%)' }}
           >
             <p className="text-2xl font-black text-gray-900 mb-3">
               À partir de 690€ · Paiement en 2 fois · Livraison garantie 4 semaines
             </p>
             <Link
               to="/tarifs"
-              className="text-violet-600 text-sm font-semibold hover:text-violet-700 transition-colors underline underline-offset-4"
+              className="text-[#066377] text-sm font-semibold hover:text-[#154359] transition-colors underline underline-offset-4"
             >
               Voir les tarifs détaillés →
             </Link>
@@ -316,7 +316,7 @@ export default function SiteVitrineArtisan() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className={`w-4 h-4 text-violet-500 flex-shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 text-[#066377] flex-shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`}
                   >
                     <path d="M6 9l6 6 6-6" />
                   </svg>
@@ -335,7 +335,7 @@ export default function SiteVitrineArtisan() {
       {/* ── CTA final ────────────────────────────────────────────────── */}
       <section
         className="py-20 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #ede9fe 0%, #fce7f3 50%, #dbeafe 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fce7f3 50%, #dbeafe 100%)' }}
       >
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeUp}>
@@ -348,8 +348,8 @@ export default function SiteVitrineArtisan() {
             </p>
             <Link
               to="/rdv"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Demander un devis gratuit
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">

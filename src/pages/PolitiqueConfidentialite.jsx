@@ -22,7 +22,7 @@ export default function PolitiqueConfidentialite() {
               <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Responsable du traitement</h2>
               <p>
                 <strong>BNK Conseil</strong>, Théo Benkirane<br />
-                Email : <a href="mailto:conseil.bnk@gmail.com" className="text-violet-600 hover:underline">conseil.bnk@gmail.com</a>
+                Email : <a href="mailto:conseil.bnk@gmail.com" className="text-[#066377] hover:underline">conseil.bnk@gmail.com</a>
               </p>
             </div>
 
@@ -73,7 +73,7 @@ export default function PolitiqueConfidentialite() {
                 <li>Droit à la portabilité</li>
               </ul>
               <p className="mt-3">
-                Pour exercer ces droits, contactez-nous à : <a href="mailto:conseil.bnk@gmail.com" className="text-violet-600 hover:underline">conseil.bnk@gmail.com</a>. Vous pouvez également introduire une réclamation auprès de la <a href="https://www.cnil.fr" className="text-violet-600 hover:underline" target="_blank" rel="noopener noreferrer">CNIL</a>.
+                Pour exercer ces droits, contactez-nous à : <a href="mailto:conseil.bnk@gmail.com" className="text-[#066377] hover:underline">conseil.bnk@gmail.com</a>. Vous pouvez également introduire une réclamation auprès de la <a href="https://www.cnil.fr" className="text-[#066377] hover:underline" target="_blank" rel="noopener noreferrer">CNIL</a>.
               </p>
             </div>
 
@@ -87,7 +87,7 @@ export default function PolitiqueConfidentialite() {
           </div>
 
           <div className="mt-10 pt-8 border-t border-gray-100">
-            <Link to="/" className="text-violet-600 hover:text-violet-700 text-sm font-medium">
+            <Link to="/" className="text-[#066377] hover:text-[#154359] text-sm font-medium">
               ← Retour à l'accueil
             </Link>
           </div>

@@ -7,7 +7,7 @@ import SEOHead from '../../components/SEOHead'
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -190,7 +190,7 @@ function AccordionItem({ question, answer }) {
       >
         <span className="font-semibold text-gray-900 text-base">{question}</span>
         <span
-          className="shrink-0 text-violet-600 transition-transform duration-300"
+          className="shrink-0 text-[#066377] transition-transform duration-300"
           style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)' }}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
@@ -224,7 +224,7 @@ export default function WixVsAgenceWeb() {
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <section
           className="relative overflow-hidden pt-28 pb-16 px-4"
-          style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #ede9fe 40%, #dbeafe 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 40%, #dbeafe 100%)' }}
         >
           <div
             className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
@@ -243,7 +243,7 @@ export default function WixVsAgenceWeb() {
               className="flex items-center gap-2 text-sm text-gray-500 mb-8"
               aria-label="Fil d'Ariane"
             >
-              <Link to="/" className="hover:text-violet-600 transition-colors">Accueil</Link>
+              <Link to="/" className="hover:text-[#066377] transition-colors">Accueil</Link>
               <span>/</span>
               <span className="text-gray-400">Guides</span>
               <span>/</span>
@@ -256,7 +256,7 @@ export default function WixVsAgenceWeb() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="inline-flex items-center gap-2 bg-white/80 border border-violet-200 rounded-full px-4 py-1.5 text-sm font-medium text-violet-700 mb-6"
+                className="inline-flex items-center gap-2 bg-white/80 border border-white rounded-full px-4 py-1.5 text-sm font-medium text-[#154359] mb-6"
               >
                 ⚖️ Comparatif
               </motion.div>
@@ -379,13 +379,13 @@ export default function WixVsAgenceWeb() {
 
                 <motion.div
                   variants={fadeUp}
-                  className="rounded-2xl border border-violet-200 p-6 mb-6"
-                  style={{ background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' }}
+                  className="rounded-2xl border border-white p-6 mb-6"
+                  style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
                   <ul className="space-y-4">
                     {agencePros.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-violet-800">
-                        <span className="shrink-0 mt-0.5 text-violet-500 font-bold">✅</span>
+                      <li key={i} className="flex items-start gap-3 text-[#154359]">
+                        <span className="shrink-0 mt-0.5 text-[#066377] font-bold">✅</span>
                         <span className="text-base leading-relaxed">{item}</span>
                       </li>
                     ))}
@@ -395,12 +395,12 @@ export default function WixVsAgenceWeb() {
                 {/* Key point callout */}
                 <motion.div
                   variants={fadeUp}
-                  className="rounded-2xl border-2 border-violet-300 p-5"
-                  style={{ background: 'linear-gradient(135deg, #ede9fe, #ddd6fe)' }}
+                  className="rounded-2xl border-2 border-[#3B9BB3] p-5"
+                  style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F0F0)' }}
                 >
-                  <p className="text-violet-900 font-bold text-base leading-relaxed">
+                  <p className="text-[#154359] font-bold text-base leading-relaxed">
                     💡 Point clé : un site d'agence spécialisée TPE ne coûte pas forcément plus cher
-                    qu'un Wix sur 3 ans — et le résultat n'a rien à voir.
+                    qu'un Wix sur 3 ans  -  et le résultat n'a rien à voir.
                   </p>
                 </motion.div>
               </motion.section>
@@ -456,19 +456,19 @@ export default function WixVsAgenceWeb() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="mb-20 rounded-2xl border border-violet-200 p-8 text-center"
-                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%)' }}
+                className="mb-20 rounded-2xl border border-white p-8 text-center"
+                style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 100%)' }}
               >
-                <p className="text-violet-900 font-bold text-xl mb-2">
+                <p className="text-[#154359] font-bold text-xl mb-2">
                   Pas encore convaincu ?
                 </p>
-                <p className="text-violet-700 text-base mb-6">
+                <p className="text-[#154359] text-base mb-6">
                   Visualisez votre futur site gratuitement en 2 minutes.
                 </p>
                 <Link
                   to="/apercu-site"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+                  style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                 >
                   Voir un aperçu de mon site
                 </Link>
@@ -512,15 +512,15 @@ export default function WixVsAgenceWeb() {
                   {/* Wix insuffisant */}
                   <motion.div
                     variants={fadeUp}
-                    className="border-2 border-violet-200 rounded-2xl p-6"
-                    style={{ background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' }}
+                    className="border-2 border-white rounded-2xl p-6"
+                    style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                   >
-                    <h3 className="font-semibold text-violet-800 text-lg mb-4 flex items-center gap-2">
+                    <h3 className="font-semibold text-[#154359] text-lg mb-4 flex items-center gap-2">
                       ❌ Wix insuffisant pour :
                     </h3>
                     <ul className="space-y-3">
                       {wixNotFor.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-sm text-violet-700 font-medium">
+                        <li key={i} className="flex items-start gap-2.5 text-sm text-[#154359] font-medium">
                           <span className="shrink-0 mt-0.5">→</span>
                           {item}
                         </li>
@@ -562,7 +562,7 @@ export default function WixVsAgenceWeb() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.55 }}
                 className="rounded-2xl p-10 text-center"
-                style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #ede9fe 50%, #dbeafe 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 50%, #dbeafe 100%)' }}
               >
                 <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3">
                   Prêt à faire le bon choix ?
@@ -574,14 +574,14 @@ export default function WixVsAgenceWeb() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     to="/tarifs"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Voir les tarifs
                   </Link>
                   <Link
                     to="/pourquoi-pas-faire-soi-meme"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-violet-300 bg-white px-7 py-3.5 text-base font-semibold text-violet-700 transition-all duration-300 hover:bg-violet-50 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#3B9BB3] bg-white px-7 py-3.5 text-base font-semibold text-[#154359] transition-all duration-300 hover:bg-[#F0F5F7] hover:-translate-y-0.5"
                   >
                     Pourquoi pas faire soi-même ?
                   </Link>
@@ -604,7 +604,7 @@ export default function WixVsAgenceWeb() {
                       <a
                         key={link.href}
                         href={link.href}
-                        className="block text-sm text-gray-600 hover:text-violet-600 hover:translate-x-1 transition-all duration-200 py-0.5"
+                        className="block text-sm text-gray-600 hover:text-[#066377] hover:translate-x-1 transition-all duration-200 py-0.5"
                       >
                         {link.label}
                       </a>
@@ -614,23 +614,23 @@ export default function WixVsAgenceWeb() {
 
                 {/* CTA card */}
                 <div
-                  className="rounded-2xl border border-violet-200 p-6 text-center"
-                  style={{ background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' }}
+                  className="rounded-2xl border border-white p-6 text-center"
+                  style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
-                  <p className="font-bold text-violet-900 text-base mb-2">
+                  <p className="font-bold text-[#154359] text-base mb-2">
                     Convaincu par l'agence ?
                   </p>
-                  <p className="text-sm text-violet-700 mb-5 leading-relaxed">
+                  <p className="text-sm text-[#154359] mb-5 leading-relaxed">
                     Obtenez un devis gratuit et personnalisé sous 24h.
                   </p>
                   <Link
                     to="/rdv"
-                    className="block text-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-violet-300/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                    className="block text-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Obtenez un devis gratuit
                   </Link>
-                  <p className="text-xs text-violet-500 mt-3">Réponse sous 24h · Sans engagement</p>
+                  <p className="text-xs text-[#066377] mt-3">Réponse sous 24h · Sans engagement</p>
                 </div>
 
                 {/* Related guide */}
@@ -644,7 +644,7 @@ export default function WixVsAgenceWeb() {
                   >
                     <span className="text-xl shrink-0">📖</span>
                     <div>
-                      <p className="text-sm font-semibold text-gray-800 group-hover:text-violet-600 transition-colors leading-snug">
+                      <p className="text-sm font-semibold text-gray-800 group-hover:text-[#066377] transition-colors leading-snug">
                         Combien coûte un site vitrine en 2025 ?
                       </p>
                       <p className="text-xs text-gray-500 mt-1">7 min · Guide complet</p>

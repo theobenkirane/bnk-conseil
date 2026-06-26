@@ -24,7 +24,7 @@ export default function MentionsLegales() {
                 <strong>BNK Conseil</strong><br />
                 Fondateur : Théo Benkirane<br />
                 Statut : Auto-entrepreneur / Consultant indépendant<br />
-                Email : <a href="mailto:conseil.bnk@gmail.com" className="text-violet-600 hover:underline">conseil.bnk@gmail.com</a>
+                Email : <a href="mailto:conseil.bnk@gmail.com" className="text-[#066377] hover:underline">conseil.bnk@gmail.com</a>
               </p>
             </div>
 
@@ -35,7 +35,7 @@ export default function MentionsLegales() {
                 <strong>Vercel Inc.</strong><br />
                 340 Pine Street, Suite 701<br />
                 San Francisco, CA 94104, États-Unis<br />
-                Site : <a href="https://vercel.com" className="text-violet-600 hover:underline" target="_blank" rel="noopener noreferrer">vercel.com</a>
+                Site : <a href="https://vercel.com" className="text-[#066377] hover:underline" target="_blank" rel="noopener noreferrer">vercel.com</a>
               </p>
             </div>
 
@@ -70,7 +70,7 @@ export default function MentionsLegales() {
           </div>
 
           <div className="mt-10 pt-8 border-t border-gray-100">
-            <Link to="/" className="text-violet-600 hover:text-violet-700 text-sm font-medium">
+            <Link to="/" className="text-[#066377] hover:text-[#154359] text-sm font-medium">
               ← Retour à l'accueil
             </Link>
           </div>

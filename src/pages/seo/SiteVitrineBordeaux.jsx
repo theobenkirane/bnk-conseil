@@ -4,7 +4,7 @@ import PageTransition from '../../components/PageTransition'
 import SEOHead from '../../components/SEOHead'
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -90,7 +90,7 @@ export default function SiteVitrineBordeaux() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         className="pt-32 pb-16 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         <div
           className="absolute top-0 right-1/4 w-96 h-72 opacity-40 pointer-events-none"
@@ -106,7 +106,7 @@ export default function SiteVitrineBordeaux() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-violet-200 rounded-full px-4 py-2 text-sm font-semibold text-violet-700 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-white rounded-full px-4 py-2 text-sm font-semibold text-[#154359] mb-6">
               <span>📍</span>
               <span>Bordeaux &amp; Gironde</span>
             </div>
@@ -123,8 +123,8 @@ export default function SiteVitrineBordeaux() {
             <div className="flex flex-col gap-4">
               <Link
                 to="/apercu-site"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 self-start"
-                style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 self-start"
+                style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
               >
                 Visualiser mon site gratuitement
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -133,7 +133,7 @@ export default function SiteVitrineBordeaux() {
               </Link>
               <Link
                 to="/rdv"
-                className="inline-flex items-center gap-1.5 text-gray-500 text-sm font-medium hover:text-violet-600 transition-colors underline underline-offset-4 self-start"
+                className="inline-flex items-center gap-1.5 text-gray-500 text-sm font-medium hover:text-[#066377] transition-colors underline underline-offset-4 self-start"
               >
                 Demander un devis gratuit
               </Link>
@@ -177,18 +177,18 @@ export default function SiteVitrineBordeaux() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl p-8 border border-violet-100"
-            style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%)' }}
+            className="rounded-2xl p-8 border border-[#F0F0F0]"
+            style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 100%)' }}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white rounded-xl p-6 border border-violet-100 shadow-sm">
+              <div className="bg-white rounded-xl p-6 border border-[#F0F0F0] shadow-sm">
                 <div className="text-3xl mb-3">💻</div>
                 <h3 className="font-bold text-gray-900 text-lg mb-2">"100% en visio"</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   "Échanges fluides via Google Meet ou Teams. Partagez vos écrans, validez en temps réel."
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-6 border border-violet-100 shadow-sm">
+              <div className="bg-white rounded-xl p-6 border border-[#F0F0F0] shadow-sm">
                 <div className="text-3xl mb-3">🤝</div>
                 <h3 className="font-bold text-gray-900 text-lg mb-2">En présentiel</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -196,7 +196,7 @@ export default function SiteVitrineBordeaux() {
                 </p>
               </div>
             </div>
-            <p className="text-center text-gray-500 text-sm bg-white/60 rounded-lg px-4 py-3 border border-violet-50">
+            <p className="text-center text-gray-500 text-sm bg-white/60 rounded-lg px-4 py-3 border border-[#F0F5F7]">
               "Nous accompagnons les TPE de Bordeaux, Mérignac, Pessac, Talence, Bègles et toute la Gironde."
             </p>
           </motion.div>
@@ -233,14 +233,14 @@ export default function SiteVitrineBordeaux() {
               >
                 <Link
                   to={secteur.link}
-                  className="block p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-violet-200 transition-all duration-300 h-full"
+                  className="block p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-white transition-all duration-300 h-full"
                 >
                   <div className="text-3xl mb-3" role="img" aria-label={secteur.label}>
                     {secteur.emoji}
                   </div>
                   <h3 className="font-bold text-gray-900 text-base mb-2">{secteur.label}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{secteur.description}</p>
-                  <span className="inline-flex items-center gap-1 mt-4 text-violet-600 text-xs font-semibold">
+                  <span className="inline-flex items-center gap-1 mt-4 text-[#066377] text-xs font-semibold">
                     En savoir plus
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
                       <path d="M5 12h14M12 5l7 7-7 7" />
@@ -284,7 +284,7 @@ export default function SiteVitrineBordeaux() {
               >
                 <div
                   className="text-xs font-black mb-3 w-8 h-8 rounded-lg flex items-center justify-center text-white"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                  style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                 >
                   {item.step}
                 </div>
@@ -319,7 +319,7 @@ export default function SiteVitrineBordeaux() {
               </p>
               <Link
                 to="/tarifs"
-                className="inline-flex items-center gap-2 text-violet-600 font-semibold text-sm hover:text-violet-700 transition-colors underline underline-offset-4"
+                className="inline-flex items-center gap-2 text-[#066377] font-semibold text-sm hover:text-[#154359] transition-colors underline underline-offset-4"
               >
                 Voir le détail des tarifs
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -373,7 +373,7 @@ export default function SiteVitrineBordeaux() {
       {/* ── CTA final ─────────────────────────────────────────────────── */}
       <section
         className="py-20 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #ede9fe 0%, #fce7f3 50%, #dbeafe 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fce7f3 50%, #dbeafe 100%)' }}
       >
         <div
           className="absolute inset-0 opacity-30 pointer-events-none"
@@ -395,8 +395,8 @@ export default function SiteVitrineBordeaux() {
             </p>
             <Link
               to="/rdv"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-white text-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Réserver mon appel gratuit
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">

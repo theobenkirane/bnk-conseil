@@ -11,7 +11,7 @@ const THEME_LIST = Object.entries(THEMES).map(([id, t]) => ({ id, ...t }))
 const PREVIEW_CONTENT_HEIGHT = 960
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -63,7 +63,7 @@ export default function ApercuSite() {
       {/* En-tête */}
       <section
         className="pt-32 pb-12 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #faf5ff 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
       >
         <div
           className="absolute top-0 left-1/3 w-96 h-72 opacity-40 pointer-events-none"
@@ -77,14 +77,14 @@ export default function ApercuSite() {
           >
             <Link
               to="/creation-site-vitrine"
-              className="inline-flex items-center gap-2 text-violet-600 text-sm font-medium mb-6 hover:text-violet-700 transition-colors"
+              className="inline-flex items-center gap-2 text-[#066377] text-sm font-medium mb-6 hover:text-[#154359] transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path d="M19 12H5M12 5l-7 7 7 7" />
               </svg>
               Création site vitrine
             </Link>
-            <span className="block text-violet-600 text-sm font-semibold uppercase tracking-widest mb-4">Outil gratuit</span>
+            <span className="block text-[#066377] text-sm font-semibold uppercase tracking-widest mb-4">Outil gratuit</span>
             <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mt-2 mb-4 leading-tight">
               Visualisez votre{' '}
               <span style={gradientText}>futur site web</span>
@@ -124,7 +124,7 @@ export default function ApercuSite() {
                     value={form.name}
                     onChange={(e) => handleChange('name', e.target.value)}
                     placeholder="Ex : Boulangerie Martin"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200"
                   />
                 </div>
 
@@ -137,7 +137,7 @@ export default function ApercuSite() {
                     <select
                       value={form.sector}
                       onChange={(e) => handleChange('sector', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm appearance-none focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200 cursor-pointer"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm appearance-none focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200 cursor-pointer"
                     >
                       {SECTOR_LIST.map((s) => (
                         <option key={s} value={s}>{SECTORS[s].emoji} {s}</option>
@@ -161,7 +161,7 @@ export default function ApercuSite() {
                     value={form.city}
                     onChange={(e) => handleChange('city', e.target.value)}
                     placeholder="Ex : Lyon, Paris, Bordeaux"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200"
                   />
                 </div>
 
@@ -176,7 +176,7 @@ export default function ApercuSite() {
                     value={form.slogan}
                     onChange={(e) => handleChange('slogan', e.target.value)}
                     placeholder="Ex : Artisan de confiance depuis 1998"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-violet-400 focus:bg-white transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200"
                   />
                 </div>
 
@@ -192,8 +192,8 @@ export default function ApercuSite() {
                         onClick={() => handleChange('theme', t.id)}
                         className="flex flex-col items-center gap-2 p-2.5 rounded-xl border-2 transition-all duration-200"
                         style={{
-                          borderColor: form.theme === t.id ? '#7C3AED' : '#e5e7eb',
-                          background: form.theme === t.id ? '#f5f3ff' : '#fafafa',
+                          borderColor: form.theme === t.id ? '#066377' : '#e5e7eb',
+                          background: form.theme === t.id ? '#F0F5F7' : '#fafafa',
                         }}
                         title={THEME_COLORS[t.id]?.label}
                       >
@@ -216,8 +216,8 @@ export default function ApercuSite() {
                   </p>
                   <Link
                     to="/rdv"
-                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     Obtenir mon vrai site
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
@@ -226,7 +226,7 @@ export default function ApercuSite() {
                   </Link>
                   <Link
                     to="/commander"
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-violet-700 text-sm border-2 border-violet-200 bg-violet-50 hover:bg-violet-100 hover:border-violet-300 transition-all duration-200"
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-[#154359] text-sm border-2 border-white bg-[#F0F5F7] hover:bg-[#F0F0F0] hover:border-[#3B9BB3] transition-all duration-200"
                   >
                     Commander directement (-30%)
                   </Link>
@@ -260,7 +260,7 @@ export default function ApercuSite() {
                   </div>
                 </div>
 
-                {/* Zone preview scalée — responsive via ResizeObserver */}
+                {/* Zone preview scalée  -  responsive via ResizeObserver */}
                 <div
                   ref={previewContainerRef}
                   className="relative overflow-hidden bg-gray-50"
@@ -288,11 +288,11 @@ export default function ApercuSite() {
                 {/* Label aperçu */}
                 <div className="px-4 py-2.5 bg-gray-50 border-t border-gray-200 flex items-center justify-between">
                   <span className="text-xs text-gray-500 font-medium">
-                    Aperçu non-contractuel — personnalisable à 100%
+                    Aperçu non-contractuel  -  personnalisable à 100%
                   </span>
                   <span
                     className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                    style={{ background: '#f5f3ff', color: '#7C3AED' }}
+                    style={{ background: '#F0F5F7', color: '#066377' }}
                   >
                     {THEME_COLORS[form.theme]?.label}
                   </span>
@@ -300,9 +300,9 @@ export default function ApercuSite() {
               </div>
 
               {/* Note reassurance */}
-              <div className="mt-4 rounded-xl border border-violet-100 bg-violet-50 px-5 py-4 flex flex-wrap gap-x-6 gap-y-2">
+              <div className="mt-4 rounded-xl border border-[#F0F0F0] bg-[#F0F5F7] px-5 py-4 flex flex-wrap gap-x-6 gap-y-2">
                 {['Design entièrement sur-mesure', 'Votre contenu réel intégré', 'Optimisé SEO dès le départ'].map((item) => (
-                  <div key={item} className="flex items-center gap-1.5 text-violet-700 text-sm font-medium">
+                  <div key={item} className="flex items-center gap-1.5 text-[#154359] text-sm font-medium">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 flex-shrink-0">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>

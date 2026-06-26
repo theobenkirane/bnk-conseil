@@ -52,7 +52,7 @@ export default function ROICalculator() {
   const filledSegments = Math.min(monthsToROI, progressMax)
 
   return (
-    <div className="bg-violet-50 border border-violet-100 rounded-2xl p-6 md:p-8 space-y-6">
+    <div className="bg-[#F0F5F7] border border-[#F0F0F0] rounded-2xl p-6 md:p-8 space-y-6">
 
       {/* Sélecteur de formule */}
       <div className="space-y-2">
@@ -63,17 +63,17 @@ export default function ROICalculator() {
               onClick={() => setFormulaIdx(i)}
               className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                 formulaIdx === i
-                  ? 'text-white shadow-md shadow-violet-300/40'
-                  : 'bg-white border border-violet-200 text-gray-600 hover:border-violet-400'
+                  ? 'text-white shadow-md shadow-[#3B9BB3]/40'
+                  : 'bg-white border border-white text-gray-600 hover:border-[#066377]'
               }`}
-              style={formulaIdx === i ? { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' } : {}}
+              style={formulaIdx === i ? { background: 'linear-gradient(135deg, #066377, #3B9BB3)' } : {}}
             >
               {f.label} · {f.price}€
             </button>
           ))}
         </div>
         {formula.boostNote && (
-          <p className="text-center text-xs text-violet-600 font-medium">{formula.boostNote}</p>
+          <p className="text-center text-xs text-[#066377] font-medium">{formula.boostNote}</p>
         )}
       </div>
 
@@ -86,7 +86,7 @@ export default function ROICalculator() {
           <select
             value={sector}
             onChange={(e) => setSector(e.target.value)}
-            className="w-full border border-violet-200 rounded-xl px-3 py-2.5 text-sm bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-violet-400"
+            className="w-full border border-white rounded-xl px-3 py-2.5 text-sm bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#066377]"
           >
             {SECTORS.map((s) => (
               <option key={s} value={s}>{s}</option>
@@ -103,7 +103,7 @@ export default function ROICalculator() {
             min={1}
             value={avgBasket}
             onChange={(e) => setAvgBasket(Math.max(1, Number(e.target.value)))}
-            className="w-full border border-violet-200 rounded-xl px-3 py-2.5 text-sm bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-violet-400"
+            className="w-full border border-white rounded-xl px-3 py-2.5 text-sm bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#066377]"
           />
         </div>
 
@@ -118,11 +118,11 @@ export default function ROICalculator() {
               max={15}
               value={clientsPerMonth}
               onChange={(e) => setClientsPerMonth(Number(e.target.value))}
-              className="w-full accent-violet-600"
+              className="w-full accent-[#066377]"
             />
             <div className="flex justify-between text-xs text-gray-500">
               <span>1</span>
-              <span className="font-semibold text-violet-700">{clientsPerMonth} client{clientsPerMonth > 1 ? 's' : ''}</span>
+              <span className="font-semibold text-[#154359]">{clientsPerMonth} client{clientsPerMonth > 1 ? 's' : ''}</span>
               <span>15</span>
             </div>
           </div>
@@ -137,12 +137,12 @@ export default function ROICalculator() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.3 }}
-          className="bg-white border border-violet-200 rounded-xl p-5 space-y-4"
+          className="bg-white border border-white rounded-xl p-5 space-y-4"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="text-center">
               <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">CA/mois</p>
-              <p className="text-2xl font-black text-violet-700">+{revenuePerMonth.toLocaleString('fr-FR')}€</p>
+              <p className="text-2xl font-black text-[#154359]">+{revenuePerMonth.toLocaleString('fr-FR')}€</p>
             </div>
             <div className="text-center border-x border-gray-100">
               <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">Rentabilisé en</p>
@@ -199,8 +199,8 @@ export default function ROICalculator() {
       <div className="text-center">
         <Link
           to="/rdv"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-semibold hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5 transition-all duration-300"
-          style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-semibold hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5 transition-all duration-300"
+          style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
         >
           Obtenir ce résultat → Réserver mon appel gratuit
         </Link>

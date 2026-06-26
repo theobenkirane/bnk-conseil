@@ -14,7 +14,7 @@ const values = [
       </svg>
     ),
     title: 'Je parle votre langage',
-    description: "Je suis passé par la prospection, le closing, la gestion de portefeuille et l'optimisation de process — je parle le même langage que vous.",
+    description: "Je suis passé par la prospection, le closing, la gestion de portefeuille et l'optimisation de process  -  je parle le même langage que vous.",
   },
   {
     icon: (
@@ -39,22 +39,22 @@ const values = [
 const timeline = [
   {
     year: 'Déb.',
-    title: 'Immobilier — apprendre la vente sur le terrain',
+    title: 'Immobilier  -  apprendre la vente sur le terrain',
     description: "Mon premier terrain d'apprentissage : la vente immobilière. Prospection, négociation, gestion de clients exigeants. C'est là que j'ai compris que la méthode fait tout.",
   },
   {
     year: 'Puis',
     title: 'Recrutement B2B et prospection commerciale',
-    description: "Recrutement B2B, prospection outbound, closing. J'ai appris à identifier un besoin, construire une relation de confiance et conclure — sur des cycles courts comme longs.",
+    description: "Recrutement B2B, prospection outbound, closing. J'ai appris à identifier un besoin, construire une relation de confiance et conclure  -  sur des cycles courts comme longs.",
   },
   {
     year: 'Auj.',
     title: 'Account Manager chez LegalPlace',
-    description: "J'accompagne des entrepreneurs dans la structuration et le lancement de leur activité. Chaque jour, je vois des indépendants avec un vrai potentiel — mais sans méthode ni visibilité.",
+    description: "J'accompagne des entrepreneurs dans la structuration et le lancement de leur activité. Chaque jour, je vois des indépendants avec un vrai potentiel  -  mais sans méthode ni visibilité.",
   },
   {
     year: 'BNK',
-    title: 'BNK Conseil — la conviction qui devient une offre',
+    title: 'BNK Conseil  -  la conviction qui devient une offre',
     description: "Aider les TPE à mieux vendre et leur donner une présence digitale qui travaille pour eux. Parce qu'un beau site sans stratégie ne convertit pas, et une bonne équipe sans visibilité plafonne vite.",
   },
 ]
@@ -111,11 +111,11 @@ export default function APropos() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-violet-700 text-sm font-bold uppercase tracking-widest">Qui je suis</span>
+              <span className="text-[#154359] text-sm font-bold uppercase tracking-widest">Qui je suis</span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6 leading-tight">
                 BNK Conseil, c'est une conviction{' '}
                 <span style={{
-                  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -138,7 +138,7 @@ export default function APropos() {
             >
               <div
                 className="relative p-1 rounded-3xl"
-                style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7, #fbcfe8)' }}
+                style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3, #fbcfe8)' }}
               >
                 <div className="bg-white rounded-[22px] p-8 text-center max-w-xs w-full">
                   {/* Photo */}
@@ -155,7 +155,7 @@ export default function APropos() {
                     />
                     <span
                       className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg"
-                      style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                      style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                     >
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-4 h-4">
                         <polyline points="20 6 9 17 4 12" />
@@ -167,7 +167,7 @@ export default function APropos() {
                   <p
                     className="text-sm font-semibold mt-1 mb-3"
                     style={{
-                      background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                      background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
@@ -183,8 +183,8 @@ export default function APropos() {
                     href="https://www.linkedin.com/in/theobenkirane/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-violet-300/40 hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -209,11 +209,11 @@ export default function APropos() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Ma différence</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Ma différence</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
               Ce qui me{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -229,11 +229,11 @@ export default function APropos() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-2xl bg-white border border-gray-200 hover:border-violet-300 hover:shadow-md hover:shadow-violet-100/50 text-center group transition-all duration-300"
+                className="p-8 rounded-2xl bg-white border border-gray-200 hover:border-[#3B9BB3] hover:shadow-md hover:shadow-[#F0F0F0]/50 text-center group transition-all duration-300"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 text-violet-600 group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.1), rgba(168,85,247,0.06))' }}
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 text-[#066377] group-hover:scale-110 transition-transform duration-300"
+                  style={{ background: 'linear-gradient(135deg, rgba(6,99,119,0.1), rgba(6,99,119,0.06))' }}
                 >
                   {value.icon}
                 </div>
@@ -246,7 +246,7 @@ export default function APropos() {
       </section>
 
       {/* ── Timeline ──────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #fdf4ff 100%)' }}>
+      <section className="py-24" style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fdf4ff 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -255,15 +255,15 @@ export default function APropos() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="text-violet-600 text-sm font-semibold uppercase tracking-widest">Mon parcours</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Mon parcours</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3">
               De la vente terrain au conseil
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto mt-4">
-              Je m'appelle Théo Benkirane. Mon parcours, c'est la vente et le terrain — l'immobilier d'abord, puis le recrutement B2B, la prospection commerciale, et aujourd'hui Account Manager chez LegalPlace où j'accompagne des entrepreneurs dans la structuration et le lancement de leur activité.
+              Je m'appelle Théo Benkirane. Mon parcours, c'est la vente et le terrain  -  l'immobilier d'abord, puis le recrutement B2B, la prospection commerciale, et aujourd'hui Account Manager chez LegalPlace où j'accompagne des entrepreneurs dans la structuration et le lancement de leur activité.
             </p>
             <p className="text-gray-500 text-base max-w-2xl mx-auto mt-3">
-              Ce que j'ai appris au fil de ces expériences : la majorité des TPE ont un vrai potentiel commercial — mais elles manquent de méthode, de visibilité en ligne, ou des deux à la fois. C'est exactement le problème que BNK Conseil adresse.
+              Ce que j'ai appris au fil de ces expériences : la majorité des TPE ont un vrai potentiel commercial  -  mais elles manquent de méthode, de visibilité en ligne, ou des deux à la fois. C'est exactement le problème que BNK Conseil adresse.
             </p>
           </motion.div>
 
@@ -271,7 +271,7 @@ export default function APropos() {
             {/* Ligne verticale */}
             <div
               className="absolute left-6 top-0 bottom-0 w-px hidden sm:block"
-              style={{ background: 'linear-gradient(180deg, transparent, #A855F7, #7C3AED, transparent)' }}
+              style={{ background: 'linear-gradient(180deg, transparent, #3B9BB3, #066377, transparent)' }}
             />
 
             <div className="space-y-8">
@@ -287,17 +287,17 @@ export default function APropos() {
                   {/* Point année */}
                   <div
                     className="hidden sm:flex absolute left-0 top-1 w-12 h-12 rounded-full items-center justify-center text-xs font-bold text-white shadow-md"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                    style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                   >
                     {item.year.slice(2)}
                   </div>
 
-                  <div className="p-5 sm:p-6 rounded-2xl bg-white border border-gray-200 hover:border-violet-200 hover:shadow-sm transition-all duration-300">
+                  <div className="p-5 sm:p-6 rounded-2xl bg-white border border-gray-200 hover:border-white hover:shadow-sm transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">
                       <span
                         className="text-sm font-bold sm:hidden"
                         style={{
-                          background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+                          background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                           WebkitBackgroundClip: 'text',
                           WebkitTextFillColor: 'transparent',
                           backgroundClip: 'text',
@@ -319,11 +319,11 @@ export default function APropos() {
       {/* ── CTA ───────────────────────────────────────────────── */}
       <section
         className="py-20 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #ede9fe 0%, #fce7f3 50%, #dbeafe 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fce7f3 50%, #dbeafe 100%)' }}
       >
         <div
           className="absolute inset-0 opacity-30 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(168,85,247,0.2), transparent)' }}
+          style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(6,99,119,0.2), transparent)' }}
         />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -336,12 +336,12 @@ export default function APropos() {
               Vous êtes indépendant, artisan, restaurateur, ou dirigeant d'une petite structure ?
             </h2>
             <p className="text-gray-600 text-lg mb-8">
-              On peut en parler. Pas de jargon, pas de promesses vagues — juste un échange direct pour voir si je peux vous aider à passer un cap.
+              On peut en parler. Pas de jargon, pas de promesses vagues  -  juste un échange direct pour voir si je peux vous aider à passer un cap.
             </p>
             <Link
               to="/rdv"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/40 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/40 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Prendre contact
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

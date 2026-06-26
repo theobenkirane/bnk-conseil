@@ -5,7 +5,7 @@ import PageTransition from '../components/PageTransition'
 import SEOHead from '../components/SEOHead'
 
 const gradientText = {
-  background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+  background: 'linear-gradient(135deg, #066377, #3B9BB3)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -61,7 +61,7 @@ const comparatorCards = [
   {
     id: 'bnk',
     title: 'BNK Conseil',
-    headerStyle: { background: 'linear-gradient(135deg, #7C3AED, #A855F7)' },
+    headerStyle: { background: 'linear-gradient(135deg, #066377, #3B9BB3)' },
     headerTextClass: 'text-white',
     badge: '✓ Recommandé',
     price: '690€',
@@ -113,10 +113,10 @@ export default function PourquoiPasFaireSoiMeme() {
         canonical="https://bnk-conseil.com/pourquoi-pas-faire-soi-meme"
       />
 
-      {/* ── Section 1 — Hero ─────────────────────────────────────────────── */}
+      {/* ── Section 1  -  Hero ─────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden pt-28 pb-20 px-4"
-        style={{ background: 'linear-gradient(135deg, #fef3c7 0%, #faf5ff 40%, #dbeafe 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #fef3c7 0%, #F0F5F7 40%, #dbeafe 100%)' }}
       >
         {/* Radial blob */}
         <div
@@ -137,12 +137,12 @@ export default function PourquoiPasFaireSoiMeme() {
           >
             <Link
               to="/creation-site-vitrine"
-              className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-violet-600 transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#066377] transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path d="M19 12H5M5 12l7-7M5 12l7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Retour — Création de site vitrine
+              Retour  -  Création de site vitrine
             </Link>
           </motion.div>
 
@@ -195,7 +195,7 @@ export default function PourquoiPasFaireSoiMeme() {
         </div>
       </section>
 
-      {/* ── Section 2 — Comparateur visuel ───────────────────────────────── */}
+      {/* ── Section 2  -  Comparateur visuel ───────────────────────────────── */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -225,7 +225,7 @@ export default function PourquoiPasFaireSoiMeme() {
                 key={card.id}
                 variants={fadeUp}
                 className={`border rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col ${
-                  card.id === 'bnk' ? 'border-violet-300 ring-2 ring-violet-200' : 'border-gray-100'
+                  card.id === 'bnk' ? 'border-[#3B9BB3] ring-2 ring-white' : 'border-gray-100'
                 }`}
               >
                 {/* Header band */}
@@ -276,8 +276,8 @@ export default function PourquoiPasFaireSoiMeme() {
                   {card.id === 'bnk' && (
                     <Link
                       to="/tarifs"
-                      className="mt-2 inline-flex justify-center items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-                      style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+                      className="mt-2 inline-flex justify-center items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+                      style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
                     >
                       Voir les tarifs
                     </Link>
@@ -289,7 +289,7 @@ export default function PourquoiPasFaireSoiMeme() {
         </div>
       </section>
 
-      {/* ── Section 3 — Vrai coût du temps ──────────────────────────────── */}
+      {/* ── Section 3  -  Vrai coût du temps ──────────────────────────────── */}
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-2xl mx-auto">
           <motion.div
@@ -327,20 +327,20 @@ export default function PourquoiPasFaireSoiMeme() {
                   step={5}
                   value={hourlyRate}
                   onChange={(e) => setHourlyRate(Number(e.target.value))}
-                  className="w-28 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                  className="w-28 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#066377]"
                 />
                 <span className="text-gray-500 font-medium">€/h</span>
               </div>
 
-              <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' }}>
-                <p className="text-lg font-bold text-violet-800">
+              <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}>
+                <p className="text-lg font-bold text-[#154359]">
                   En passant 60h sur Wix →{' '}
                   <span className="text-2xl" style={gradientText}>
                     {(hourlyRate * 60).toLocaleString('fr-FR')}€
                   </span>{' '}
                   de manque à gagner
                 </p>
-                <p className="text-sm text-violet-600 mt-2">
+                <p className="text-sm text-[#066377] mt-2">
                   Sans compter le résultat souvent décevant et la frustration
                 </p>
               </div>
@@ -360,7 +360,7 @@ export default function PourquoiPasFaireSoiMeme() {
         </div>
       </section>
 
-      {/* ── Section 4 — Idées reçues ─────────────────────────────────────── */}
+      {/* ── Section 4  -  Idées reçues ─────────────────────────────────────── */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -406,8 +406,8 @@ export default function PourquoiPasFaireSoiMeme() {
         </div>
       </section>
 
-      {/* ── Section 5 — Pour qui est-ce adapté ? ────────────────────────── */}
-      <section className="bg-violet-50 py-20 px-4">
+      {/* ── Section 5  -  Pour qui est-ce adapté ? ────────────────────────── */}
+      <section className="bg-[#F0F5F7] py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
             className="text-center mb-12"
@@ -457,10 +457,10 @@ export default function PourquoiPasFaireSoiMeme() {
             {/* BNK column */}
             <motion.div
               variants={fadeUp}
-              className="border border-violet-200 rounded-2xl shadow-sm p-7"
-              style={{ background: 'linear-gradient(135deg, #faf5ff, #ede9fe)' }}
+              className="border border-white rounded-2xl shadow-sm p-7"
+              style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
             >
-              <h3 className="font-black text-violet-800 text-lg mb-5 flex items-center gap-2">
+              <h3 className="font-black text-[#154359] text-lg mb-5 flex items-center gap-2">
                 ✨ BNK adapté pour :
               </h3>
               <ul className="space-y-3">
@@ -470,7 +470,7 @@ export default function PourquoiPasFaireSoiMeme() {
                   'Quand vous voulez être trouvé sur Google',
                   'Quand votre site doit convertir des visiteurs',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-violet-700 text-sm font-medium">
+                  <li key={item} className="flex items-start gap-2 text-[#154359] text-sm font-medium">
                     <span className="mt-0.5 shrink-0">✅</span>
                     {item}
                   </li>
@@ -481,10 +481,10 @@ export default function PourquoiPasFaireSoiMeme() {
         </div>
       </section>
 
-      {/* ── Section 6 — CTA final ────────────────────────────────────────── */}
+      {/* ── Section 6  -  CTA final ────────────────────────────────────────── */}
       <section
         className="py-24 px-4"
-        style={{ background: 'linear-gradient(135deg, #faf5ff 0%, #ede9fe 50%, #dbeafe 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 50%, #dbeafe 100%)' }}
       >
         <motion.div
           className="max-w-2xl mx-auto text-center"
@@ -506,14 +506,14 @@ export default function PourquoiPasFaireSoiMeme() {
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
               to="/tarifs"
-              className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-violet-300/50 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #7C3AED, #A855F7)' }}
+              className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#3B9BB3]/50 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
             >
               Voir les tarifs
             </Link>
             <Link
               to="/apercu-site"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-violet-300 bg-white px-7 py-3.5 text-base font-semibold text-violet-700 transition-all duration-300 hover:bg-violet-50 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#3B9BB3] bg-white px-7 py-3.5 text-base font-semibold text-[#154359] transition-all duration-300 hover:bg-[#F0F5F7] hover:-translate-y-0.5"
             >
               Visualiser mon site gratuit
             </Link>

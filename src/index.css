@@ -1,3 +1,18 @@
+@import url('https://db.onlinewebfonts.com/c/69f2576e7ca287875bf8d089130e292c?family=TT+Firs+Neue');
+
+.font-firs {
+  font-family: 'TT Firs Neue', 'Inter', system-ui, sans-serif;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @import "tailwindcss";
 
 /* Global resets and base styles */
@@ -26,26 +41,19 @@ body {
   background: #EFF6FF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #A855F7;
+  background: #3B9BB3;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7C3AED;
+  background: #066377;
 }
 
-/* Gradient text utility (violet → fuchsia) */
+/* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #7C3AED, #A855F7);
+  background: linear-gradient(135deg, #066377, #3B9BB3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Card blanche avec ombre douce */
-.soft-card {
-  background: #ffffff;
-  border: 1px solid #E9D5FF;
-  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.06);
 }
 
 /* Smooth transitions for page changes */

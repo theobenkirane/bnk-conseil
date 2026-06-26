@@ -1,5 +1,5 @@
 // WebsitePreview.jsx
-// Rendu statique 1280px — scale CSS depuis ApercuSite.jsx
+// Rendu statique 1280px  -  scale CSS depuis ApercuSite.jsx
 // 3 layouts distincts : vitrine / portfolio / artisan
 // 5 themes : colore / elegant / nature / warm / pro
 
@@ -188,12 +188,12 @@ export const SECTORS = {
     layoutType: "portfolio",
     emoji: "💻",
     heroTitle: (name, city) => name ? `${name}, freelance a ${city}` : `Freelance expert a ${city}`,
-    heroSubtitle: "Developpeur, designer, consultant — collaborons ensemble sur vos projets.",
+    heroSubtitle: "Developpeur, designer, consultant  -  collaborons ensemble sur vos projets.",
     skillTags: ["Web Design", "Developpement", "SEO", "React", "UI/UX"],
     projects: [
       { title: "Site e-commerce", tag: "E-commerce", color: "#F97316" },
       { title: "Application mobile", tag: "Mobile", color: "#0D9488" },
-      { title: "Refonte identite", tag: "Branding", color: "#7C3AED" },
+      { title: "Refonte identite", tag: "Branding", color: "#066377" },
       { title: "Audit SEO complet", tag: "SEO", color: "#16a34a" },
     ],
     processSteps: ["Analyse", "Proposition", "Realisation", "Livraison"],
@@ -226,7 +226,7 @@ export const SECTORS = {
       { title: "Audit organisationnel", tag: "Audit", color: "#2563eb" },
       { title: "Plan marketing 2025", tag: "Marketing", color: "#ea580c" },
       { title: "Recrutement cadres", tag: "RH", color: "#0D9488" },
-      { title: "Optimisation couts", tag: "Finance", color: "#7C3AED" },
+      { title: "Optimisation couts", tag: "Finance", color: "#066377" },
     ],
     processSteps: ["Audit", "Diagnostic", "Plan d'action", "Suivi"],
     stats: [{ val: "10+", label: "Ans d'experience" }, { val: "200+", label: "Clients" }, { val: "4.9", label: "Note moyenne" }],
@@ -316,7 +316,7 @@ function LayoutVitrine({ t, s, displayName, displayCity, slogan, header, footer 
     <div>
       {header}
 
-      {/* HERO — centré */}
+      {/* HERO  -  centré */}
       <section style={{ background: t.heroBg, padding: "80px 64px 72px", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.7)", border: `1px solid ${t.cardBorder}`, borderRadius: "999px", padding: "6px 16px", marginBottom: "28px" }}>
           <span style={{ fontSize: "16px" }}>{s.emoji}</span>
@@ -342,7 +342,7 @@ function LayoutVitrine({ t, s, displayName, displayCity, slogan, header, footer 
         </div>
       </section>
 
-      {/* SERVICES — blocs avec bordure gauche */}
+      {/* SERVICES  -  blocs avec bordure gauche */}
       <section style={{ background: "#fff", padding: "72px 64px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p style={{ fontSize: "12px", fontWeight: 700, color: t.primary, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "12px" }}>Nos services</p>
@@ -365,7 +365,7 @@ function LayoutVitrine({ t, s, displayName, displayCity, slogan, header, footer 
           Prêts a vous accueillir
         </h2>
         <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.8)", marginBottom: "32px" }}>
-          Disponible 7j/7 — Reponse rapide garantie
+          Disponible 7j/7  -  Reponse rapide garantie
         </p>
         <button style={{ background: "#fff", color: t.primary, borderRadius: "12px", padding: "14px 36px", fontWeight: 800, fontSize: "16px", border: "none", cursor: "default" }}>
           {s.bookingLabel || "Reserver maintenant"}
@@ -389,7 +389,7 @@ function LayoutPortfolio({ t, s, displayName, displayCity, slogan, header, foote
     <div>
       {header}
 
-      {/* HERO — 2 colonnes */}
+      {/* HERO  -  2 colonnes */}
       <section style={{ background: t.heroBg, padding: "72px 64px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 420px", gap: "64px", alignItems: "center", maxWidth: "1152px", margin: "0 auto" }}>
           <div>
@@ -436,7 +436,7 @@ function LayoutPortfolio({ t, s, displayName, displayCity, slogan, header, foote
         </div>
       </section>
 
-      {/* PROJETS — grille 2x2 */}
+      {/* PROJETS  -  grille 2x2 */}
       <section style={{ background: "#f9fafb", padding: "72px 64px" }}>
         <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
@@ -457,7 +457,7 @@ function LayoutPortfolio({ t, s, displayName, displayCity, slogan, header, foote
         </div>
       </section>
 
-      {/* PROCESS — 4 etapes */}
+      {/* PROCESS  -  4 etapes */}
       <section style={{ background: t.primaryLight, padding: "56px 64px" }}>
         <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
@@ -517,7 +517,7 @@ function LayoutArtisan({ t, s, displayName, displayCity, slogan, header, footer 
         ))}
       </div>
 
-      {/* HERO — 2 colonnes */}
+      {/* HERO  -  2 colonnes */}
       <section style={{ background: t.heroBg, padding: "72px 64px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: "64px", alignItems: "center", maxWidth: "1152px", margin: "0 auto" }}>
           <div>
@@ -552,7 +552,7 @@ function LayoutArtisan({ t, s, displayName, displayCity, slogan, header, footer 
         </div>
       </section>
 
-      {/* REALISATIONS — mosaique */}
+      {/* REALISATIONS  -  mosaique */}
       <section style={{ background: "#fff", padding: "72px 64px" }}>
         <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>

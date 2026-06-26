@@ -2,11 +2,9 @@ import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { HelmetProvider } from 'react-helmet-async'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import AvailabilityBanner from './components/AvailabilityBanner'
-import { AVAILABILITY } from './config/availability'
+import AppLayout from './layouts/AppLayout'
 import Home from './pages/Home'
+import { useStellar } from './contexts/StellarContext'
 
 const Offres = lazy(() => import('./pages/Offres'))
 const APropos = lazy(() => import('./pages/APropos'))
@@ -30,13 +28,14 @@ const WixVsAgenceWeb = lazy(() => import('./pages/guides/WixVsAgenceWeb'))
 const Commander = lazy(() => import('./pages/Commander'))
 const Portfolio = lazy(() => import('./pages/Portfolio'))
 
-// AnimatePresence nécessite l'accès à location via un composant interne
+// AnimatePresence requires location access via an inner component
 function AnimatedRoutes() {
   const location = useLocation()
+  const { scrollRef } = useStellar()
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [location.pathname])
+    if (scrollRef?.current) scrollRef.current.scrollTop = 0
+  }, [location.pathname, scrollRef])
 
   return (
     <AnimatePresence mode="wait">
@@ -70,35 +69,13 @@ function AnimatedRoutes() {
   )
 }
 
-function AppLayout() {
-  const location = useLocation()
-  const isPortfolio = location.pathname === '/portfolio'
-
-  if (isPortfolio) {
-    return (
-      <div style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}>
-        <AnimatedRoutes />
-      </div>
-    )
-  }
-
-  return (
-    <div className="min-h-screen bg-[#FAFBFF] text-gray-900" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-      <AvailabilityBanner />
-      <Header />
-      <main style={{ paddingTop: AVAILABILITY.active ? '40px' : '0' }}>
-        <AnimatedRoutes />
-      </main>
-      <Footer />
-    </div>
-  )
-}
-
 export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <AppLayout />
+        <AppLayout>
+          <AnimatedRoutes />
+        </AppLayout>
       </BrowserRouter>
     </HelmetProvider>
   )
