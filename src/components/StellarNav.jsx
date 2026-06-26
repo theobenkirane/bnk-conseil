@@ -50,7 +50,7 @@ export default function StellarNav() {
           className="flex items-center gap-1.5 text-white text-[10px] uppercase tracking-[0.14em] font-medium px-[18px] py-3 transition-[filter] hover:brightness-125 ml-2"
           style={{ background: '#066377', clipPath: CTA_CLIP }}
         >
-          Reserver un appel
+          Réserver un appel
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
             <path d="M7 17L17 7M17 7H7M17 7v10" />
           </svg>
@@ -90,7 +90,7 @@ export default function StellarNav() {
             className="flex items-center gap-2 text-white text-sm uppercase tracking-[0.14em] font-medium px-6 py-3 mt-4 transition-[filter] hover:brightness-125"
             style={{ background: '#066377', clipPath: CTA_CLIP }}
           >
-            Reserver un appel
+            Réserver un appel
           </Link>
         </div>
       )}

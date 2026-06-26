@@ -1,6 +1,11 @@
 import { createContext, useContext, useRef } from 'react'
 
-const StellarContext = createContext(null)
+const defaultContext = {
+  scrollRef: { current: null },
+  lenisRef: { current: null },
+}
+
+const StellarContext = createContext(defaultContext)
 
 export function StellarProvider({ children }) {
   const scrollRef = useRef(null)
@@ -13,7 +18,5 @@ export function StellarProvider({ children }) {
 }
 
 export function useStellar() {
-  const ctx = useContext(StellarContext)
-  if (!ctx) throw new Error('useStellar must be inside StellarProvider')
-  return ctx
+  return useContext(StellarContext)
 }

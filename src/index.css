@@ -56,13 +56,6 @@ body {
   background-clip: text;
 }
 
-/* Card blanche avec ombre douce */
-.soft-card {
-  background: #ffffff;
-  border: 1px solid #E9D5FF;
-  box-shadow: 0 2px 12px rgba(6,99,119, 0.06);
-}
-
 /* Smooth transitions for page changes */
 html {
   scroll-behavior: smooth;
