@@ -1,3 +1,18 @@
+@import url('https://db.onlinewebfonts.com/c/69f2576e7ca287875bf8d089130e292c?family=TT+Firs+Neue');
+
+.font-firs {
+  font-family: 'TT Firs Neue', 'Inter', system-ui, sans-serif;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @import "tailwindcss";
 
 /* Global resets and base styles */
