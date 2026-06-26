@@ -22,6 +22,7 @@
   --c-bg: #FAFBFF;
   --c-bg-services: #F0F0F0;
   --c-bg-results: #F0F5F7;
+  --c-mid: #737373;
   --grad-display: linear-gradient(294deg, var(--c-chrome-lo) 20%, var(--c-chrome-hi));
   --clip-cta: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
 }

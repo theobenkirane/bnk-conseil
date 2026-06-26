@@ -35,28 +35,28 @@ export default function Home() {
         <div className="absolute inset-0" style={{ zIndex: 0 }}>
           <LiquidChrome />
         </div>
-        {/* voile radial pour contraste du texte */}
+        {/* voile sombre pour la lisibilité du texte clair */}
         <div
           className="absolute inset-0"
-          style={{ zIndex: 1, background: 'radial-gradient(60% 50% at 50% 50%, rgba(255,255,255,0.35), transparent 70%)' }}
+          style={{ zIndex: 1, background: 'radial-gradient(70% 60% at 50% 50%, rgba(3,16,24,0.5), transparent 78%)' }}
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style={{ zIndex: 30 }}>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[11px] uppercase tracking-[0.3em] font-medium mb-6" style={{ color: 'var(--c-dark)' }}
+            className="text-[11px] uppercase tracking-[0.3em] font-medium mb-6" style={{ color: 'var(--c-chrome-hi)' }}
           >
             Conseil Commercial · Depuis 2022
           </motion.p>
 
-          <h1 className="font-firs font-semibold tracking-[-0.04em] leading-[0.9] text-[52px] sm:text-[80px] lg:text-[104px] xl:text-[124px]" style={{ color: 'var(--c-dark)' }}>
+          <h1 className="font-firs font-semibold tracking-[-0.04em] leading-[0.9] text-[52px] sm:text-[80px] lg:text-[104px] xl:text-[124px]" style={{ color: '#FFFFFF', textShadow: '0 4px 40px rgba(3,16,24,0.45)' }}>
             <Reveal variant="chars" as="span" className="block">BNK</Reveal>
             <Reveal variant="chars" as="span" className="block" delay={0.1}>Conseil</Reveal>
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.55 }}
-            className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-medium max-w-lg leading-[1.8] mt-8 mb-8" style={{ color: 'var(--c-dark)' }}
+            className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-medium max-w-lg leading-[1.8] mt-8 mb-8" style={{ color: 'rgba(255,255,255,0.88)' }}
           >
             Sites qui convertissent. Audit commercial. Résultats en 30 jours.
           </motion.p>
@@ -74,7 +74,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14">
             <p className="text-[12px] tracking-[0.24em] uppercase font-medium mb-3" style={{ color: 'var(--c-teal)' }}>[ Services ]</p>
-            <h2 className="font-firs text-[40px] sm:text-[54px] font-semibold uppercase tracking-tight mb-4" style={{ color: 'var(--c-dark)' }}>Services</h2>
+            <h2 className="font-firs text-[40px] sm:text-[54px] font-semibold uppercase tracking-tight mb-4" style={{ color: 'var(--c-dark)' }}>Ce qu'on fait pour vous</h2>
             <p className="text-[15px] leading-relaxed max-w-xl mx-auto" style={{ color: 'var(--c-dark)' }}>
               Tout ce qu'il faut pour structurer votre commercial et lancer votre présence en ligne. Un seul interlocuteur, des résultats mesurables.
             </p>

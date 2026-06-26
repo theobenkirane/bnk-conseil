@@ -23,22 +23,39 @@ void main(){
   float aspect = uResolution.x / uResolution.y;
   vec2 p = uv; p.x *= aspect;
   vec2 ptr = uPointer; ptr.x *= aspect;
-  float t = uTime * 0.06;
-  vec2 q = vec2(fbm(p*2.0 + t), fbm(p*2.0 - t + 5.2));
+  float t = uTime * 0.13;
+
+  // domaine déformé (liquide)
+  vec2 q = vec2(fbm(p*2.2 + t), fbm(p*2.2 - t + 5.2));
   vec2 r = vec2(
-    fbm(p*2.0 + q*1.5 + t*1.3 + (p-ptr)*0.25),
-    fbm(p*2.0 + q*1.5 - t*1.1)
+    fbm(p*2.2 + q*1.8 + t*1.3 + (p-ptr)*0.35),
+    fbm(p*2.2 + q*1.8 - t*1.1 + 2.7)
   );
-  float f = fbm(p*2.0 + r*2.0);
-  float band = sin(f*10.0 + r.x*4.0)*0.5+0.5;
-  band = pow(band, 1.5);
-  vec3 lo = vec3(0.094,0.357,0.482);
-  vec3 hi = vec3(0.294,0.741,0.941);
-  vec3 light = vec3(0.98,0.99,1.0);
-  vec3 col = mix(lo, hi, band);
-  col = mix(col, light, smoothstep(0.6,1.0,f));
-  float spec = smoothstep(0.85,1.0, fbm(p*3.0 - t*2.0 + r));
-  col += spec*0.5;
+  float f = fbm(p*2.2 + r*2.2);
+
+  // crêtes métalliques (chrome)
+  float band = sin(f*14.0 + r.x*6.0 + t*2.0)*0.5+0.5;
+  band = pow(band, 2.0);
+
+  // base sombre -> teal -> chrome lumineux
+  vec3 deep   = vec3(0.012,0.063,0.094);
+  vec3 teal   = vec3(0.024,0.388,0.467);
+  vec3 chrome = vec3(0.45,0.86,0.98);
+  vec3 col = mix(deep, teal, smoothstep(0.2,0.7,f));
+  col = mix(col, chrome, band * smoothstep(0.45,1.0,f));
+
+  // irisation
+  float irid = sin(f*8.0 + r.y*5.0 - t*1.5)*0.5+0.5;
+  col += vec3(0.0,0.12,0.18) * irid * 0.4;
+
+  // reflets spéculaires nets
+  float spec = smoothstep(0.9,1.0, fbm(p*3.2 - t*2.2 + r));
+  col += chrome * spec * 0.6;
+
+  // vignette (profondeur)
+  float vig = smoothstep(1.2,0.2, length(uv-0.5));
+  col *= 0.55 + 0.45*vig;
+
   gl_FragColor = vec4(col,1.0);
 }
 `
@@ -57,7 +74,7 @@ export default function LiquidChrome({ className = '' }) {
     const gl = canvas.getContext('webgl', { antialias: true, alpha: false })
     if (!gl) {
       canvas.style.background =
-        'radial-gradient(120% 120% at 30% 20%, var(--c-chrome-hi), var(--c-chrome-lo) 60%, var(--c-dark))'
+        'radial-gradient(120% 120% at 30% 20%, var(--c-teal-mid), var(--c-teal) 45%, var(--c-dark) 80%, #031018)'
       return
     }
 
@@ -65,7 +82,7 @@ export default function LiquidChrome({ className = '' }) {
 
     const applyFallback = () => {
       canvas.style.background =
-        'radial-gradient(120% 120% at 30% 20%, var(--c-chrome-hi), var(--c-chrome-lo) 60%, var(--c-dark))'
+        'radial-gradient(120% 120% at 30% 20%, var(--c-teal-mid), var(--c-teal) 45%, var(--c-dark) 80%, #031018)'
     }
 
     const compile = (type, src) => {
