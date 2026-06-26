@@ -4,6 +4,7 @@ import StellarShell from '../components/StellarShell'
 import StellarNav from '../components/StellarNav'
 import PageIndicator from '../components/PageIndicator'
 import ScrollHint from '../components/ScrollHint'
+import LiquidCursor from '../components/stellar/LiquidCursor'
 import AvailabilityBanner from '../components/AvailabilityBanner'
 import { AVAILABILITY } from '../config/availability'
 
@@ -17,6 +18,7 @@ function BNKLayout({ children }) {
           <StellarNav />
           <PageIndicator scrollRef={scrollRef} />
           <ScrollHint scrollRef={scrollRef} />
+          <LiquidCursor />
         </>
       }
     >
