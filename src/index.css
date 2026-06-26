@@ -45,12 +45,12 @@ body {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7C3AED;
+  background: #066377;
 }
 
-/* Gradient text utility (violet → fuchsia) */
+/* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #7C3AED, #3B9BB3);
+  background: linear-gradient(135deg, #066377, #3B9BB3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
