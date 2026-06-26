@@ -64,9 +64,14 @@ export default function MagneticButton({
   }
 
   if (to) return <Link to={to} {...shared}>{content}</Link>
-  return (
+  if (href) return (
     <a href={href} target="_blank" rel="noopener noreferrer" {...shared}>
       {content}
     </a>
+  )
+  return (
+    <button type="button" {...shared}>
+      {content}
+    </button>
   )
 }
