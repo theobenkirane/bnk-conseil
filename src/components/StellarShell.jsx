@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
-import { StellarProvider, useStellar } from '../contexts/StellarContext'
+import { useStellar } from '../contexts/StellarContext'
 
 function ShellInner({ children, overlays, bannerActive }) {
   const { scrollRef, lenisRef } = useStellar()
@@ -48,10 +48,8 @@ function ShellInner({ children, overlays, bannerActive }) {
 
 export default function StellarShell({ children, overlays, bannerActive = false }) {
   return (
-    <StellarProvider>
-      <ShellInner overlays={overlays} bannerActive={bannerActive}>
-        {children}
-      </ShellInner>
-    </StellarProvider>
+    <ShellInner overlays={overlays} bannerActive={bannerActive}>
+      {children}
+    </ShellInner>
   )
 }
