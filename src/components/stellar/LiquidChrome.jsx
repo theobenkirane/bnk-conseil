@@ -63,16 +63,47 @@ export default function LiquidChrome({ className = '' }) {
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+    const applyFallback = () => {
+      canvas.style.background =
+        'radial-gradient(120% 120% at 30% 20%, var(--c-chrome-hi), var(--c-chrome-lo) 60%, var(--c-dark))'
+    }
+
     const compile = (type, src) => {
       const s = gl.createShader(type)
       gl.shaderSource(s, src)
       gl.compileShader(s)
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+        console.warn('[LiquidChrome] shader compile error:', gl.getShaderInfoLog(s))
+        gl.deleteShader(s)
+        return null
+      }
       return s
     }
+
+    const vertShader = compile(gl.VERTEX_SHADER, VERT)
+    const fragShader = compile(gl.FRAGMENT_SHADER, FRAG)
+
     const prog = gl.createProgram()
-    gl.attachShader(prog, compile(gl.VERTEX_SHADER, VERT))
-    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, FRAG))
+
+    if (!vertShader || !fragShader) {
+      gl.deleteProgram(prog)
+      applyFallback()
+      return () => {}
+    }
+
+    gl.attachShader(prog, vertShader)
+    gl.attachShader(prog, fragShader)
     gl.linkProgram(prog)
+
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      console.warn('[LiquidChrome] program link error:', gl.getProgramInfoLog(prog))
+      gl.deleteShader(vertShader)
+      gl.deleteShader(fragShader)
+      gl.deleteProgram(prog)
+      applyFallback()
+      return () => {}
+    }
+
     gl.useProgram(prog)
 
     const buf = gl.createBuffer()
@@ -142,6 +173,11 @@ export default function LiquidChrome({ className = '' }) {
       ro.disconnect()
       window.removeEventListener('mousemove', onMove)
       document.removeEventListener('visibilitychange', onVisibility)
+      if (buf) gl.deleteBuffer(buf)
+      if (vertShader) gl.deleteShader(vertShader)
+      if (fragShader) gl.deleteShader(fragShader)
+      if (prog) gl.deleteProgram(prog)
+      gl.getExtension('WEBGL_lose_context')?.loseContext()
     }
   }, [])
 
