@@ -134,7 +134,7 @@ export default function Offres() {
       {/* En-tête de page */}
       <section
         className="pt-32 pb-16 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.12) 60%, rgba(255,255,255,0) 100%)' }}
       >
         <div
           className="absolute top-0 left-1/3 w-96 h-72 opacity-40 pointer-events-none"
@@ -225,7 +225,7 @@ export default function Offres() {
       </section>
 
       {/* Section Guides */}
-      <section className="py-16 bg-white/45 backdrop-blur-sm border-t border-gray-100">
+      <section className="py-16 bg-white/45 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUpView(0)} className="text-center mb-10">
             <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Ressources</span>

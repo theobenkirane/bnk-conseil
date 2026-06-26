@@ -91,7 +91,7 @@ export default function APropos() {
       {/* ── Hero - fond pastel ────────────────────────────────── */}
       <section
         className="pt-32 pb-24 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #bfdbfe 0%, #f9fafb 35%, #fce7f3 65%, #d1fae5 100%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.12) 60%, rgba(255,255,255,0) 100%)' }}
       >
         <div
           className="absolute top-10 left-10 w-72 h-72 rounded-full opacity-40 pointer-events-none"

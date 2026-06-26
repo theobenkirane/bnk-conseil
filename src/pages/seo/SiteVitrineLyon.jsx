@@ -90,7 +90,7 @@ export default function SiteVitrineLyon() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         className="pt-32 pb-16 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.12) 60%, rgba(255,255,255,0) 100%)' }}
       >
         <div
           className="absolute top-0 right-1/4 w-96 h-72 opacity-40 pointer-events-none"

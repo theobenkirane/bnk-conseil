@@ -59,7 +59,7 @@ function ShellInner({ children, overlays, bannerActive }) {
             <div
               className="absolute inset-0 z-0 pointer-events-none"
               aria-hidden="true"
-              style={{ background: 'rgba(250,251,255,0.62)' }}
+              style={{ background: 'rgba(250,251,255,0.40)' }}
             />
           </>
         )}

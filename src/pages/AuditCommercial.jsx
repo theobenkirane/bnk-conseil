@@ -142,7 +142,7 @@ export default function AuditCommercial() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         className="pt-32 pb-16 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #F0F5F7 40%, #fce7f3 100%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.12) 60%, rgba(255,255,255,0) 100%)' }}
       >
         <div
           className="absolute top-0 left-1/4 w-96 h-72 opacity-40 pointer-events-none"
@@ -192,7 +192,7 @@ export default function AuditCommercial() {
       </section>
 
       {/* Garanties */}
-      <section className="py-12 bg-white/45 backdrop-blur-sm border-b border-gray-100">
+      <section className="py-12 bg-white/45 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -215,7 +215,7 @@ export default function AuditCommercial() {
       </section>
 
       {/* ── Résultats ──────────────────────────────────────────────────── */}
-      <section className="py-12 bg-white/45 backdrop-blur-sm border-b border-gray-100">
+      <section className="py-12 bg-white/45 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {resultats.map((stat, i) => (
