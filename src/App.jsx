@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 import { HelmetProvider } from 'react-helmet-async'
 import AppLayout from './layouts/AppLayout'
 import Home from './pages/Home'
+import { useStellar } from './contexts/StellarContext'
 
 const Offres = lazy(() => import('./pages/Offres'))
 const APropos = lazy(() => import('./pages/APropos'))
@@ -30,10 +31,11 @@ const Portfolio = lazy(() => import('./pages/Portfolio'))
 // AnimatePresence requires location access via an inner component
 function AnimatedRoutes() {
   const location = useLocation()
+  const { scrollRef } = useStellar()
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [location.pathname])
+    if (scrollRef?.current) scrollRef.current.scrollTop = 0
+  }, [location.pathname, scrollRef])
 
   return (
     <AnimatePresence mode="wait">
