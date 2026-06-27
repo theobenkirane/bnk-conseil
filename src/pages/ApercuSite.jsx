@@ -90,7 +90,7 @@ export default function ApercuSite() {
               <span style={gradientText}>futur site web</span>
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Renseignez les infos de votre société et obtenez un aperçu instantané de ce que pourrait être votre site. Gratuit, sans engagement.
+              Tapez le nom de votre boîte, votre secteur, votre ville. En 10 secondes vous voyez à quoi ressemblerait votre site. Gratuit, zéro engagement, aucune carte bancaire.
             </p>
           </motion.div>
         </div>
@@ -110,8 +110,8 @@ export default function ApercuSite() {
             >
               <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-6">
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-1">Personnalisez votre aperçu</h2>
-                  <p className="text-gray-500 text-sm">Les modifications s'appliquent en temps réel.</p>
+                  <h2 className="text-xl font-bold text-gray-900 mb-1">À vous de jouer</h2>
+                  <p className="text-gray-500 text-sm">Vous tapez, ça change sous vos yeux. En direct.</p>
                 </div>
 
                 {/* Nom de la société */}
@@ -212,7 +212,7 @@ export default function ApercuSite() {
                 {/* CTA */}
                 <div className="pt-2 border-t border-gray-100 space-y-3">
                   <p className="text-gray-500 text-sm">
-                    Ce design vous convient ? Obtenons votre vrai site en 2 à 4 semaines.
+                    Ça vous parle ? On passe du faux au vrai en 2 à 4 semaines. Avec vos photos, vos textes, votre vraie carte.
                   </p>
                   <Link
                     to="/rdv"
@@ -230,7 +230,7 @@ export default function ApercuSite() {
                   >
                     Commander directement (-30%)
                   </Link>
-                  <p className="text-center text-gray-400 text-xs">Devis gratuit · Sans engagement · Réponse sous 24h</p>
+                  <p className="text-center text-gray-400 text-xs">Devis gratuit · Sans engagement · Je réponds sous 24h</p>
                 </div>
               </div>
             </motion.div>
@@ -288,7 +288,7 @@ export default function ApercuSite() {
                 {/* Label aperçu */}
                 <div className="px-4 py-2.5 bg-gray-50 border-t border-gray-200 flex items-center justify-between">
                   <span className="text-xs text-gray-500 font-medium">
-                    Aperçu non-contractuel  -  personnalisable à 100%
+                    Juste un aperçu  -  le vrai sera 100% à votre image
                   </span>
                   <span
                     className="text-xs font-semibold px-2 py-0.5 rounded-full"
@@ -301,7 +301,7 @@ export default function ApercuSite() {
 
               {/* Note reassurance */}
               <div className="mt-4 rounded-xl border border-[#F0F0F0] bg-[#F0F5F7] px-5 py-4 flex flex-wrap gap-x-6 gap-y-2">
-                {['Design entièrement sur-mesure', 'Votre contenu réel intégré', 'Optimisé SEO dès le départ'].map((item) => (
+                {['Conçu sur-mesure, pas un template', 'Vos vrais textes et vos vraies photos', 'Pensé pour Google dès le jour 1'].map((item) => (
                   <div key={item} className="flex items-center gap-1.5 text-[#154359] text-sm font-medium">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 flex-shrink-0">
                       <polyline points="20 6 9 17 4 12" />

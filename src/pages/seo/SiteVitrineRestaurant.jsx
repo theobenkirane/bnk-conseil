@@ -19,22 +19,22 @@ const benefits = [
   {
     emoji: '🍽️',
     title: 'Menu en ligne',
-    description: "Votre carte accessible 24h/24, mise à jour en temps réel depuis votre espace client.",
+    description: "Votre carte lisible sur le téléphone, dans le métro, à 23h. Changez le plat du jour vous-même en 30 secondes, sans rappeler personne.",
   },
   {
     emoji: '📅',
-    title: 'Réservations facilitées',
-    description: "Intégration d'un système de réservation (TheFork, Calendly ou formulaire personnalisé).",
+    title: 'Réservations sans le téléphone qui sonne',
+    description: "TheFork, Calendly ou un formulaire maison : le client réserve pendant que vous êtes en plein coup de feu.",
   },
   {
     emoji: '📍',
-    title: 'SEO local',
-    description: "Apparaissez sur Google quand quelqu'un cherche \"restaurant + votre ville\". Google Maps intégré.",
+    title: 'On vous trouve sur Google',
+    description: "Quelqu'un tape \"restaurant + votre ville\" un vendredi soir, affamé. C'est vous qui sortez, pas le voisin. Google Maps intégré.",
   },
   {
     emoji: '📸',
-    title: 'Galerie appétissante',
-    description: "Section photos de vos plats et de votre salle pour donner envie avant la visite.",
+    title: 'Des photos qui mettent l\'eau à la bouche',
+    description: "On met vos plats et votre salle en valeur. Le client a déjà choisi sa table avant de pousser la porte.",
   },
 ]
 
@@ -52,24 +52,24 @@ const guarantees = [
 
 const faqData = [
   {
-    question: "Puis-je mettre à jour mon menu moi-même ?",
-    answer: "Oui, via une interface simple (CMS). Aucune compétence technique requise.",
+    question: "Je peux changer mon menu moi-même ?",
+    answer: "Oui. Le plat du jour, un prix qui bouge, une fermeture exceptionnelle : vous le faites en deux clics. Pas besoin de m'appeler, pas besoin d'être un geek.",
   },
   {
-    question: "Peut-on intégrer un système de réservation ?",
-    answer: "Oui, TheFork, Reservio, Calendly ou un formulaire sur-mesure selon votre besoin.",
+    question: "On peut brancher un système de réservation ?",
+    answer: "TheFork, Reservio, Calendly ou un formulaire sur-mesure. On branche celui que vous utilisez déjà, ou on en met un en place.",
   },
   {
-    question: "Mon site sera-t-il visible sur Google Maps ?",
-    answer: "Oui, on intègre Google Maps et on optimise votre fiche Google Business Profile.",
+    question: "Mon resto apparaîtra sur Google Maps ?",
+    answer: "Oui. On intègre Google Maps et on remet d'aplomb votre fiche Google Business. C'est souvent là que se joue le client de dernière minute.",
   },
   {
     question: "Combien de pages pour un restaurant ?",
-    answer: "En général : Accueil, Menu, Galerie, À propos, Contact / Réservation (5 pages, formule Pro).",
+    answer: "En général : Accueil, Menu, Galerie, À propos, Contact / Réservation. Cinq pages, formule Pro. Pas besoin de plus pour remplir la salle.",
   },
   {
-    question: "Et si je change de carte saisonnièrement ?",
-    answer: "La mise à jour est incluse pendant la période de retouches. Ensuite, maintenance disponible à 49€/mois.",
+    question: "Et si je change de carte à chaque saison ?",
+    answer: "La mise à jour est incluse pendant la période de retouches. Ensuite, la maintenance est à 49€/mois si vous voulez qu'on s'en occupe.",
   },
 ]
 
@@ -140,7 +140,7 @@ export default function SiteVitrineRestaurant() {
             </h1>
 
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
-              Attirez plus de couverts, affichez votre menu en ligne, facilitez les réservations.
+              Avant de réserver, le client regarde votre site. 8 fois sur 10, il tombe sur un truc qui fait fuir alors que la cuisine est top. On répare ça : menu en ligne, réservation facile, et une salle qui se remplit.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -171,7 +171,7 @@ export default function SiteVitrineRestaurant() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Voici à quoi pourrait ressembler votre site
+              Voilà ce qui pourrait donner faim à vos futurs clients
             </h2>
           </motion.div>
 
@@ -216,7 +216,7 @@ export default function SiteVitrineRestaurant() {
               <span style={gradientText}>restaurant</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              Des fonctionnalités pensées pour la restauration, pas un site générique.
+              Pas un template recyclé d'avocat ou de plombier. Des fonctionnalités pensées pour la restauration, point.
             </p>
           </motion.div>
 
@@ -344,7 +344,7 @@ export default function SiteVitrineRestaurant() {
               <span style={gradientText}>restaurant</span>
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-              20 minutes pour discuter de votre projet. Devis gratuit, sans engagement, réponse sous 24h.
+              20 minutes au téléphone, le temps d'un café avant le service. Devis gratuit, sans engagement, réponse sous 24h.
             </p>
             <Link
               to="/rdv"

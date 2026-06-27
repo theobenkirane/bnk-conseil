@@ -3,17 +3,15 @@ import '@fontsource-variable/geist'
 import '@fontsource-variable/geist-mono'
 
 import { ThemeProvider, Backdrop } from './theme'
-import { Cursor } from './motion'
 
-// Coquille du portfolio : polices, variables de design, fond cinématique,
-// curseur custom et styles globaux scopés sous #portfolio-root.
+// Coquille du portfolio : polices, variables de design, fond cinématique
+// et styles globaux scopés sous #portfolio-root.
 export default function PortfolioShell({ children }) {
   return (
     <ThemeProvider>
       <div id="portfolio-root">
         <style>{CSS}</style>
         <Backdrop />
-        <Cursor />
         <div className="pf-content">{children}</div>
       </div>
     </ThemeProvider>
@@ -30,16 +28,16 @@ const CSS = `
   --brass: #BE823A;
   --brass-bright: #D89A4B;
 
-  /* Teinte par défaut (ivoire) — surchargée en continu au scroll par le moteur. */
-  --fg: #15120E;
-  --muted: #6F6557;
-  --line: rgba(21,18,14,0.12);
-  --hair: rgba(21,18,14,0.07);
-  --base: #F3EEE4;
-  --card: rgba(21,18,14,0.022);
-  --card-hover: rgba(21,18,14,0.045);
-  --pf-bg: #F3EEE4;
-  --pf-grid: rgba(21,18,14,0.055);
+  /* Palette verrouillée sur le thème marron/sombre — plus d'alternance. */
+  --fg: #F5F0E7;
+  --muted: #CDC2B1;
+  --line: rgba(243,238,228,0.14);
+  --hair: rgba(243,238,228,0.07);
+  --base: #1C140D;
+  --card: rgba(18,12,7,0.74);
+  --card-hover: rgba(30,21,13,0.84);
+  --pf-bg: #100B06;
+  --pf-grid: rgba(243,238,228,0.05);
 
   position: relative;
   min-height: 100vh;
@@ -55,15 +53,12 @@ const CSS = `
 
 /* ── Fond cinématique fixe ──────────────────────────────────────────────── */
 .pf-backdrop { position: fixed; inset: 0; z-index: 0; background-color: var(--pf-bg); }
-.pf-grid {
-  position: absolute; inset: -12%;
-  background-image:
-    linear-gradient(var(--pf-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--pf-grid) 1px, transparent 1px);
-  background-size: calc(100vw / 8) calc(100vw / 8);
-  -webkit-mask-image: radial-gradient(120% 100% at 50% 30%, #000 35%, transparent 88%);
-  mask-image: radial-gradient(120% 100% at 50% 30%, #000 35%, transparent 88%);
-  will-change: transform;
+.pf-liquid { position: absolute; inset: 0; }
+.pf-liquid canvas { width: 100%; height: 100%; }
+/* Voile sombre : tempère les reflets dorés pour garder le texte lisible partout. */
+.pf-veil {
+  position: absolute; inset: 0; pointer-events: none;
+  background: rgba(10,7,3,0.5);
 }
 .pf-vignette {
   position: absolute; inset: 0;

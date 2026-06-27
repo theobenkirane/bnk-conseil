@@ -18,23 +18,23 @@ const gradientText = {
 const benefits = [
   {
     emoji: '🕐',
-    title: 'Horaires toujours à jour',
-    description: "Vos heures d'ouverture visibles immédiatement, modifiables en quelques clics (jours fériés, vacances).",
+    title: 'Vos horaires, jamais faux',
+    description: "Rien n'énerve plus un client que de trouver porte close alors que Google disait \"ouvert\". Jours fériés, congés, ouverture exceptionnelle : vous changez ça en deux clics.",
   },
   {
     emoji: '🛒',
-    title: 'Catalogue de produits',
-    description: "Présentez vos produits phares avec photos, descriptions et prix. Pas un e-commerce : une vitrine qui donne envie.",
+    title: 'Votre vitrine, en ligne',
+    description: "Vos produits phares avec photos, descriptions et prix. Pas un e-commerce — une vitrine qui donne envie de pousser la porte.",
   },
   {
     emoji: '📍',
-    title: 'Google Maps et SEO local',
-    description: "Apparaissez sur Google quand un client cherche votre type de commerce près de chez lui.",
+    title: 'On vous trouve sur Google Maps',
+    description: "Quand quelqu'un cherche votre type de commerce dans le quartier, c'est vous qui sortez. Pas la boutique d'à côté.",
   },
   {
     emoji: '💳',
     title: 'Click & collect',
-    description: "Option pour permettre à vos clients de commander en ligne et récupérer en magasin (si pertinent).",
+    description: "Le client commande sur son canapé, passe récupérer en boutique. Pratique pour lui, du monde en plus pour vous (si ça colle à votre commerce).",
   },
 ]
 
@@ -52,24 +52,24 @@ const guarantees = [
 
 const faqData = [
   {
-    question: "La différence avec un e-commerce ?",
-    answer: "Un site vitrine présente vos produits pour attirer en magasin. Un e-commerce permet la vente en ligne. On peut faire les deux si besoin.",
+    question: "C'est quoi la différence avec un e-commerce ?",
+    answer: "Un site vitrine donne envie de venir en boutique. Un e-commerce vend directement en ligne. On peut faire les deux, mais souvent une bonne vitrine suffit pour faire entrer du monde.",
   },
   {
-    question: "Mes horaires peuvent-ils changer facilement ?",
-    answer: "Oui, vous pouvez les mettre à jour vous-même en quelques clics via l'interface de gestion.",
+    question: "Je peux changer mes horaires facilement ?",
+    answer: "Oui, en deux clics, depuis votre téléphone. Pas besoin de m'appeler à chaque pont du mois de mai.",
   },
   {
-    question: "Peut-on intégrer un système de réservation ?",
-    answer: "Oui, si votre commerce propose des services sur rendez-vous (coiffeur, institut, etc.).",
+    question: "On peut ajouter la prise de rendez-vous ?",
+    answer: "Oui, si vous travaillez sur rendez-vous (coiffeur, institut, retoucherie). Le client réserve son créneau tout seul.",
   },
   {
-    question: "Est-ce que le site aidera ma fiche Google ?",
-    answer: "Oui, un site pro renforce votre autorité locale et améliore votre positionnement Google Maps.",
+    question: "Ça aidera ma fiche Google ?",
+    answer: "Un vrai site renforce votre crédibilité aux yeux de Google et vous fait remonter sur Maps. Les deux se nourrissent.",
   },
   {
-    question: "Combien de produits puis-je présenter ?",
-    answer: "Autant que vous le souhaitez, organisés en catégories. On vous conseille sur la sélection la plus efficace.",
+    question: "Je peux mettre combien de produits ?",
+    answer: "Autant que vous voulez, rangés par catégories. On vous dit lesquels mettre en avant pour que ça donne envie sans noyer le client.",
   },
 ]
 
@@ -140,7 +140,7 @@ export default function SiteVitrineCommerce() {
             </h1>
 
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
-              Attirez de nouveaux clients, affichez vos horaires, présentez vos produits phares.
+              Le client tape votre quartier sur Google avant de bouger. S'il ne vous trouve pas, il pousse la porte d'à côté. On vous remet sur la carte, horaires à jour et produits qui donnent envie.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -171,7 +171,7 @@ export default function SiteVitrineCommerce() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Voici à quoi pourrait ressembler votre site
+              Voilà ce que verrait le client avant de pousser la porte
             </h2>
           </motion.div>
 
@@ -216,7 +216,7 @@ export default function SiteVitrineCommerce() {
               <span style={gradientText}>commerce de proximité</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              Des fonctionnalités pensées pour les commerces locaux, pour attirer et fidéliser.
+              Pensé pour le commerce du coin, pas pour une marketplace géante. De quoi faire entrer du monde et le faire revenir.
             </p>
           </motion.div>
 
@@ -344,7 +344,7 @@ export default function SiteVitrineCommerce() {
               <span style={gradientText}>commerce local</span>
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-              20 minutes pour discuter de votre projet. Devis gratuit, sans engagement, réponse sous 24h.
+              20 minutes, le temps d'une accalmie en boutique. Devis gratuit, sans engagement, réponse sous 24h.
             </p>
             <Link
               to="/rdv"

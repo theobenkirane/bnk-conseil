@@ -69,7 +69,7 @@ const priceCategories = [
     id: 'diy',
     title: 'DIY (Wix, Squarespace)',
     price: '0€ à 400€/an',
-    desc: 'Simple mais limité en SEO et personnalisation',
+    desc: 'Facile à lancer, mais SEO bridé et design qui sent le template',
     icon: '🛠️',
     highlight: false,
     badgeText: null,
@@ -81,7 +81,7 @@ const priceCategories = [
     id: 'freelance',
     title: 'Freelance débutant',
     price: '300€ à 800€',
-    desc: "Variable selon l'expérience, peu de garanties",
+    desc: "Le pari : ça dépend de qui vous tombez, et peu de garanties",
     icon: '👤',
     highlight: false,
     badgeText: null,
@@ -93,7 +93,7 @@ const priceCategories = [
     id: 'agence-tpe',
     title: 'Agence spécialisée TPE',
     price: '690€ à 1 500€',
-    desc: 'Rapport qualité/prix optimal, spécialistes secteur',
+    desc: 'Le meilleur rapport qualité/prix, des gens qui connaissent votre métier',
     icon: '🏆',
     highlight: true,
     badgeText: '✅ Recommandé',
@@ -105,7 +105,7 @@ const priceCategories = [
     id: 'grande-agence',
     title: 'Grande agence web',
     price: '2 000€ à 10 000€+',
-    desc: 'Qualité mais budget hors de portée pour TPE',
+    desc: 'Du beau travail, mais un budget qui fait tousser une TPE',
     icon: '🏢',
     highlight: false,
     badgeText: null,
@@ -119,32 +119,32 @@ const factors = [
   {
     icon: '📄',
     title: 'Nombre de pages',
-    desc: '3 pages vs 10 pages = délai et coût différents',
+    desc: '3 pages ou 10 pages : ce n\'est ni le même délai ni le même prix',
   },
   {
     icon: '🎨',
     title: 'Niveau de personnalisation',
-    desc: 'Template modifié vs design 100% sur-mesure',
+    desc: 'Un template à peine retouché ou un design 100% à vous',
   },
   {
     icon: '🔍',
     title: 'SEO',
-    desc: 'SEO de base vs stratégie locale avancée',
+    desc: 'Le minimum syndical ou une vraie stratégie pour sortir dans votre ville',
   },
   {
     icon: '⚙️',
     title: 'Fonctionnalités',
-    desc: 'Formulaire simple vs réservation en ligne, blog, catalogue',
+    desc: 'Un simple formulaire de contact ou réservation en ligne, blog, catalogue',
   },
   {
     icon: '🌐',
     title: 'Hébergement',
-    desc: "Certains prestataires incluent l'hébergement, d'autres non",
+    desc: "Inclus chez les uns, facturé en douce chez les autres — vérifiez",
   },
   {
     icon: '🔧',
     title: 'Maintenance',
-    desc: 'Site livré seul vs contrat de maintenance mensuel',
+    desc: 'Livré et débrouillez-vous, ou contrat de maintenance chaque mois',
   },
 ]
 
@@ -197,28 +197,28 @@ const budgetOptions = [
   {
     budget: 'Budget < 200€',
     choice: 'Wix gratuit ou Squarespace',
-    note: 'Attention au SEO',
+    note: 'Ça dépanne, mais le SEO va vous laisser sur le carreau',
     recommended: false,
     icon: '⚠️',
   },
   {
     budget: 'Budget 200 – 500€',
     choice: 'Freelance',
-    note: 'Vérifiez les références',
+    note: 'Demandez à voir 2-3 sites déjà livrés avant de signer',
     recommended: false,
     icon: '👀',
   },
   {
     budget: 'Budget 500 – 1 500€ · TPE/artisan',
     choice: 'Agence spécialisée TPE',
-    note: 'Meilleur rapport qualité/prix pour votre activité',
+    note: 'Le meilleur rapport qualité/prix pour faire tourner votre activité',
     recommended: true,
     icon: '✅',
   },
   {
     budget: 'Budget > 2 000€',
     choice: 'Grande agence web',
-    note: 'Si vous avez des besoins très spécifiques',
+    note: 'Seulement si vous avez des besoins vraiment hors normes',
     recommended: false,
     icon: '🏢',
   },
@@ -228,27 +228,27 @@ const faqItems = [
   {
     question: "Quel est le prix moyen d'un site vitrine en 2025 ?",
     answer:
-      "Entre 500€ et 1 500€ pour une TPE chez un prestataire sérieux. Les offres sous 300€ sont souvent des templates peu personnalisés.",
+      "Entre 500€ et 1 500€ pour une TPE chez quelqu'un de sérieux. En dessous de 300€, méfiance : c'est souvent un template à peine retouché qui ressemble à 10 000 autres sites.",
   },
   {
     question: "Peut-on avoir un site vitrine professionnel pour moins de 1 000€ ?",
     answer:
-      "Oui, c'est notre coeur de métier. La formule Essentiel à 690€ inclut design sur-mesure, SEO, hébergement 1 an.",
+      "Oui, et c'est exactement notre métier. La formule Essentiel à 690€ comprend design sur-mesure, SEO et hébergement la première année. Pas de surprise à la fin.",
   },
   {
     question: "Le prix inclut-il l'hébergement ?",
     answer:
-      "Pas toujours. Chez BNK Conseil, l'hébergement et le nom de domaine sont inclus la première année.",
+      "Pas toujours, et c'est souvent là que la facture gonfle. Chez BNK Conseil, l'hébergement et le nom de domaine sont compris la première année. C'est écrit noir sur blanc.",
   },
   {
     question: "Wix est-il une alternative sérieuse ?",
     answer:
-      "Pour un blog perso ou un portfolio amateur, oui. Pour une vitrine professionnelle TPE, non : le SEO est limité et le design générique.",
+      "Pour un blog perso ou un portfolio loisir, franchement oui. Pour la vitrine pro d'une TPE, non : SEO bridé et design qu'on reconnaît au premier coup d'oeil. Vos clients aussi le voient.",
   },
   {
     question: "Comment comparer les devis d'agences ?",
     answer:
-      "Vérifiez ce qui est inclus : hébergement, SEO, retouches, maintenance. Un devis à 500€ sans hébergement peut revenir plus cher qu'un à 800€ tout inclus.",
+      "Regardez ce qui est inclus, pas juste le chiffre en bas : hébergement, SEO, retouches, maintenance. Un devis à 500€ sans rien dedans finit souvent plus cher qu'un à 800€ tout compris. Le diable est dans les lignes en petit.",
   },
 ]
 
@@ -373,9 +373,9 @@ export default function CombienCouteUnSiteVitrine() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-xl text-gray-700 leading-relaxed"
               >
-                Le prix d'un site vitrine varie de 0€ à 10 000€+. Un écart qui sème la confusion chez la plupart des TPE.
-                La réalité ? Le bon choix dépend de votre budget, de vos objectifs et de ce que chaque prestataire inclut vraiment.
-                Ce guide vous donne les clés pour comparer sans vous faire avoir.
+                Le prix d'un site vitrine va de 0€ à 10 000€ et plus. Forcément, on s'y perd. Et c'est là qu'on
+                se fait avoir. La vérité, c'est que le bon prix dépend de votre budget, de vos objectifs et surtout
+                de ce que chaque devis cache (ou pas). Ce guide vous donne les clés pour comparer les yeux ouverts.
               </motion.p>
             </div>
           </div>
@@ -404,7 +404,7 @@ export default function CombienCouteUnSiteVitrine() {
                   Les grandes catégories de prix
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Voici les 4 options qui s'offrent à une TPE, avec leurs fourchettes réelles.
+                  Les 4 chemins possibles pour une TPE, avec les vraies fourchettes — pas celles des plaquettes commerciales.
                 </motion.p>
 
                 <motion.div
@@ -458,10 +458,10 @@ export default function CombienCouteUnSiteVitrine() {
                 className="mb-20 scroll-mt-24"
               >
                 <motion.h2 variants={fadeUp} className="text-2xl font-bold text-gray-900 mb-2">
-                  Ce qui influence le prix
+                  Ce qui fait grimper (ou pas) la facture
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Six facteurs expliquent pourquoi deux devis peuvent varier du simple au triple.
+                  Six éléments expliquent pourquoi deux devis pour "le même site" peuvent aller du simple au triple.
                 </motion.p>
 
                 <motion.div
@@ -497,7 +497,7 @@ export default function CombienCouteUnSiteVitrine() {
                   Le vrai coût sur 3 ans
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Les chiffres qui changent tout quand on calcule le coût total de possession.
+                  Là où le "pas cher" du début se transforme en "ah, mais en fait…". Faisons l'addition complète.
                 </motion.p>
 
                 <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
@@ -548,8 +548,8 @@ export default function CombienCouteUnSiteVitrine() {
                   style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
                   <p className="text-[#154359] font-medium leading-relaxed">
-                    💡 Un site BNK Conseil est rentabilisé dès que vous gagnez 2 nouveaux clients grâce à lui.
-                    Pour un restaurant avec un panier moyen de 40€/personne, c'est souvent le mois 1.
+                    💡 Un site BNK Conseil est remboursé dès que 2 nouveaux clients passent grâce à lui.
+                    Pour un resto avec un panier moyen de 40€/personne, c'est réglé dès le premier mois.
                   </p>
                 </motion.div>
               </motion.section>
@@ -563,7 +563,7 @@ export default function CombienCouteUnSiteVitrine() {
                 className="mb-20 rounded-2xl border border-white p-8 text-center"
                 style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 100%)' }}
               >
-                <p className="text-[#154359] font-bold text-xl mb-2">Obtenez un devis transparent en 24h</p>
+                <p className="text-[#154359] font-bold text-xl mb-2">Un devis clair, sans lignes cachées, en 24h</p>
                 <p className="text-[#154359] text-base mb-6">
                   Sans engagement · Réponse garantie sous 24h
                 </p>
@@ -586,10 +586,10 @@ export default function CombienCouteUnSiteVitrine() {
                 className="mb-20 scroll-mt-24"
               >
                 <motion.h2 variants={fadeUp} className="text-2xl font-bold text-gray-900 mb-2">
-                  Pour une TPE, quelle option choisir ?
+                  Pour une TPE, on choisit quoi ?
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Guide de décision selon votre budget.
+                  La réponse en un coup d'oeil, selon le budget que vous avez en poche.
                 </motion.p>
 
                 <motion.div variants={stagger} className="space-y-4">
@@ -642,7 +642,7 @@ export default function CombienCouteUnSiteVitrine() {
                   Questions fréquentes
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Les réponses aux questions que tout le monde se pose.
+                  Les vraies réponses, celles qu'on aimerait avoir avant de sortir la carte bleue.
                 </motion.p>
 
                 <motion.div variants={stagger} className="space-y-3">
@@ -666,7 +666,7 @@ export default function CombienCouteUnSiteVitrine() {
                 <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3">
                   Vous savez maintenant ce que vaut un site vitrine.
                 </h2>
-                <p className="text-gray-600 text-lg mb-8">Passons à la pratique.</p>
+                <p className="text-gray-600 text-lg mb-8">Assez de théorie. On passe à votre site ?</p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
@@ -715,10 +715,10 @@ export default function CombienCouteUnSiteVitrine() {
                   style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
                   <p className="font-bold text-[#154359] text-base mb-2">
-                    Vous avez votre réponse ?
+                    Vous y voyez plus clair ?
                   </p>
                   <p className="text-sm text-[#154359] mb-5 leading-relaxed">
-                    Obtenez un devis gratuit et personnalisé.
+                    Un devis gratuit, chiffré pour votre activité, sans blabla.
                   </p>
                   <Link
                     to="/rdv"

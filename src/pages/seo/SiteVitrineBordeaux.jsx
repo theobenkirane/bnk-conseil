@@ -14,25 +14,25 @@ const secteurs = [
   {
     emoji: '🍽️',
     label: 'Restaurant',
-    description: "Menu en ligne, réservation, photos pro. Un site qui donne envie de venir.",
+    description: "Menu en ligne, réservation, photos qui donnent faim. Le client a déjà choisi sa table avant d'arriver.",
     link: '/creation-site-vitrine-restaurant',
   },
   {
     emoji: '🔨',
     label: 'Artisan',
-    description: "Galerie de réalisations, formulaire de devis, avis clients, référencement local.",
+    description: "Vos chantiers en photo, le devis qui trie les vrais prospects, vos certifs bien visibles.",
     link: '/creation-site-vitrine-artisan',
   },
   {
     emoji: '🎯',
     label: 'Coach / Formateur',
-    description: "Page programme, témoignages, module de contact, tunnel vers inscription.",
+    description: "Vos programmes clairs, vos résultats en preuve, et l'agenda qui se remplit tout seul.",
     link: '/creation-site-vitrine-coach',
   },
   {
     emoji: '🛍️',
     label: 'Commerce local',
-    description: "Horaires, localisation, catalogue, promotions. Visible sur Google Maps.",
+    description: "Horaires jamais faux, catalogue qui donne envie d'entrer, et bien placé sur Google Maps.",
     link: '/creation-site-vitrine-commerce-local',
   },
 ]
@@ -41,40 +41,40 @@ const process = [
   {
     step: '01',
     title: '📞 Appel découverte',
-    description: "20 min pour comprendre votre projet, vos objectifs et votre secteur. Gratuit, sans engagement.",
+    description: "20 min pour comprendre votre métier et ce que vous attendez. Gratuit, sans engagement, sans jargon.",
   },
   {
     step: '02',
     title: '📐 Maquette & validation',
-    description: "On vous présente la structure et le design avant de coder. Vous validez avant qu'on démarre.",
+    description: "Vous voyez la tête du site avant qu'une seule ligne de code soit écrite. Vous validez, on démarre.",
   },
   {
     step: '03',
     title: '⚡ Développement',
-    description: "On crée votre site sur mesure en 2 à 4 semaines. Vous suivez l'avancement.",
+    description: "On construit votre site sur mesure en 2 à 4 semaines. Vous suivez, on vous tient au courant.",
   },
   {
     step: '04',
     title: '🚀 Livraison & lancement',
-    description: "On met en ligne, on configure votre hébergement et on vous forme à la gestion du site.",
+    description: "On met en ligne, on règle l'hébergement, et on vous montre comment gérer votre site tout seul.",
   },
 ]
 
 const garanties = [
   {
     icon: '✅',
-    title: 'Livraison garantie en délai',
-    description: "On respecte les délais convenus ou on vous rembourse. Pas de mauvaises surprises.",
+    title: 'Dans les délais ou remboursé',
+    description: "On tient la date qu'on s'est fixée, ou on vous rembourse. Pas de \"ça prend du retard\" qui dure six mois.",
   },
   {
     icon: '✅',
     title: '1 mois de retouches offertes',
-    description: "Après la livraison, on ajuste ce que vous voulez pendant 30 jours. Inclus dans le prix.",
+    description: "Après la mise en ligne, on ajuste ce que vous voulez pendant 30 jours. Compris dans le prix, pas en supplément.",
   },
   {
     icon: '✅',
     title: 'Hébergement 1 an inclus',
-    description: "Domaine + hébergement compris la première année. On gère tout pour vous.",
+    description: "Domaine + hébergement payés la première année. La partie technique chiante, c'est pour nous.",
   },
 ]
 
@@ -117,7 +117,7 @@ export default function SiteVitrineBordeaux() {
             </h1>
 
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
-              "Restaurateurs, artisans, commerçants bordelais : un site vitrine qui reflète l'excellence de votre métier."
+              "Restaurateurs, artisans, commerçants bordelais : vous soignez votre métier, votre site doit en faire autant. Un site vitrine à la hauteur de ce que vous faites — pas un truc bâclé entre la poire et le fromage."
             </p>
 
             <div className="flex flex-col gap-4">
@@ -164,11 +164,11 @@ export default function SiteVitrineBordeaux() {
             className="text-center mb-10"
           >
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              On travaille ensemble,{' '}
+              On bosse{' '}
               <span style={gradientText}>comme vous voulez</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              "À Bordeaux, on s'adapte à vos contraintes et votre rythme."
+              "À Bordeaux, c'est vous qui menez la danse. On s'adapte à vos horaires, pas l'inverse."
             </p>
           </motion.div>
 
@@ -192,7 +192,7 @@ export default function SiteVitrineBordeaux() {
                 <div className="text-3xl mb-3">🤝</div>
                 <h3 className="font-bold text-gray-900 text-lg mb-2">En présentiel</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  "On peut se retrouver dans votre commerce, votre atelier ou un espace de coworking bordelais."
+                  "On se voit dans votre commerce, votre atelier ou un coworking bordelais. Des Chartrons à la Bastide, on se déplace."
                 </p>
               </div>
             </div>
@@ -218,7 +218,7 @@ export default function SiteVitrineBordeaux() {
               <span style={gradientText}>à Bordeaux</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              "Chaque métier a ses codes. On conçoit votre site en fonction de ce que vos clients bordelais cherchent."
+              "Chaque métier a ses codes. On construit votre site autour de ce que vos clients bordelais tapent vraiment dans Google."
             </p>
           </motion.div>
 
@@ -268,7 +268,7 @@ export default function SiteVitrineBordeaux() {
               <span style={gradientText}>passe ?</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              Un process clair, de la prise de contact à la mise en ligne.
+              Quatre étapes, zéro mauvaise surprise. Du premier appel à la mise en ligne.
             </p>
           </motion.div>
 
@@ -347,7 +347,7 @@ export default function SiteVitrineBordeaux() {
               <span style={gradientText}>garanties</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              On s'engage sur des résultats concrets.
+              On s'engage par écrit, pas juste en parlant.
             </p>
           </motion.div>
 
@@ -391,7 +391,7 @@ export default function SiteVitrineBordeaux() {
               <span style={gradientText}>à Bordeaux</span>
             </h2>
             <p className="text-gray-600 text-xl mb-8 max-w-xl mx-auto">
-              "Un projet en Gironde ? Discutons-en autour d'un appel de 20 minutes."
+              "Un projet en Gironde ? 20 minutes au téléphone et on voit ce qu'on peut faire. Pas de blabla, du concret."
             </p>
             <Link
               to="/rdv"

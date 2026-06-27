@@ -2,9 +2,7 @@ import { useLocation } from 'react-router-dom'
 import { StellarProvider, useStellar } from '../contexts/StellarContext'
 import StellarShell from '../components/StellarShell'
 import StellarNav from '../components/StellarNav'
-import PageIndicator from '../components/PageIndicator'
 import ScrollHint from '../components/ScrollHint'
-import LiquidCursor from '../components/stellar/LiquidCursor'
 import AvailabilityBanner from '../components/AvailabilityBanner'
 import { AVAILABILITY } from '../config/availability'
 
@@ -16,9 +14,7 @@ function BNKLayout({ children }) {
       overlays={
         <>
           <StellarNav />
-          <PageIndicator scrollRef={scrollRef} />
           <ScrollHint scrollRef={scrollRef} />
-          <LiquidCursor />
         </>
       }
     >

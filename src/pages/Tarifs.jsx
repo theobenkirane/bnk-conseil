@@ -81,40 +81,40 @@ const guarantees = [
   {
     icon: "⏱️",
     title: "Livraison garantie",
-    desc: "Si le délai est dépassé, vous bénéficiez d'un remboursement partiel. Essentiel : 2 semaines, Pro : 3 semaines. On tient nos engagements.",
+    desc: "Délai dépassé ? Vous récupérez une partie de votre argent. Essentiel : 2 semaines, Pro : 3 semaines. Quand je dis une date, je la tiens.",
   },
   {
     icon: "🔧",
     title: "1 mois de retouches",
-    desc: "Après la livraison, vous disposez d'une période de modifications illimitées pour affiner chaque détail jusqu'à ce que vous soyez 100% satisfait.",
+    desc: "Après la mise en ligne, on peaufine autant qu'il faut. Une virgule, une couleur, un mot — on bouge jusqu'à ce que ça vous plaise vraiment.",
   },
   {
     icon: "🌐",
     title: "Hébergement 1 an inclus",
-    desc: "Nom de domaine et hébergement offerts la première année. Votre site est en ligne immédiatement, sans frais cachés ni surprises.",
+    desc: "Nom de domaine et hébergement offerts la première année. Votre site est en ligne tout de suite, sans frais planqués ni mauvaise surprise.",
   },
 ]
 
 const faqItems = [
   {
     q: "Puis-je payer en plusieurs fois ?",
-    a: "Oui, le paiement en 2× est disponible : 50% à la commande, 50% à la livraison. La possibilité de payer en 3× est aussi envisageable, sur devis.",
+    a: "Oui. En 2× : 50% à la commande, 50% à la livraison. Et si vous avez besoin d'étaler en 3×, on en parle, c'est faisable sur devis.",
   },
   {
     q: "Qu'est-ce qui est inclus dans le prix ?",
-    a: "Design sur-mesure, développement complet, SEO de base, intégration de vos contenus (textes, images), hébergement 1 an et nom de domaine. Tout est inclus, sans supplément.",
+    a: "Tout. Design sur-mesure, développement complet, SEO de base, vos textes et vos images intégrés, hébergement 1 an et nom de domaine. Pas de petites lignes en bas, pas de supplément qui tombe après.",
   },
   {
     q: "Combien de temps dure la réalisation ?",
-    a: "Entre 2 et 4 semaines selon la formule choisie, à partir de la validation du cahier des charges. Un planning clair vous est communiqué dès le démarrage.",
+    a: "De 2 à 4 semaines selon la formule, une fois le cahier des charges validé. Vous avez le planning sous les yeux dès le premier jour — vous savez où on en est.",
   },
   {
     q: "Puis-je faire des modifications après la livraison ?",
-    a: "Oui, la période de retouches est incluse dans chaque formule. Au-delà, une maintenance est disponible à partir de 49€/mois selon vos besoins.",
+    a: "Oui, la période de retouches est comprise dans chaque formule. Ensuite, si vous voulez que je m'en occupe, une maintenance démarre à 49€/mois selon vos besoins.",
   },
   {
     q: "Et si j'ai besoin de plus de pages plus tard ?",
-    a: "Une refonte partielle ou l'ajout de pages est tout à fait possible. Le tarif est établi sur devis selon le volume et la complexité des ajouts souhaités.",
+    a: "Aucun souci, on ajoute des pages ou on refait une partie du site quand vous voulez. Le tarif se fait sur devis, selon ce qu'il y a à ajouter.",
   },
 ]
 
@@ -274,7 +274,7 @@ export default function Tarifs() {
     <PageTransition>
       <SEOHead
         title="Tarifs création site vitrine | BNK Conseil"
-        description="Découvrez nos tarifs transparents pour la création de site vitrine. À partir de 690€, paiement en 2×, livraison garantie en 4 semaines. Devis gratuit."
+        description="Nos tarifs pour la création de site vitrine, en clair et sans embrouille. À partir de 690€, paiement en 2×, livraison garantie en 4 semaines. Devis gratuit."
         canonical="https://bnk-conseil.com/tarifs"
       />
 
@@ -305,12 +305,12 @@ export default function Tarifs() {
           </motion.div>
 
           <motion.h1 {...fadeUp(0.1)} className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
-            Un investissement maîtrisé,{' '}
-            <span style={gradientText}>des résultats mesurables</span>
+            Le prix annoncé,{' '}
+            <span style={gradientText}>c'est le prix final</span>
           </motion.h1>
 
           <motion.p {...fadeUp(0.2)} className="text-lg text-gray-600 max-w-xl mx-auto">
-            Moins cher qu'un employé, plus efficace qu'un outil no-code. Paiement en 2× disponible.
+            Moins cher qu'un employé, plus malin qu'un outil no-code. Et payable en 2×.
           </motion.p>
 
           <motion.div {...fadeUp(0.3)} className="flex flex-wrap items-center justify-center gap-3">
@@ -331,7 +331,7 @@ export default function Tarifs() {
         <div className="max-w-5xl mx-auto space-y-10">
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Nos formules</span>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900">Choisissez votre formule</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900">Trois formules, zéro piège</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -341,7 +341,7 @@ export default function Tarifs() {
           </div>
 
           <motion.p {...fadeUpView(0.4)} className="text-center text-sm text-gray-500">
-            Paiement en 2× disponible · Livraison garantie · Devis gratuit sous 24h
+            Payable en 2× · Livraison garantie · Devis gratuit sous 24h
           </motion.p>
 
           <motion.div {...fadeUpView(0.5)} className="text-center">
@@ -364,10 +364,10 @@ export default function Tarifs() {
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Simulation</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900">
-              Calculez votre retour sur investissement
+              Combien votre site va vous rapporter ?
             </h2>
             <p className="text-gray-600">
-              Estimez en quelques secondes la rentabilité de votre site.
+              Trois chiffres à entrer, et vous voyez s'il se rembourse en deux clics.
             </p>
           </motion.div>
 
@@ -382,7 +382,7 @@ export default function Tarifs() {
         <div className="max-w-5xl mx-auto space-y-10">
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Engagements</span>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900">Nos garanties</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900">Ce sur quoi je m'engage</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -407,7 +407,7 @@ export default function Tarifs() {
           <motion.div {...fadeUpView(0)} className="text-center space-y-3">
             <span className="uppercase tracking-widest text-xs font-semibold text-gray-600">Comparaison</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900">
-              Le vrai coût de faire soi-même
+              Le "gratuit", ça coûte cher
             </h2>
           </motion.div>
 
@@ -424,19 +424,19 @@ export default function Tarifs() {
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-red-400 mt-0.5">✗</span>
-                  <span>~1 080€ d'abonnement sur 3 ans (30€/mois)</span>
+                  <span>~1 080€ d'abonnement sur 3 ans (30€/mois), à vie</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-red-400 mt-0.5">✗</span>
-                  <span>40 à 80h de votre temps à apprendre et construire</span>
+                  <span>40 à 80h de votre temps à galérer avec les tutos</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-red-400 mt-0.5">✗</span>
-                  <span>Résultat générique, peu différenciant face aux concurrents</span>
+                  <span>Un site qui ressemble à celui du voisin (et du voisin du voisin)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-red-400 mt-0.5">✗</span>
-                  <span>SEO limité, performances souvent médiocres</span>
+                  <span>SEO au rabais, site qui rame : Google n'aime pas</span>
                 </li>
               </ul>
               <div className="bg-red-50 border border-red-100 rounded-xl px-4 py-3 text-sm font-semibold text-red-700">
@@ -456,19 +456,19 @@ export default function Tarifs() {
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-0.5">✓</span>
-                  <span>690€ paiement unique, hébergement 1 an inclus</span>
+                  <span>690€ une seule fois, hébergement 1 an offert</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-0.5">✓</span>
-                  <span>0h de votre temps  -  on s'occupe de tout</span>
+                  <span>0h de votre temps  -  je m'occupe de tout, vous validez</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-0.5">✓</span>
-                  <span>Design professionnel et sur-mesure pour votre activité</span>
+                  <span>Un design taillé pour votre métier, pas un modèle recyclé</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-0.5">✓</span>
-                  <span>SEO optimisé dès le départ, livraison en 2 semaines</span>
+                  <span>Bien référencé dès le départ, en ligne en 2 semaines</span>
                 </li>
               </ul>
               <div className="bg-[#F0F5F7] border border-white rounded-xl px-4 py-3 text-sm font-semibold text-[#154359]">
@@ -483,7 +483,7 @@ export default function Tarifs() {
             className="bg-yellow-50 border border-yellow-200 rounded-2xl px-6 py-5 text-center"
           >
             <p className="text-gray-800 font-semibold text-sm md:text-base">
-              💡 Votre temps a de la valeur. Si vous facturez 30€/h, 60h sur Wix = 1 800€ de manque à gagner.
+              💡 Votre temps vaut de l'argent. À 30€/h, 60h passées sur Wix, c'est 1 800€ qui vous filent entre les doigts.
             </p>
           </motion.div>
 
@@ -521,7 +521,7 @@ export default function Tarifs() {
       >
         <motion.div {...fadeUpView(0)} className="max-w-xl mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900">
-            Prêt à lancer votre site ?
+            On lance votre site ?
           </h2>
 
           <Link

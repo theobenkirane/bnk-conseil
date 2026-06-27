@@ -99,7 +99,7 @@ function PreQualForm() {
           value={form.objectif}
           onChange={handleChange}
           disabled={showCalendly}
-          placeholder="Ex : générer plus de leads qualifiés"
+          placeholder="Ex : remplir plus de tables le midi"
           className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200 disabled:opacity-60"
         />
       </div>
@@ -117,7 +117,7 @@ function PreQualForm() {
           value={form.blocage}
           onChange={handleChange}
           disabled={showCalendly}
-          placeholder="Ex : peu de visibilité en ligne, pas de process de vente"
+          placeholder="Ex : on me trouve pas sur Google, mon site fait fuir"
           className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200 disabled:opacity-60"
         />
       </div>
@@ -125,7 +125,7 @@ function PreQualForm() {
       {/* Encadré de réassurance */}
       <div className="rounded-xl border border-white bg-[#F0F5F7] px-5 py-4">
         <div className="flex flex-wrap gap-x-6 gap-y-2">
-          {['Appel sans engagement', '20 minutes', 'Réponse sous 24h'].map((item) => (
+          {['Zéro engagement, zéro blabla', '20 minutes chrono', 'On vous rappelle sous 24h'].map((item) => (
             <div key={item} className="flex items-center gap-1.5 text-[#154359] text-sm font-medium">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 flex-shrink-0">
                 <polyline points="20 6 9 17 4 12" />
@@ -151,7 +151,7 @@ function PreQualForm() {
               style={{ background: 'linear-gradient(135deg, #066377, #3B9BB3)' }}
               title={!isReady ? "Remplissez les 3 champs pour accéder à la réservation" : ''}
             >
-              Réserver mon diagnostic gratuit
+              Je réserve mon appel gratuit
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -159,7 +159,7 @@ function PreQualForm() {
 
             {!isReady && (
               <p className="text-center text-gray-400 text-xs mt-2">
-                Remplissez les 3 champs ci-dessus pour accéder au calendrier de réservation.
+                Remplissez les 3 champs au-dessus et le calendrier s'ouvre. Promis, c'est rapide.
               </p>
             )}
           </motion.div>
@@ -168,7 +168,7 @@ function PreQualForm() {
 
       {/* Email secondaire */}
       <p className="text-center text-gray-500 text-sm">
-        ou écrivez directement à{' '}
+        ou écrivez-moi directement à{' '}
         <a
           href="mailto:conseil.bnk@gmail.com"
           className="text-[#066377] hover:text-[#154359] transition-colors font-medium"
@@ -188,8 +188,8 @@ function PreQualForm() {
             className="pt-2"
           >
             <div className="mb-4 text-center">
-              <p className="text-gray-700 font-semibold text-sm">Choisissez votre créneau ci-dessous</p>
-              <p className="text-gray-400 text-xs mt-1">Appel de 20 min, sans engagement.</p>
+              <p className="text-gray-700 font-semibold text-sm">Plus qu'à choisir votre créneau</p>
+              <p className="text-gray-400 text-xs mt-1">20 minutes, sans engagement, et on raccroche.</p>
             </div>
             <CalendlyInline url={CALENDLY_URL} />
           </motion.div>
@@ -252,7 +252,7 @@ export default function RDV() {
               }}>croissance</span>
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Quelques secondes pour mieux vous connaître, puis réservez votre créneau directement.
+              3 questions, 30 secondes, et on cale un créneau. Pas de tunnel à rallonge, pas de carte bancaire.
             </p>
           </motion.div>
         </div>
@@ -274,7 +274,7 @@ export default function RDV() {
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-[#066377]"></span>
                 </span>
                 <p className="text-[#154359] text-sm font-medium">
-                  {AVAILABILITY.message}  -  Réservez rapidement
+                  {AVAILABILITY.message}  -  Prenez votre place tant qu'il en reste
                 </p>
               </div>
             )}
@@ -293,10 +293,10 @@ export default function RDV() {
                 </svg>
               </div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">
-                Avant de réserver, dites-nous en un peu plus
+                Avant de décrocher, dites-moi l'essentiel
               </h2>
               <p className="text-gray-500 text-sm">
-                3 questions rapides pour que notre échange soit le plus utile possible.
+                3 questions rapides. Comme ça j'arrive à l'appel avec des idées, pas des questions.
               </p>
             </div>
 

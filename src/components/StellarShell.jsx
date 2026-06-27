@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -17,6 +17,7 @@ function tintForPath(path) {
 
 function ShellInner({ children, overlays, bannerActive }) {
   const { scrollRef, lenisRef } = useStellar()
+  const contentRef = useRef(null)
   const { pathname } = useLocation()
   // L'accueil dessine son propre liquide sombre ; les autres pages ont un voile clair teinté.
   const isHome = pathname === '/'
@@ -26,7 +27,11 @@ function ShellInner({ children, overlays, bannerActive }) {
     const el = scrollRef.current
     if (!el) return
 
-    const lenis = new Lenis({ wrapper: el })
+    // On passe le contenu interne à Lenis : son ResizeObserver suit alors la
+    // hauteur réelle de la page. Sans ça, Lenis ne mesure que le wrapper
+    // (absolute inset-0, taille fixe) et garde une limite de scroll périmée
+    // depuis la première page → impossible de scroller jusqu'en bas.
+    const lenis = new Lenis({ wrapper: el, content: contentRef.current })
     lenisRef.current = lenis
 
     ScrollTrigger.defaults({ scroller: el })
@@ -67,7 +72,7 @@ function ShellInner({ children, overlays, bannerActive }) {
           ref={scrollRef}
           className="absolute inset-0 z-10 overflow-y-auto overflow-x-hidden no-scrollbar"
         >
-          {children}
+          <div ref={contentRef} className={isHome ? undefined : 'bnk-flat-sections'}>{children}</div>
         </div>
         {overlays}
       </div>

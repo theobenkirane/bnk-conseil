@@ -6,7 +6,7 @@
 // fil du scroll (plus de saut brutal). Aucun symbole d'échecs : juste la dualité.
 
 import { createContext, useContext, useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import LiquidChrome from '../stellar/LiquidChrome'
 
 export const COLORS = {
   ink: '#15120E',
@@ -31,14 +31,14 @@ const TOKENS = {
     grid: [21, 18, 14, 0.055],
   },
   ink: {
-    fg: [243, 238, 228, 1],
-    muted: [176, 165, 148, 1],
+    fg: [245, 240, 231, 1],
+    muted: [205, 194, 177, 1],
     line: [243, 238, 228, 0.14],
     hair: [243, 238, 228, 0.07],
-    base: [46, 36, 27, 1],
-    card: [243, 238, 228, 0.04],
-    cardHover: [243, 238, 228, 0.08],
-    bg: [46, 36, 27, 1],
+    base: [28, 20, 13, 1],
+    card: [18, 12, 7, 0.74],
+    cardHover: [30, 21, 13, 0.84],
+    bg: [16, 11, 6, 1],
     grid: [243, 238, 228, 0.05],
   },
 }
@@ -56,9 +56,6 @@ const VAR = {
 }
 
 const lerp = (a, b, t) => a + (b - a) * t
-const clamp01 = (v) => (v < 0 ? 0 : v > 1 ? 1 : v)
-const smooth = (t) => t * t * (3 - 2 * t)
-const toneOf = (theme) => (theme === 'ink' ? 1 : 0)
 const mix = (A, B, t) =>
   `rgba(${Math.round(lerp(A[0], B[0], t))},${Math.round(lerp(A[1], B[1], t))},${Math.round(
     lerp(A[2], B[2], t)
@@ -80,83 +77,28 @@ export function ThemeProvider({ children }) {
   return <ThemeCtx.Provider value={{ registry, register }}>{children}</ThemeCtx.Provider>
 }
 
-// Calque de fond fixe + moteur de teinte piloté par le scroll.
+// Fond cinématique : métal liquide marron (façon accueil) + vignette + grain.
+// Plus d'alternance ivoire/encre — toute la palette est verrouillée sur le
+// thème sombre/marron pour un rendu continu et cohérent.
 export function Backdrop() {
   const ctx = useTheme()
-  const { scrollY, scrollYProgress } = useScroll()
-  const gridY = useTransform(scrollYProgress, [0, 1], ['0%', '14%'])
-  const gridScale = useTransform(scrollYProgress, [0, 1], [1, 1.08])
 
   useEffect(() => {
-    if (!ctx) return
     const root = document.getElementById('portfolio-root')
     if (!root) return
-
-    let entries = []
-
-    const measure = () => {
-      entries = ctx.registry.current
-        .filter((e) => e.el)
-        .map((e) => {
-          const r = e.el.getBoundingClientRect()
-          const top = r.top + window.scrollY
-          return { top, bottom: top + r.height, theme: e.theme }
-        })
-        .sort((a, b) => a.top - b.top)
+    for (const k in VAR) {
+      root.style.setProperty(VAR[k], mix(TOKENS.ink[k], TOKENS.ink[k], 0))
     }
-
-    const apply = (tone) => {
-      const t = clamp01(tone)
-      for (const k in VAR) {
-        root.style.setProperty(VAR[k], mix(TOKENS.ivory[k], TOKENS.ink[k], t))
-      }
-    }
-
-    const compute = () => {
-      if (!entries.length) return
-      const center = window.scrollY + window.innerHeight * 0.5
-      let tone = toneOf(entries[0].theme)
-      for (let i = 0; i < entries.length - 1; i++) {
-        const boundary = (entries[i].bottom + entries[i + 1].top) / 2
-        const gap = entries[i + 1].top - entries[i].top
-        const band = Math.min(window.innerHeight * 0.45, gap * 0.45) || 1
-        const p = smooth(clamp01((center - (boundary - band)) / (2 * band)))
-        tone = lerp(tone, toneOf(entries[i + 1].theme), p)
-      }
-      apply(tone)
-    }
-
-    const onScroll = () => compute()
-    const onResize = () => {
-      measure()
-      compute()
-    }
-
-    measure()
-    compute()
-
-    const unsub = scrollY.on('change', onScroll)
-    window.addEventListener('resize', onResize)
-    // Re-mesure après que les hauteurs dynamiques (Parcours horizontal) se stabilisent.
-    const t1 = setTimeout(onResize, 300)
-    const t2 = setTimeout(onResize, 900)
-    const ro = new ResizeObserver(onResize)
-    ro.observe(document.body)
-
-    return () => {
-      unsub()
-      window.removeEventListener('resize', onResize)
-      clearTimeout(t1)
-      clearTimeout(t2)
-      ro.disconnect()
-    }
-  }, [ctx, scrollY])
+  }, [])
 
   if (!ctx) return null
 
   return (
     <div className="pf-backdrop">
-      <motion.div className="pf-grid" style={{ y: gridY, scale: gridScale }} />
+      <div className="pf-liquid" aria-hidden="true">
+        <LiquidChrome variant="brown" />
+      </div>
+      <div className="pf-veil" />
       <div className="pf-vignette" />
       <div className="pf-grain" />
     </div>

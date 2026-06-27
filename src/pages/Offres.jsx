@@ -6,16 +6,16 @@ import FAQ from '../components/FAQ'
 import SEOHead from '../components/SEOHead'
 
 const sectorPages = [
-  { label: 'Restaurant', emoji: '🍽️', path: '/creation-site-vitrine-restaurant', desc: 'Menu en ligne, réservations, Google Maps' },
-  { label: 'Artisan', emoji: '🔧', path: '/creation-site-vitrine-artisan', desc: 'Devis en ligne, galerie, zones d\'intervention' },
-  { label: 'Coach / Formation', emoji: '🎓', path: '/creation-site-vitrine-coach', desc: 'Programmes, témoignages, prise de RDV' },
-  { label: 'Commerce local', emoji: '🛍️', path: '/creation-site-vitrine-commerce-local', desc: 'Horaires, catalogue, click & collect' },
+  { label: 'Restaurant', emoji: '🍽️', path: '/creation-site-vitrine-restaurant', desc: 'Le menu qui donne faim, les résa, et Google Maps qui vous trouve' },
+  { label: 'Artisan', emoji: '🔧', path: '/creation-site-vitrine-artisan', desc: 'Devis en ligne, vos plus beaux chantiers, vos zones d\'intervention' },
+  { label: 'Coach / Formation', emoji: '🎓', path: '/creation-site-vitrine-coach', desc: 'Vos programmes, les avis clients qui rassurent, le RDV en un clic' },
+  { label: 'Commerce local', emoji: '🛍️', path: '/creation-site-vitrine-commerce-local', desc: 'Horaires à jour, catalogue, click & collect' },
 ]
 
 const guidePages = [
-  { label: 'Combien coûte un site vitrine ?', path: '/guide/combien-coute-un-site-vitrine', emoji: '💰' },
-  { label: 'Wix vs Agence web  -  lequel choisir ?', path: '/guide/wix-vs-agence-web', emoji: '⚖️' },
-  { label: 'Pourquoi pas faire soi-même ?', path: '/pourquoi-pas-faire-soi-meme', emoji: '🤔' },
+  { label: 'Un site vitrine, ça coûte combien au juste ?', path: '/guide/combien-coute-un-site-vitrine', emoji: '💰' },
+  { label: 'Wix ou agence web  -  on tranche', path: '/guide/wix-vs-agence-web', emoji: '⚖️' },
+  { label: 'Le faire soi-même, vraiment ?', path: '/pourquoi-pas-faire-soi-meme', emoji: '🤔' },
 ]
 
 const cityPages = [
@@ -42,14 +42,14 @@ const offers = [
       </svg>
     ),
     title: 'Audit Commercial & Accompagnement',
-    description: "Un diagnostic complet de votre organisation commerciale, suivi d'un accompagnement stratégique pour structurer et accélérer votre croissance.",
+    description: "On regarde tout : comment vous trouvez des clients, comment vous les convertissez, ce qui coince. Puis on remet la machine commerciale d'aplomb — et on reste à côté de vous le temps qu'il faut.",
     benefits: [
-      'Analyse complète du processus de vente',
-      'Identification des leviers de croissance prioritaires',
-      "Co-construction de la stratégie commerciale",
-      "Plan d'action avec résultats attendus sous 30 jours",
-      'Suivi mensuel des KPIs et ajustements en temps réel',
-      'Accès direct et illimité pour toutes vos questions',
+      'On dissèque votre façon de vendre, de A à Z',
+      'On repère les leviers qui rapportent vraiment',
+      "On construit votre stratégie à deux mains",
+      "Un plan d'action avec des premiers résultats sous 30 jours",
+      'Les chiffres suivis chaque mois, et on ajuste en route',
+      'Une question ? Vous me joignez direct, autant que vous voulez',
     ],
     duration: '1 mois à 12 mois',
     price: 'À partir de 390€',
@@ -66,14 +66,14 @@ const offers = [
       </svg>
     ),
     title: 'Création Site Vitrine',
-    description: "Création de site web professionnel pour TPE, artisans et restaurateurs. Design moderne, SEO optimisé, livré en 2 à 4 semaines.",
+    description: "Un site qui fait signer, pas fuir. Pour les TPE, artisans et restaurateurs. Beau, rapide, bien placé sur Google, livré en 2 à 4 semaines.",
     benefits: [
-      'Design sur-mesure et responsive (mobile, tablette, desktop)',
-      'Optimisation SEO pour être trouvé sur Google',
-      'Formulaire de contact et prise de rendez-vous intégrés',
-      'Hébergement et nom de domaine inclus la 1ère année',
-      'Formation à la mise à jour du contenu',
-      'Support technique inclus 3 mois après livraison',
+      'Un design taillé pour vous, nickel sur mobile comme sur grand écran',
+      'Bien référencé pour que Google vous mette en avant',
+      'Formulaire de contact et prise de RDV branchés direct',
+      'Hébergement et nom de domaine offerts la 1ère année',
+      'On vous montre comment modifier votre contenu vous-même',
+      'On reste joignable 3 mois après la mise en ligne',
     ],
     duration: '2 à 4 semaines',
     price: 'À partir de 690€',
@@ -85,23 +85,23 @@ const offers = [
 const faqItems = [
   {
     question: "C'est quoi exactement un audit commercial ?",
-    answer: "Un audit commercial, c'est un diagnostic complet de votre organisation de vente : comment vous trouvez des clients, comment vous les convertissez, ce qui bloque. On identifie les leviers prioritaires et on construit ensemble un plan d'action concret avec des objectifs chiffrés.",
+    answer: "On passe votre façon de vendre au crible : comment vous trouvez vos clients, comment vous les convertissez, et surtout où ça coince. On repère les leviers qui rapportent et on pose un plan d'action concret, avec des chiffres en face — pas du vent.",
   },
   {
     question: "Je suis seul dans ma boîte, c'est fait pour moi ?",
-    answer: "C'est exactement pour ça que BNK Conseil existe. Les TPE et solopreneurs n'ont pas les ressources pour recruter un directeur commercial ou une agence digitale. On joue ce rôle de manière flexible et opérationnelle, selon votre rythme et votre budget.",
+    answer: "C'est même pile pour ça que BNK Conseil existe. Vous n'allez pas embaucher un directeur commercial à plein temps ni vous payer une grosse agence. Je joue ce rôle quand vous en avez besoin, à votre rythme et dans votre budget.",
   },
   {
     question: "Combien de temps dure une mission ?",
-    answer: "L'audit commercial dure de 1 à 12 mois selon la profondeur de l'accompagnement. La création de site vitrine prend 2 à 4 semaines selon le scope. On démarre toujours par un appel découverte de 30 minutes pour cadrer précisément ce dont vous avez besoin.",
+    answer: "L'audit commercial, c'est de 1 à 12 mois selon ce qu'on creuse. Le site vitrine, 2 à 4 semaines. Dans tous les cas, on démarre par un appel de 30 minutes pour voir clair sur ce dont vous avez vraiment besoin.",
   },
   {
     question: "Est-ce que vous garantissez des résultats ?",
-    answer: "On ne vend pas de miracles. Ce qu'on garantit : des objectifs clairs dès le départ, un suivi mensuel des KPIs, et une communication directe si quelque chose ne fonctionne pas. Nos clients voient les premiers résultats en moins de 30 jours.",
+    answer: "Je ne vends pas de miracle, et méfiez-vous de ceux qui le font. Ce que je garantis : des objectifs clairs dès le départ, les chiffres suivis chaque mois, et un coup de fil franc si un truc ne marche pas. Mes clients voient les premiers effets en moins de 30 jours.",
   },
   {
     question: "Vous travaillez avec quels types d'entreprises ?",
-    answer: "TPE, startups en phase de lancement ou de croissance, indépendants qui veulent professionnaliser leur développement commercial. Peu importe le secteur, notre approche s'adapte à votre contexte.",
+    answer: "TPE, jeunes boîtes qui se lancent ou qui décollent, indépendants qui veulent enfin vendre pour de vrai. Le secteur n'a pas d'importance — je m'adapte à votre terrain.",
   },
 ]
 
@@ -110,7 +110,7 @@ export default function Offres() {
     <PageTransition>
       <SEOHead
         title="Nos Offres : Audit Commercial & Création Site Vitrine | BNK Conseil"
-        description="Deux offres pour structurer votre croissance : audit commercial avec suivi KPI, et création de site vitrine pour TPE, artisans et restaurateurs. Sur devis, résultats mesurables."
+        description="Deux offres, zéro blabla : un audit commercial avec suivi des chiffres, et un site vitrine qui fait signer pour TPE, artisans et restaurateurs. Sur devis, résultats mesurables."
         canonical="https://bnk-conseil.com/offres"
         schema={{
           "@context": "https://schema.org",
@@ -150,18 +150,18 @@ export default function Offres() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Ce que l'on fait</span>
+            <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Ce que je fais</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mt-4 mb-6">
-              Nos offres d'accompagnement{' '}
+              Deux façons de vous faire{' '}
               <span style={{
                 background: 'linear-gradient(135deg, #066377, #3B9BB3)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>commercial et digital</span>
+              }}>vendre plus</span>
             </h1>
             <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-              Deux solutions complémentaires pour structurer votre croissance commerciale et renforcer votre visibilité en ligne.
+              Un site qui fait signer, une organisation commerciale qui tourne. L'un, l'autre, ou les deux — à vous de voir.
             </p>
           </motion.div>
         </div>
@@ -188,7 +188,7 @@ export default function Offres() {
           <motion.div {...fadeUpView(0)} className="text-center mb-10">
             <span className="text-[#066377] text-sm font-semibold uppercase tracking-widest">Sites vitrines</span>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2 mb-3">Par secteur d'activité</h2>
-            <p className="text-gray-500">Un site conçu pour votre métier, pas un template générique.</p>
+            <p className="text-gray-500">Un site pensé pour votre métier — pas un template recopié 400 fois.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {sectorPages.map((s, i) => (
@@ -269,7 +269,7 @@ export default function Offres() {
               Questions fréquentes
             </h2>
             <p className="text-gray-500 text-lg">
-              Tout ce que vous voulez savoir avant de nous contacter.
+              Tout ce que vous vous demandez avant de décrocher votre téléphone.
             </p>
           </motion.div>
 
@@ -294,10 +294,10 @@ export default function Offres() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Pas certain de quelle offre vous convient ?
+              Vous hésitez entre les deux ?
             </h2>
             <p className="text-gray-500 text-lg mb-8">
-              On fait un appel de 30 minutes, on comprend votre situation, et on vous recommande la meilleure approche. Sans engagement.
+              30 minutes au téléphone, je comprends votre situation et je vous dis franchement ce qui vous servira le plus. Si c'est rien, je vous le dis aussi. Sans engagement.
             </p>
             <a
               href="/rdv"

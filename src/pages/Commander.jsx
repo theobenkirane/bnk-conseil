@@ -128,7 +128,7 @@ export default function Commander() {
               <span style={gradientText}>-30% garanti</span>
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-6">
-              Choisissez votre formule, remplissez le formulaire. On vous contacte sous 24h pour démarrer.
+              Vous choisissez votre formule, vous laissez vos coordonnées. Je vous rappelle sous 24h et on lance la machine.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {['RDV express offert', 'Paiement sécurisé', 'Livraison garantie'].map((pill) => (
@@ -253,9 +253,9 @@ export default function Commander() {
           </div>
 
           <motion.p {...fadeUpView(0.4)} className="text-center text-sm text-gray-500 mt-6">
-            Pas sûr de votre choix ?{' '}
+            Vous hésitez ? Normal.{' '}
             <Link to="/rdv" className="text-[#066377] hover:text-[#154359] font-medium transition-colors">
-              Prenez un appel gratuit de 20 min →
+              20 min au téléphone et on tranche ensemble →
             </Link>
           </motion.p>
         </div>
@@ -277,11 +277,11 @@ export default function Commander() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-black text-gray-900">Commande reçue !</h3>
+                <h3 className="text-xl font-black text-gray-900">C'est noté, on est partis !</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Merci <strong>{form.prenom}</strong>. Votre commande pour la formule{' '}
-                  <strong>{selectedData?.name}</strong> est enregistrée.
-                  Nous vous contactons sous 24h pour convenir du RDV express de démarrage.
+                  Merci <strong>{form.prenom}</strong>. Votre formule{' '}
+                  <strong>{selectedData?.name}</strong> est réservée.
+                  Je vous appelle sous 24h pour caler le RDV de démarrage. Pensez à préparer vos photos.
                 </p>
                 <Link
                   to="/"
@@ -391,14 +391,14 @@ export default function Commander() {
                     value={form.message}
                     onChange={handleChange}
                     rows={3}
-                    placeholder="Précisez votre secteur, vos besoins ou posez vos questions..."
+                    placeholder="Votre secteur, ce que vous voulez, vos questions — balancez tout..."
                     className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#066377] focus:bg-white transition-all duration-200 resize-none"
                   />
                 </div>
 
                 {/* Info */}
                 <div className="rounded-xl border border-blue-100 bg-blue-50 px-5 py-3 text-sm text-blue-700">
-                  Votre commande est validée sous 24h. Nous vous contacterons pour convenir d'un RDV express de démarrage.
+                  Rien n'est prélevé maintenant. Je valide votre commande sous 24h et on cale le RDV de démarrage ensemble.
                 </div>
 
                 {/* Submit */}
@@ -416,7 +416,7 @@ export default function Commander() {
 
                 {!isReady && (
                   <p className="text-center text-gray-400 text-xs">
-                    Remplissez prénom, nom et email pour confirmer.
+                    Prénom, nom, email et c'est bon. Le reste, on en parle de vive voix.
                   </p>
                 )}
               </form>
@@ -430,9 +430,9 @@ export default function Commander() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: '🛡️', title: 'Satisfaction garantie', desc: 'Modifications illimitées incluses jusqu\'à ce que vous soyez 100% satisfait.' },
-              { icon: '⚡', title: 'RDV express sous 48h', desc: 'Dès votre commande reçue, on vous contacte pour démarrer rapidement.' },
-              { icon: '💳', title: 'Paiement en 2× possible', desc: '50% à la commande, 50% à la livraison. Sans frais supplémentaires.' },
+              { icon: '🛡️', title: 'On lâche rien', desc: 'On retouche autant qu\'il faut jusqu\'à ce que le site vous plaise vraiment. Pas un de moins.' },
+              { icon: '⚡', title: 'On démarre sous 48h', desc: 'Commande reçue, je vous appelle. Pas de file d\'attente, pas de mois à patienter.' },
+              { icon: '💳', title: 'Payez en 2 fois', desc: 'Moitié au lancement, moitié à la livraison. Zéro frais en plus, zéro surprise.' },
             ].map((item, i) => (
               <motion.div
                 key={item.title}

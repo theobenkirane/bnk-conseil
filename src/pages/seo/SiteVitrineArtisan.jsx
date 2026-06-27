@@ -18,23 +18,23 @@ const gradientText = {
 const benefits = [
   {
     emoji: '🏗️',
-    title: 'Galerie de réalisations',
-    description: "Mettez en avant vos chantiers avec photos avant/après. Votre meilleur argument commercial.",
+    title: 'Vos chantiers en photo',
+    description: "Le avant/après d'une salle de bain refaite vend mieux que n'importe quel discours. On met votre boulot en vitrine.",
   },
   {
     emoji: '📋',
-    title: 'Formulaire de devis',
-    description: "Un formulaire intelligent pour qualifier vos prospects avant le premier contact.",
+    title: 'Le devis qui trie pour vous',
+    description: "Un formulaire qui pose les bonnes questions (type de travaux, surface, délai). Vous arrêtez de perdre une heure au téléphone avec ceux qui ne signeront jamais.",
   },
   {
     emoji: '🏆',
-    title: 'Vos certifications',
-    description: "RGE, Qualibat, assurance décennale : affichez vos certifications pour rassurer immédiatement.",
+    title: 'RGE, Qualibat, décennale',
+    description: "Vos certifications affichées dès l'accueil. Le client se dit \"lui, il est carré\" avant même de vous appeler.",
   },
   {
     emoji: '📍',
-    title: "Zone d'intervention",
-    description: "Carte de votre zone géographique + communes couvertes pour cibler le bon trafic local.",
+    title: "Votre zone, vos communes",
+    description: "Une carte de votre secteur et les villes que vous couvrez. Vous attirez le client d'à côté, pas celui à 80 km.",
   },
 ]
 
@@ -52,24 +52,24 @@ const guarantees = [
 
 const faqData = [
   {
-    question: "Comment montrer mes réalisations ?",
-    answer: "Via une galerie photo optimisée. On s'occupe de l'intégration de vos photos existantes.",
+    question: "Comment je montre mes chantiers ?",
+    answer: "Une galerie photo propre. Vous m'envoyez vos photos, même celles prises au téléphone, et on s'occupe du reste.",
   },
   {
-    question: "Mon site sera-t-il sur Google pour mon métier + ma ville ?",
-    answer: "Oui, c'est le coeur de notre stratégie SEO locale pour les artisans.",
+    question: "Je sortirai sur Google pour \"mon métier + ma ville\" ?",
+    answer: "C'est tout l'intérêt. Quand quelqu'un cherche \"plombier + votre ville\", l'objectif c'est que ce soit vous qui apparaissiez, pas la pub d'une grosse boîte.",
   },
   {
-    question: "Puis-je ajouter mes certifications RGE/Qualibat ?",
-    answer: "Bien sûr, elles seront mises en avant dès la page d'accueil pour rassurer.",
+    question: "Je peux afficher mes certifications RGE / Qualibat ?",
+    answer: "Évidemment. Dès l'accueil, bien visibles. C'est ce qui fait que le client vous prend au sérieux.",
   },
   {
-    question: "Le formulaire de devis peut-il qualifier les prospects ?",
-    answer: "Oui, on configure des champs sur-mesure (type de travaux, surface, délai) pour pré-qualifier.",
+    question: "Le formulaire peut filtrer les vrais prospects ?",
+    answer: "Oui. On règle les questions (type de travaux, surface, délai) pour que vous ne traitiez que les demandes sérieuses.",
   },
   {
-    question: "Et si j'ai peu de photos de réalisations ?",
-    answer: "On travaille avec ce que vous avez. Même 5-6 bonnes photos suffisent pour un excellent résultat.",
+    question: "Et si j'ai trois photos et demie de chantiers ?",
+    answer: "On fait avec ce que vous avez. Cinq ou six bonnes photos suffisent largement pour un site qui claque.",
   },
 ]
 
@@ -140,7 +140,7 @@ export default function SiteVitrineArtisan() {
             </h1>
 
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
-              Montrez vos réalisations, générez des demandes de devis, rassurez vos futurs clients.
+              Vous êtes bon de vos mains, mais sur le web on ne vous voit pas. On montre vos chantiers, on fait remonter les vraies demandes de devis, et on rassure le client avant qu'il décroche son téléphone.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -171,7 +171,7 @@ export default function SiteVitrineArtisan() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Voici à quoi pourrait ressembler votre site
+              Voilà la tête que pourrait avoir votre site
             </h2>
           </motion.div>
 
@@ -216,7 +216,7 @@ export default function SiteVitrineArtisan() {
               <span style={gradientText}>activité artisanale</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              Des fonctionnalités pensées pour les artisans, pour convaincre et convertir.
+              Pensé pour un artisan qui bosse, pas pour faire joli. De quoi transformer un curieux en client qui signe.
             </p>
           </motion.div>
 
@@ -344,7 +344,7 @@ export default function SiteVitrineArtisan() {
               <span style={gradientText}>activité artisanale</span>
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-              20 minutes pour discuter de votre projet. Devis gratuit, sans engagement, réponse sous 24h.
+              20 minutes au téléphone, entre deux chantiers. Devis gratuit, sans engagement, réponse sous 24h.
             </p>
             <Link
               to="/rdv"

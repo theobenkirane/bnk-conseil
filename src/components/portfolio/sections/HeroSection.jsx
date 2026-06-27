@@ -126,7 +126,7 @@ const CSS = `
 }
 .pf-hero-grid {
   position: relative;
-  display: grid; grid-template-columns: 1.35fr 0.65fr; gap: clamp(2rem, 5vw, 5rem);
+  display: grid; grid-template-columns: 1fr 0.92fr; gap: clamp(1.5rem, 3.5vw, 3.5rem);
   align-items: center; flex: 1;
 }
 .pf-hero-eyebrow { margin-bottom: clamp(1.2rem, 3vh, 2rem); }
@@ -139,7 +139,7 @@ const CSS = `
 
 .pf-hero-aside { display: flex; justify-content: center; }
 .pf-hero-portrait {
-  position: relative; width: 100%; max-width: 340px; aspect-ratio: 3 / 4;
+  position: relative; width: 100%; max-width: 480px; aspect-ratio: 3 / 4;
   border-radius: 200px 200px 18px 18px; overflow: hidden;
   border: 1px solid var(--line);
 }
@@ -182,7 +182,7 @@ const CSS = `
 @media (max-width: 900px) {
   .pf-hero-grid { grid-template-columns: 1fr; }
   .pf-hero-aside { grid-row: 1; justify-content: flex-start; }
-  .pf-hero-portrait { max-width: 240px; }
+  .pf-hero-portrait { max-width: 300px; }
   .pf-hero-line:nth-child(2) { padding-left: 0; }
   .pf-hero-stats { grid-template-columns: repeat(2, 1fr); }
   .pf-scrollcue { display: none; }

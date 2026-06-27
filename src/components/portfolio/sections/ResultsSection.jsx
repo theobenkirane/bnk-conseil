@@ -42,11 +42,12 @@ const CSS = `
 .pf-res-title { margin-top: 1rem; }
 .pf-res-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-  background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
+  background: var(--base); border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
 }
+.pf-res-grid > * { height: 100%; }
 .pf-res-card {
   background: var(--base); padding: clamp(1.5rem, 2.5vw, 2.6rem) clamp(1.2rem, 2vw, 2rem);
-  display: flex; flex-direction: column; gap: 0.5rem; min-height: 200px;
+  display: flex; flex-direction: column; gap: 0.5rem; min-height: 200px; height: 100%;
 }
 .pf-res-value {
   font-family: var(--font-display); font-weight: 440; letter-spacing: -0.04em; line-height: 0.9;

@@ -88,11 +88,8 @@ export default function APropos() {
         }}
       />
 
-      {/* ── Hero - fond pastel ────────────────────────────────── */}
-      <section
-        className="pt-32 pb-24 relative overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.12) 60%, rgba(255,255,255,0) 100%)' }}
-      >
+      {/* ── Hero ───────────────────────────────────────────────── */}
+      <section className="pt-32 pb-24 relative overflow-hidden">
         <div
           className="absolute top-10 left-10 w-72 h-72 rounded-full opacity-40 pointer-events-none"
           style={{ background: 'radial-gradient(circle, #c4b5fd, transparent)', filter: 'blur(60px)' }}
@@ -174,7 +171,7 @@ export default function APropos() {
                     Fondateur & Consultant
                   </p>
                   <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                    Spécialiste de la performance commerciale et de la digitalisation pour TPE et startups. Opérationnel, direct, orienté résultats.
+                    Ex-agent immo, ex-recruteur, ex-commercial. Aujourd'hui je transforme les sites qui font fuir en sites qui font signer. Pas de blabla, pas de jargon — du concret.
                   </p>
 
                   <div className="flex flex-col gap-2.5">
@@ -211,7 +208,7 @@ export default function APropos() {
       </section>
 
       {/* ── Valeurs ───────────────────────────────────────────── */}
-      <section className="py-24 bg-white/45 backdrop-blur-sm">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -257,7 +254,7 @@ export default function APropos() {
       </section>
 
       {/* ── Timeline ──────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fdf4ff 100%)' }}>
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -327,10 +324,7 @@ export default function APropos() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section
-        className="py-20 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #fce7f3 50%, #dbeafe 100%)' }}
-      >
+      <section className="py-20 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-30 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(6,99,119,0.2), transparent)' }}
@@ -342,6 +336,34 @@ export default function APropos() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto mb-10">
+              {[
+                { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&q=80&auto=format&fit=crop', alt: "Salle de restaurant", label: 'Restaurants & cafés' },
+                { src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&q=80&auto=format&fit=crop', alt: "Équipe d'une petite structure au travail", label: 'Équipes & startups' },
+                { src: 'https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=500&q=80&auto=format&fit=crop', alt: "Commerçant qui encaisse un client", label: 'Commerces & artisans' },
+              ].map((img, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.94 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="group cursor-default"
+                >
+                  <div className="overflow-hidden rounded-2xl shadow-lg shadow-[#066377]/10 ring-1 ring-white/60 transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-[#066377]/25">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      className="w-full h-24 sm:h-36 object-cover transition-transform duration-[600ms] ease-out group-hover:scale-110"
+                    />
+                  </div>
+                  <p className="mt-2 h-4 text-center text-[11px] sm:text-xs font-bold uppercase tracking-wide text-[#066377] opacity-0 translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                    {img.label}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
               Vous êtes indépendant, artisan, restaurateur, ou dirigeant d'une petite structure ?
             </h2>

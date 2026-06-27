@@ -19,32 +19,32 @@ const secteurs = [
   {
     emoji: '🍽️',
     label: 'Restauration',
-    description: "Menu en ligne, réservation, carte Google, photos pro. Un site qui donne envie de venir.",
+    description: "Menu en ligne, réservation, fiche Google, photos qui donnent faim. Un site qui fait venir au lieu de faire fuir.",
   },
   {
     emoji: '🔧',
     label: 'Artisanat',
-    description: "Galerie de réalisations, formulaire de devis, avis clients, référencement local.",
+    description: "Vos chantiers en photos, le formulaire de devis qui sonne tout seul, les avis clients en évidence. Visible dans votre coin sur Google.",
   },
   {
     emoji: '🎓',
     label: 'Formation & Coaching',
-    description: "Page programme, témoignages, module de contact, tunnel vers inscription.",
+    description: "Votre programme clair, des témoignages qui rassurent, et un chemin direct vers l'inscription. Le visiteur comprend, puis il s'inscrit.",
   },
   {
     emoji: '🛍️',
     label: 'Commerce local',
-    description: "Horaires, localisation, catalogue, promotions. Visible sur Google Maps.",
+    description: "Horaires, adresse, vitrine en ligne, promos du moment. Et surtout, vous apparaissez sur Google Maps quand on cherche à côté de chez vous.",
   },
   {
     emoji: '💼',
     label: 'Prestataires de services',
-    description: "Crédibilité, portfolio, références clients, prise de rendez-vous en ligne.",
+    description: "Vous inspirez confiance avant même de décrocher le téléphone : références clients, réalisations, et prise de rendez-vous en ligne.",
   },
   {
     emoji: '💻',
     label: 'Indépendants & Freelances',
-    description: "Portfolio, tarifs, prise de contact directe. Un site qui reflète votre expertise et convertit.",
+    description: "Vos projets, vos tarifs, un contact direct. Un site à votre image qui bosse pour vous pendant que vous êtes en mission.",
   },
 ]
 
@@ -55,8 +55,8 @@ const inclus = [
         <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: 'Design sur-mesure',
-    description: "Un design pensé pour votre secteur, vos couleurs et votre clientèle. Pas de template générique.",
+    title: 'Un design à vous, pas un copier-coller',
+    description: "On part de votre métier, vos couleurs, vos clients. Zéro template recyclé qu'on retrouve sur 400 autres sites.",
   },
   {
     icon: (
@@ -64,8 +64,8 @@ const inclus = [
         <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
       </svg>
     ),
-    title: 'SEO technique optimisé',
-    description: "Balises meta, schema markup, sitemap, robots.txt, vitesse de chargement. Prêt pour Google dès le lancement.",
+    title: 'Prêt pour Google dès le jour 1',
+    description: "Balises meta, schema, sitemap, robots.txt, vitesse de chargement : tout le travail technique est fait. Vous n'avez pas à comprendre ces mots, juste à en profiter.",
   },
   {
     icon: (
@@ -73,8 +73,8 @@ const inclus = [
         <rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" />
       </svg>
     ),
-    title: 'Mobile-first',
-    description: "60% des recherches se font sur mobile. Votre site est conçu pour être parfait sur tous les écrans.",
+    title: 'Impeccable sur téléphone',
+    description: "6 visiteurs sur 10 vous trouvent depuis leur mobile, souvent debout dans la rue. Votre site est nickel sur petit écran, pas juste sur l'ordi du bureau.",
   },
   {
     icon: (
@@ -83,8 +83,8 @@ const inclus = [
         <polyline points="22,6 12,13 2,6" />
       </svg>
     ),
-    title: 'Formulaire de contact',
-    description: "Formulaire de prise de contact ou de devis intégré, relié à votre boîte mail.",
+    title: 'Un contact qui atterrit chez vous',
+    description: "Formulaire de contact ou de devis branché direct sur votre boîte mail. Le client clique, vous recevez. Pas d'usine à gaz entre les deux.",
   },
   {
     icon: (
@@ -92,8 +92,8 @@ const inclus = [
         <path d="M18 20V10" /><path d="M12 20V4" /><path d="M6 20v-6" />
       </svg>
     ),
-    title: 'Analytics & suivi',
-    description: "Tableau de bord simple pour suivre vos visiteurs, vos sources de trafic et les pages les plus consultées.",
+    title: 'Vous voyez ce qui se passe',
+    description: "Un tableau de bord simple : combien de visiteurs, d'où ils viennent, quelles pages ils regardent. Pas besoin d'être expert pour le lire.",
   },
   {
     icon: (
@@ -101,54 +101,54 @@ const inclus = [
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
       </svg>
     ),
-    title: 'SEO local & Google Maps',
-    description: "Fiche Google Business Profile créée et optimisée. Vous apparaissez dans les recherches locales de votre zone.",
+    title: 'Trouvable dans votre quartier',
+    description: "On crée et on règle votre fiche Google Business Profile. Quand quelqu'un cherche votre métier près de chez vous, c'est vous qui sortez.",
   },
 ]
 
 const pourquoi = [
   {
     stat: '97%',
-    label: 'des internautes cherchent un commerce local en ligne avant de se déplacer',
+    label: 'des gens regardent un commerce en ligne avant de pousser la porte. Pas de site, pas de visite.',
   },
   {
     stat: '75%',
-    label: "des clics Google vont aux 3 premiers résultats : un site optimisé est indispensable",
+    label: "des clics Google partent dans les 3 premiers résultats. La page 2, personne n'y va jamais.",
   },
   {
     stat: '2–4 sem.',
-    label: "délai de livraison pour un site vitrine complet, de la maquette à la mise en ligne",
+    label: "et votre site est en ligne. De la maquette au lancement, sans vous faire poireauter six mois.",
   },
 ]
 
 const faqItems = [
   {
     question: "Combien coûte la création d'un site vitrine ?",
-    answer: 'Nos sites vitrines démarrent à partir de 690 €. Le tarif varie selon le nombre de pages, les fonctionnalités souhaitées (galerie, réservation en ligne, e-shop…) et la complexité du design. Devis gratuit après un appel de 20 min.',
+    answer: 'Les sites vitrines démarrent à 690 €. Le tarif bouge selon le nombre de pages et ce que vous voulez dedans (galerie, réservation en ligne, e-shop…). Vous avez un devis clair après un appel de 20 min, sans surprise au moment de la facture.',
   },
   {
     question: 'Combien de temps pour livrer le site ?',
-    answer: 'Entre 2 et 4 semaines selon la complexité. La maquette vous est présentée dans les 5 premiers jours ouvrés. Vous validez, on intègre, on met en ligne.',
+    answer: 'Entre 2 et 4 semaines selon ce qu\'il y a à faire. Vous voyez la maquette dans les 5 premiers jours ouvrés. Vous validez, on intègre, on met en ligne. Pas de chantier qui traîne pendant des mois.',
   },
   {
     question: 'Est-ce que vous créez des sites pour tous les secteurs ?',
-    answer: "Oui : restauration, artisanat, commerce local, formation, coaching, prestataires de services. Chaque secteur a ses codes visuels et ses attentes clients, on les connaît.",
+    answer: "Oui : restauration, artisanat, commerce local, formation, coaching, prestataires de services. Chaque métier a ses codes et ce que les clients y cherchent. On les connaît, on ne fait pas le même site pour un resto et un plombier.",
   },
   {
     question: "Je n'ai pas de contenu (textes, photos). Vous pouvez aider ?",
-    answer: "Absolument. On rédige vos textes SEO-optimisés et on peut vous orienter vers des banques d'images professionnelles ou des photographes partenaires. On s'adapte à ce que vous avez.",
+    answer: "Pas de souci, c'est même fréquent. On écrit vos textes pensés pour Google, et pour les photos on vous oriente vers des banques d'images pro ou un photographe partenaire. Vous arrivez les mains vides, on remplit.",
   },
   {
     question: 'Le site sera-t-il trouvé sur Google ?',
-    answer: "Oui, c'est une priorité. Chaque site est livré avec les fondations SEO en place : balises meta, schema, sitemap, vitesse optimisée, et fiche Google Business Profile. Les résultats SEO prennent 1 à 3 mois à se concrétiser.",
+    answer: "Oui, et c'est non négociable. Chaque site part avec les fondations SEO en place : balises meta, schema, sitemap, vitesse, et fiche Google Business Profile. Je vous mens pas : Google met 1 à 3 mois à vous remonter, ça ne se fait pas en une nuit.",
   },
   {
     question: 'Puis-je payer en plusieurs fois ?',
-    answer: "Oui, le paiement en 2 fois est disponible : 50% à la commande, 50% à la livraison. Possibilité de 3 fois sur devis.",
+    answer: "Oui : 50% à la commande, 50% à la livraison. Et le 3 fois est possible sur devis. On trouve un rythme qui ne plombe pas votre trésorerie.",
   },
   {
     question: 'Quel est le prix exact de votre service ?',
-    answer: "La formule Essentiel démarre à 690€ (3-4 pages), la formule Pro à 990€ (5-7 pages + blog). Consultez notre page tarifs pour le détail complet.",
+    answer: "La formule Essentiel démarre à 690€ (3-4 pages), la formule Pro à 990€ (5-7 pages + blog). Le détail complet est sur la page tarifs, sans astérisque ni petites lignes.",
   },
 ]
 
@@ -159,7 +159,7 @@ export default function CreationSiteVitrine() {
     <PageTransition>
       <SEOHead
         title="Création Site Vitrine TPE, Artisan & Indépendant | Site Web Pro | BNK Conseil"
-        description="Création de site vitrine pour artisans, restaurateurs, indépendants et TPE. Site pro, rapide, optimisé SEO local. Devis gratuit en 30 min. Livraison 2-4 semaines."
+        description="Création de site vitrine pour artisans, restaurateurs, indépendants et TPE. On transforme les sites qui font fuir en sites qui font signer. Site pro, optimisé SEO local. Devis gratuit. Livraison 2-4 semaines."
         canonical="https://bnk-conseil.com/creation-site-vitrine"
         schema={{
           '@context': 'https://schema.org',
@@ -211,7 +211,7 @@ export default function CreationSiteVitrine() {
               {' '}pour TPE, Artisans, Restaurateurs & Indépendants
             </h1>
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
-              Un site professionnel, rapide à livrer, optimisé pour Google et conçu pour convertir vos visiteurs en clients. Site vitrine pas cher TPE, devis gratuit en 20 min.
+              8 fois sur 10, le resto est top mais le site fait fuir. On répare ça : un site vitrine pro, livré vite, trouvé sur Google et fait pour transformer le visiteur en client. Devis gratuit en 20 min.
             </p>
             <div className="flex flex-col gap-4">
               <Link
@@ -247,9 +247,9 @@ export default function CreationSiteVitrine() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { icon: '⏱️', title: 'Livraison garantie', desc: 'Délai respecté ou remboursement partiel.' },
-                { icon: '🔧', title: '1 mois de retouches', desc: 'Modifications illimitées pendant 1 mois après livraison.' },
-                { icon: '🌐', title: 'Hébergement 1 an inclus', desc: 'Domaine et hébergement offerts la première année.' },
+                { icon: '⏱️', title: 'Le délai, on le tient', desc: 'On respecte la date annoncée, sinon on vous rembourse une partie. Promis, pas juste écrit.' },
+                { icon: '🔧', title: '1 mois de retouches', desc: 'Vous changez d\'avis, on ajuste. Modifications illimitées pendant 1 mois après la mise en ligne.' },
+                { icon: '🌐', title: 'Hébergement offert 1 an', desc: 'Nom de domaine et hébergement payés par nous la première année. Zéro frais caché au lancement.' },
               ].map((g) => (
                 <div key={g.title} className="p-5 rounded-2xl border border-gray-100 bg-white shadow-sm flex gap-4 items-start">
                   <span className="text-2xl">{g.icon}</span>
@@ -300,7 +300,7 @@ export default function CreationSiteVitrine() {
               <span style={gradientText}>couverts</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
-              Chaque secteur a ses codes. On conçoit votre site en fonction de ce que vos clients cherchent vraiment.
+              Chaque métier a ses codes. On bâtit votre site autour de ce que vos clients cherchent vraiment, pas de ce qui fait joli.
             </p>
           </motion.div>
 
@@ -387,7 +387,7 @@ export default function CreationSiteVitrine() {
               <span style={gradientText}>livré en 2 semaines</span>
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-              20 minutes pour discuter de votre projet. On vous dit ce qu'on peut faire, en combien de temps, et pour quel budget.
+              20 minutes au téléphone sur votre projet. On vous dit cash ce qu'on peut faire, en combien de temps et pour quel budget. Pas de blabla, pas de jargon.
             </p>
             <Link
               to="/rdv"
@@ -409,7 +409,7 @@ export default function CreationSiteVitrine() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">{"Votre secteur d'activité"}</h2>
-            <p className="text-gray-500 text-center mb-8">Un site vitrine adapté à votre métier</p>
+            <p className="text-gray-500 text-center mb-8">Un site vitrine taillé pour votre métier, pas un modèle passe-partout</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { emoji: '🍽️', label: 'Restaurant', path: '/creation-site-vitrine-restaurant' },

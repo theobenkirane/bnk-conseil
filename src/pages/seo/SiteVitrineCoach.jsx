@@ -18,23 +18,23 @@ const gradientText = {
 const benefits = [
   {
     emoji: '📚',
-    title: 'Présentation des programmes',
-    description: "Page dédiée à chaque offre avec les détails, le prix, le public ciblé et un CTA de réservation.",
+    title: 'Vos offres, claires net et précises',
+    description: "Une page par programme : ce que ça change, pour qui, combien, et un bouton pour réserver. Le prospect comprend en 10 secondes au lieu de fermer l'onglet.",
   },
   {
     emoji: '⭐',
-    title: 'Témoignages clients',
-    description: "Section dédiée aux avis et success stories pour instaurer la confiance et lever les objections.",
+    title: 'La preuve par vos clients',
+    description: "Vos avis et vos réussites bien en évidence. Rien ne convainc un futur client comme un ancien qui dit \"ça a marché\".",
   },
   {
     emoji: '📅',
-    title: 'Prise de RDV intégrée',
-    description: "Calendly, Cal.com ou formulaire de contact pour remplir votre agenda automatiquement.",
+    title: 'Votre agenda se remplit tout seul',
+    description: "Calendly, Cal.com ou un formulaire : le prospect bloque son créneau pendant que vous êtes en séance. Fini les allers-retours par mail.",
   },
   {
     emoji: '🎓',
-    title: 'Éligibilité CPF',
-    description: "Si vos formations sont éligibles CPF ou Qualiopi, on le met en avant pour rassurer et convertir.",
+    title: 'CPF et Qualiopi mis en avant',
+    description: "Vos formations sont éligibles ? On l'affiche clairement. C'est souvent ce détail qui fait passer du \"je réfléchis\" au \"je m'inscris\".",
   },
 ]
 
@@ -52,24 +52,24 @@ const guarantees = [
 
 const faqData = [
   {
-    question: "Comment présenter mes différentes offres ?",
-    answer: "Une page par offre ou une page catalogue bien structurée selon le nombre de programmes.",
+    question: "Comment je présente mes différentes offres ?",
+    answer: "Une page par offre, ou une page catalogue bien rangée si vous en avez beaucoup. L'idée : que le prospect trouve la sienne sans se perdre.",
   },
   {
-    question: "Peut-on intégrer un système de prise de RDV ?",
-    answer: "Oui, Calendly, Cal.com ou toute autre solution que vous utilisez déjà.",
+    question: "On peut brancher un agenda de réservation ?",
+    answer: "Oui. Calendly, Cal.com ou l'outil que vous utilisez déjà. Le client réserve, vous validez, c'est plié.",
   },
   {
-    question: "Comment collecter des témoignages clients ?",
-    answer: "On crée une section dédiée et on vous conseille sur comment solliciter vos clients.",
+    question: "Comment je récupère des témoignages ?",
+    answer: "On crée la section qu'il faut et on vous donne le bon moment et la bonne phrase pour les demander à vos clients. Vous verrez, ils disent rarement non.",
   },
   {
-    question: "Mon site peut-il mentionner l'éligibilité CPF ?",
-    answer: "Absolument, c'est un argument clé que l'on met en avant de façon visible.",
+    question: "Je peux afficher mon éligibilité CPF ?",
+    answer: "Bien sûr, et bien en évidence. C'est un argument qui rassure et qui débloque pas mal d'inscriptions.",
   },
   {
-    question: "Je n'ai pas encore de clients, comment faire ?",
-    answer: "On structure votre page pour convaincre même sans témoignages initiaux (résultats attendus, méthode, votre parcours).",
+    question: "Je débute et je n'ai pas encore de clients, je fais quoi ?",
+    answer: "On vend votre méthode, vos résultats attendus et votre parcours. On n'a pas besoin de cent témoignages pour donner envie — il faut une page qui inspire confiance.",
   },
 ]
 
@@ -140,7 +140,7 @@ export default function SiteVitrineCoach() {
             </h1>
 
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
-              Présentez vos programmes, collectez des témoignages, remplissez votre agenda.
+              Vous transformez la vie des gens, mais votre site, lui, ne transforme personne. On présente vos programmes clairement, on met vos résultats en avant, et on remplit votre agenda pendant que vous coachez.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -171,7 +171,7 @@ export default function SiteVitrineCoach() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Voici à quoi pourrait ressembler votre site
+              Voilà ce que verrait votre prochain client
             </h2>
           </motion.div>
 
@@ -216,7 +216,7 @@ export default function SiteVitrineCoach() {
               <span style={gradientText}>activité de coaching</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              Des fonctionnalités pensées pour les coachs et formateurs, pour convaincre et remplir votre agenda.
+              Pensé pour les coachs et formateurs : convaincre le prospect, lever ses doutes, et caler le rendez-vous.
             </p>
           </motion.div>
 
@@ -344,7 +344,7 @@ export default function SiteVitrineCoach() {
               <span style={gradientText}>activité de coaching</span>
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-              20 minutes pour discuter de votre projet. Devis gratuit, sans engagement, réponse sous 24h.
+              20 minutes entre deux séances pour parler de votre projet. Devis gratuit, sans engagement, réponse sous 24h.
             </p>
             <Link
               to="/rdv"

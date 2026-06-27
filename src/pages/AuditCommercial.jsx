@@ -22,8 +22,8 @@ const inclus = [
         <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
       </svg>
     ),
-    title: 'Analyse de votre pipeline commercial',
-    description: "Cartographie complète de vos étapes de vente, identification des goulots d'étranglement et des opportunités manquées.",
+    title: 'On dissèque votre pipeline',
+    description: "On retrace chaque étape de votre vente pour repérer où ça coince et combien de clients vous laissez filer sans le savoir.",
   },
   {
     icon: (
@@ -31,8 +31,8 @@ const inclus = [
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
       </svg>
     ),
-    title: 'Scripts et argumentaires de vente',
-    description: "Rédaction ou optimisation de vos scripts d'appel, emailings de prospection et pitchs adaptés à votre secteur.",
+    title: 'Des mots qui font signer',
+    description: "Scripts d'appel, mails de prospection, pitchs : on écrit ou on remet d'aplomb tout ce qui vous fait perdre des clients à l'oral comme à l'écrit.",
   },
   {
     icon: (
@@ -40,8 +40,8 @@ const inclus = [
         <ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
       </svg>
     ),
-    title: 'Mise en place CRM simple',
-    description: "Sélection et configuration d'un outil CRM adapté à votre taille. Suivi des prospects, relances automatisées, sans complexité.",
+    title: 'Un CRM, pas une usine à gaz',
+    description: "On installe un outil à votre taille pour suivre vos prospects et automatiser vos relances. Fini les relances oubliées et le post-it perdu.",
   },
   {
     icon: (
@@ -49,8 +49,8 @@ const inclus = [
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
       </svg>
     ),
-    title: 'Définition des KPIs commerciaux',
-    description: "Identification des 3 à 5 indicateurs clés à suivre chaque semaine pour piloter votre activité commerciale avec clarté.",
+    title: '3 à 5 chiffres à regarder, pas 50',
+    description: "On choisit ensemble les rares indicateurs qui comptent vraiment, à checker chaque semaine. Vous pilotez votre boîte au lieu de la subir.",
   },
   {
     icon: (
@@ -58,8 +58,8 @@ const inclus = [
         <path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
       </svg>
     ),
-    title: "Plan d'action personnalisé",
-    description: "Un document de 5 à 10 actions prioritaires, priorisées par impact, avec délais et responsabilités clairement définis.",
+    title: "Un plan d'action, pas un PDF qui dort",
+    description: "5 à 10 actions concrètes, classées par impact, avec qui fait quoi et pour quand. Vous savez exactement par où commencer lundi matin.",
   },
   {
     icon: (
@@ -68,8 +68,8 @@ const inclus = [
         <path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    title: 'Suivi mensuel des performances',
-    description: "Point mensuel de 45 min pour analyser les résultats, ajuster la stratégie et débloquer les situations complexes.",
+    title: 'On reste là chaque mois',
+    description: "45 min par mois pour regarder les résultats en face, ajuster ce qui doit l'être et débloquer ce qui vous bloque. Pas de mission qu'on lâche après la facture.",
   },
 ]
 
@@ -91,23 +91,23 @@ const resultats = [
 const faqItems = [
   {
     question: 'Combien coûte un audit commercial ?',
-    answer: 'Nos missions démarrent à partir de 390 €. Le tarif final dépend de la durée et de la complexité de votre organisation. Nous établissons un devis personnalisé après votre appel découverte gratuit.',
+    answer: 'Les missions démarrent à 390 €. Le tarif dépend de la durée et de ce qu\'il y a à débroussailler chez vous. Vous avez un devis clair après l\'appel découverte gratuit, sans surprise et sans ligne cachée.',
   },
   {
     question: "Combien de temps dure l'accompagnement commercial ?",
-    answer: "L'accompagnement peut durer de 1 à 12 mois selon vos objectifs. La première phase (diagnostic + plan d'action) est réalisée en 1 à 2 semaines. Vous choisissez ensuite la durée de suivi.",
+    answer: "De 1 à 12 mois, c'est vous qui voyez. La première phase (diagnostic + plan d'action) est bouclée en 1 à 2 semaines. Ensuite vous choisissez si on continue ensemble ou si vous prenez le relais en solo.",
   },
   {
     question: 'Vous travaillez avec tous les secteurs ?',
-    answer: "Oui. Artisans, restaurateurs, prestataires de services, startups, formateurs indépendants… Notre approche s'adapte à votre réalité opérationnelle et à vos typologies de clients.",
+    answer: "Oui. Artisans, restaurateurs, prestataires, startups, formateurs indépendants… La méthode reste la même, mais on la colle à votre terrain et à vos clients à vous. Pas de recette toute faite.",
   },
   {
     question: "Je n'ai pas de process commercial du tout. C'est trop tôt pour moi ?",
-    answer: "Au contraire. C'est exactement le moment idéal. Partir d'une feuille blanche permet de construire un process solide dès le départ, sans mauvaises habitudes à désapprendre.",
+    answer: "Au contraire, c'est le moment parfait. Une feuille blanche, c'est zéro mauvaise habitude à désapprendre. On construit propre du premier coup au lieu de réparer le bazar plus tard.",
   },
   {
     question: 'Quels résultats puis-je espérer ?',
-    answer: 'En moyenne : +40% de chiffre d\'affaires sur 6 mois, 3× plus de rendez-vous qualifiés, et une réduction du temps passé en prospection improductive. Les résultats varient selon votre secteur et votre implication.',
+    answer: 'En moyenne : +40% de chiffre d\'affaires sur 6 mois, 3× plus de rendez-vous qui valent le coup, et beaucoup moins de temps perdu à courir après des prospects qui ne signeront jamais. Après, je vous mens pas : ça dépend aussi de votre secteur et de ce que vous y mettez.',
   },
 ]
 
@@ -118,7 +118,7 @@ export default function AuditCommercial() {
     <PageTransition>
       <SEOHead
         title="Audit Commercial TPE | Consultant Commercial Indépendant | BNK Conseil"
-        description="Audit commercial pour TPE et indépendants. Diagnostic complet, structuration du process de vente, suivi des KPIs. Prenez RDV gratuit en 2 min."
+        description="Audit commercial pour TPE et indépendants. On trouve où partent vos clients, on structure votre process de vente, on suit les bons KPIs. RDV gratuit en 2 min."
         canonical="https://bnk-conseil.com/audit-commercial"
         schema={{
           '@context': 'https://schema.org',
@@ -170,7 +170,7 @@ export default function AuditCommercial() {
               {' '}, consultant commercial indépendant
             </h1>
             <p className="text-gray-600 text-xl max-w-2xl mb-8 leading-relaxed">
-              Un diagnostic complet de votre organisation commerciale, un plan d'action concret et un suivi mensuel pour améliorer votre process de vente et générer plus de revenus.
+              Vous vendez bien, mais en mode débrouille. On met de l'ordre : on regarde où partent vos clients, on construit un vrai process de vente, et on reste à vos côtés chaque mois. Du concret, pas du jargon.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -197,9 +197,9 @@ export default function AuditCommercial() {
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { icon: '📊', title: 'Résultats mesurables', desc: 'Objectifs définis dès le départ, KPIs suivis mensuellement.' },
-                { icon: '🤝', title: 'Accompagnement personnalisé', desc: "Un consultant dédié qui connaît votre secteur et vos enjeux." },
-                { icon: '✅', title: 'Premier résultat en 30 jours', desc: "Plan d'action concret et premières améliorations dès le premier mois." },
+                { icon: '📊', title: 'Des chiffres, pas des promesses', desc: 'Objectifs posés dès le départ, suivis chaque mois. On mesure, vous voyez.' },
+                { icon: '🤝', title: 'Un seul interlocuteur', desc: "Pas un standard ni un junior. Moi, qui connais votre métier et votre terrain." },
+                { icon: '✅', title: 'Du résultat dès le 1er mois', desc: "Un plan clair et les premières améliorations visibles avant la fin du mois." },
               ].map((g) => (
                 <div key={g.title} className="p-5 rounded-2xl border border-gray-100 bg-white shadow-sm flex gap-4 items-start">
                   <span className="text-2xl">{g.icon}</span>
@@ -251,7 +251,7 @@ export default function AuditCommercial() {
               <span style={gradientText}>l'audit commercial</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
-              Une mission complète, de l'analyse initiale au suivi des résultats.
+              Du premier coup d'oeil sur votre organisation au suivi des résultats. Rien laissé au hasard.
             </p>
           </motion.div>
 
@@ -296,7 +296,7 @@ export default function AuditCommercial() {
               <span style={gradientText}>pour qui ?</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
-              Notre accompagnement commercial est pensé pour les TPE et indépendants, quel que soit le secteur.
+              Pensé pour les TPE et les indépendants. Pas pour les grands groupes avec un service commercial de 30 personnes.
             </p>
           </motion.div>
 
@@ -335,7 +335,7 @@ export default function AuditCommercial() {
               <span style={gradientText}>croissance commerciale ?</span>
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-              20 minutes d'appel gratuit pour faire le point sur votre situation et voir ce qu'on peut faire ensemble.
+              20 minutes au téléphone, gratuit. On fait le point sur votre situation, et je vous dis cash ce qu'il y a à débloquer. Sans engagement.
             </p>
             <Link
               to="/rdv"

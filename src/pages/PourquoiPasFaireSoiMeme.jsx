@@ -81,22 +81,22 @@ const idees = [
   {
     myth: "Wix c'est gratuit",
     reality:
-      "Wix gratuit = publicités Wix sur votre site. La version pro coûte 17-35€/mois, soit 204-420€/an.",
+      "Wix gratuit = de la pub Wix collée sur votre site, à côté de votre menu. La version pro coûte 17-35€/mois, soit 204-420€/an. Gratuit, vraiment ?",
   },
   {
     myth: 'Je peux le faire moi-même',
     reality:
-      "Techniquement oui. Mais entre un site fonctionnel et un site qui convertit et se référence bien, il y a une vraie différence.",
+      "Techniquement oui. Vous pouvez aussi vous couper les cheveux vous-même. Entre un site qui fonctionne et un site qui fait signer et remonte sur Google, l'écart est énorme.",
   },
   {
     myth: "Le SEO c'est pareil partout",
     reality:
-      "Les sites Wix et IA ont des limitations structurelles pour le SEO. Un site custom bien codé se référence bien mieux.",
+      "Non. Wix et l'IA traînent des limites structurelles côté SEO — code lourd, peu de contrôle. Un site bien codé remonte beaucoup plus haut sur Google.",
   },
   {
     myth: "Je n'ai pas besoin d'un vrai site",
     reality:
-      "96% des consommateurs vérifient un site avant d'acheter ou de contacter. Un site pro inspire confiance.",
+      "96% des clients regardent votre site avant de pousser la porte ou de décrocher leur téléphone. Un site bricolé, c'est la moitié qui repart avant même d'avoir essayé.",
   },
 ]
 
@@ -175,7 +175,7 @@ export default function PourquoiPasFaireSoiMeme() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-xl text-gray-600 mb-10"
           >
-            On a fait les calculs pour vous. La réponse va vous surprendre.
+            On a sorti la calculette. Spoiler : le "gratuit" coûte cher.
           </motion.p>
 
           {/* Stat pills */}
@@ -186,10 +186,10 @@ export default function PourquoiPasFaireSoiMeme() {
             className="flex flex-wrap gap-3"
           >
             <span className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm">
-              ⏱ 40-80h perdues en moyenne
+              ⏱ 40-80h de votre vie englouties
             </span>
             <span className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm">
-              💸 1 800€ de manque à gagner
+              💸 1 800€ partis en fumée
             </span>
           </motion.div>
         </div>
@@ -206,10 +206,10 @@ export default function PourquoiPasFaireSoiMeme() {
             variants={stagger}
           >
             <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
-              La comparaison honnête
+              La comparaison qu'on vous cache
             </motion.h2>
             <motion.p variants={fadeUp} className="text-gray-600 text-lg">
-              Coûts réels calculés sur 3 ans d'utilisation
+              Coûts réels sur 3 ans, abonnements et temps perdu compris
             </motion.p>
           </motion.div>
 
@@ -300,7 +300,7 @@ export default function PourquoiPasFaireSoiMeme() {
             className="text-center mb-12"
           >
             <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
-              Votre temps, c'est de l'argent
+              Votre temps, c'est votre argent
             </motion.h2>
           </motion.div>
 
@@ -317,7 +317,7 @@ export default function PourquoiPasFaireSoiMeme() {
               className="bg-white border border-gray-100 rounded-2xl shadow-sm p-8"
             >
               <label className="block text-sm font-semibold text-gray-700 mb-3">
-                Votre taux horaire estimé
+                Votre heure de travail vaut combien ?
               </label>
               <div className="flex items-center gap-3 mb-6">
                 <input
@@ -334,14 +334,14 @@ export default function PourquoiPasFaireSoiMeme() {
 
               <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}>
                 <p className="text-lg font-bold text-[#154359]">
-                  En passant 60h sur Wix →{' '}
+                  60h passées à vous battre avec Wix →{' '}
                   <span className="text-2xl" style={gradientText}>
                     {(hourlyRate * 60).toLocaleString('fr-FR')}€
                   </span>{' '}
                   de manque à gagner
                 </p>
                 <p className="text-sm text-[#066377] mt-2">
-                  Sans compter le résultat souvent décevant et la frustration
+                  Et on ne compte même pas les soirées perdues et le résultat qui pique les yeux
                 </p>
               </div>
             </motion.div>
@@ -353,7 +353,7 @@ export default function PourquoiPasFaireSoiMeme() {
               style={{ background: 'linear-gradient(135deg, #fffbeb, #fef3c7)' }}
             >
               <p className="text-amber-800 font-medium leading-relaxed">
-                💡 Un site créé en 60h de bricolage vs 2 semaines par un expert → le résultat ne sera pas le même.
+                💡 60h de bricolage le dimanche soir vs 2 semaines par quelqu'un dont c'est le métier → devinez lequel fait signer vos clients.
               </p>
             </motion.div>
           </motion.div>
@@ -371,7 +371,7 @@ export default function PourquoiPasFaireSoiMeme() {
             variants={stagger}
           >
             <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-black text-gray-900">
-              Les idées reçues
+              Les phrases qu'on entend (trop) souvent
             </motion.h2>
           </motion.div>
 
@@ -417,10 +417,10 @@ export default function PourquoiPasFaireSoiMeme() {
             variants={stagger}
           >
             <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
-              Quand le DIY est acceptable
+              Quand le DIY est une bonne idée
             </motion.h2>
             <motion.p variants={fadeUp} className="text-gray-600 text-lg">
-              Soyons honnêtes : le DIY a du sens dans certains cas
+              Jouons franc-jeu : parfois, le faire soi-même suffit largement
             </motion.p>
           </motion.div>
 
@@ -441,10 +441,10 @@ export default function PourquoiPasFaireSoiMeme() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  'Blog personnel sans enjeu commercial',
-                  'Portfolio étudiant ou amateur',
-                  'Projet test / MVP rapide',
-                  'Budget < 200€ et résultat non-critique',
+                  'Un blog perso, zéro client à la clé',
+                  'Un portfolio étudiant ou de loisir',
+                  'Un projet test à monter en une soirée',
+                  'Budget < 200€ et site qui ne fait pas vivre votre boîte',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-gray-600 text-sm">
                     <span className="mt-0.5 text-gray-400 shrink-0">•</span>
@@ -465,10 +465,10 @@ export default function PourquoiPasFaireSoiMeme() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  'TPE, artisan, indépendant professionnel',
-                  'Quand votre image de marque compte',
-                  'Quand vous voulez être trouvé sur Google',
-                  'Quand votre site doit convertir des visiteurs',
+                  'TPE, artisan, indépendant qui vit de son activité',
+                  'Quand votre image, c\'est votre gagne-pain',
+                  'Quand vous voulez sortir sur Google, pas en page 8',
+                  'Quand le site doit transformer les curieux en clients',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-[#154359] text-sm font-medium">
                     <span className="mt-0.5 shrink-0">✅</span>
@@ -497,10 +497,10 @@ export default function PourquoiPasFaireSoiMeme() {
             variants={fadeUp}
             className="text-3xl md:text-4xl font-black text-gray-900 mb-4"
           >
-            Investissez bien, une seule fois
+            Payez une fois. Pas tous les mois.
           </motion.h2>
           <motion.p variants={fadeUp} className="text-gray-600 text-lg mb-10">
-            Pour le prix d'un abonnement Wix 3 ans, obtenez un site professionnel livré en 2 semaines.
+            Pour le prix de 3 ans d'abonnement Wix, vous avez un vrai site pro livré en 2 semaines. Et vos soirées restent à vous.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-6">

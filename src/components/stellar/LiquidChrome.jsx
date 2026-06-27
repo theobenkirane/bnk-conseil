@@ -40,7 +40,7 @@ void main(){
   vec2 p = uv; p.x *= aspect;
   vec2 ptr = uPointer; ptr.x *= aspect;
   // le scroll fait couler le métal verticalement
-  float t = uTime * 0.16 + uScroll * 0.9;
+  float t = uTime * 0.10 + uScroll * 0.9;
 
   // influence du curseur : creux/relief qui suit la souris
   float pd = length(p - ptr);
@@ -98,6 +98,8 @@ void main(){ gl_Position = vec4(aPos,0.0,1.0); }
 // Couleurs normalisées 0..1 : a = fond, b = teinte, c = reflet.
 const VARIANTS = {
   home:   { light: 0, a: [0.008, 0.028, 0.042], b: [0.020, 0.270, 0.340], c: [0.62, 0.92, 1.00] },
+  // Métal liquide sombre, version chaude/marron (portfolio) — même rendu que l'accueil mais ambré.
+  brown:  { light: 0, a: [0.055, 0.038, 0.024], b: [0.40, 0.24, 0.085], c: [0.96, 0.78, 0.52] },
   teal:   { light: 1, a: [0.56, 0.73, 0.78], b: [0.07, 0.40, 0.49], c: [1.0, 1.0, 1.0] },
   blue:   { light: 1, a: [0.58, 0.69, 0.86], b: [0.10, 0.29, 0.60], c: [1.0, 1.0, 1.0] },
   violet: { light: 1, a: [0.68, 0.64, 0.86], b: [0.34, 0.25, 0.66], c: [1.0, 1.0, 1.0] },

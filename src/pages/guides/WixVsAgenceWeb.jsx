@@ -65,26 +65,26 @@ const schema = {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const wixPros = [
-  "Prise en main rapide (quelques heures pour un site de base)",
-  "Pas besoin de développeur pour les mises à jour courantes",
-  "Interface visuelle intuitive et drag-and-drop",
-  "Nombreux templates disponibles dans tous les secteurs",
+  "On démarre vite (quelques heures pour un site basique)",
+  "Pas besoin d'un développeur pour changer un horaire ou une photo",
+  "Interface visuelle, on glisse-dépose, ça parle à tout le monde",
+  "Des centaines de templates, dans tous les secteurs",
 ]
 
 const wixCons = [
-  "SEO structurellement limité (code lourd, peu de contrôle technique)",
-  "Design générique reconnaissable comme \"site Wix\"",
-  "Coût réel sous-estimé (abonnement + domaine = 200–400€/an)",
-  "Votre site appartient à Wix (pas d'export de code possible)",
-  "Support limité (base de connaissance, chatbot automatique)",
+  "SEO bridé : code lourd, peu de contrôle, Google rame à vous classer",
+  "Design qu'on repère à 10 mètres — \"tiens, encore un site Wix\"",
+  "Le vrai coût qu'on oublie : abonnement + domaine = 200–400€/an, chaque année",
+  "Votre site appartient à Wix, pas à vous (impossible d'exporter le code)",
+  "Support fantôme : une base d'articles et un chatbot qui tourne en rond",
 ]
 
 const agencePros = [
-  "SEO optimisé dès le départ (structure technique, balises, performance)",
-  "Design 100% sur-mesure (votre identité, pas un template)",
-  "Vous possédez votre site et son code source",
-  "Support humain pour les questions et modifications",
-  "Résultat professionnel qui inspire confiance aux clients",
+  "SEO calé dès le jour 1 : structure propre, balises, vitesse au top",
+  "Design 100% sur-mesure : votre identité, pas le template du voisin",
+  "Le site est à vous, code compris — vous partez avec si vous voulez",
+  "Un humain au bout du fil quand vous avez une question ou une retouche",
+  "Un rendu pro qui rassure vos clients au lieu de les faire fuir",
 ]
 
 const comparisonRows = [
@@ -121,38 +121,38 @@ const comparisonRows = [
 ]
 
 const wixOkFor = [
-  "Blog personnel, portfolio hobby sans enjeu commercial",
-  "MVP ultra-rapide pour valider une idée à faible coût",
-  "Projet avec budget < 100€ et sans enjeu de conversion",
+  "Blog perso ou portfolio loisir, sans un euro en jeu",
+  "Tester une idée vite fait, sans y laisser un budget",
+  "Un projet à moins de 100€ où personne ne doit cliquer \"acheter\"",
 ]
 
 const wixNotFor = [
-  "Vitrine professionnelle d'une TPE ou d'un artisan",
-  "Tout secteur où l'image compte (restaurant, coach, artisan)",
-  "Quand vous voulez être trouvé sur Google localement",
-  "Quand votre site doit convertir des visiteurs en clients",
+  "La vitrine d'une TPE ou d'un artisan qui veut être pris au sérieux",
+  "Tout métier où l'image fait vendre (restaurant, coach, artisan)",
+  "Quand vous voulez sortir sur Google dans votre ville",
+  "Quand le site doit transformer les visiteurs en clients qui paient",
 ]
 
 const faqItems = [
   {
     question: "Wix peut-il vraiment bien se référencer sur Google ?",
     answer:
-      "Techniquement oui mais structurellement limité. Les sites Wix ont souvent du code inutile qui ralentit le chargement, ce qui pénalise directement le SEO selon les Core Web Vitals de Google.",
+      "Sur le papier oui, dans la vraie vie c'est compliqué. Les sites Wix traînent souvent du code inutile qui ralentit le chargement — et Google déteste ça. Ses Core Web Vitals sanctionnent directement les sites lents, donc votre SEO en prend un coup.",
   },
   {
     question: "Mon site Wix actuel peut-il être migré ?",
     answer:
-      "Pas directement. Wix ne permet pas l'export du code source. Mais votre contenu (textes, photos, logo) peut être réutilisé intégralement dans un nouveau site professionnel.",
+      "Pas en un clic, non : Wix ne laisse pas exporter le code. Mais tout votre contenu — textes, photos, logo — se récupère et se réutilise tel quel dans un nouveau site pro. Vous ne repartez pas de zéro.",
   },
   {
     question: "Combien de temps pour créer un site sur Wix soi-même ?",
     answer:
-      "Comptez 20 à 80h selon votre expérience et le niveau de personnalisation visé. Un résultat vraiment professionnel demande du temps et des compétences en design et en SEO.",
+      "Comptez 20 à 80h selon votre niveau et l'envie de bien faire. Et encore, pour un rendu vraiment pro il faut des compétences en design et en SEO que Wix ne fournit pas dans la boîte.",
   },
   {
     question: "Une agence peut-elle vraiment livrer en 2 semaines ?",
     answer:
-      "Chez BNK Conseil, oui pour la formule Essentiel. On a un process rodé et une spécialisation TPE qui nous permet d'aller vite sans sacrifier la qualité du design ou du SEO.",
+      "Chez BNK Conseil, oui, sur la formule Essentiel. Process rodé, spécialisation TPE : on va vite sans bâcler le design ni le SEO. Pas de \"on vous rappelle dans 3 mois\".",
   },
 ]
 
@@ -292,8 +292,8 @@ export default function WixVsAgenceWeb() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-xl text-gray-700 leading-relaxed"
               >
-                Wix s'est imposé comme la solution no-code de référence. Mais pour une TPE qui a besoin
-                d'un site qui génère des clients, est-ce vraiment le bon choix ?
+                Wix est partout, et pour cause : c'est rapide et pas cher à première vue. Mais quand votre
+                site doit ramener de vrais clients dans votre TPE, est-ce que ça tient la route ? On regarde sous le capot.
               </motion.p>
             </div>
           </div>
@@ -316,10 +316,10 @@ export default function WixVsAgenceWeb() {
                 className="mb-20 scroll-mt-24"
               >
                 <motion.h2 variants={fadeUp} className="text-2xl font-bold text-gray-900 mb-2">
-                  Wix : les vrais avantages et limites
+                  Wix : ce qui marche, ce qui coince
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Soyons honnêtes : Wix a des qualités. Mais aussi des limites structurelles que peu d'articles mentionnent.
+                  Wix a de vraies qualités, on ne va pas le nier. Mais aussi des limites structurelles que les pubs oublient toujours de mentionner.
                 </motion.p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -371,10 +371,10 @@ export default function WixVsAgenceWeb() {
                 className="mb-20 scroll-mt-24"
               >
                 <motion.h2 variants={fadeUp} className="text-2xl font-bold text-gray-900 mb-2">
-                  Agence web : les avantages réels
+                  Agence web : ce que vous gagnez vraiment
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Ce que vous obtenez quand vous passez par une agence spécialisée TPE.
+                  Concrètement, voilà ce que vous récupérez en passant par une agence spécialisée TPE.
                 </motion.p>
 
                 <motion.div
@@ -399,8 +399,8 @@ export default function WixVsAgenceWeb() {
                   style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F0F0)' }}
                 >
                   <p className="text-[#154359] font-bold text-base leading-relaxed">
-                    💡 Point clé : un site d'agence spécialisée TPE ne coûte pas forcément plus cher
-                    qu'un Wix sur 3 ans  -  et le résultat n'a rien à voir.
+                    💡 Le truc que personne ne dit : sur 3 ans, un site d'agence spécialisée TPE
+                    ne coûte pas plus cher qu'un Wix  -  sauf que le résultat joue dans une autre cour.
                   </p>
                 </motion.div>
               </motion.section>
@@ -415,10 +415,10 @@ export default function WixVsAgenceWeb() {
                 className="mb-20 scroll-mt-24"
               >
                 <motion.h2 variants={fadeUp} className="text-2xl font-bold text-gray-900 mb-2">
-                  Comparaison sur 5 critères clés
+                  Le face-à-face sur 5 critères
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Une comparaison factuelle, sans langue de bois.
+                  Les chiffres sur la table, zéro langue de bois.
                 </motion.p>
 
                 <motion.div variants={stagger} className="space-y-4">
@@ -460,10 +460,10 @@ export default function WixVsAgenceWeb() {
                 style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 100%)' }}
               >
                 <p className="text-[#154359] font-bold text-xl mb-2">
-                  Pas encore convaincu ?
+                  Vous hésitez encore ?
                 </p>
                 <p className="text-[#154359] text-base mb-6">
-                  Visualisez votre futur site gratuitement en 2 minutes.
+                  Voyez à quoi ressemblerait votre futur site. Gratuit, et ça prend 2 minutes.
                 </p>
                 <Link
                   to="/apercu-site"
@@ -484,10 +484,10 @@ export default function WixVsAgenceWeb() {
                 className="mb-20 scroll-mt-24"
               >
                 <motion.h2 variants={fadeUp} className="text-2xl font-bold text-gray-900 mb-2">
-                  Pour qui Wix est adapté
+                  Pour qui Wix fait le job
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Wix n'est pas mauvais en soi. Il est juste inadapté à certains besoins.
+                  Wix n'est pas le diable. Il n'est juste pas taillé pour certains besoins.
                 </motion.p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -543,7 +543,7 @@ export default function WixVsAgenceWeb() {
                   Questions fréquentes
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-gray-500 text-base mb-8">
-                  Ce que les TPE nous demandent le plus souvent.
+                  Les questions qui reviennent à chaque rendez-vous TPE.
                 </motion.p>
 
                 <motion.div variants={stagger} className="space-y-3">
@@ -565,10 +565,10 @@ export default function WixVsAgenceWeb() {
                 style={{ background: 'linear-gradient(135deg, #F0F5F7 0%, #F0F5F7 50%, #dbeafe 100%)' }}
               >
                 <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3">
-                  Prêt à faire le bon choix ?
+                  On arrête de comparer, on passe à l'action ?
                 </h2>
                 <p className="text-gray-600 text-lg mb-8">
-                  Un site professionnel livré en 2 semaines, à partir de 690€.
+                  Un vrai site pro, livré en 2 semaines, à partir de 690€.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -618,10 +618,10 @@ export default function WixVsAgenceWeb() {
                   style={{ background: 'linear-gradient(135deg, #F0F5F7, #F0F5F7)' }}
                 >
                   <p className="font-bold text-[#154359] text-base mb-2">
-                    Convaincu par l'agence ?
+                    L'agence vous tente ?
                   </p>
                   <p className="text-sm text-[#154359] mb-5 leading-relaxed">
-                    Obtenez un devis gratuit et personnalisé sous 24h.
+                    Devis gratuit, taillé pour votre activité, réponse sous 24h.
                   </p>
                   <Link
                     to="/rdv"
